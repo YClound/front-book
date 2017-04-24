@@ -1,0 +1,18 @@
+{
+    "code":0,
+    "message":"ok",
+    "data":{
+        "pager":{
+            "page":2,
+            "pages":22,
+            "total":220,
+            "pagesize":10
+        },
+        "list":[
+            {"sociatyId":"1","sociatyName":"杭州新春商会","role":"0"},
+            {"sociatyId":"2","sociatyName":"杭州新春商会2","role":"0"},
+            {"sociatyId":"3","sociatyName":"杭州新春商会33","role":"1"}
+
+        ]
+    }
+}

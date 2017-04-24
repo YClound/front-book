@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>新昌商会</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!-- 可更改 -->
+    <meta name="keywords" content="新昌商会">
+    <meta name="description" content="新昌商会">
+    <!-- 百度统计 -->
+    <meta name="baidu-site-verification" content="j4d5H6qJuY"/>
+    <meta name="share-title" content=""/>
+    <meta name="share-img" content=""/>
+    <meta name="share-desc" content=""/>
+    <meta name="share-url" content=""/>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    
+    <link rel="stylesheet" href="../assets/css/base_m.css">
+    <link rel="stylesheet" href="../assets/css/mobile/app.css">
+    <link rel="stylesheet" href="../assets/css/mobile/member.css">
+    <script src="../assets/js/mobile/config.js"></script>
+  
+    <style>
+    
+    </style>
+    
+  </head>
+  <body class="bg m-member">
+    <div class="m-main view-main">
+        <!-- header -->
+        <div class="s-header headroom flex">
+            <div class="ellipsis flex-1">会员</div>
+            <button type="button" class="btn-search r-8" data-router="/search">
+                <i class="if icon-search m-0"></i>
+            </button>
+        </div>
+
+        <!-- 搜索标题 -->
+        <div class="s-header s-header-result flex aic headroom dn">
+          <div class="w-3em btn-cancel-search"><i class="if icon-angle-left"></i></div>
+          <div class="flex-1 keyword"></div>
+          <div class="w-3em"></div>
+        </div>
+        <div class="padding-header"></div>
+
+        <!-- 会员列表 -->
+        <div class="member-wrap">
+            <div class="member-list" >
+                <!-- <div class="s-member-list">
+                    <div class="s-member-background"></div>
+                    <div class="s-member-intro">
+                        <div class="s-member-image">
+                            <img src="http://7xjckn.com2.z0.glb.qiniucdn.com/2015-12-29_568257513df21.png" alt="" onerror="imgErr(this)">
+                        </div>
+                        <div class="s-member-name c-f">齐小吓 <span>会长</span></div>
+                        <div class="s-member-from">浙江省九鼎投资集团有限公司&nbsp;董事长</div>
+                    </div>
+                    <div class="s-member-info">
+                        <div class="mb-6 flex">
+                          <span class="c-7">行业：</span>
+                          <span class="c-2 flex-1">互联网金融</span>
+                        </div>
+                        <div class="flex">
+                          <span class="c-7">人生格言：</span>
+                          <span class="c-2 flex-1">天生我才必有用，千金散尽还复来！</span>
+                        </div>
+                        <div class="tac w-100">
+                           <a href="member-detail.html" class="look-member">查看主页</a>
+                        </div>
+                    </div>          
+                </div> -->
+            </div>
+
+            <!-- data-template 模板ID ；data-total-page 总页数; form.action ajax提交路径，隐藏域为参数-->
+            <div class="infinite-loading" type="json" data-template="member-list" data-list-wrap=".member-list" data-hidden="true">
+                <form class="ajax-form" action="../api/mobile/member.json" data-ajax-method="get">
+                    <input type="hidden" name="type" value="" />
+                    <input type="hidden" name="page" value="1" data-name="offset" />
+                    <input type="hidden" name="keyword" value="" />
+                </form>
+            </div>
+
+        </div>
+
+        <!-- footer -->
+        <div class="padding-footer-index"></div>
+        <div class="s-footer s-footer-index flex space-around aic c-a tac bgc-w">
+            <a class="db w-4em" href="index.html">
+                <i class="icon-footer pl-2">
+                    <img src="../assets/images/mobile/icon/index.png" style="width:24px;">
+                </i>
+                <div>首页</div>
+            </a>
+            <a class="db w-4em auth-link" href="contact-list.html">
+                <i class="icon-footer">
+                    <img src="../assets/images/mobile/icon/contact.png">
+                </i>
+                <div>通讯录</div>
+            </a>
+            <a class="db w-4em active" href="member.html">
+                <i class="icon-footer">
+                    <img src="../assets/images/mobile/icon/member1.png">
+                </i>
+                <div>会员展示</div>
+            </a>
+            <a class="db w-4em" href="my.html">
+                <i class="icon-footer">
+                    <img src="../assets/images/mobile/icon/my.png">
+                </i>
+                <div>我的</div>
+            </a>
+        </div>
+
+    </div>
+    
+    <!-- 搜索页面 -->
+    <div class="view-wrap">
+        <div class="view view-search">
+            <div class="view-content">
+                <form class="s-header flex form-search" native="" novalidate="novalidate">
+                    <a class="w-3em db" onclick="history.back()" href="">
+                        <i class="if icon-angle-left"></i>
+                    </a>
+                    <div class="flex-1 ctrl-wrap lh-10 mt-4 c-text">
+                        <input type="search" placeholder="请输入关键字" name="keyword">
+                        <i class="if icon-search poa l-10 t-7 c-8 fz-large"></i>
+                    </div>
+                    <button type="submit" class="w-3em btn-text c-f">
+                        <span>搜索</span>
+                    </button>
+                </form>
+                <div class="padding-header"></div>
+                <div class="panel">
+                    <div class="pb-6 bb fz-medium">搜索历史</div>
+                    <ul class="search-history-list"></ul>
+                    <a href="javascript:" class="db tac pt-6 clear-search-history">清空搜索记录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/html" id="member-list">
+        <div class="s-member-list" data-id="{{userId}}">
+            <span class="tag-primary poa t-0 l-0 pl-6 pr-6 fz-base" style="border-radius: 0px;">{{positionName}}</span>
+            <div class="s-member-background"></div>
+            <div class="s-member-intro">
+                <div class="s-member-image">
+                    <img src="{{userPhoto}}" alt="" onerror="imgErr(this)">
+                </div>
+                <div class="s-member-name c-f">
+                    <span class="vat mb-4">{{realName}}</span> 
+                    {{if groupName}}
+                    <span class="memberGroup">
+                        {{each _groupName as value}}
+                        <span class="tag vam mb-4">{{value}}</span>
+                        {{/each}}
+                    </span>
+                    {{/if}}
+                </div>
+                <div class="s-member-from">{{registerCompany}}&nbsp;{{registerPosition}}</div>
+            </div>
+            <div class="s-member-info">
+                <div class="mb-6 flex">
+                  <span class="c-7">所属行业：</span>
+                  <span class="c-2 flex-1">{{industry}}</span>
+                </div>
+                <div class="flex">
+                  <span class="c-7">人生格言：</span>
+                  <span class="c-2 flex-1">{{userIntro}}</span>
+                </div>
+                <div class="tac w-100">
+                   <a href="member-detail.html" class="look-member">查看主页</a>
+                </div>
+            </div>          
+        </div>
+    </script>
+
+    <script src="../vendor/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../assets/js/template.js"></script>
+    <script src="../assets/js/dm.base.js"></script>
+    <script src="../assets/js/mobile/api.js"></script>
+    <script src="../assets/js/mobile/member.js"></script>
+    <script type="text/javascript">
+        $('[data-name="offset"]').val(1);
+    </script>
+  </body>
+</html>

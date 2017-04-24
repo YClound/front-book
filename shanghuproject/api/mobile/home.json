@@ -1,0 +1,74 @@
+{
+  "status": 0,
+  "info": "ok",
+  "data": [
+    {
+      "value": 0,
+      "info": "不限"
+    },
+    {
+      "value": 1,
+      "info": "羽林街道"
+    },
+    {
+      "value": 2,
+      "info": "南明街道"
+    },
+    {
+      "value": 3,
+      "info": "七星街道"
+    },
+    {
+      "value": 4,
+      "info": "澄潭镇"
+    },
+    {
+      "value": 5,
+      "info": "梅渚镇"
+    },
+    {
+      "value": 0,
+      "info": "回山镇"
+    },
+    {
+      "value": 1,
+      "info": "大市聚镇"
+    },
+    {
+      "value": 2,
+      "info": "小将镇"
+    },
+    {
+      "value": 3,
+      "info": "沙溪镇"
+    },
+    {
+      "value": 4,
+      "info": "镜岭镇"
+    },
+    {
+      "value": 5,
+      "info": "儒岙镇"
+    },
+    {
+      "value": 0,
+      "info": "城南乡"
+    },
+    {
+      "value": 1,
+      "info": "东茗乡"
+    },
+    {
+      "value": 2,
+      "info": "双彩乡"
+    },
+    {
+      "value": 3,
+      "info": "新林乡"
+    },
+    {
+      "value": 4,
+      "info": "巧英乡"
+    }
+  ]
+}

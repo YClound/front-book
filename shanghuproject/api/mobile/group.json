@@ -1,0 +1,30 @@
+{
+  "status": 0,
+  "info": "ok",
+  "data": [
+    {
+      "value": 0,
+      "info": "不限"
+    },
+    {
+      "value": 1,
+      "info": "金融组"
+    },
+    {
+      "value": 2,
+      "info": "医疗组"
+    },
+    {
+      "value": 3,
+      "info": "教育组"
+    },
+    {
+      "value": 4,
+      "info": "服务组"
+    },
+    {
+      "value": 5,
+      "info": "IT组"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "list": [
+            {
+                "companyId": "1",
+                "companyName": "杭州树德科技有限公司",
+                "companyPosition":"CEO",
+                "companyAddress": "杭州市西湖区德力西大厦",
+                "companyIndustry": "互联网金融",
+                "companyScale": "50-150人",
+                "companyWebsite": "http://www.chuyingfund.com",
+                "companyWx": "雏鹰网",
+                "companyUserId": "1",
+                "role": 1
+            },
+            {
+                "companyId": "1",
+                "companyName": "杭州树德科技有限公司",
+                "companyPosition":"CEO",
+                "companyAddress": "杭州市西湖区德力西大厦",
+                "companyIndustry": "互联网金融",
+                "companyScale": "1000-5000人",
+                "companyWebsite": "http://www.chuyingfund.com",
+                "companyWx": "雏鹰网",
+                "companyUserId": "1",
+                "role": 1
+            }
+        ]
+    }
+}

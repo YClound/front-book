@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>PhotoSwipe</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="default-skin/default-skin.css">
+    <link rel="stylesheet" href="photoswipe.css">
+    <script type="text/javascript" src="/webapp/static/assets/vendor/jquery/jquery-1.11.3.min.js"></script>
+    <script src="photoswipe-ui-default.js"></script>
+    <script src="photoswipe.js"></script>
+    
+    </head>
+    <body >
+        <ul>
+            <li>
+                <a href="https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg" data-size="1600x1600" data-med="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg" data-med-size="1024x1024" data-author="Folkert Gorter">
+                    <img src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+
+
+<button id="btn">Open PhotoSwipe</button>
+        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<ul class="feed-photo-list" data-role="photoList" >
+    <li class="feed-photo-item" data-role="photoItem" data-original="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/0F/04/ChMkJldGqV6IJhl6ABG7On7QrTgAAR6lwINgBgAEbtS030.jpg">
+        <img src="http://ww2.sinaimg.cn/thumb180/afb4603bgw1f46h8acklbj20500500sq.jpg" alt="" />
+    </li>
+    <li class="feed-photo-item" data-role="photoItem" data-original="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/0F/04/ChMkJldGqWiIOd2aABHGozUiJsgAAR6mAPqICAAEca7019.jpg" />
+    </li>
+    <li class="feed-photo-item" data-role="photoItem" data-original="http://ww1.sinaimg.cn/bmiddle/6c7cbd31jw1f48i73474yj20i80rsgrx.jpg">
+        <img src="http://ww2.sinaimg.cn/thumb180/afb4603bgw1f46h8acklbj20500500sq.jpg" alt=""  />
+    </li>
+    <li class="feed-photo-item" data-role="photoItem" data-original="http://ww1.sinaimg.cn/bmiddle/6c7cbd31jw1f48i783rhjj20m80m846h.jpg">
+        <img src="http://ww2.sinaimg.cn/thumb180/afb4603bgw1f46h8acklbj20500500sq.jpg" alt=""  />
+    </li>
+</ul>
+
+
+<script type="text/javascript">
+    
+var openPhotoSwipe = function() {
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+
+        // build items array
+        var items = [
+            {
+                src: 'http://ww1.sinaimg.cn/bmiddle/6c7cbd31jw1f48i783rhjj20m80m846h.jpg',
+                w: 500,
+                h: 1024
+            },
+            {
+                src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
+                w: 964,
+                h: 1024
+            },
+            {
+                src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
+                w: 1024,
+                h: 683
+            }
+        ];
+        
+        // define options (if needed)
+        var options = {
+                 // history & focus options are disabled on CodePen        
+            history: false,
+            focus: false,
+
+            showAnimationDuration: 0,
+            hideAnimationDuration: 0,
+            getThumbBoundsFn: function(index) {
+                console.log('getThumbBoundsFn',index)
+            }
+            
+        };
+        
+
+        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.listen('gettingData', function(index, item) {
+            //console.log(index,item)
+        });
+
+        gallery.init();
+};
+
+//openPhotoSwipe();
+
+document.getElementById('btn').onclick = openPhotoSwipe;
+
+
+$(function(){
+    var Util = {
+        //获取图片宽 和 高
+        imgReady: function( url, success, error ) {
+            var width, height, intervalId, check, div,
+                img = new Image(),
+                body = document.body;
+                
+            img.src = url;
+            
+            // 从缓存中读取
+            if (img.complete) {
+                return success(img.width, img.height);
+            }
+            // 通过占位提前获取图片头部数据
+            if (body) {
+                div = document.createElement('div');
+                div.style.cssText = 'position:absolute;left:-99999px;top:0;';
+                div.appendChild(img);
+                body.appendChild(div);
+                width = img.offsetWidth;
+                height = img.offsetHeight;
+               
+                check = function () {
+                   
+                    if (img.offsetWidth !== width || img.offsetHeight !== height) {
+                        
+                        clearInterval(intervalId);
+                        success(img.offsetWidth, img.clientHeight);
+                        img.onload = null;
+                        div.innerHTML = '';
+                        div.parentNode.removeChild(div);
+                    };
+
+                };
+                
+                intervalId = setInterval(check, 150);
+            }
+            
+            // 加载完毕后方式获取
+            img.onload = function () {
+                if(img.complete){
+                    success(img.width, img.height);
+                    img.onload = img.onerror = null;
+                    clearInterval(intervalId);
+                    body && img.parentNode &&img.parentNode.removeChild(img);
+                }
+                    
+            };
+            
+            // 图片加载错误
+            img.onerror = function () {
+                error && error();
+                clearInterval(intervalId);
+                body && img.parentNode && img.parentNode.removeChild(img);
+            };
+        }
+    };
+    $('body').on('click', '[data-role="photoItem"]', function(e){
+ 
+        var items = [];
+        var $photoItem = $(e.currentTarget);
+        var $photoList = $photoItem.closest('[data-role="photoList"]');
+
+
+        $photoList.find('[data-role="photoItem"]').each(function(i,item){
+            var $photoItem = $(this);
+            var pic = $photoItem.attr('data-original');
+            $photoItem.attr('photo-index',i);
+            $(this).attr('photo-index',i);
+            //console.log(pic)
+       
+            items.push({
+                src:pic,
+                w: 1024,
+                h: 683
+            });
+        });
+
+        
+        
+        var index = $photoItem.attr('photo-index') || 0;
+        var path = $photoItem.attr('data-original')  || '';
+        index = parseInt(index);
+        $photoList.length==1?items:items.push({src:path,w:800,h:500});
+        //pics.push($photoItem.attr('data-original') || '');
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+
+        // build items array
+        
+        
+        // define options (if needed)
+        var options = {
+            index:index,
+            history: false,
+            focus: false,
+            showAnimationDuration: 0,
+            hideAnimationDuration: 0
+            
+        };
+        
+        //console.log(options,items)
+        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        // Image loaded
+        gallery.listen('imageLoadComplete', function(index, item) { 
+            // index - index of a slide that was loaded
+            // item - slide object
+            console.log('imageLoadComplete',index)
+        });
+        var count = 0;
+        var tick = function(){
+            if(count === items.length) {
+                gallery.init();
+            }
+        }
+        for (var i = items.length - 1; i >= 0; i--) {
+            (function(item){
+                console.log(item.src)
+                Util.imgReady(item.src,function(w,h){
+                    item.w = w;
+                    item.h = h;
+                    count++;
+                    tick();
+                });
+            })(items[i]);
+        }
+        
+
+        
+
+    });
+});
+
+</script>
+    </body>
+</html>

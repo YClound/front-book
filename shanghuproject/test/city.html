@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>city</title>
+    <link rel="stylesheet" href="../assets/css/base_m.css">
+    <style>
+    body {
+        font-size: 14px;
+        color: #444;
+        font-family: "Helvetica Neue","Microsoft YaHei",sans-serif;
+    }
+.tab-city-container{
+    z-index: 200;
+    display: none;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.tab-city-wrap {
+    transform: translate3d(0px, 100%, 0px);
+    border-radius: 0px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #FFF;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+}
+       
+.tab-city-main{
+    font-weight: 400;
+    color: #707479;
+}
+
+.tab-city-hr{
+    height: 2px;
+    position: relative;
+}
+.tab-city-hr .line {
+    display: block;
+    left: -25%;
+    width: 25%;
+    bottom: 0px;
+    height: 2px;
+    top: -2px;
+    position: absolute;
+    transition: left 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    background-color: rgb(204, 204, 204);
+}
+.tab-city-list li {
+    cursor: pointer;
+}
+.tab-city-list li.selected{
+    background: #f7f8f9
+}
+.tab-city-list li a {
+    padding: 8px 18px;
+    border-bottom: .01rem solid #f7f8f9;
+    display: block;
+}
+.tab-city-wrap .link-close {
+    font-size: 18px;
+    color: #4a4a4a;
+    display: inline-block;
+    line-height: 1;
+    padding: 7px 10px;
+}
+.tab-city-wrap .tab-city-link {
+    color: #ccc;
+}
+.tab-city-wrap .tab-city-link.active {
+    color: #4a4a4a;
+}
+.tab-city-list {
+    height: 200px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+    </style>
+
+
+<script src="../vendor/jquery/jquery-2.1.4.min.js"></script>
+<script src="js/city-picker.data.js"></script>
+<script src="../assets/js/dm.city.js"></script>
+<script>
+
+
+
+</script>
+
+</head>
+
+<body>
+
+
+
+<div id="selectCity" data-toggle="chinacity">
+    <input type="text" name="province" class="province">
+    <input type="text" name="city" class="city">
+    <input type="text" name="country" class="country">
+    <input type="text" name="street" class="street">
+    <!-- <button class="cityBtn">选择</button> -->
+    <input type="text" class="cityShow" name="chinaCity" data-name="china" value="浙江省,杭州市,西湖区" readonly="readonly">
+</div>
+
+
+
+<div id="selectCity2" data-toggle="chinacity">
+    <label for="">看看</label>
+    <input type="text" class="cityShow" name="chinaCity2" data-name="china" value="" readonly="readonly">
+</div>
+
+<!-- data-toggle="chinacity"绑定插件  data-level="street" 显示到街道为止 默认到县区district data-count 一开始显示位置-->
+<div id="selectCity3" data-count="street" data-toggle="chinacity" data-level="street">
+    <label for="">默认street</label>
+    <input type="text" name="chinaCity3" data-name="china" value="浙江省,绍兴市,新昌县" readonly="readonly" >
+</div>
+
+
+
+<script type="text/template" id="cityTpl">
+<div class="tab-city-container">
+    <div class="tab-city-wrap">
+        <div class="tab-city-headline flex p-7 bb">
+            <div class="flex-1">请选择</div>
+            <div class="">
+                <a href="javascript:;" class="link-close">×</a>
+            </div>
+        </div>
+        <div class="tab-city-main">
+            <div class="flex tac pb-5 pt-5 bb tab-city-links">
+                <div class="flex-1" style="display:none">
+                    <a href="javascript:;" class="db p-3 br tab-city-link" data-role="province">省份</a>
+                </div>
+                <div class="flex-1" style="display:none">
+                    <a href="javascript:;" class="db p-3 br tab-city-link" data-role="city">城市</a>
+                </div>
+                <div class="flex-1" style="display:none">
+                    <a href="javascript:;" class="db p-3 br tab-city-link" data-role="country">区县</a>
+                </div>
+                <div class="flex-1" style="display:none">
+                    <a href="javascript:;" class="db p-3 tab-city-link" data-role="street">街道</a>
+                </div>
+            </div>
+            <div class="tab-city-hr">
+                <div class="line"></div>
+            </div>
+            <div class="tab-city-lists">
+                <div class="tab-city-list" style="display:none" data-role="province">
+                    <ul>
+                        <li class="selected">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                    </ul>
+                </div>
+                <div class="tab-city-list" style="display:none" data-role="city">
+                    <ul>
+                        <li class="selected">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                    </ul>
+                </div>
+                <div class="tab-city-list " style="display:none" data-role="country">
+                    <ul>
+                        <li class="selected">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                    </ul>
+                </div>
+                <div class="tab-city-list street" style="display:none" data-role="street">
+                    <ul>
+                        <li class="selected">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                        <li class="">北京市</li>
+                    </ul>
+                </div>
+                    
+            </div>
+        </div>
+    </div> 
+</div>
+</script>
+    
+
+
+    <script>
+        
+    </script>  
+</body>
+
+</html>

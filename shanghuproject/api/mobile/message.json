@@ -1,0 +1,27 @@
+{
+    "status" : 0,
+    "info" : "ok",
+    "data" :{
+        "page" : {
+            "current_page" :  1,
+            "total_page" : 1
+        },
+        "list" : [
+            {
+                "meaasgeId" : 1,
+                "userPhoto" : "../assets/images/mobile/msg.png",
+                "realName" : "俞春雷",
+                "messageSendTime" : "2016-09-25",
+                "messageContent" : "很高兴认识你，我的电话是1465872389！期望您的来电！"
+            },
+            {
+                "meaasgeId" : 2,
+                "userPhoto" : "../assets/images/mobile/msg.png",
+                "realName" : "俞春雷",
+                "messageSendTime" : "2016-09-25",
+                "messageContent" : "很高兴认识你，我的电话是1465872389！期望您的来电！"
+            }
+        ]
+    }
+    
+}

@@ -1,0 +1,37 @@
+<div class="formEdit" style="padding-top: 50px;">
+    <form class="form-horizontal" name='submitForm'>
+        <input type="hidden" name="userId" ng-model="formData">
+        <div class="flex control-group aic mb-7">
+            <div class="w-10em control-title">姓名：</div>
+            <div class="flex-1 control-field">
+                <input type="text" name="realName" ng-model="formData.realName" required>
+            </div>
+        </div>
+        <div class="flex control-group aic mb-7">
+            <div class="w-10em control-title">手机号码：</div>
+            <div class="flex-1 control-field">
+                <input type="text" name="userPhone" ng-model="formData.userPhone">
+            </div>
+        </div>
+        <div class="flex control-group aic mb-7">
+            <div class="w-10em control-title">身份证号码：</div>
+            <div class="flex-1 control-field">
+                <input type="text" name="userIdcard" ng-model="formData.userIdcard">
+            </div>
+        </div>
+        <div class="flex control-group aic mb-7">
+            <div class="w-10em control-title">入会时间：</div>
+            <div class="flex-1 control-field">
+                <input type="text" name="joinTime" ng-model="formData.joinTime">
+            </div>
+        </div>
+
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"></div>
+            <div class="flex-1 control-field">
+                <button type="button" class="btn btn-primary" ng-click="save()" ng-disabled="submitForm.$invalid">保存</button>
+                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+            </div>
+        </div>
+    </form>
+</div>

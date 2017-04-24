@@ -1,0 +1,29 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "positionId":"2",
+        "userPassword":"admin",
+        "groupIds":"1,2",
+        "userId": "1",
+        "userPhone":"13456535357",
+        "userPhoto":"http://www.chuyingfund.com/files/account/headImg/120/2016/20160612131503913_1280x960.jpg",
+        "groupIds":"1,2",
+        "userIdcard":"330989484948383748",
+        "joinTime":"2016-12-12",
+        "realName": "马赛克",
+        "registerCompany":"杭州百鬼有限公司",
+        "registerPosition":"懂事",
+        "overdueTime":"2017-12-12",
+        "companyAddress":"杭州市西湖区德力西大厦",
+        "liveAddress":"杭州市拱墅区塘河新村",
+        "userAddress":"浙江省,绍兴市,新昌县,南明街道",
+        "inviterId":"2",
+        "inviter":{
+            "userId":"11",
+            "realName":"亚当"
+        },
+        "memberType":2,
+        "userIntro":"自古多情空余恨，从此绵绵无绝期"
+    }
+}

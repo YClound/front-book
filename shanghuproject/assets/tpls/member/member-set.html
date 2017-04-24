@@ -1,0 +1,48 @@
+<div class="main-view-wrapper">
+    <form class="form-horizontal" name="submitForm">
+    	<input type="text" class="form-control" ng-model="formData.userId" hidden="hidden"/>
+        
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">姓名：</label></div>
+            <div class="flex-1 control-field">
+                <span ng-bind="formData.realName"></span>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">企业/职位：</label></div>
+            <div class="flex-1 control-field">
+                <span ng-bind="formData.registerCompany"></span> / <span ng-bind="formData.registerPosition"></span>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">商会职位：</label></div>
+            <div class="flex-1 control-field">
+                <select class="form-control" ng-options="option.positionId as option.positionName for option in sociaty_position_list" ng-model="formData.positionId"></select>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">商会分组：</label></div>
+            <div class="flex-1 control-field">
+                <label class="checkbox-inline" ng-repeat="group in sociaty_group_list">
+                    <input type="checkbox"  value="{{group.groupId}}" name="groupIds" ng-checked="group._selected" ng-model="group._selected"> <span ng-bind="group.groupName"></span>
+                </label>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">会员到期时间：</label></div>
+            <div class="flex-1 control-field">
+                <input  type="text" ng-model="formData.overdueTime" class="form-control laydate-icon" laydate />
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title">&nbsp;</div>
+            <div class="flex-1 control-field">
+                <button class="btn btn-primary" type="button" ng-click="save($event)" ng-disabled="submitForm.$invalid || loading">保存</button>
+                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+            </div>
+
+        </div>
+        
+    </form>
+</div>
+    

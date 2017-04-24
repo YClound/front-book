@@ -1,0 +1,33 @@
+{
+    "status" : 0,
+    "info" : "ok",
+    "data" : {
+        "list" : [
+            {
+                "companyId" : "1234",
+                "companyName" : "杭州树德科技有限公司",
+                "companyIndustry" : "金融业"
+            },
+            {
+                "companyId" : "1289",
+                "companyName" : "杭州有数金服公司",
+                "companyIndustry" : "采矿业"
+            },
+            {
+                "companyId" : "1267",
+                "companyName" : "网易",
+                "companyIndustry" : "教育"
+            },
+            {
+                "companyId" : "1245",
+                "companyName" : "阿里巴巴集团",
+                "companyIndustry" : "制造业"
+            },
+            {
+                "companyId" : "1045",
+                "companyName" : "杭州九鼎投资公司",
+                "companyIndustry" : "建筑业"
+            }
+        ]
+    }
+}
