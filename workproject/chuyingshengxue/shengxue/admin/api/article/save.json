@@ -1,0 +1,19 @@
+{
+  "code": 0,
+  "message": "操作成功",
+  "url": null,
+  "data": {
+    "articleId": 1,
+    "articleImage": "http://7xjckn.com2.z0.glb.qiniucdn.com/2016-12-14_5850bcea40706.jpg",
+    "articleTitle": "标题",
+    "articleLabel": "标签#1",
+    "articleAuthor": "作者",
+    "articleType": null,
+    "articleSummary": "摘要",
+    "articleShowtime": "2015-02-09",
+    "articleCreatetime": 1482745741000,
+    "articleUpdatetime": null,
+    "articleSort": 1,
+    "articleContent": "主要内容"
+  }
+}

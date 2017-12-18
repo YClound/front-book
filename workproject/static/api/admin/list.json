@@ -1,0 +1,20 @@
+{
+    "code":0,
+    "message":"ok",
+    "data":{
+        "pager":{
+            "page":2,
+            "pages":22,
+            "total":220,
+            "pagesize":10
+        },
+        "list":[
+            {"id":"1","name":"董卓1","role":"0"},
+            {"id":"2","name":"吕布","role":"0"},
+            {"id":"3","name":"曹操","role":"1"},
+            {"id":"4","name":"刘备","role":"0"},
+            {"id":"5","name":"孙尚香","role":"1"}
+
+        ]
+    }
+}

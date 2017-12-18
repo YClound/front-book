@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head()
+
+<body>
+
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+			#sidebar('')
+			
+			<div class="span10">
+				
+				#breadcrumb("")
+				
+				<div class="sortable row-fluid">
+					<div class="box span12">
+						<div class="box-content row-fluid " style="padding-left:15px;height:200px">
+							<h2>建设中........</h2>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	#footer()
+</body>
+</html>

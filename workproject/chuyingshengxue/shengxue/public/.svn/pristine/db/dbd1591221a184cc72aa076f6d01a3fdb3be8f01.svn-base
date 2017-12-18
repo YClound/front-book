@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+        <title>list</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <link rel="stylesheet" href="../assets/css/base_m.css?4.9">
+    
+   <style>
+   .msg-sys-list .panel {
+    border: 1px solid #EEF0F3;
+}
+.msg-sys-list .cover {
+    padding-bottom: 50%;
+    background: center no-repeat;
+    background-size: cover;
+}
+</style>
+    
+    
+</head>
+<body class=""> 
+<ul class="msg-sys-list mb-8">
+    <li class="pt-6 pb-6 bb">
+        <div class="tac fz-small c-a">2017-01-04 10:39</div>
+        <a href="/info/notice_detail/id/285.html" class="db m-7 panel round">
+            <div class="por fwb fz-medium mb-6"><i class="icon-red-dot hide mr-3"></i>2017股权众筹进入筹智时代，“众智众测”为投资保驾护航</div>
+            
+            <div class="cover mb-6" style="background-image: url('http://7xjckn.com2.z0.glb.qiniucdn.com/2017-01-04_586c604c2934f.jpg');"></div>
+            
+            <div class="c-a bb pb-6 mb-6">2016年的最后一周聚募APP做了本年度的最后一次更新。</div>
+            <div class="flex space-between c-8">
+                <div>阅读全文</div>
+                <div><i class="if icon-angle-right"></i></div>
+            </div>
+        </a>
+    </li>
+    
+    <li class="pt-6 pb-6 bb">
+        <div class="tac fz-small c-a">2017-01-03 13:19</div>
+        <a href="/info/notice_detail/id/284.html" class="db m-7 panel round">
+            <div class="por fwb fz-medium mb-6"><i class="icon-red-dot hide mr-3"></i>“新颜美光”路演通知</div>
+            
+            <div class="cover mb-6" style="background-image: url('http://7xjckn.com2.z0.glb.qiniucdn.com/2017-01-03_586b33b424a3c.jpg');"></div>
+            
+            <div class="c-a bb pb-6 mb-6">SHINE BEAUTY LOUNGE 线上线下完美的结合，护肤高科技仪器 +美容高端产品，实体店服务+网络一体化</div>
+            <div class="flex space-between c-8">
+                <div>阅读全文</div>
+                <div><i class="if icon-angle-right"></i></div>
+            </div>
+        </a>
+    </li>
+    
+    
+    
+    <li class="pt-6 pb-6 bb">
+        <div class="tac fz-small c-a">2016-11-16 15:28</div>
+        <a href="/info/notice_detail/id/278.html" class="db m-7 panel round">
+            <div class="por fwb fz-medium mb-6"><i class="icon-red-dot hide mr-3"></i>“艾德教育郑州分校”停止众筹合投公告</div>
+            
+            <div class="cover mb-6" style="background-image: url('http://7xjckn.com2.z0.glb.qiniucdn.com/2016-11-16_582c08a2ab5f6.jpg');"></div>
+            
+            <div class="c-a bb pb-6 mb-6">全国职业教育行业内前三甲，线上网校+线下面授，全国连锁运营，总部直营管理。郑州分校已由项目方自行出资筹备完成，并开始进入试运营阶段。</div>
+            <div class="flex space-between c-8">
+                <div>阅读全文</div>
+                <div><i class="if icon-angle-right"></i></div>
+            </div>
+        </a>
+    </li>
+    
+    <li class="pt-6 pb-6 bb">
+        <div class="tac fz-small c-a">2016-11-10 10:37</div>
+        <a href="/info/notice_detail/id/277.html" class="db m-7 panel round">
+            <div class="por fwb fz-medium mb-6"><i class="icon-red-dot hide mr-3"></i>“吾舍停车”项目众筹开投公告</div>
+            
+            <div class="cover mb-6" style="background-image: url('http://7xjckn.com2.z0.glb.qiniucdn.com/2016-11-10_5823d45687c98.jpg');"></div>
+            
+            <div class="c-a bb pb-6 mb-6">将小区业主上班后空闲（或者一直空闲）的车位在APP上临时或者长期发布出租，有停车需求的人用APP来寻找车位并租用。平台收取一定的管理费。</div>
+            <div class="flex space-between c-8">
+                <div>阅读全文</div>
+                <div><i class="if icon-angle-right"></i></div>
+            </div>
+        </a>
+    </li>
+    
+</ul>
+
+
+
+
+
+</body>
+</html>

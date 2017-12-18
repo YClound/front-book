@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>autocomplete</title>
+    <link rel="apple-touch-icon-precomposed" href="icon.jpg">
+    <!-- <link rel="apple-touch-icon-precomposed" href="./assets/images/app-icon72x72@2x.png"> -->
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta name="author" content="majinhui04@foxmail.com" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../../assets/css/mobile/base.css">
+    <script src="../../assets/vendor/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../../assets/js/plugins/dm.modal.js"></script>
+    <script src="../../assets/js/plugins/dm.ajaxpost.js"></script>
+    <script src="../../assets/js/plugins/autocomplete.js"></script>
+    <style>
+.ww {
+    width: 400px;
+}   
+
+    .xx {
+        position: absolute;
+        left: -99999px;
+        top:-99999px;
+    }
+    </style>
+
+</head>
+<body class="">
+    <!-- 模板 -->
+    <script type="text/tempalte" id="searchItem">
+        <li class="search">
+            <a href="javascript:;" data-key="{key}">{value}
+            </a>
+        </li> 
+    </script>
+
+    <section class="ww">
+        
+        <section class=" search autocomplete" data-action="/static/doc/autocomplete/autocomplete.json" data-tpl="searchItem">
+            <!-- <form action="/s.php" class="search-form" method="get" id="searchform">
+                <label class="ipts">
+                    <input type="text" value="" placeholder="搜索你想要的" name="wd" id="mTopSearchIpt" autocomplete="off">
+                </label>
+                <div class="cancel" id="mTopSearchCancel" style="display: none;">取消</div>
+            </form> -->
+
+                <label class="ipts">
+                    
+                    <input type="text" value="" placeholder="搜索你想要的" name="wd" id="mTopSearchIpt" autocomplete="off" class="search-input">
+                    <input type="hidden" value="" name="key" data-name="key">
+                    <input type="hidden" value="pp" name="p1" class="search-param">
+                    
+                </label>
+                <div class="search-cancel cancel"  style="display: none;">取消</div>
+            
+            <div class=" search-lay" >
+                <ul class=" search-list">
+                    
+                </ul>
+            </div>
+        </section>
+        
+        
+
+    </section>
+        
+    
+
+    
+
+   
+
+
+    <script>
+
+        
+  
+    </script>
+
+</body>
+</html>

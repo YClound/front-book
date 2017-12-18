@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>新昌商会</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!-- 可更改 -->
+    <meta name="keywords" content="新昌商会">
+    <meta name="description" content="新昌商会">
+    <!-- 百度统计 -->
+    <meta name="baidu-site-verification" content="j4d5H6qJuY"/>
+    <meta name="share-title" content=""/>
+    <meta name="share-img" content=""/>
+    <meta name="share-desc" content=""/>
+    <meta name="share-url" content=""/>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    
+    <link rel="stylesheet" href="../assets/css/base_m.css">
+    <link rel="stylesheet" href="../assets/css/mobile/app.css">
+    <link rel="stylesheet" href="../assets/css/mobile/my.css">
+    <script src="../assets/js/mobile/config.js"></script>
+  
+    <style>
+    
+    </style>
+    
+  </head>
+  <body class="bg m-my-work-exp">
+    <div class="m-main">
+        <!-- header -->
+        <div class="s-header flex">
+            <a class="w-3em db" href="my.html">
+               <i class="if icon-angle-left"></i>
+            </a>
+            <div class="flex-1">工作经历</div>
+            <a class="w-3em db c-f add-information" href="javascript:;"><i class="if icon-plus"></i></a> 
+        </div>
+        <!-- <div class="padding-header"></div> -->
+        <!-- 无工作经历时将dataContent=0 -->
+        <div class="my-content" data-content="0">
+            <div class="no-info">
+                <div class="info-img"></div>
+                <div class="fz-large">空空如也～ <br>没有您的任何工作经历哦～ </div>
+
+                <div class="pl-20 pr-20 pt-10">
+                    <a class="db btn-pd btn-yellow w-100 add-information">马上增加</a>
+                </div>
+            </div>
+            <div class="panel pr-0 pb-0 mb-0 pl-8 pt-0">
+                <!-- <div class="content-item pr-6 bb pt-10 pb-10 c-6" data-router="/work" data-field="work" data-id="1">
+                    <div class="por flex">
+                        <span class="db icon-img t-10 flex-1">
+                            <img src="../assets/images/mobile/icon/clock.png">
+                        </span>
+                        <span class="ml-13 var-field" data-name="startDate">2014-12-09</span>
+                        <span>/</span>
+                        <span class="var-field" data-name="endDate">2014-12-09</span>
+                    </div>
+                    <div class="mt-6 por">
+                        <span class="db icon-img t-10 flex-1">
+                            <img src="../assets/images/mobile/icon/user4.png">
+                        </span>
+                        <span class="pr-5 ml-13 var-field" data-name="workCompany">浙江九鼎投资集团有限公司</span>
+                        <span class="var-field" data-name="workPosition">产品经理</span>
+                    </div>
+                    <span class="if icon-angle-right angle-right"></span>
+                </div>
+                <div class="content-item pr-6 bb pt-10 pb-10 c-6" data-router="/work" data-field="work" data-id="2">
+                    <div class="por flex">
+                        <span class="db icon-img t-10 flex-1">
+                            <img src="../assets/images/mobile/icon/clock.png">
+                        </span>
+                        <span class="ml-13 var-field" data-name="startDate">2014-09-12</span>
+                        <span>/</span>
+                        <span class="var-field" data-name="endDate">2016-07-31</span>
+                    </div>
+                    <div class="mt-6 por">
+                        <span class="db icon-img t-10 flex-1">
+                            <img src="../assets/images/mobile/icon/user4.png">
+                        </span>
+                        <span class="pr-5 ml-13 var-field" data-name="workCompany">浙江九鼎投资集团</span>
+                        <span class="var-field" data-name="workPosition">总经理</span>
+                    </div>
+                    <span class="if icon-angle-right angle-right"></span>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <!-- 信息编辑与添加页面 修改工作信息-->
+    <div class="view-wrap">
+        <div class="view view-work">
+            <div class="view-content">
+                <div class="s-header flex ">
+                    <a class="w-3em db" onclick="javascript:history.back()" href="javascript:;">
+                        <i class="if icon-angle-left"></i>
+                    </a>
+                    <div class="flex-1">工作经历</div>
+                    <button class="w-3em db c-f delete-infomation"><i class="if icon-shanchu w-3em"></i></button>
+                </div> 
+                <div class="padding-header"></div>     
+                <form action="../api/mobile/work.json" method="get" class="ajax-form">
+                    <input type="hidden" name="workId" value="">
+                    <div class="panel mt-6 pt-0 pb-0 pr-0 pl-8">
+                        <div class="flex aic">
+                            <label class="db w-2em por">
+                                <span class="icon-img"><img src="../assets/images/mobile/icon/clock.png"></span>
+                            </label>
+                            <div class="ctrl-wrap flex-1 bb pb-3 pt-3">
+                                <input class="line" type="date" name="startDate" placeholder="请输入开始时间" required="">
+                            </div>
+                        </div>
+
+                        <div class="flex aic">
+                            <label class="db w-2em por">
+                                <span class="icon-img"><img src="../assets/images/mobile/icon/clock.png"></span>
+                            </label>
+                            <div class="ctrl-wrap flex-1 bb pb-3 pt-3">
+                                <input class="line" type="date" name="endDate" placeholder="请输入结束时间" required="">
+                            </div>
+                        </div>
+
+                        <div class="flex aic por">
+                            <label class="db w-2em">
+                                <span class="icon-img"><img src="../assets/images/mobile/icon/home.png"></span>
+                            </label>
+                            <div class="ctrl-wrap flex-1 bb pb-3 pt-3">
+                                <input class="line" type="text" name="workCompany" placeholder="请输入公司名称" required="">
+                            </div>
+                        </div>
+
+                        <div class="flex aic por">
+                            <label class="db w-2em">
+                                <span class="icon-img"><img src="../assets/images/mobile/icon/user4.png"></span>
+                            </label>
+                            <div class="ctrl-wrap flex-1 pb-3 pt-3">
+                                <input class="line" type="text" name="workPosition" placeholder="请输入工作职位" required="">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="ctrl-wrap mt-12 pl-8 pr-8">
+                        <button type="" class="btn-pd btn-yellow w-100">保 存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/html" id="work-item">
+        <div class="content-item pr-6 bb pt-10 pb-10 c-6" data-router="/work" data-field="work" data-id="{{workId}}">
+            <div class="por flex">
+                <span class="db icon-img t-10 flex-1">
+                    <img src="../assets/images/mobile/icon/clock.png">
+                </span>
+                <span class="ml-13 var-field" data-name="startDate">{{startDate}}</span>
+                <span>/</span>
+                <span class="var-field" data-name="endDate">{{endDate}}</span>
+            </div>
+            <div class="mt-6 por">
+                <span class="db icon-img t-10 flex-1">
+                    <img src="../assets/images/mobile/icon/user4.png">
+                </span>
+                <span class="pr-5 ml-13 var-field" data-name="workCompany">{{workCompany}}</span>
+                <span class="var-field" data-name="workPosition">{{workPosition}}</span>
+            </div>
+            <span class="if icon-angle-right angle-right"></span>
+        </div>
+    </script>
+
+    <script src="../vendor/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../assets/js/template.js"></script>
+    <script src="../assets/js/dm.base.js"></script>
+    <script src="../assets/js/mobile/api.js"></script>
+    <script src="../assets/js/mobile/my-work-exp.js"></script>
+
+  </body>
+</html>

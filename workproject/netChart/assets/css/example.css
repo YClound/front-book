@@ -1,0 +1,140 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-size: 16px;
+}
+.chartList{
+    width: 100%;
+    margin: 0 auto;
+}
+.chartContent{
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.chartItem{
+    width: 100%;
+    position: relative;
+    border-top: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+.chart{
+    width: 960px;
+    height: 550px;
+}
+.modal-dialog{
+    width: 900px;
+}
+.modal-body table{
+    text-align: center;
+    margin: 30px;
+}
+.modal-body table td{
+    border-left: #ddd 1px solid;
+    padding: 10px 5px;
+}
+.modal-body table tr{
+    border-top: #ddd 1px solid;
+}
+.modal-body table tr:last-of-type{
+    border-bottom: #ddd 1px solid;
+}
+.modal-body table tr td:last-of-type{
+    border-right: #ddd 1px solid;
+}
+
+
+.navbar-default{
+    width: 100%;
+    background-color: #2d3949;
+    border: 0;
+    border-radius : 0;
+    height: 60px;
+    margin-bottom: 0px;
+}
+.container-fluid{
+    width: 1190px;
+    margin: 0 auto;
+    height: 100%;
+}
+.navbar-brand{
+    padding : 10px;
+}
+.navbar-brand img{
+    height: 40px;
+}
+.glyphicon-qrcode{
+    font-size: 30px;
+    color: #fff;
+    padding-top: 14px;
+    padding-left: 20px;
+}
+.navbar-collapse{
+    height: 100%;
+    padding-top: 5px;
+}
+.navbar-form .form-group input{
+    width: 300px;
+}
+.glyphicon-search{
+    color: #fff;
+    padding-left: 10px;
+}
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>a:hover{
+    color: #fff;
+}
+
+/*主要部分*/
+.container{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    background-color : #f5f5f5;
+}
+.main-content{
+    width: 1190px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+.content{
+    border-radius : 5px;
+    border-top: 5px solid #d3d6dd;
+    padding-top: 10px;
+}
+
+.chartTitle{
+    overflow: hidden;
+    clear: both;
+    padding-top: 20px;
+}
+.chartTitle h4{
+    font-weight: bold;
+    float: left;
+    width: 1000px;
+    line-height: 30px;
+}
+.chartTitle a{
+    margin-top: 10px;
+    display: block;
+    float: right;
+    z-index: 100;
+    cursor: pointer;
+}
+.chartImage{
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    width: 300px;
+}
+.chartImage img{
+    width: 100%;
+}
+/*隐藏刷新和返回图标*/
+.DVSL-bar-btn-rearrange,.DVSL-bar-btn-back{
+    display: none;
+}

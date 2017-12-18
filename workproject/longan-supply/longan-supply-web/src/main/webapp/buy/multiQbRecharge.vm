@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head("Q币充值")
+
+<body>
+	
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+			#sidebar('qb')
+			
+			<div class="span10">
+				
+				#stepBarQb(1)
+				
+				<div class="sortable row-fluid">
+					<div class="span12">
+						
+						#qbTab('multi')
+						
+						<div class="content-main" style="height:200px">
+							<h2>建设中........</h2>
+						</div>
+						
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	#footer()
+	
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>新昌商会-发起求助</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!-- 可更改 -->
+    <meta name="keywords" content="新昌商会">
+    <meta name="description" content="新昌商会">
+    <!-- 百度统计 -->
+    <meta name="baidu-site-verification" content="j4d5H6qJuY"/>
+    <meta name="share-title" content=""/>
+    <meta name="share-img" content=""/>
+    <meta name="share-desc" content=""/>
+    <meta name="share-url" content=""/>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    
+    <link rel="stylesheet" href="../assets/css/base_m.css">
+    <link rel="stylesheet" href="../assets/css/mobile/app.css">
+    <link rel="stylesheet" href="../assets/css/mobile/fellowship.css">
+    <script src="../assets/js/mobile/config.js"></script>
+  </head>
+  <body class="bg m-help-launch">
+    <div class="m-main">
+        <div class="s-header flex">
+            <a href="javascript:;" onclick="javascript:history.back()" class="db w-3em">
+                <i class="if icon-angle-left"></i>
+            </a>
+            <div class="flex-1">发起求助</div>
+            <div class="w-3em"></div>
+        </div>
+        <div class="padding-header"></div>
+
+        <div class="launch-content">
+            <form class="ajax-form launch-form" method="get" action="../api/mobile/form.json">
+                <div class="panel pb-10">
+                    <textarea rows="5" placeholder="请输入求助内容" name="content" required></textarea>
+
+                    <div class="add-image wu">
+                        <input type="hidden" name="userPhoto" value="" class="file-upload">
+                        <div class="pick-wrap">
+                            <div class="pick pt-4" data-preview="true" data-server="/upload">
+                                <i class="if icon-plus-circle"></i>
+                                <br><span class="c-9">添加照片</span>
+                            </div>
+                        </div>
+                        <div class="file-list"></div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="title ml-6">选择求助</div>
+                    <div class="pt-8 pb-13 clearfix">
+                        <div class="chooseHelp por fl">
+                            <input type="checkbox" class="helpOption" name="helpOption" value="商会" checked/>
+                            <div class="checkContent flex">
+                                <span class="if icon-check checkImage"></span>
+                                <span class="flex-1 checkText">向商会求助</span>
+                            </div>
+                        </div>
+                        <div class="chooseHelp por fl pl-8">
+                            <input type="checkbox" class="helpOption" name="helpOption" value="商联" />
+                            <div class="checkContent flex">
+                                <span class="if icon-check checkImage"></span>
+                                <span class="flex-1 checkText">向商联求助</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-13 pl-8 pr-8 pb-13">
+                    <button class="db w-100 btn-pd btn-yellow btn">提交帮助</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 图片上传模板 -->
+    <script type="text/html" id="file-item">
+        <div id="{{id}}" class="file-item">
+            <div class="title">{{name}}</div>
+            <div class="img-wrap"></div>
+            <div class="progress">
+                <div class="progress-bar" style="width:0;"></div>
+            </div>
+            <div class="float-bar">
+                <span class="fr close">&times;</span>
+            </div>
+            <div class="info"></div>
+            <div class="success" style="display:none;"></div>
+        </div>
+    </script>
+
+    <script src="../vendor/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../assets/js/dm.base.js"></script>
+    <script src="../assets/js/mobile/api.js"></script>
+    <script src="../vendor/webuploader/webuploader.html5only.min.js"></script>
+    <script src="../assets/js/template.js"></script>
+    <script src="../assets/js/dm.wu.js"></script>
+    <script src="../assets/js/mobile/help-launch.js"></script>
+
+  </body>
+</html>

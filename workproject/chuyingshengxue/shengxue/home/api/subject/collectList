@@ -1,0 +1,95 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "pager": {
+            "page": 1,
+            "pages": 1,
+            "total": 5,
+            "pagesize": 10
+        },
+        "list": [
+            {
+                "subjectId": "1",
+                "subjectName":"数学",
+                "subjectImage":"math",
+                "count":11,
+                "subjectShort":"sx",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "2",
+                "subjectName":"语文",
+                "subjectImage":"chinese",
+                "count":15,
+                "subjectShort":"yw",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "3",
+                "subjectName":"英语",
+                "subjectImage":"english",
+                "count":20,
+                "subjectShort":"yy",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "4",
+                "subjectName":"物理",
+                "subjectImage":"physical",
+                "count":33,
+                "subjectShort":"wl",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "5",
+                "subjectName":"化学",
+                "subjectImage":"chem",
+                "count":5,
+                "subjectShort":"hx",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "5",
+                "subjectName":"生物",
+                "subjectImage":"chem",
+                "count":8,
+                "subjectShort":"sw",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "5",
+                "subjectName":"政治",
+                "subjectImage":"chem",
+                "count":3,
+                "subjectShort":"zh",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "5",
+                "subjectName":"历史",
+                "subjectImage":"chem",
+                "count":0,
+                "subjectShort":"ls",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "5",
+                "subjectName":"地理",
+                "subjectImage":"chem",
+                "count":10,
+                "subjectShort":"dl",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            }
+        ]
+    }
+}

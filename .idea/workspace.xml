@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="81bbcd77-7f2e-4921-b6a7-0ed73ad56dc5" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/WdatePicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/calendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/lang/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/lang/zh-tw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/skin/WdatePicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/skin/datePicker.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/skin/default/datepicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/skin/default/img.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/skin/whyGreen/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/skin/whyGreen/datepicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/My97DatePicker/skin/whyGreen/img.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-animate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-animate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-animate.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-aria.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-aria.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-aria.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-cookies.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-cookies.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-cookies.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-csp.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-loader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-loader.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-loader.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-message-format.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-message-format.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-message-format.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-messages.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-messages.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-messages.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-mocks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-resource.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-resource.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-resource.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-route.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-route.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-route.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-sanitize.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-sanitize.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-sanitize.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-scenario.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-touch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-touch.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular-touch.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/js/angular.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/modules/ocLazyLoad.core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/modules/ocLazyLoad.directive.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/modules/ocLazyLoad.loaders.common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/modules/ocLazyLoad.loaders.core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/modules/ocLazyLoad.loaders.cssLoader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/modules/ocLazyLoad.loaders.jsLoader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/modules/ocLazyLoad.loaders.requireJSLoader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/modules/ocLazyLoad.loaders.templatesLoader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/modules/ocLazyLoad.polyfill.ie8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/ocLazyLoad.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/ocLazyLoad.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/ocLazyLoad.require.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ocLazyLoad/ocLazyLoad.require.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/plugins/angular-lazyload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/plugins/mainApp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/plugins/redirectApp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/plugins/ui-bootstrap-tpls-0.14.3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/plugins/ui-bootstrap-tpls-0.14.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ui-router/angular-ui-router.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/angular/ui-router/angular-ui-router.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bootstrap-3.3.5/js/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/clipboard/clipboard.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/cropper/cropper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/css/font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/bordered-pulled.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/core.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/fixed-width.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/font-awesome.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/icons.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/larger.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/list.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/mixins.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/path.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/rotated-flipped.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/spinning.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/stacked.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/less/variables.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_bordered-pulled.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_core.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_fixed-width.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_icons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_larger.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_list.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_path.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_rotated-flipped.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_spinning.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_stacked.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/_variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/font-awesome/4.2.0/scss/font-awesome.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/3d-column-interactive/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/3d-column-null-values/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/3d-column-stacking-grouping/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/3d-pie-donut/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/3d-pie/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/3d-scatter-draggable/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/area-basic/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/area-inverted/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/area-missing/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/area-negative/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/area-stacked-percent/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/area-stacked/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/arearange-line/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/arearange/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/areaspline/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/bar-basic/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/bar-negative-stack/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/bar-stacked/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/box-plot/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/bubble-3d/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/bubble/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/column-basic/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/column-drilldown/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/column-negative/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/column-parsed/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/column-placement/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/column-rotated-labels/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/column-stacked-and-grouped/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/column-stacked-percent/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/column-stacked/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/columnrange/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/combo-dual-axes/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/combo-meteogram/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/combo-multi-axes/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/combo-regression/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/combo-timeline/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/combo/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/dynamic-click-to-add/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/dynamic-master-detail/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/dynamic-update/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/error-bar/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/funnel/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/gauge-activity/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/gauge-clock/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/gauge-dual/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/gauge-solid/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/gauge-speedometer/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/gauge-vu-meter/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/heatmap-canvas/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/heatmap/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/line-ajax/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/line-basic/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/line-labels/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/line-log-axis/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/line-time-series/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/pie-basic/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/pie-donut/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/pie-drilldown/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/pie-gradient/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/pie-legend/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/pie-monochrome/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/pie-semi-circle/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/polar-spider/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/polar-wind-rose/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/polar/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/polygon/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/pyramid/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/renderer/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/scatter/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/sparkline/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/spline-inverted/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/spline-irregular-time/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/spline-plot-bands/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/spline-symbols/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/synchronized-charts/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/treemap-coloraxis/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/treemap-large-dataset/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/treemap-with-levels/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/examples/waterfall/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/gfx/vml-radial-gradient.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/highslide/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/highslide/closeX.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/highslide/outlines/rounded-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/highslide/resize.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/highslide/zoomout.cur" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/meteogram-symbols-30px.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/search.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/skies.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/snow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/graphics/sun.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/adapters/standalone-framework.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/adapters/standalone-framework.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/highcharts-3d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/highcharts-3d.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/highcharts-more.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/highcharts-more.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/highcharts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/highcharts.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/highcharts副本.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/boost.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/boost.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/broken-axis.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/broken-axis.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/canvas-tools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/canvas-tools.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/data.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/drilldown.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/drilldown.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/exporting.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/exporting.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/funnel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/funnel.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/heatmap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/heatmap.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/no-data-to-display.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/no-data-to-display.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/offline-exporting.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/offline-exporting.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/solid-gauge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/solid-gauge.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/treemap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/modules/treemap.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/themes/dark-blue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/themes/dark-green.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/themes/dark-unica.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/themes/gray.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/themes/grid-light.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/themes/grid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/themes/sand-signika.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/js/themes/skies.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/highcharts-4.2.5/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/imageview/jquery.imageview.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/imageview/jquery.imageview.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/jcshare/jquery.jcshare.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/jqPaginator/jqPaginator.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/jquery/jquery-1.11.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/jquery/jquery-2.1.4.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/laydate.dev.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/laydate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/need/laydate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/dahong/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/dahong/laydate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/danlan/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/danlan/laydate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/default/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/default/laydate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/molv/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/molv/laydate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/qianhuang/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/qianhuang/laydate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/yahui/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/yahui/laydate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/yalan/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/skins/yalan/laydate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/test/demo1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/test/demo2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laydate/test/demo2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/pdfobject/pdfobject.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/default-skin/default-skin.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/default-skin/default-skin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/default-skin/default-skin.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/default-skin/preloader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/photoswipe-ui-default.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/photoswipe-ui-default.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/photoswipe.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/photoswipe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/photoswipe/photoswipe.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/qrcode/jquery.qrcode.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/require/require.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/seajs/2.0.0/sea-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/seajs/2.0.0/sea.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/css/swiper.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/css/swiper.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/js/maps/swiper.jquery.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/js/maps/swiper.jquery.umd.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/js/maps/swiper.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/js/swiper.jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/js/swiper.jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/js/swiper.jquery.umd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/js/swiper.jquery.umd.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/js/swiper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/swiper-3/js/swiper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/webuploader/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/webuploader/Uploader.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/webuploader/webuploader.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/webuploader/webuploader.html5only.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/webuploader/webuploader.nolog.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/~$biji.doc" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.text" afterPath="$PROJECT_DIR$/readme.text" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1456" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="workproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="81bbcd77-7f2e-4921-b6a7-0ed73ad56dc5" name="Default" comment="" />
+      <created>1513581290678</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1513581290678</updated>
+      <workItem from="1513581292098" duration="570000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="570000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980299" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>

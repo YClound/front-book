@@ -1,0 +1,81 @@
+<div class="main-view-wrapper">
+    <h3>{{isNew?"新增":"修改"}}</h3>
+    <form class="form-horizontal" name="submitForm">
+        <div class="form-group validInput">
+            <label class="control-label col-md-1 required">手机号</label>
+            <div class="col-md-4">
+            	<input type="hidden" class="form-control" ng-model="formData.userid"  />
+                <input type="text" class="form-control" ng-model="formData.phone"  required />
+            </div>
+            <label class="control-label col-md-1 required">邮箱</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="formData.email"  required />
+            </div>
+        </div>
+        
+       <!--  <div class="form-group ">
+            <label class="control-label col-md-2 required">权限</label>
+            <div class="col-md-8">
+                <div class="checkbox">
+                <label>
+                  <input type="radio" name="aa" value="0" ng-checked="formData.userrole == 0" ng-model="formData.userrole"> 普通管理员
+                </label>
+                <label>
+                  <input type="radio" name="aa" value="1" ng-checked="formData.userrole == 1" ng-model="formData.userrole"> 超级管理员
+                </label>
+              </div>
+            </div>
+        </div> -->
+
+         <div class="form-group ">
+            <label class="control-label col-md-1 required">昵称</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="formData.nickname"  required />
+            </div>
+            <label class="control-label col-md-1 required">状态</label>
+            <div class="col-md-4">
+            	<div class="checkbox">
+                <label>
+                  <input type="radio" name="enable" value="0" ng-checked="formData.enable == 1" ng-model="formData.enable"> 启用
+                </label>
+                <label>
+                  <input type="radio" name="enable" value="1" ng-checked="formData.enable == 0" ng-model="formData.enable"> 锁定
+                </label>
+              </div>
+            </div>
+        </div>
+         <div class="form-group ">
+            <label class="control-label col-md-1 ">性别</label>
+            <div class="col-md-4">
+            	<div class="checkbox">
+                <label>
+                  <input type="radio" name="gender" value="0" ng-checked="formData.gender == 1" ng-model="formData.gender"> 男
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="1" ng-checked="formData.gender == 0" ng-model="formData.gender"> 女
+                </label>
+              </div>
+            </div>
+            <label class="control-label col-md-1 ">年龄</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="formData.age" />
+            </div>
+        </div>
+         <div class="form-group ">
+            <label class="control-label col-md-1 ">个性签名</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" ng-model="formData.sign" maxlength="64" />
+            </div>
+        </div>
+         
+        </div>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <button class="btn btn-primary" type="button" ng-click="save($event)" ng-disabled="submitForm.$invalid || loading">保存</button>
+                <a class="btn btn-primary" href="javascript:history.go(-1)">返回</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+    

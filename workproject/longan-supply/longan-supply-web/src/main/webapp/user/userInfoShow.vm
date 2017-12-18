@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head()
+
+<body>
+	$!errorMsg
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+			#sidebar('userInfo')
+			
+			<div class="span10">
+				
+				#breadcrumb("商户信息",'userInfoShow.htm')
+				
+				<div class="sortable row-fluid">
+					<div class="span12">
+						#userInfoTab('userInfoShow')
+						<div class="content-main" style="height:345px;">
+							<div class="span5 main-info" style="width:400px;height:345px;">
+								<ul style="color: #a1a1a1">
+								    <li style="color: #6e6e6e">
+								    <span>基本信息</span>
+								    </li>
+									<li>
+									<span>门店或公司名：</span>  
+									<span>$!user.compayInfo </span>
+									</li>
+									<li>
+									<span>用户编号：</span>  
+									<span>$!user.id </strong></span></li>
+									<li>
+									<span>用户名：</span>  
+									<span>$!user.userName</span>
+									</li>
+									<li>
+									<span>注册时间：</span>  
+									<span>$!dateTool.format("yyyy-MM-dd HH:mm:ss", $!user.gmtCreate)</span>
+									</li>
+									<li>
+									<span>登录名：</span>  
+									<span>$!userInfo.loginId</span>
+									</li>
+									<li>
+									<span>最后登录时间：</span>  
+									<span> $!dateTool.format("yyyy-MM-dd HH:mm:ss", $!user.lastLoginTime)</span>
+									</li>
+									<li>
+									<span>最后登录ip：</span>  
+									<span>$!user.lastLoginIp</span>
+									</li>
+									<li>
+									<span>用户类型：</span>  
+									<span>$!user.typeDesc</span>
+									</li>
+									<li>
+									<span>绑定手机号：</span>  
+									<span>$!user.mobile</span>
+									</li>
+									<li><span>邮箱：</span>  
+									<span>$!user.email</span>
+									</li>
+									<li>
+									<span>用户状态：</span>  
+									<span>$!user.statusDesc</span>
+									</li>
+								</ul>
+							</div>
+							<div class="span5 main-info" style="width:400px;height:345px;">
+								<ul style="color: #a1a1a1">
+								    <li style="color: #6e6e6e">
+								    <span>账户信息</span>
+								    </li>
+									<li>
+									<span>账户编号：</span>  
+									<span>$!acctInfo.id</span>
+									</li>
+									<li>
+									<span>账户余额：</span>  
+									<span>$!acctInfo.balanceDesc </span>
+									</li>
+									<li>
+									<span>账户状态：</span>  
+									<span>$!acctInfo.statusDesc </span>
+									</li>
+								</ul>
+							</div>
+						</div>						
+						
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	#footer()
+</body>
+</html>

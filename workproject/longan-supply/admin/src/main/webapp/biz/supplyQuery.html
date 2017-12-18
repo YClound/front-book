@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>查询结果</title>
+    #parse("common/common.vm")  
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+    
+</head>
+<body class="list-body">
+     <div class="list-container">
+        <div class="alert-title fz-16">查询结果</div>
+
+        <table class="table information-show table-striped table-bordered table-condensed list">
+            <thead>
+                <tr>
+                    <td colspan="4"><b>查询结果：</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="w-8em">库存号:</td>
+                    <td class="detail">$!stockId</td>
+                </tr>
+                <tr>
+                    <td class="w-8em">查询结果:</td>
+                    <td class="detail">#if($!result && $!result.isSuccess()) 查询成功  #else 查询失败 #end</td>
+                </tr>
+                <tr>
+                    <td class="w-8em">查询信息:</td>
+                    <td class="detail">#if($!result && $!result.isSuccess()) $!result.getModule()  #else $!result.getResultMsg()#end</td>
+                </tr>           
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

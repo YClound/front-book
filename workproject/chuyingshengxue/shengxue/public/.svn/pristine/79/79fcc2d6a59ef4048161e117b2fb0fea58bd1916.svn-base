@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>tab切换</title>
+    <link rel="stylesheet" href="../assets/css/mobile/base.css">
+    
+ 
+    <style>
+    .wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    min-height: 100%;
+    height: 100%;
+}
+.panel {
+    border: 1px solid #d4d4d4;
+    background: #fff;
+    margin: 30px 0;
+    padding: 0;
+}
+.tab-title {
+    border-bottom: 1px solid #e6e6e6;
+    white-space: nowrap;
+    font-size: 0;
+}
+.tab-title>div,.tab-title>a {
+    width: 50%;
+    border-bottom: 3px solid transparent;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+}
+.tab-title>div.active {
+    color: #3399e0;
+    border-bottom-color: #3399e0;
+}
+.tab-content {
+    min-height: 100px;
+    padding-bottom: 20px;
+}
+.paged-content {
+    padding-top: 20px;
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body class="">
+<div class="wrapper ">
+    <!-- <h2>异步获取数据 tab</h2>
+    <div class="panel panel-follow">
+        <div class="tab-title clearfix">
+            <div class="tab-title-att cup active">关注</div>
+            <div class="tab-title-fans cup ">粉丝</div>
+        </div>
+        <div class="tab-content ajax">
+            <div class="tab-content-follow" data-ajax="/static/assets/data/tab1.json" data-offset="1">
+                <div class="clearfix">
+                    <section class="paged-content">
+                        
+                        <u class="">您还没有关注别人</u>
+                        
+                    </section>
+                    
+                </div>
+            </div>
+            <div class="tab-content-fans clearfix" data-ajax="/static/assets/data/tab2.json" data-offset="1" >
+                <div class="clearfix">
+                    <section class="paged-content">
+                        
+                        <u class="">没IE8诶诶诶诶</u>
+                        
+                    </section>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+    
+
+    <!-- tab -->
+    <h2>tab</h2>
+    <div class="panel panel-tab">
+        <div class="tab-title clearfix">
+            <div class="tab-title-att cup " href="javascript:;" data-tab="p1">关注</div>
+            <div class="tab-title-fans cup " href="javascript:;" data-tab="p2">粉丝</div>
+        </div>
+        <div class="tab-content pb-10">
+            <div class="tab-content-follow" data-tab="p1">
+                <div class="clearfix">
+                    111111111
+                </div>
+            </div>
+            <div class="tab-content-fans clearfix" data-tab="p2">
+                <div class="clearfix">
+                    22222222
+                </div>
+            </div>
+
+        </div>
+    </div>
+        
+</div>
+<script src="../assets/vendor/jquery/jquery-2.1.4.min.js"></script>
+<script src="../assets/js/plugins/dm.modal.js"></script>
+<script src="../assets/js/plugins/dm.ajaxpost.js"></script>
+<script src="../assets/js/plugins/dm.tab.js"></script>
+<script>
+    
+$(function () {
+    
+    // tab
+    //$('.panel-follow .tab-title').ajaxTab();
+
+    $('.panel-tab .tab-title').tab()
+})
+</script>
+
+</body>
+</html>

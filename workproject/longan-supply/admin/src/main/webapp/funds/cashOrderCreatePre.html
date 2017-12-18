@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    #parse("common/common.vm")  
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/list-common.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/doubleDate.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/doubleDate2.0.js"></script>
+    
+</head>
+<body class="list-body">
+    $!errorMsg
+    <div class="list-container">
+        <div class="alert-title fz-16">提现单创建</div>
+    
+        <form action="cashOrderCreate.do" class="queryForm">
+             <table class="table query-style table-striped table-bordered table-condensed" style="width: 50%;margin-left: 0px;">
+                <input type="hidden" name="type" value="queryUser"/>
+              <tr> 
+                <td align="left" class="w-8em">登录名：<font color="#FF0000">*</font></td>
+                <td class="detail"><input type="text" name="loginId" size="20" value="">
+                </td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td class="detail"><input class="btn btn-inverse" type="submit" value="下一步" /></td>
+               </tr>        
+            </table>
+
+        </form>
+    </div>
+</body>
+</html>

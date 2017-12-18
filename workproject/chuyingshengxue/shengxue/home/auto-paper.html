@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>雏鹰升学-智能组卷</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="/public/assets/css/base_m.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pc/chuyingentrance.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pc/make-paper.css">
+
+  <script type="text/javascript">
+    var serverData = {
+    		 /* userData:{
+            id: 9,
+            name: "Damon5",
+            location: null,
+            subjectId: "4",
+            teachGrades: "1,2"
+          } */
+          userData:{
+        	  id: "[[${session.teacher eq null?null:session.teacher.id}]]",
+              name: "[[${session.teacher eq null?null:session.teacher.name}]]",
+              location: "[[${session.teacher eq null?null:session.teacher.location}]]",
+              subjectId: "[[${session.teacher eq null?null:session.teacher.subjectId}]]",
+              subjectName: "[[${session.teacher eq null?null:session.teacher.subjectName}]]",
+              teachGrades: "[[${session.teacher eq null?null:session.teacher.teachGrades}]]"
+          }
+    }
+    if(!serverData.userData){
+      var redirect_url = location.href;
+      location.href = "index.html?redirect_url="+redirect_url;
+    }
+  </script>
+</head>
+<body class="bg">
+  <!-- 头部 -->
+  <div class="header">
+    <div class="header-content clearfix">
+      <a class="header-logo" href="index.html"></a>
+      <div class="header-nav">
+        <ul class="header-nav-list">
+          <li class="nav-title"> 
+            <a href="javascript:;" class="show">组卷</a>
+            <div class="nav-content">
+              <a href="manual-paper.html">手工组卷</a>
+              <a href="auto-paper.html" class="active">智能组卷</a>
+            </div>
+          </li>
+          <li class="nav-title">
+            <a href="javascript:;">试题宝库</a>
+            <div class="nav-content nav-subject-list">
+              <div class="flex flex-center flex-wrap">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <a class="header-user" href="my-paper.html">
+        <span class="user-avatar"><img src="./assets/images/pc/icon/avatar.png"></span>
+        <span th:text="${session.teacher eq null?'':session.teacher.name}" class="user-info"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="manual-paper-header">
+      <h2>欢迎使用“雏鹰升学”智能组卷</h2>
+      <div class="shadow"></div>
+    </div>
+    <div class="manual-paper-content">
+      <div class="processor">
+        <div class="type-processor suject-processor active">
+          <div class="border"><div class="circle"></div></div>
+        </div>
+        <div class="line"></div>
+        <div class="type-processor format-processor active">
+          <div class="border"><div class="circle"></div></div>
+        </div>
+        <div class="line" style="height: 245px;"></div>
+        <div class="type-processor difficult-processor active">
+          <div class="border"><div class="circle"></div></div>
+        </div>
+        <div class="line" style="height: 139px;"></div>
+        <div class="type-processor outline-processor">
+          <div class="border"><div class="circle"></div></div>
+        </div>
+        <div class="line" style="height: 142px;"></div>
+        <div class="type-processor score-processor active">
+          <div class="border"><div class="circle"></div></div>
+        </div>
+        <div class="line questionType-line"></div>
+        <div class="type-processor title-processor">
+          <div class="border"><div class="circle"></div></div>
+        </div>
+      </div>
+      <div class="main-content">
+        <form class="auto-form" method="post" action="/assembly.html">
+          <!-- 学科 -->
+          <div class="paper-subject">
+            <div class="paper-type active">学科</div>
+            <div class="type-list subject-list flex space-between">
+            </div>
+          </div>
+          <!-- 试卷版式 -->
+          <div class="paper-format">
+            <div class="paper-type active">版式</div>
+            <div class="type-list format-list flex">
+              <label class="format-item por tac">
+                <input type="radio" name="templetId" value="1" checked>
+                <div class="format-show">
+                  <img src="./assets/images/pc/icon/vertical.png">
+                  <div class="pt-6">A4/B5竖版</div>
+                </div>
+              </label>
+              <label class="format-item por flex-1">
+                <input type="radio" name="templetId" value="2">
+                <div class="format-show">
+                  <img src="./assets/images/pc/icon/horizontal.png">
+                  <div class="pt-6">A6/B7横版</div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <!-- 难度 -->
+          <div class="paper-difficult">
+            <div class="paper-type active">难度</div>
+            <div class="type-list difficult-list">
+              <select name="difficult" required>
+              </select>
+            </div>
+          </div>
+          <!-- 考点 -->
+          <div class="paper-syllabus">
+            <div class="paper-type">考点</div>
+            <div class="type-list por syllabus-list">
+              <input type="hidden" name="syllabus" class="paper-syllabusId" value="" required>
+              <div class="syllabus-number">已选择（<var>0</var>）</div>
+              <div class="syllabus-content">
+                <ul class="syllabus-parent">
+                </ul>
+                <div class="syllabus-children">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 总分 -->
+          <div class="paper-questionType">
+            <input type="hidden" name="typeConfig" value="" class="question-type">
+            <div class="paper-type tatol-score active">总分：<var>120</var>分</div>
+            <div class="type-list questionType-list">
+            </div>
+          </div>
+          <!-- 试卷题目 -->
+          <div class="paper-title">
+            <div class="paper-type">试卷信息</div>
+            <div class="type-list title-content c-9">
+              <span class="pr-4">试卷标题</span>
+              <input type="text" name="title" placeholder="请输入试卷标题" required class="title" value="">
+            </div>
+          </div>
+
+          <div class="form-btn tac">
+            <a class="make-paper bg-blue">生成试卷</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer">
+    <div class="footer-container clearfix">
+      <div class="footer-item">
+        <h2>现在开始</h2>
+        <ul>
+          <li><a href="javascript:;">梦想发起</a></li>
+          <li><a href="javascript:;">账号注册</a></li>
+          <li><a href="javascript:;">账号登录</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-item">
+        <h2>关于我们</h2>
+        <ul>
+          <li><a href="javascript:;">FAQ</a></li>
+          <li><a href="javascript:;">用户引导</a></li>
+          <li><a href="javascript:;">联系我们</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-item">
+        <h2>法律</h2>
+        <ul>
+          <li><a href="javascript:;">服务条款</a></li>
+          <li><a href="javascript:;">隐私政策</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-item">
+        <ul class="footer-infor">
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/phone.png"></span>
+            <span>0571-88489062</span>
+          </li>
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/message.png"></span>
+            <span>bp@chuyingfund.cn</span>
+          </li>
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/weibo.png"></span>
+            <span>雏鹰网</span>
+          </li>
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/history.png"></span>
+            <span>周一至周五9:00-18:00 </span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-QRcode">
+        <img src="./assets/images/pc/icon/QRcode.jpg">
+        <p>扫码关注微信公众号</p>
+      </div>
+
+    </div>
+
+    <span class="copyright">Copyright © 2016 杭州树德科技有限公司 浙ICP备15019518号-2.</span>
+  </div>
+
+  <!-- 学科模板 -->
+  <script type="text/html" id="subjectList">
+    <label class="subject-item por tac" data-subjectId="{{subjectId}}">
+      <input type="radio" name="subjectId" value="{{subjectId}}" class="subject-value">
+      <div class="subject-show">
+        <img class="subject-hide" src="./assets/images/pc/subject/{{subjectShort}}.png">
+        <img class="subject-active" src="./assets/images/pc/subject/{{subjectShort}}1.png">
+        <div class="pt-6">{{subjectName}}</div>
+      </div>
+    </label>
+  </script>
+
+  <!-- 子考点模板 -->
+  <script type="text/html" id="childrenSyllabus">
+    <ul class="syllabus-children-list">
+      {{each children as item}}
+      <li class="children-item">
+        <label>
+          <input type="checkbox" name="syllabusId" value="{{item.syllabusId}}" class="syllabus">
+          <div class="checkbox"></div>
+          {{item.syllabusName}}
+        </label>
+      </li>
+      {{/each}}
+    </ul>
+  </script>
+  
+  <!-- 题型模板 -->
+  <script type="text/html" id="questionTypeList">
+    <div class="questionType-item" data-id="{{typeId}}">
+      <span>{{typeName}}：</span>
+      <input type="text" name="count" class="count pl-3 pr-3" value="{{recordCount}}">
+      <span>题，每道</span>
+      <input type="text" name="score" class="single-score pl-3 pr-3" value="{{recordScore}}">
+      <span>分，共<var class="score-sum">{{scoreSum}}</var>分</span>
+    </div>
+  </script>
+  
+  <!-- js文件 -->
+  <script src="./assets/js/dm.api.js"></script>
+  <script src="/public/vendor/jquery/jquery-2.1.4.min.js"></script>
+  <script src="/public/assets/js/dm.base.js"></script>
+  <script src="/public/assets/js/template.js"></script>
+  <script src="./assets/js/pc.js"></script>
+  <script src="./assets/js/pc/auto-paper.js"></script>
+</body>
+</html>

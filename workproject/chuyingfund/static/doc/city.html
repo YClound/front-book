@@ -1,0 +1,94 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>二级城市</title>
+    <link rel="stylesheet" href="../assets/css/mobile/base.css">
+    
+ 
+    <style>
+    .wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    min-height: 100%;
+    height: 100%;
+}
+
+
+
+    </style>
+    <script>
+        
+        var api = {
+            cities:'/static/assets/data/city.json'
+        };
+    </script>
+</head>
+<body class="">
+<div class="wrapper ">
+    <h2>二级城市</h2>
+    <!-- <div>
+        <label for="addr-city">所在城市</label>
+        <div class="ctrl-wrap">
+            <div class="city-select">
+                <input type="hidden" id="province" name="province" value="">
+                <input type="hidden" id="city" name="city" value="">
+                <input type="button" class="btn btn-o btn-city-text" value="请选择城市" pattern="/\//" data-pattern-msg="请选择城市" data-blur-silence="true">
+
+                <div class="dropdown-content" style="display: none;">
+                    <ul class="tab-title">
+                        <li class="active" data-target=".prov-box">省份</li>
+                        <li data-target=".city-box">城市</li>
+                    </ul>
+                    <ul class="tab-content">
+                        <li class="prov-box"></li>
+                        <li class="city-box" style="display: none;"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div>
+        <label for="addr-city">所在城市 </label>
+        <div class="ctrl-wrap">
+            <div class="city-select">
+                <!-- 默认为空 要初始化则value赋值即可 -->
+                <input type="hidden" id="province" name="province" value="">
+                <input type="hidden" id="city" name="city" value="">
+                <input type="button" class="btn btn-o btn-city-text" value="请选择城市" pattern="/\//" data-pattern-msg="请选择城市" data-blur-silence="true">
+
+                <div class="dropdown-content" style="display: none;">
+                    <ul class="tab-title">
+                        <li class="active" data-target=".prov-box">省份</li>
+                        <li data-target=".city-box">城市</li>
+                    </ul>
+                    <ul class="tab-content">
+                        <li class="prov-box"></li>
+                        <li class="city-box" style="display: none;"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+<script src="../assets/vendor/jquery/jquery-2.1.4.min.js"></script>
+
+<script src="../assets/js/plugins/dm.validate2.js"></script>
+<script src="../assets/js/plugins/dm.city.select.js"></script>
+<script>
+    
+$(function () {
+    
+})
+</script>
+
+</body>
+</html>

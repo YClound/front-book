@@ -1,0 +1,70 @@
+<div class="main-view-wrapper">
+    <!-- 条件筛选 -->
+    <form class="form-inline form-search" style="margin-bottom: 7px;">
+        
+        <div class="form-group m-5" ng-if="isUnion">
+            <label>商会</label>
+            <input type="text" ng-model="queryModel.sociatyName" class="form-control" placeholder="商会" />
+        </div>
+        <div class="form-group m-5">
+            <label>关键字</label>
+            <input type="text" ng-model="queryModel.realName" class="form-control" placeholder="姓名" />
+        </div>
+        <div class="form-group m-5">
+            <button type="button" class="btn btn-primary" ng-click="search()"><i class="fa fa-search mr-3"></i>查询</button>
+            <button type="button" class="btn btn-default" ng-click="clear()"><i class="fa fa-undo mr-3"></i>重置</button>
+        </div>
+          
+  
+    </form>
+
+    <!-- 数据展示 -->
+    <div class="table-wrapper">
+      <table class="table table-bordered table-condensed table-striped table-hover">
+        <thead>
+          <tr>
+            <th>申请人</th>
+            <th>商会身份</th>
+            <th>手机号</th>
+            <th>申请时间</th>
+            <th ng-if="isUnion">申请商会</th>
+            <th style="width: 340px;">内容</th>
+            <th>图片</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- helpStatus 0初始值 1同意 2拒绝 -->
+          <tr ng-repeat="item in dataList">
+            <td style="vertical-align: middle;"><span ng-bind="item.realName"></span></td>
+            <td style="vertical-align: middle;"><span ng-bind="{'1':'游客','2':'同乡','3':'会员'}[item.memberType]"></span></td>
+            <td style="vertical-align: middle;"><span ng-bind="item.userPhone"></span></td>
+            <td style="vertical-align: middle;"><span ng-bind="item.helpApplyTime"></span></td>
+            <td style="vertical-align: middle;" ng-if="isUnion"><span ng-bind="item.sociatyName"></span></td>
+            <td style="vertical-align: middle;"><span ng-bind="item.helpContent"></span></td>
+
+            <td style="vertical-align: middle;"><span ng-if="item.helpPhoto"><img ng-src="{{item.helpPhoto}}" alt="item.realName" style="width:80px;"></span></td>
+            <td class="text-center" style="vertical-align: middle;">
+                <button class="btn btn-primary btn-tiny" type="button" ng-click="agreeHelp(item)" ng-disabled="item.helpStatus==1">同意</button>
+                <button class="btn btn-danger btn-tiny" type="button" ng-click="rejectHelp(item)" ng-disabled="item.helpStatus==2">拒绝</button>
+                <a href="javascript:;" class="btn btn-tiny btn-default c-primary" ui-sref="help.edit({id:item.helpId})">编辑</a>
+                <button class="btn btn-warning btn-tiny" type="button" ng-click="deleteHelp(item.helpId)" >删除</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <!-- 数据分页 -->
+    <div class="table-pager clearfix">
+      <ul class="pagination pull-left">
+          <li>
+              <a>共{{pagerOption.pages}}页,{{pagerOption.total}}条记录</a>
+          </li>
+      </ul>
+      <!-- 分页插件 -->
+      <uib-pagination total-items="pagerOption.total" ng-model="queryModel.page" max-size="10" ng-change="query()" items-per-page="pagerOption.pagesize" boundary-links="true" class="pagination-md pull-right" rotate="false" num-pages="pagerOption.pages"></uib-pagination>
+    </div>
+
+</div>
+    

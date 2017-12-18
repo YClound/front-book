@@ -1,0 +1,22 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "positionId":"2",
+        "userPassword":"admin",
+        "groupIds":"1,2",
+        "userId": "1",
+        "userPhone":"13456535357",
+        "userPhoto":"http://www.chuyingfund.com/files/account/headImg/120/2016/20160612131503913_1280x960.jpg",
+        "groupIds":"1,2",
+        "userIdcard":"330989484948383748",
+        "joinTime":"2016-12-12",
+        "realName": "马金",
+        "registerCompany":"杭州树德科技有限公司",
+        "registerPosition":"懂事",
+        "overdueTime":"2017-12-12",
+        "userAddress":"新昌",
+        "memberType":2,
+        "userIntro":"自古多情空余恨，从此绵绵无绝期"
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head()
+
+#set($contextPath = $!context.contextPath)
+
+<body>
+	
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+		
+			#sidebar('acctIn')
+			
+			<div class="span10">
+			
+				#breadcrumb("账户充值",'acctIn.htm')
+				
+				#acctInTab('offline')
+				
+				<div class="sortable row-fluid">
+					<div class="span12">
+						<div class="content-result">
+									<div class="alert #showAcctInResultClass($!result)">
+										 #showAcctInResult($!result)
+									</div>
+						</div>						
+					</div>
+				</div>
+
+			
+
+			</div>
+
+		</div>
+	</div>
+	#footer()
+	<script type="text/javascript">
+		 $(document).ready(function() {
+			 countDonwJump();
+		 }); 
+			
+		var redirectUrl = '$!{contextPath}main.htm';
+		var sysSecond = 30 * 1000;
+		var interValObj;
+		
+		function countDonwJump(){
+			interValObj = window.setInterval(setRemainTime, 1000);
+		}
+		
+		function setRemainTime(){
+			sysSecond -= 1000;
+			if(sysSecond<=0){
+			 		window.clearInterval(interValObj);
+					window.location.href= redirectUrl;
+					return;
+			}
+		   if (sysSecond > 0) {
+		  	  var second = sysSecond / 1000;
+		   	  $("#remain").html(second);
+		   } 
+		   
+		}
+		
+		function returnBack(){
+			var url;
+			url = '$!{contextPath}main.htm';
+			window.location.href=url;
+		}
+	</script>
+	
+</body>
+</html>

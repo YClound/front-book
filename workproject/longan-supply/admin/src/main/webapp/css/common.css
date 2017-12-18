@@ -1,0 +1,147 @@
+html,body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+.wrap{
+    width: 100%;
+    height: 100%;
+    min-width: 1190px;
+}
+.wrap .header{
+    width: 100%;
+    height: 78px;
+    position: relative;
+    padding-left: 300px;
+    background-color: #43a9ff;
+}
+.wrap .header .header-left{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: 100%;
+    background-color: #2d97f0;
+    text-align: center;
+    vertical-align: middle;
+}
+.wrap .header-left img{width: 100px;}
+.wrap .header .header-right{
+    height: 100%;
+    line-height: 78px;
+    color: #fff;
+    font-size: 18px;
+    text-align: right;
+    padding-right: 20px;
+}
+.header .header-right div{
+    display: inline-block;
+}
+.header .header-right .login-name,
+.header .header-right .time-nav{
+    margin-right: 20px;
+}
+
+/*主要内容*/
+.wrap .main-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-left: 300px;
+    min-height: 600px;
+}
+.wrap .main-container .container-left{
+    width: 300px;
+    height: 100%;
+    background-color: #393c45;
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 85px;
+    min-height: 600px;
+}
+.container-left .choose-type{
+    width: 85px;
+    box-sizing: border-box;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-right: #2a2e38 1px solid;
+}
+.container-left .choose-type li{padding: 20px 5px 10px;}
+.container-left .choose-type .active{background-color: #2a2e38;}
+.container-left .main-type{
+    height: 100%;
+    min-height: 600px;
+    overflow: auto;
+    padding-bottom: 100px;
+}
+.main-type .type-detail{
+    position: relative;
+}
+.type-detail .show-on .on{display: inline-block;}
+.type-detail .show-on .off{display: none;}
+.type-detail .show-off .on{display: none;}
+.type-detail .show-off .off{display: inline-block;}
+.main-type .type-detail .one{
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    padding-left: 20px;
+    display: block;
+    position: relative;
+    color: #fff;
+}
+.main-type .type-detail .one span{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    padding-right: 10px;
+}
+
+.type-detail .kid li{
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 60px;
+}
+.type-detail .kid li a{
+   color: #fff; 
+}
+.system-management .kid li{padding-left: 20px;}
+.type-detail .kid li.active{
+    background-color: #2a2e38;
+}
+
+/*右边样式*/
+.container-right{
+    height: 100%;
+    background: #f4f4f4;
+    padding: 20px;
+    min-height: 600px;
+}
+
+.Conframe {
+    height: 100%;
+    background: #FFF;
+    position: absolute;
+    left: 300px;
+    overflow: auto;
+    right: 0px;
+    z-index: 999;
+    top: 0px;
+}
+
+#Conframe {
+    width: 100%;
+    border: none;
+    height: 100%;
+}
+
+.top-nav a:hover{color: #fff;}
+.top-nav a{color: #fff;}

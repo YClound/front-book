@@ -1,0 +1,381 @@
+<!doctype html>
+<!--[if lte IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="zh-CN"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon.png">
+    <link type="image/png" href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="pragram" content="no-cache">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="email=no"/>
+    <meta name="format-detection" content="address=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-title" content="雏鹰网"/>
+    <title>信息编辑-雏鹰网</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="keywords" content="众筹,雏鹰网,雏鹰众筹,基金,种子基金,股权众筹,天使轮,种子轮,天使投资,风险投资,众筹平台,创业融资,私募股权融资,私募股权投资平台,融资平台">
+    <meta name="description" content="雏鹰网是致力于帮助有梦想、有决心、有能力、够努力的早期创业者获得股权投资的互联网平台。打造融合众筹投资人和创业者学习、互助、交流的在线众创空间。梦想再小也要呵护，力量再小也要支持。">
+    <!-- apple icon -->
+    <link type="image/png" href="../assets/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../assets/css/mobile/base_m.css">
+    <link rel="stylesheet" href="../assets/css/mobile/app.css">
+    
+    <script src="../assets/vendor/seajs/2.0.0/sea.js"></script>
+    <script src="../assets/js/config.m.js"></script>
+
+  </head>
+  <body class="s-my-compile">
+    <!-- 顶部标题信息 -->
+    <div class="s-header flex">
+        <div class="w-3em" onclick="javascript:history.back()">
+           <i class="if icon-angle-left"></i>
+        </div>
+        <div class="flex-1">信息编辑</div>
+        <div class="w-3em"></div>
+    </div>
+    <div class="padding-header"></div>
+    <!-- 个人基础信息 -->
+    <div class="s-container">
+        
+        <div class="panel mt-6">
+            <!-- 头像 -->
+            <div class="flex space-between aic pb-6 pr-6 pl-4 bb" >
+                <div>头像</div>
+                <div class="ci-7 c-8 flex-1 tar por wu-avatar">
+                    <div class="pick-wrap">
+                      <div class="pick"></div>
+                    </div>
+                    <img class="" src="http://7xjckn.com2.z0.glb.qiniucdn.com/2016-05-18_573c17b6b719a.jpg" alt="">
+                    <!--<i class="if icon-angle-right"></i>-->
+                </div>
+                <div class="pl-5"><i class="if icon-angle-right c-9"></i></div>
+            </div>
+
+            <!-- 昵称 -->
+            <div class="flex space-between aic pt-6 pb-6 pr-6 pl-4 bb" data-router="/nickname" data-field="nickname">
+                <div>昵称</div>
+                <div class="c-8 flex-1 tar">
+                    <var data-name="nickname" class="var-field">齐小吓</var>
+                </div>
+            </div>
+
+
+            <!-- 公司 -->
+            <div class="flex space-between aic pt-6 pb-6 pr-6 pl-4 bb" data-router="/company" data-field="company">
+                <div>公司</div>
+                <div class="c-8 flex-1 tar">
+                    <var data-name="company" class="var-field">杭州树德科技</var>
+                </div>
+            </div>
+
+            <!-- 职位 -->
+            <div class="flex space-between aic pt-6 pb-6 pr-6 pl-4 bb" data-router="/company" data-field="position">
+                <div>职位</div>
+                <div class="c-8 flex-1 tar">
+                    <var data-name="position" class="var-field">产品经理</var>
+                </div>
+            </div>
+
+            <!-- 手机 -->
+            <div class="flex space-between aic pt-6 pb-6 pr-6 pl-4 bb" data-router="" data-field="telephone">
+                <div>手机</div>
+                <div class="c-8 flex-1 tar">
+                    <var data-name="telephone" class="var-field">15158134357</var>
+                </div>
+            </div>
+            
+
+            <!-- 地区 -->
+            <div class="flex space-between aic pt-6 pb-6 pr-6 pl-4 bb" data-router="/personal">
+                <div>地区</div>
+                <div class="c-8">
+                    <var class="var-city"></var>
+                </div>
+            </div>
+
+
+            <!-- 邮箱 -->
+            <div class="flex space-between aic pt-6 pb-6 pr-6 pl-4 bb" data-router="/personal" data-field="email">
+                <div>邮箱</div>
+                <div class="c-8 flex-1 tar">
+                    <var data-name="email" class="var-field">504397517@qq.com</var>
+                </div>
+            </div>
+
+            <!-- 简介 -->
+            <div class="flex space-between aic pt-6 pr-6 pl-4" data-router="/intro" data-field="describe">
+                <div class="mr-20">简介</div>
+                <var data-name="describe" class="db flex-1 c-8 ovh tar ellipsis var-field"></var>
+            </div>
+            
+
+        </div><!-- panel end -->
+
+        <div class="panel">
+            <!-- 实名认证 -->
+            <div class="flex space-between aic pb-6 pr-6 pl-4 bb">
+                <div>实名认证信息</div>
+                <div class="c-8 flex-1 tar">
+                    <var data-name="approve" class="var-field">齐名峰&nbsp;|&nbsp;330182199003183218</var>
+                </div>
+            </div>
+            <!-- 邮箱 -->
+            <div class="flex space-between aic pt-6 pr-6 pl-4" data-router="/password" data-field="password">
+                <div>修改密码</div>
+                <div class="c-8 flex-1 tar">
+                    <var data-name="password" class="var-field"></var>
+                    <i class="if icon-angle-right c-9"></i>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div><!--s-container end-->
+
+
+  <!-- 修改信息页面 -->
+  <div class="view-wrap">
+    <!-- 修改昵称 -->
+    <div class="view view-nickname">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <!-- 顶部信息 -->
+                <div class="w-3em" onclick="javascript:history.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">昵称</div>
+                <div class="w-3em"></div>
+            </div> 
+            <div class="padding-header"></div>         
+            <form action="" method="post" class="ajax-form">
+                <div class="panel mt-6 pt-0 pb-0">
+                    <div class="ctrl-wrap">
+                        <input class="line" type="text" name="nickName" placeholder="请输入新的昵称" value="">
+                    </div>
+                </div>
+                <div class="ctrl-wrap mt-12 pl-6 pr-6 fz-medium">
+                    <button type="submit" class="btn-height btn-primary w-100 ">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 修改公司与职位 -->
+    <div class="view view-company">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <div class="w-3em" onclick="javascript:history.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">工作信息</div>
+                <div class="w-3em"></div>
+            </div> 
+            <div class="padding-header"></div>     
+            <form action="" method="post" class="ajax-form">
+                <div class="panel mt-6 pt-0 pb-0">
+
+                    <div class="flex aic bb">
+                        <label class="db w-3em tac">公司</label>
+                        <div class="ctrl-wrap">
+                            <input class="line" type="text" name="companyName" placeholder="请输入公司名称">
+                        </div>
+                    </div>
+
+                    <div class="flex aic">
+                        <label class="db w-3em tac">职位</label>
+                        <div class="ctrl-wrap">
+                            <input class="line" type="text" name="position" placeholder="请输入您的职位">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="ctrl-wrap mt-12 pl-6 pr-6">
+                    <button type="submit" class="btn-height btn-primary w-100 fz-medium">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+        <!-- 修改手机 -->
+     <div class="view view-telephone">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <div class="w-3em" onclick="javascript:history.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">个人信息</div>
+                <div class="w-3em"></div>
+            </div> 
+            <div class="padding-header"></div>     
+            <form action="/static/assets/data/form.json" method="get" class="ajax-form" id="telVafiry">
+                <div class="panel mt-6 pt-0 pb-0" >
+                    <!-- 手机号码修改 -->
+                    <div class="flex aic bb">
+                        <div class="w-4em">新手机号</div>
+                        <div class="ctrl-wrap flex-1">
+                            <input type="tel" name="telephone" class="line" placeholder="请填写新手机号码">
+                        </div>
+                    </div>
+                    <!-- 手机验证码 -->
+                    <div class="flex aic bb">
+                        <div class="w-4em tar">验证码</div>
+                        <div class="ctrl-wrap flex-1">
+                            <input type="text" name="telCod" class="line" placeholder="手机验证码">
+                            <button type="button" data-check-type="changemobile" data-disabled-text="<var>60</var> 秒" class="poa r-6 t-3 btn-primary btn-sms w-20">获取</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 保存修改 -->
+                <div class="ctrl-wrap mt-12 pl-6 pr-6">
+                    <button type="submit" class="btn-height btn-primary w-100 fz-medium">下一步</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 修改个人信息-->
+     <div class="view view-personal">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <div class="w-3em" onclick="javascript:history.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">个人信息</div>
+                <div class="w-3em"></div>
+            </div> 
+            <div class="padding-header"></div>     
+            <form action="/static/assets/data/form.json" method="get" class="ajax-form">
+                <div class="panel mt-6 pt-0 pb-0">
+                    <!-- 地区修改 -->
+                     <div class="flex aic bb pt-6 pb-6">
+                        <div class="w-4em">地区</div>
+                        <div class="city-select">
+                            <input type="hidden" id="province" name="province" value="330000">
+                            <input type="hidden" id="city" name="city" value="330100">
+                            <input type="button" class="btn btn-o btn-city-text" value="请选择城市" pattern="/\//" data-pattern-msg="请选择城市" data-bubble-left="172">
+
+                            <div class="dropdown-content" style="display: none;">
+                                <ul class="tab-title">
+                                    <li class="active" data-target=".prov-box">省份</li>
+                                    <li data-target=".city-box">城市</li>
+                                </ul>
+                                <ul class="tab-content">
+                                    <li class="prov-box"></li>
+                                    <li class="city-box" style="display: none;"></li>
+                                </ul>
+                            </div>
+                        </div>
+                                         
+                    </div>
+                    <!-- 邮箱修改 -->
+                    <div class="flex aic ">
+                        <div class="w-4em">邮箱</div>
+                        <div class="ctrl-wrap flex-1">
+                            <input type="email" name="email" class="line" placeholder="请填写邮箱地址">
+                        </div>
+                    </div>
+                </div>
+                <!-- 保存修改 -->
+                <div class="ctrl-wrap mt-12 pl-6 pr-6">
+                    <button type="submit" class="btn-height btn-primary w-100 fz-medium">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 修改简介 -->
+    <div class="view view-intro">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <div class="w-3em" onclick="dm.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">简介</div>
+                <div class="w-3em"></div>
+            </div>
+            <div class="padding-header"></div>            
+            <form action="/static/assets/data/form.json" method="get" class="ajax-form">
+                <div class="panel mt-6 pt-0 pb-0">
+                    <div class="ctrl-wrap">
+                        <textarea class="line" name="describe" placeholder="" maxlength="50" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="ctrl-wrap mt-12 pl-6 pr-6">
+                    <button type="submit" class="btn-height btn-primary w-100 fz-medium">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- 修改密码 -->
+    <div class="view view-password">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <div class="w-3em" onclick="javascript:history.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">密码</div>
+                <div class="w-3em"></div>
+            </div>
+            <div class="padding-header"></div>     
+            <form action="" method="post" class="ajax-form" id="password">
+                <div class="panel mt-6 pt-0 pb-0">
+                    <!-- 手机号码修改 -->
+                    <div class="flex aic bb">
+                        <div class="w-4em">原密码</div>
+                        <div class="ctrl-wrap flex-1">
+                            <input type="password" name="password" class="line" placeholder="请输入原密码">
+                        </div>
+                    </div>
+                    <div class="flex aic bb"> 
+                        <div class="w-4em">新密码</div>
+                        <div class="ctrl-wrap flex-1">
+                            <input type="password" required name="new-password" class="line" placeholder="请输入新密码" style="margin-bottom:2px;">
+                        </div>
+                    </div>
+                    <div class="flex aic bb"> 
+                        <div class="w-4em">确认密码</div>
+                        <div class="ctrl-wrap flex-1">
+                            <input type="password" required name="verify-password" class="line" placeholder="请再次输入新密码" style="margin-bottom:2px;">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="password-tip">您两次密码输入不一样</div>
+                <!-- 保存修改 -->
+                <div class="ctrl-wrap mt-12 pl-6 pr-6">
+                    <button type="submit" class="btn-height btn-primary w-100 fz-medium">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+  </div>
+
+
+
+
+<script src="/static/assets/js/api.js"></script>
+<script src="/static/assets/vendor/jquery/jquery-2.1.4.min.js"></script>
+<script src="/static/assets/js/dm.base.js"></script>
+
+  <script>
+    seajs.use('/static/assets/js/module/mobile/m-my-compile.js');
+  </script>
+  </body>
+</html>

@@ -1,0 +1,226 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "pager": {
+            "page": 1,
+            "pages": 5,
+            "total": 225,
+            "pagesize": 5
+        },
+        "list": [
+            {
+              "collectionId": 1,
+              "collectionQuestionId": "WLXZT00001",
+              "collectionTime": 1483952203000,
+              "collectionUserId": 9,
+              "propertyValue": {
+                "difficultName": "中等",
+                "subjectName": "物理",
+                "syllabus": [
+                  {
+                    "syllabusId": 48,
+                    "syllabusName": "相互作用"
+                  },
+                  {
+                    "syllabusId": 47,
+                    "syllabusName": "运动的描述和匀变速直线运动"
+                  },
+                  {
+                    "syllabusId": 49,
+                    "syllabusName": "牛顿运动定律"
+                  },
+                  {
+                    "syllabusId": 50,
+                    "syllabusName": "曲线运动"
+                  }
+                ],
+                "typeName": "选择题"
+              },
+              "questionContentJson": {
+                "title": "下列说法正确的是（）",
+                "option": [
+                  "静摩擦力的大小随着正压力的增大而增大",
+                  "高压输电线上放有两根接地导线，利用了静电屏蔽原理",
+                  "在运输灵敏电流表时，为了防止电磁阻尼现象，不能将两接线柱链接起来",
+                  "电容器两极板电量不变，增大极板间距，极板间电场强度增加"
+                ]
+              },
+              "questionDifficult": 0.63,
+              "questionFrom": "原创",
+              "questionFromSource": "原创",
+              "questionSubjectId": 11,
+              "questionTypeId": 16,
+              "relation": {
+                "questionBrowseCount": 0,
+                "questionCollectCount": 0,
+                "questionUsedCount": 0,
+                "question_id": "WLXZT00001"
+              },
+              "typeCode": "SELECT"
+            },
+            {
+              "collectionId": 1,
+              "collectionQuestionId": "WLXZT00002",
+              "collectionTime": 1483952203000,
+              "collectionUserId": 9,
+              "propertyValue": {
+                "difficultName": "中等",
+                "subjectName": "物理",
+                "syllabus": [
+                  {
+                    "syllabusId": 48,
+                    "syllabusName": "相互作用"
+                  },
+                  {
+                    "syllabusId": 47,
+                    "syllabusName": "运动的描述和匀变速直线运动"
+                  },
+                  {
+                    "syllabusId": 49,
+                    "syllabusName": "牛顿运动定律"
+                  },
+                  {
+                    "syllabusId": 50,
+                    "syllabusName": "曲线运动"
+                  }
+                ],
+                "typeName": "选择题"
+              },
+              "questionContentJson": {
+                "title": "下列说法正确的是（）",
+                "option": [
+                  "静摩擦力的大小随着正压力的增大而增大",
+                  "高压输电线上放有两根接地导线，利用了静电屏蔽原理",
+                  "在运输灵敏电流表时，为了防止电磁阻尼现象，不能将两接线柱链接起来",
+                  "电容器两极板电量不变，增大极板间距，极板间电场强度增加"
+                ]
+              },
+              "questionDifficult": 0.63,
+              "questionFrom": "原创",
+              "questionFromSource": "原创",
+              "questionSubjectId": 11,
+              "questionTypeId": 16,
+              "relation": {
+                "questionBrowseCount": 0,
+                "questionCollectCount": 0,
+                "questionUsedCount": 0,
+                "question_id": "WLXZT00002"
+              },
+              "typeCode": "SELECT"
+            },
+            {
+              "collectionId": 1,
+              "collectionQuestionId": "WLXZT00003",
+              "collectionTime": 1483952203000,
+              "collectionUserId": 9,
+              "propertyValue": {
+                "difficultName": "中等",
+                "subjectName": "物理",
+                "syllabus": [
+                  {
+                    "syllabusId": 48,
+                    "syllabusName": "相互作用"
+                  },
+                  {
+                    "syllabusId": 47,
+                    "syllabusName": "运动的描述和匀变速直线运动"
+                  },
+                  {
+                    "syllabusId": 49,
+                    "syllabusName": "牛顿运动定律"
+                  },
+                  {
+                    "syllabusId": 50,
+                    "syllabusName": "曲线运动"
+                  }
+                ],
+                "typeName": "填空题"
+              },
+              "questionContentJson": {
+                "title": "已知函数f(x+1)=3x+2,则f(x)的解析式是————————"
+              },
+              "questionDifficult": 0.63,
+              "questionFrom": "原创",
+              "questionFromSource": "原创",
+              "questionSubjectId": 11,
+              "questionTypeId": 16,
+              "relation": {
+                "questionBrowseCount": 0,
+                "questionCollectCount": 0,
+                "questionUsedCount": 0,
+                "question_id": "WLXZT00003"
+              },
+              "typeCode": "FILLBLANK"
+            },
+            {
+              "collectionId": 1,
+              "collectionQuestionId": "WLXZT00004",
+              "collectionTime": 1483952203000,
+              "collectionUserId": 9,
+              "propertyValue": {
+                "difficultName": "中等",
+                "subjectName": "物理",
+                "syllabus": [
+                  {
+                    "syllabusId": 48,
+                    "syllabusName": "相互作用"
+                  },
+                  {
+                    "syllabusId": 47,
+                    "syllabusName": "运动的描述和匀变速直线运动"
+                  },
+                  {
+                    "syllabusId": 49,
+                    "syllabusName": "牛顿运动定律"
+                  },
+                  {
+                    "syllabusId": 50,
+                    "syllabusName": "曲线运动"
+                  }
+                ],
+                "typeName": "计算题"
+              },
+              "questionContentJson" :{
+                    "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是QANDA已知函数f(x+1)=3x+2,则f(x)的解析式是QANDA已知函数f(x+1)=3x+2,则f(x)的解析式是QANDA",
+                    "children":[
+                        {
+                            "number":1,
+                            "typeCode": "SELECT",
+                            "question": {
+                                "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是()",
+                                "option":["3x+2","3x+1","3x-1","3x+4"]
+                            }
+                        },
+                        {
+                            "number":2,
+                            "typeCode": "FILLBLANK",
+                            "question": {
+                                "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是_________"
+                            }
+                        },
+                        {
+                            "number":3,
+                            "typeCode": "QANDA",
+                            "question": {
+                                "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是已知函数f(x+1)=3x+2,则f(x)的解析式是"
+                            }
+                        }
+                    ]
+                },
+              "questionDifficult": 0.63,
+              "questionFrom": "原创",
+              "questionFromSource": "原创",
+              "questionSubjectId": 11,
+              "questionTypeId": 16,
+              "relation": {
+                "questionBrowseCount": 0,
+                "questionCollectCount": 0,
+                "questionUsedCount": 0,
+                "question_id": "WLXZT00004"
+              },
+              "typeCode": "COMPLEX"
+            }
+        ]
+    }
+}

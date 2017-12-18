@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>新昌商会-寻求帮助</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!-- 可更改 -->
+    <meta name="keywords" content="新昌商会">
+    <meta name="description" content="新昌商会">
+    <!-- 百度统计 -->
+    <meta name="baidu-site-verification" content="j4d5H6qJuY"/>
+    <meta name="share-title" content=""/>
+    <meta name="share-img" content=""/>
+    <meta name="share-desc" content=""/>
+    <meta name="share-url" content=""/>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    
+    <link rel="stylesheet" href="../assets/css/base_m.css">
+    <link rel="stylesheet" href="../assets/css/mobile/app.css">
+    <link rel="stylesheet" href="../assets/css/mobile/fellowship.css">
+    <script src="../assets/js/mobile/config.js"></script>
+</head>
+<body class="bg m-help-looking">
+    <div class="m-main">
+        <div class="s-header flex">
+            <a href="javascript:;" onclick="javascript:history.back()" class="db w-3em">
+                <i class="if icon-angle-left"></i>
+            </a>
+            <div class="flex-1">寻求帮助</div>
+            <a class="db w-5em tal fz-base" href="help-launch.html">发起求助</a>
+        </div>
+        <div class="padding-header"></div>
+        <div class="help-container">
+            <div class="help-list"></div>
+
+            <div class="infinite-loading" type="json" data-template="help-list" data-list-wrap=".help-list" data-hidden="true">
+                <form class="ajax-form" action="../api/mobile/help/looking.json" data-ajax-method="get">
+                    <input type="hidden" name="page" value="1" data-name="offset" />
+                </form>
+            </div>
+        </div>
+       
+
+    </div>
+
+    <script type="text/html" id="help-list">
+        <div class="help-item por">
+            {{if status == '0'}}
+            <span class="poa r-0 t-0 tag tag-gray" style="border-radius: 0px">审核中</span>
+            {{/if}}
+            <div class="flex pt-8 pl-8 pr-8">
+                <a href="javascript:;" class="ci-9">
+                    <img src="{{userPhoto}}">
+                </a>
+                <div class="flex-1 pl-6 pt-7">
+                    <div class="pb-3">
+                        <span>{{realName}}</span>
+                        <span class="pl-6">{{positionName}}</span>
+                    </div>
+                    <span class="c-8">{{helpApplyTime}}</span>
+                </div>
+            </div>
+            <a href="help-detail.html" class="db">
+                <div class="p-8">{{helpContent}}</div>
+            </a>
+            {{if helpPhoto.length}}
+            <div class="images-list pb-6 pl-8 pr-8 clearfix">
+                {{each _helpPhoto as photoItem}}
+                <a class="db image-item" href="javascript:;">
+                    <img src="{{photoItem}}">
+                </a>
+                {{/each}}
+            </div>
+            {{/if}}
+            <div class="bt">
+                <a class="db tar p-8 c-8 icon-img" href="help-detail.html">
+                    <img src="../assets/images/mobile/icon/msg.png">
+                    <var>{{readNumber}}</var>
+                </a>
+            </div>
+        </div>
+    </script>
+
+    <script src="../vendor/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../assets/js/jweixin-1.0.0.js"></script>
+    <script src="../assets/js/template.js"></script>
+    <script src="../assets/js/dm.base.js"></script>
+    <script src="../assets/js/mobile/api.js"></script>
+    <script src="../assets/js/mobile/help-looking.js"></script>
+    <script type="text/javascript">
+        $('[data-name="offset"]').val(1);
+    </script>
+</body>
+</html>

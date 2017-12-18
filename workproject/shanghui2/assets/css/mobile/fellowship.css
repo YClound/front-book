@@ -1,0 +1,213 @@
+/*互帮互助*/
+.m-fellowship .title{
+    border-left: #d0b178 4px solid;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    color: #d0b178;
+    margin-top: 8px;
+}
+/*同乡资源*/
+.resource-lists{
+    padding-top: 10px;
+}
+.resource-list{
+    width: 100%;
+    padding: 15px 0px 0px;
+    overflow: hidden;
+    clear: both;
+}
+.resource-list:last-of-type{
+     border-bottom: 0;
+}
+.resource-lists .resource-item{
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-size: 12px;
+}
+.resource-item .resource-img{
+    display: block;
+    width: 35px;
+    height: 40px;
+    margin: 0 auto;
+    padding-left: 5px;
+    padding-bottom: 15px;
+}
+.resource-item .resource-img img{
+    max-height: 25px;
+}
+/*寻求帮助*/
+.m-help-looking .help-list{
+    padding-top: 10px;
+}
+.m-help-looking .help-item{
+    margin-bottom: 12px;
+    background-color: #fff;
+}
+.help-item .image-item{
+    display: block;
+    float: left;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    height: 80px;
+}
+.help-item .image-item img{
+    max-width: 70%;
+    max-height: 200px;
+}
+
+/*同乡资源*/
+.m-help-resource .resource-title{
+    max-height: 45px;
+    overflow: hidden;
+}
+.m-help-resource .img-major img{
+    height: 80px;
+    width: 110px;
+}
+.m-help-resource .img-major .tag{
+    border-radius: 0px;
+}
+.m-help-resource .panel{
+    padding-left: 10px;
+}
+.icon-img img{
+    width: 20px;
+}
+.icon-img-min img{
+    width: 16px;
+}
+
+/*发起请求*/
+.launch-content{
+    padding-top: 12px;
+}
+.launch-content textarea{
+    border: 0px;
+    outline: 0px;
+    padding-left: 0px;
+}
+.launch-content .add-image{
+    text-align: center;
+    width: 110px;
+    height: 110px;
+    border-radius: 4px;
+    border: #c2c2c2 1px dashed;
+}
+.launch-content .add-image i{
+    font-size: 50px;
+    color: #d4b168
+}
+.launch-content .title{
+    border-left: #d0b178 4px solid;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 8px;
+    color: #d0b178;
+}
+/*选择求助*/
+.checkContent{
+    border: #d4b168 1px solid;
+    border-radius: 4px;
+    color: #d4b168
+}
+.checkContent .checkImage{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 20px;
+    border-right: #d4b168 1px solid;
+}
+.checkContent  .checkText{
+    width: 95px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.chooseHelp .helpOption{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+}
+.chooseHelp .helpOption:checked + .checkContent{
+    background-color: #d4b168;
+    color: #fff;
+}
+.chooseHelp .helpOption:checked + .checkContent .checkImage{
+    border-right-color: #fff;
+}
+
+/*图片上传*/
+.wu .file-item {
+    width: 108px;
+    position: relative;
+    overflow: hidden;
+    font-size: 12px;
+}
+.file-item .title {
+    display: none;
+}
+.file-item .img-wrap img {
+    width: 100%;
+}
+.file-item .progress {
+    height: 8px;
+    line-height: 1;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+    box-shadow: none;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.file-item .progress-bar {
+    height: 100%;
+    background: #3399e0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    box-shadow: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.file-item .float-bar {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+.file-item .float-bar .close{
+    opacity: .5;
+}
+.file-item .info {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: #f43838;
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+}
+.wu .file-item .error, .wu .file-item .float-bar, .wu .file-item .success {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}

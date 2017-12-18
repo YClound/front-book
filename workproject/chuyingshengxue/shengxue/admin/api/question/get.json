@@ -1,0 +1,22 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "questionId": "2",
+        "questionSubjectId" :"1",
+        "questionTypeId":"2",
+        "typeCode":"FILLBLANK",
+        "questionSyllabus":["8","12"],
+        "questionJson":{
+          "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是_______",
+          "blanks":"2",
+          "analysis":"已知函数f(x+1)=3x+2,则f(x)的解析式是",
+          "answer":["第一个空LKLKJ765第个空","第二个空"]      
+        },
+        "questionFrom":"原创",
+        "questionFromSource" : "2016年高考模拟试卷",
+        "questionDifficult":0.93,
+        "questionType":"选择题",
+        "questionEnable":true
+    }
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>人工供货单统计查询</title>
+    #parse("common/select.vm")
+    #parse("common/pagination.vm")
+    #parse("common/common.vm")
+    
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/doubleDate.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+	<script type="text/javascript" src="$!staticServer/js/doubleDate2.0.js"></script>
+	<script type="text/javascript" src="$!staticServer/js/jquery.cookie.js"></script>
+	
+</head>
+<body class="list-body">
+    $!errorMsg
+    <div class="list-container">
+        <div class="alert-title fz-16">人工供货单统计查询</div>
+        <form id="supplyOrderQueryForm" class="queryForm" action="queryManualSupplyOrder.do" method="post" onsubmit="return submitCheck();" >
+            <input type="hidden" name="pageSize" value = "30"/>
+            <input type="hidden" name="supplyType" value = "3"/>
+            <input type="hidden" name="bizId" value = "$!supplyOrderQuery.bizId"/>
+            <div  style="font-size: 20px; padding: 4px 6px 15px;">
+            <span>
+                 <strong>人工供货单统计:</strong>
+                处理中  <font>$!supplyOrderStatisic.chargingCount</font>
+                人工处理中   <font>$!supplyOrderStatisic.lockedCount</font>
+                异常   <font color=red >$!supplyOrderStatisic.exceptionCount</font>  
+                未确认   <font color=red >$!supplyOrderStatisic.unComfirmCount</font>
+                失败  <font  color=red>$!supplyOrderStatisic.failedCount</font>  
+                成功  <font color=green >$!supplyOrderStatisic.successCount</font>  
+            </span>
+            </div>
+        
+            <table class="table query-style table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <td colspan="8" class="auto-style2">请填写查询条件</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="w-8em">供货单号</td>
+                    <td class="detail">
+                        <input type="text" id="formid"  name="id" value="$!supplyOrderQuery.id"  />
+                    </td>
+                    <td class="w-8em">客户手机号</td>
+                    <td class="detail">
+                        <input type="text" class="input-small" id="formtype" name="itemUid" value="$!supplyOrderQuery.itemUid" /></td>
+                    <td class="w-8em">订单号</td>
+                    <td class="detail">
+                         <input type="text" class="input-small" id="formtype" name="bizOrderId" value="$!supplyOrderQuery.bizOrderId" /></td>
+                    </td>                   
+                    <td class="w-8em">商品编号</td>
+                    <td class="td_detail detail">
+                        <input type="text" name="itemId" value="$!supplyOrderQuery.itemId" />
+                    </td>                 
+                </tr>
+                <tr>
+                    <td class="w-8em">业务类型</td>
+                    <td class="detail">
+                        #select($!bizList,'bizId',$!supplyOrderQuery.bizId)
+                    </td>
+                    <td class="w-8em">上游供货商</td>
+                    <td class="detail">
+                        #selectClassMedium($!upStreamUser,'supplyTraderId',$!supplyOrderQuery.supplyTraderId) 
+					</td>
+                    <td class="w-8em">代理商</td>
+                    <td class="td_detail detail">
+                        #selectClassMedium($!downStreamUser,'userId',$!supplyOrderQuery.userId)
+                    </td>       
+                    <td class="w-8em">锁定人</td>
+                    <td class="detail">
+                        #select($!operList,'lockOperId',$!supplyOrderQuery.lockOperId)
+                    </td>              
+                </tr>
+                <tr>
+                    <td class="w-8em">供货单状态 </td>
+                    <td class="detail">
+                        #select($!supplyStatusList,'supplyStatus',$!supplyOrderQuery.supplyStatus)
+                    </td>
+                    <td class="w-8em">处理人</td>
+                    <td class="detail">
+                        #select($!operList,'dealOperId',$!supplyOrderQuery.dealOperId)
+                    </td> 
+                    <td class="w-8em">供货类型</td>
+                    <td class="detail">
+                        #select($!supplyTypeList,'supplyType',$!supplyOrderQuery.supplyType)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w-8em">供货单日期 </td>
+                    <td class="detail" colspan="3">
+                        <div class="input-append">
+                            <span class="input-date">
+                                <input class="input-small doubledate" readonly="readonly" size="10" type="text" name="startGmtCreate" value="$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.startGmtCreate)" />
+                                <span class="add-on"><img src="../img/date.png"></span>
+                            </span>至
+                            <span class="input-date">
+                                <input id="endtime" class="input-small doubledate" readonly="readonly" type="text" name="endGmtCreate" value="$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.endGmtCreate)" />
+                                <span class="add-on"><img src="../img/date.png"></span>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="detail input-value" colspan="4">
+                        充值时长：大于等于
+                        <input type="text" class="input-small" name="moreCostTime" value="$!supplyOrderQuery.moreCostTime" />
+                        小于等于
+                        <input type="text" class="input-small" name="lessCostTime" value="$!supplyOrderQuery.lessCostTime" />秒
+                    </td>
+                </tr>
+                  
+                <tr>
+                    <td colspan="8" align="left">
+                        <a class="btn btn-inverse"  onclick="javascript:query();"  >查询</a>
+                        <input class="btn btn-inverse"  type="reset" value="清空" />
+                        <a class="btn btn-inverse"  onclick="javascript:fileExport()" >导出</a>
+						#if($!userInfo.isAdmin())
+							<a class="btn btn-inverse"  href="queryManualSupplyOrder.do?supplyStatus=1&pageSize=30&bizId=$!supplyOrderQuery.bizId" >查询处理中供货单</a>
+							<a class="btn btn-inverse"  href="queryManualSupplyOrder.do?supplyStatus=4&lockOperId=$!userInfo.id&pageSize=30&bizId=$!supplyOrderQuery.bizId" >查询我锁定的供货单</a>
+						#end 
+					</td>
+						
+                </tr>
+            </tbody>
+         </table>
+
+        <table class="table table-list table-striped table-bordered table-condensed" id="list">
+        <thead>
+            <tr class="tr_detail">
+                <td>供货单号 </td>
+				<td>订单号 </td>
+				<td>上游流水号 </td>
+                <td>客户手机号</td>
+                <td>代理商号</td>
+                <td>商品</td>
+                <td>交易金额(元)</td>
+				<td>平台成本单价(元)</td>
+				<td>实际成本(元)</td>
+                <td>交易时间 </td>
+				<td>充值时长</td>
+                <td>供货单状态 </td>
+				<td>操作</td>
+				<td>供货商</td>
+    			<td>供货摘要</td>
+    			<td>锁定人</td>
+    			<td>处理人</td>				
+            </tr>
+        </thead>
+        <tbody>
+			
+			#foreach($!supplyOrder in $!supplyOrderList)
+				<tr>
+                <td>$!supplyOrder.id</td>
+				<td><a title="点击查看订单信息" href="../statistic/queryAllBizOrder.do?id=$!supplyOrder.bizOrderId&bizId=$!supplyOrder.bizId" >$!supplyOrder.bizOrderId</a></td>
+				<td>$!supplyOrder.upstreamSerialno</td>
+                <td>$!supplyOrder.itemUid</td>
+                <td><a href="../user/userInfoShow.do?id=$!supplyOrder.userId" >$!supplyOrder.userId</a></td>
+                <td>
+					$!supplyOrder.itemName
+				</td>
+                <td>$!supplyOrder.amountDesc</td>
+				<td>$!supplyOrder.supplyCostPriceDesc</td>
+				<td>$!supplyOrder.supplyActualCostDesc</td>
+                <td>$!dateTool.format("yyyy-MM-dd HH:mm:ss", $!supplyOrder.gmtCreate)</td>
+				<td>$!supplyOrder.supplyCostTimeDesc</td>
+                <td>
+					<font #if($!supplyOrder.showRed())color=red #end #if($!supplyOrder.showGreen())color=green #end >
+					$!supplyOrder.supplyStatusDesc
+					</font>
+				</td>
+				<td>
+					#if($!userInfo.isAdmin())
+						<a href="#" onclick="javascript:window.open('../biz/supplyOrderShow.do?bizId=$!supplyOrder.bizId&supplyOrderId=$!supplyOrder.id','newwin','width=750,height=550,scrollbars=yes,top=50,left=50');" class="btn btn-mini btn-primary add" >详情</a>
+        					#if($!supplyOrder.canManCancel())
+        						<a href="supplyOrderCancel.do?supplyOrderId=$!supplyOrder.id&itemUid=$!supplyOrderQuery.itemUid&itemId=$!supplyOrderQuery.itemId&userId=$!supplyOrderQuery.userId&startGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.startGmtCreate)&endGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.endGmtCreate)&bizId=$!supplyOrderQuery.bizId&supplyStatus=$!supplyOrderQuery.supplyStatus&pageSize=30" class="btn btn-mini btn-danger" onclick="return confirm('是否确认退款操作，退款操作后，会将钱退款给代理商')">退款</a>
+        					#end					
+        					#if($!supplyOrder.canManLock())
+        						<a id="prompt_button" href="#" onclick="lockOrder($!supplyOrder.id);" class="btn btn-mini btn-danger" >锁定</a>
+    						#end
+    						#if($!supplyOrder.canManUnConfirm())
+    							<a href="supplyOrderUnConfirm.do?supplyOrderId=$!supplyOrder.id&itemUid=$!supplyOrderQuery.itemUid&itemId=$!supplyOrderQuery.itemId&userId=$!supplyOrderQuery.userId&startGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.startGmtCreate)&endGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.endGmtCreate)&bizId=$!supplyOrderQuery.bizId&supplyStatus=$!supplyOrderQuery.supplyStatus&pageSize=30" class="btn btn-mini btn-danger" onclick="return confirm('是否做未确定操作,未确认后，会挂起订单')">未确认</a>
+    						#end
+        					#if($!supplyOrder.canManUnLock())
+        						<a href="supplyOrderUnLock.do?supplyOrderId=$!supplyOrder.id&itemUid=$!supplyOrderQuery.itemUid&itemId=$!supplyOrderQuery.itemId&userId=$!supplyOrderQuery.userId&startGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.startGmtCreate)&endGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.endGmtCreate)&bizId=$!supplyOrderQuery.bizId&supplyStatus=$!supplyOrderQuery.supplyStatus&pageSize=30" class="btn btn-mini btn-danger" onclick="return confirm('是否确认解锁操作')">解锁</a>
+        					#end
+        					#if($!supplyOrder.canManConfirm())
+        					    <a href="supplyOrderConfirm.do?supplyOrderId=$!supplyOrder.id&itemUid=$!supplyOrderQuery.itemUid&itemId=$!supplyOrderQuery.itemId&userId=$!supplyOrderQuery.userId&startGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.startGmtCreate)&endGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.endGmtCreate)&bizId=$!supplyOrderQuery.bizId&supplyStatus=$!supplyOrderQuery.supplyStatus&pageSize=30" class="btn btn-mini btn-danger" onclick="return confirm('是否确认充值成功操作')">确认充值</a>
+        					#end								
+					#end			
+				</td>
+    			<td>
+    				$!supplyOrder.supplyTraderName
+                </td>					
+    			<td>$!supplyOrder.upstreamMemo</td>
+				<td>$!supplyOrder.lockOperName</td>	
+				<td>$!supplyOrder.dealOperName</td>			
+            </tr>
+            #end
+            
+           
+        </tbody>
+        </table>
+         #pagination2($!supplyOrderQuery,'supplyOrderQueryForm','queryManualSupplyOrder.do')
+    
+        </form>
+    </div>
+     
+    <script type="text/javascript">
+        $(function(){
+        $('.doubledate').kuiDate({
+            className:'doubledate',
+            isDisabled: "1"
+        });
+        });
+        
+        
+        function submitCheck()
+        {
+        	if(!checkDate()){
+    			return false;
+    		}
+        	return true;
+        }
+		
+		
+        var checkDate = function()
+        {
+        	var start_date =  jQuery("input[name='startGmtCreate']").val();
+        	var end_date = jQuery("input[name='endGmtCreate']").val();
+        	var objDate=new Date();
+        	var year = objDate.getFullYear();
+        	var month = objDate.getMonth() + 1;
+        	var day = objDate.getDate();
+        	month = month>=10?month:'0'+month;
+        	day = day>=10?day:'0'+day;
+        	var date = year + "-" + month + "-" + day;
+        	
+        	if(!compareDate(start_date, date)){
+        		alert("起始日期不能大于当前日期！");
+        		return false;
+        	}
+        	if(!compareDate(end_date, date)){
+        		alert("终止日期不能大于当前日期！");
+        		return false;
+        	}
+        	
+        	if(!compareDate(start_date, end_date))
+        	{
+        		alert("起始日期不能大于终止日期!");
+        		return false;
+        	}
+        	var  beginTime   =   new   Date(Date.parse(start_date.replace(/-/g,   "/")));
+        	var  endTime   =   new   Date(Date.parse(end_date.replace(/-/g,   "/"))); 
+        	var onemonthe=2*30*24*60*60*1000;
+        	
+        	if((endTime-beginTime)>onemonthe)
+        	{
+        		alert("只能查二个月之内的记录!");
+        		return false;
+        	}	
+        	return true; 
+   	 	}
+    
+        function compareDate(date1, date2){
+        	year1 = date1.substring(0,date1.indexOf("-"));
+            year2 = date2.substring(0,date2.indexOf("-"));
+            month1 = date1.substring(date1.indexOf("-") + 1,date1.lastIndexOf("-"));
+            month2 = date2.substring(date2.indexOf("-") + 1,date2.lastIndexOf("-"));
+            day1 = date1.substring(date1.lastIndexOf("-") + 1);
+            day2 = date2.substring(date2.lastIndexOf("-") + 1);
+            
+            if(year1 > year2){
+                return false;
+            } else if(year1 < year2){
+            	return true;
+            } else if(month1 > month2){
+                return false;
+            } else if(month1 < month2){
+            	return true;
+            } else if(day1 > day2){
+                return false;
+            } else if(day1 < day2){
+            	return true;
+            }
+            return true;
+        }
+		
+		function query(){
+			jQuery('#supplyOrderQueryForm').attr("action", "queryManualSupplyOrder.do");
+			jQuery('#supplyOrderQueryForm').submit();
+		}
+		
+		function fileExport(){
+			jQuery('#supplyOrderQueryForm').attr("action", "../biz/supplyOrderExport.do");
+			jQuery('#supplyOrderQueryForm').submit();
+		}		
+		
+    	function lockOrder(orderId) {
+    		if(window.confirm('你确定锁定操作吗?')){
+    			window.location.href = "supplyOrderLock.do?supplyOrderId=" + orderId +  "&itemUid=$!supplyOrderQuery.itemUid&itemId=$!supplyOrderQuery.itemId&userId=$!supplyOrderQuery.userId&startGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.startGmtCreate)&endGmtCreate=$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.endGmtCreate)&bizId=$!supplyOrderQuery.bizId&supplyStatus=$!supplyOrderQuery.supplyStatus&pageSize=30";
+                return true;
+             }else{
+                return false;
+            }
+         }		
+		
+    </script>
+</body>
+</html>

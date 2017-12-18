@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>修改密码</title>
+    #parse("common/common.vm")
+    #parse("common/errorUtils.vm")
+     <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/doubleDate.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/doubleDate2.0.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/md5.js"></script>
+    
+</head>
+<body class="list-body">
+    $!errorMsg
+    <div class="list-container">
+       <div class="alert-title fz-16">修改密码</div>
+    
+        <form id="form" action="userModifyPwd.do" method="post" >
+             <table class="table Storage-information table-striped table-bordered table-condensed">
+                <input id="oldPwd" type="hidden" name="oldPwd" >
+                <input id="newPwd" type="hidden" name="newPwd" >
+                
+                <tr> 
+                    <td class="w-8em" align="left">旧密码：<font color="#FF0000">*</font></td>
+                    <td align="left"><input id="pwd1" type="password" name="pwd1" maxlength="20" size="20" value="">
+                            #getErrorMessage($errorList,"oldPwd")
+                    </td>
+              </tr> 
+              <tr> 
+                <td align="left">新密码：<font color="#FF0000">*</font></td>
+                <td align="left"><input id="newpwd1" type="password" maxlength="20" size="20" value="">
+                        #getErrorMessage($errorList,"newPwd")
+                </td>
+              </tr> 
+              <tr> 
+                <td align="left">确认密码：<font color="#FF0000">*</font></td>
+                <td align="left"><input id="newpwd2" type="password" maxlength="20" size="20" value="">
+                </td>
+              </tr>
+              
+              <tr>
+                <td>&nbsp;</td>
+                <td align="left"><input class="btn btn-inverse" type="button" onclick="submitForm()" value="提交修改" /></td>
+               </tr>        
+            </table>
+
+        </form>
+    </div>
+    
+    <script type="text/javascript">
+        function submitForm(){
+            var pwd1 = jQuery('#pwd1').val();
+            var newpwd1 = jQuery('#newpwd1').val();
+            var newpwd2 = jQuery('#newpwd2').val();
+            
+            if(!checkPwd(pwd1)){
+                alert("旧密码必须是6到20位数字和字母");
+                return;
+            }
+            
+            if(!checkPwd(newpwd1)){
+                alert("新密码必须是6到20位数字和字母");
+                return;
+            }
+            
+            if(newpwd1 != newpwd2){
+                alert("新密码两次输入不相同");
+                return;
+            }
+            
+            pwd1 =  CryptoJS.MD5(pwd1+"longan_login");
+            newpwd1 =  CryptoJS.MD5(newpwd1+"longan_login");
+            
+            jQuery('#oldPwd').val(pwd1);
+            jQuery('#newPwd').val(newpwd1);
+            jQuery('#form').submit();
+        }
+        
+         function checkPwd(obj)    {
+            var re= /^[A-Za-z0-9]{6,20}$/;   
+            if(re.test(obj)==false){
+                return false;
+            }
+            return true;
+        }       
+                
+    </script>
+</body>
+</html>

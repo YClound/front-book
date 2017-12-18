@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>新昌商会-加盟流程</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!-- 可更改 -->
+    <meta name="keywords" content="新昌商会">
+    <meta name="description" content="新昌商会">
+    <!-- 百度统计 -->
+    <meta name="baidu-site-verification" content="j4d5H6qJuY"/>
+    <meta name="share-title" content=""/>
+    <meta name="share-img" content=""/>
+    <meta name="share-desc" content=""/>
+    <meta name="share-url" content=""/>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    
+    <link rel="stylesheet" href="../assets/css/base_m.css">
+    <link rel="stylesheet" href="../assets/css/mobile/app.css">
+    <link rel="stylesheet" href="../assets/css/mobile/index.css">
+    <script src="../assets/js/mobile/config.js"></script>
+  
+    <style>
+    
+    </style>
+    
+  </head>
+  <body class="m-process">
+    <div class="s-header flex">
+        <a href="javascript:;" onclick="javascript:history.back()" class="db w-3em"><span class="if icon-angle-left"></span></a>
+        <div class="flex-1 tac">加盟流程</div>
+        <div class="w-3em"></div>
+    </div>
+    <div class="padding-header"></div>
+    <div class="community-process">
+        <div class="fz-large pb-8">一、如果您还不是商联同乡</div>
+        <div class="por union-tel">
+            <img src="../assets/images/mobile/index/process.png">
+            <a class="poa db fz-base c-6" href="tel:0571-11111111111" id="tel">0571-11111111111</a>
+        </div>
+       
+        <div class="pl-8 pr-8 pt-6">
+            <a href="village-register.html" class="w-100 btn btn-pd btn-yellow">成为同乡</a>
+        </div> 
+    </div>
+    <div class="commerce-process">
+        <div class="fz-large pb-8">二、如果您已经是同乡，想加入商会</div>
+        <img src="../assets/images/mobile/index/process1.png">
+        <div class="pl-8 pr-8 pt-6">
+            <a href="commerce-identity.html" class="w-100 btn btn-pd btn-yellow">加入商会</a>
+        </div> 
+    </div>
+    <script src="../vendor/jquery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        var imgW = $('.union-tel').find("img").width();
+        var imgH = $('.union-tel').find("img").height();
+        console.log(imgW,imgH)
+        var bottom = 0.28 * imgH;
+        var left = 0.32 * imgW;  
+        $('#tel').css({
+            'left' : left,
+            'bottom' : bottom
+        })
+    </script>
+  </body>
+</html>

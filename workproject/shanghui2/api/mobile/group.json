@@ -1,0 +1,26 @@
+{
+  "status": 0,
+  "info": "ok",
+  "data": [
+    {
+      "groupId": 1,
+      "groupName": "金融组"
+    },
+    {
+      "groupId": 2,
+      "groupName": "医疗组"
+    },
+    {
+      "groupId": 3,
+      "groupName": "教育组"
+    },
+    {
+      "groupId": 4,
+      "groupName": "服务组"
+    },
+    {
+      "groupId": 5,
+      "groupName": "IT组"
+    }
+  ]
+}

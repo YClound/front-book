@@ -1,0 +1,103 @@
+#set($assetsServer = $springMacroRequestContext.webApplicationContext.getServletContext().getAttribute('assetsServer'))
+
+ #macro( getErrorMessage $errorList $field)
+     #set($errors = $!errorList)
+	 #if($errors)
+		#foreach($e in $errors)
+			#if($!field == $e.field)
+	                  <p class="help-line red mt5">${e.defaultMessage}</p>
+			#end
+		#end
+	 #end
+ #end
+ 
+ #macro( getErrorMessageBylist $errorList)
+     #set($errors = $!errorList)
+	 #if($errors)
+		#foreach($e in $errors)
+	           <p class="help-line red">${e.defaultMessage}</p>
+	           #break
+		#end
+	 #end
+ #end
+ 
+ #macro( getErrorMessageByForm $objectName $field)
+     #set($errors = $springMacroRequestContext.getErrors($objectName))
+	 #if($errors && $errors.fieldErrors && $errors.fieldErrors.size()>0)
+		#foreach($e in $errors.fieldErrors)
+			#if($!field == $e.field)
+				${e.defaultMessage}
+			#end
+		#end
+	 #end
+ #end
+
+ 
+#macro(checkBoxFlat $name $checkBoxMap $values)
+    #foreach($key in ${checkBoxMap.keySet()}) 
+		<span style="display:inline-block">
+        <label><input type="checkbox" name="$name" value="$key" #if($values.contains($key)) checked="true" #end/>${checkBoxMap.get($key)}</label>
+        </span>	
+	#end	
+#end
+
+#macro(select $selectMap $name $value)
+	<select class="input-small" size="1" id="$!name" name="$!name" data-original-title="">
+		  <option #if(!$value) selected="selected" #end value=""></option>
+		    #foreach($key in ${selectMap.keySet()})
+                 <option #if($!value==$key) selected="selected" #end value="$key">${selectMap.get($key)}</option>
+			#end				
+    </select>
+#end
+#macro(selectMini $selectMap $name $value)
+	<select class="input-mini" style="margin-top:6px;" size="1" id="$!name" name="$!name" data-original-title="">
+		  <option #if(!$value) selected="selected" #end value=""></option>
+		    #foreach($key in ${selectMap.keySet()})
+                 <option #if($!value==$key) selected="selected" #end value="$key">${selectMap.get($key)}</option>
+			#end			
+    </select>
+#end
+#macro(selectClassMedium $selectMap $name $value)
+	<select class="input-medium" style="border-radius: 4px;" size="1"  id="$!name"  name="$!name" data-original-title="">
+		  <option #if(!$value) selected="selected" #end value=""></option>
+		    #foreach($key in ${selectMap.keySet()})  
+                 <option #if($!value==$key) selected="selected" #end value="$key">${selectMap.get($key)}</option>
+			#end				
+    </select>
+#end	
+
+#macro(selectClassBig $selectMap $name $value)
+	<select class="input-big" style="border-radius: 4px;" size="1"  id="$!name"  name="$!name" data-original-title="">
+		  <option #if(!$value) selected="selected" #end value=""></option>
+		    #foreach($key in ${selectMap.keySet()})
+                 <option #if($!value==$key) selected="selected" #end value="$key">${selectMap.get($key)}</option>
+			#end				
+    </select>
+#end
+
+#macro(selectReadOnly $selectMap $name $value)
+	<select class="input-small" style="border-radius: 4px;" size="1"  id="$!name"  name="$!name" readonly="readonly" data-original-title="">
+		  <option #if(!$value) selected="selected" #end value=""></option>
+		    #foreach($key in ${selectMap.keySet()})  
+                 <option #if($!value==$key) selected="selected" #end value="$key">${selectMap.get($key)}</option>
+			#end				
+    </select>
+#end
+
+#macro(selectReadOnlyBig $selectMap $name $value)
+	<select class="input-big" style="border-radius: 4px;" size="1"  id="$!name"  name="$!name" readonly="readonly" data-original-title="">
+		  <option #if(!$value) selected="selected" #end value=""></option>
+		    #foreach($key in ${selectMap.keySet()})  
+                 <option #if($!value==$key) selected="selected" #end value="$key">${selectMap.get($key)}</option>
+			#end				
+    </select>
+#end
+
+#macro(radio $name $radioMap $selected)
+    #foreach($key in ${radioMap.keySet()}) 
+		<label class="radio mutl-recharge">
+          <input type="radio" name="$name" value="$key" #if($!selected == $key) checked="true" #end/>
+          <label>${radioMap.get($key)}</label>
+        </label>	
+	#end	
+#end

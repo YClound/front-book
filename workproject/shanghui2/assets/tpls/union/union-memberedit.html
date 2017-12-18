@@ -1,0 +1,192 @@
+<div class="main-view-wrapper">
+    <form class="form-horizontal" name="submitForm">
+        <input type="text" class="form-control" ng-model="formData.userId" hidden="hidden"/>
+        
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="required">姓名：</label></div>
+            <div class="flex-1 control-field">
+                <input  type="text" ng-model="formData.realName" class="form-control" required />
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="required">手机号码：</label></div>
+            <div class="flex-1 control-field">
+                <input  type="text" ng-model="formData.userPhone" class="form-control" required />
+            </div>
+        </div>
+        
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="required">身份证号：</label></div>
+            <div class="flex-1 control-field">
+                <input ng-change="searchEnterprise()" type="text" ng-model="formData.userIdcard" class="form-control" required value="" />
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">头像：</label></div>
+            <div class="flex-1 control-field">
+                <!-- 属性wu表示上传插件  ng-model绑定数据-->
+                <div class="wu" wu ng-model="formData.userPhoto" >
+                    <input type="hidden" class="form-control file-upload" ng-model="formData.userPhoto" name="userPhoto" >
+                    <div class="pick-wrap">
+                        <div class="pick" data-preview="true" data-mode="avatar">上传图片</div>
+                    </div>
+                    <div class="file-list">
+                        
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="control-group flex mb-7">
+            <div class="w-10em control-title"><label class="required">企业/职位：</label></div>
+            <div class="flex-1 control-field">
+                <input style="width:260px;" type="text" ng-model="formData.registerCompany" class="form-control dib" required placeholder="比如:杭州树德科技有限公司" /> - 
+                <input  style="width:120px;" type="text" ng-model="formData.registerPosition" class="form-control dib" required placeholder="比如:董事长"  />
+                <div class="pt-5 pb-5" ng-if="enterpriseList.length">
+                    <div class="inner-tag-wrapper" ng-repeat="enterprise in enterpriseList" ng-click="selectEnterprise(enterprise)">
+                        <span class="inner-tag-name">{{enterprise.name}}</span>
+                        <a href="javascript:;" class="inner-tag-close">{{enterprise.industry}}</a>
+                    </div>
+                    <!-- <div class="inner-tag-wrapper">
+                        <span class="inner-tag-name">杭州树德科技有限公司</span>
+                        <a href="javascript:;" class="inner-tag-close">金融</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="required">行业：</label></div>
+            <div class="flex-1 control-field ctrl-wrap">
+                <select name="industry" ng-model="formData.industry" ng-options="option.value as option.value for option in INDUSTRY" class="form-control" required></select>
+                
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">老家地址：</label></div>
+            <div class="flex-1 control-field ctrl-wrap">
+                <input  type="text" ng-model="formData.userAddress" class="form-control"  value="" citypicker />
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7" ng-if="sociatyList.length">
+            <div class="w-10em control-title"><label class="">所在城市：</label></div>
+            <div class="flex-1 control-field">
+                <select name="province" ng-options="option.code as option.text for option in provinceList" ng-model="formData.province" class="form-control" style="width: 150px;display: inline-block;" ng-change="provinceChange()"></select>
+                <select ng-if="formData.province" name="city" ng-options="option.code as option.text for option in cityList" ng-model="formData.city" class="form-control" style="width: 150px;display: inline-block;" ng-change="cityChange()"></select>
+                <select ng-if="formData.city" class="form-control" ng-options="option.code as option.text for option in districtList" ng-model="formData.district" style="width: 150px;display: inline-block;" ng-change="districtChange()">
+                </select>
+            </div>
+        </div>
+        <!-- 会员专属 -->
+        <!-- memberType=2 同乡 3 会员 -->
+        <div class="" ng-if="formData.memberType=='3'">
+            <div style="height: 1px;background-color: #ddd" class="mt-8 mb-8"></div>
+            <div class="control-group flex aic mb-7" ng-if="sociatyList.length">
+                <div class="w-10em control-title"><label class="">所属商会：</label></div>
+                <div class="flex-1 control-field">
+                    <select  class="form-control" ng-options="option.sociatyId as option.sociatyName for option in sociatyList" ng-model="formData.sociatyId" ng-change="sociatyChange()" ng-disabled="!isNew">
+                </select>
+                </div>
+            </div>
+            <div class="control-group flex aic mb-7">
+                <div class="w-10em control-title"><label class="">商会职位：</label></div>
+                <div class="flex-1 control-field">
+                    <select class="form-control" ng-options="option.positionId as option.positionName for option in sociaty_position_list" ng-model="formData.positionId" ></select>
+                </div>
+            </div>
+            <div class="control-group flex  mb-7">
+                <div class="w-10em control-title"><label class="">商会分组：</label></div>
+                <div class="flex-1 control-field">
+                    <label class="checkbox-inline" ng-repeat="group in sociaty_group_list">
+                        <input type="checkbox"  value="{{group.groupId}}" name="groupIds" ng-checked="group._selected" ng-model="group._selected"> <span ng-bind="group.groupName"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="control-group flex aic mb-7">
+                <div class="w-10em control-title"><label class="">会员入会时间：</label></div>
+                <div class="flex-1 control-field">
+                    <input  type="text" ng-model="formData.joinTime" class="form-control laydate-icon" laydate style="width:200px" />
+                </div>
+            </div>
+            <div class="control-group flex aic mb-7">
+                <div class="w-10em control-title"><label class="">会员到期时间：</label></div>
+                <div class="flex-1 control-field">
+                    <input  type="text" ng-model="formData.overdueTime" class="dib form-control laydate-icon" laydate style="width:200px" />
+                </div>
+            </div>
+            <div class="control-group flex aic mb-7">
+                <div class="w-10em control-title"><label class="required">介绍人：</label></div>
+                <div class="flex-1 control-field">
+                    <span ng-bind="formData.inviter.realName"></span>
+                    <button class="btn btn-primary btn-tiny" ng-click="inviterView()" data-toggle="modal" data-target="#inviterModel">修改</button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title">&nbsp;</div>
+            <div class="flex-1 control-field">
+                <button class="btn btn-primary" type="button" ng-click="save($event)" ng-disabled="submitForm.$invalid || loading">保存</button>
+                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+            </div>
+        </div>
+        
+    </form>
+
+    <!-- 介绍人指定 -->
+    <div class="modal fade" id="inviterModel" role="dialog" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">修改介绍人</h4>
+          </div>
+          <div class="modal-body">
+            <!-- 条件筛选 -->
+            <form class="form-inline form-search mb-7">
+                
+                <div class="form-group m-5">
+                    <label>关键字</label>
+                    <input type="text" ng-model="queryModel.key" class="form-control" placeholder="姓名" />
+                </div>
+                <div class="form-group m-5">
+                    <button type="button" class="btn btn-primary" ng-click="search()"><i class="fa fa-search mr-3"></i>查询</button>
+                </div>
+                    
+            </form>
+
+            <!-- 数据展示 -->
+            <div class="table-wrapper">
+              <table class="table table-bordered table-condensed table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>姓名</th>
+                    <th>企业名称/职位</th>
+                    <th>手机号</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="item in dataList">
+                    <td><span ng-bind="item.realName"></span></td>
+                    <td><span ng-bind="item.registerCompany"></span>/<span ng-bind="item.registerPosition"></span></td>
+                    <td><span ng-bind="item.userPhone"></span></td>
+                    <td class="text-center">
+                        <button class="btn btn-primary btn-tiny" ng-click="setInviter(item)" data-dismiss="modal">指定为介绍人</button>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <!-- 数据分页 -->
+            <div class="table-pager clearfix">
+              <!-- 分页插件 -->
+              <uib-pagination total-items="pagerOption.total" ng-model="queryModel.page" max-size="5" ng-change="query()" items-per-page="pagerOption.pagesize" boundary-links="true" class="pagination-md pull-right" rotate="false" num-pages="pagerOption.pages"></uib-pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    
+</div>
+    

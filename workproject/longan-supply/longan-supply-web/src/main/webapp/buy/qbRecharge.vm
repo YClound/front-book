@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head("Q币充值")
+
+<body>
+	
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+			#sidebar('qb')
+			
+			<div class="span10">
+				
+				#stepBarQb(1)
+				
+				<div class="sortable row-fluid">
+					<div class="span12">
+						
+						#qbTab('qb')
+						
+						<div class="content-main">
+						
+							<form id="qbRechargeForm" class="form-horizontal" action="qbRechargeConfirm.htm" method="post">
+							<input type="hidden" id="salesPrice" value="$!item.getPriceDesc($!salesPrice)">
+							<fieldset>
+							  <div class="control-group recharge-form">
+								<label class="control-label" for="qqNum">QQ号：</label>
+								<div class="controls">
+								  <div class="input-prepend">
+								   </span><input id="qqNum" name="uid" maxlength="11" type="text">
+								  </div>
+								  <p id="qqInfo" class="help-inline red"> 请输入充值QQ号 </p>
+								</div>
+							  </div>
+							  							  
+							  <div class="control-group recharge-form">
+								<label class="control-label" for="amount">Q币数：</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input class= "input-small" id="amount" name="amount" maxlength="4" type="text">
+								  </div>
+								  <p id="amountInfo" class="help-inline red"> </p>
+								</div>
+							  </div>
+							  
+							  <div class="control-group recharge-form">
+								<label class="control-label" for="facePriceShow">价格：</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="priceShow" name="price" class= "input-mini" readonly="readonly" size="8" type="text">
+									<span class="help-inline red" id="priceInfo">$!itemInfo</span>
+								  </div>								
+								</div>
+							  </div>							  
+							  
+							  <div class="control-group">
+							  <div class="controls">
+								<button id="rechargeButton" type="submit" class="btn disabled" data-loading-text="处理中...">立即充值</button>
+								</div>
+							  </div>							  
+								
+							</fieldset>
+						</form>
+						</div>						
+						
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	#footer()
+	
+	<script src="$!{assetsServer}assets/js/aes.js"></script>
+	<script src="$!{assetsServer}assets/js/md5.js"></script>
+	<script src="$!{assetsServer}assets/js/mode-ecb-min.js"> </script>
+	<script src="$!{assetsServer}assets/js/jquery.validate.min.js"></script>
+	
+	<script type="text/javascript">
+		$().ready(function() {
+			unPassButton();
+			$("#amountInfo").html("请输入Q币充值数量($!item.numberList)");
+			$("#qbRechargeForm").validate({
+				focusInvalid:false, 
+			    submitHandler: function(form){ 
+			    	if(!submitForm()){
+			    		return;
+			    	}
+			        form.submit();  
+			    },
+			});
+		});
+		$("#qqNum").bind("propertychange input",qqQuery);
+		function  qqQuery() { 
+			var rule = "^[1-9]\\d{4,10}$";
+			var qq = $("#qqNum").val();
+			var flag = new RegExp(rule).test(qq);
+			if(flag){
+				$("#qqInfo").html("&nbsp;");
+				if($("#priceShow").val()!=""){
+					passButton();
+				}
+				return true;
+			}else{
+				unPassButton();
+				$("#qqInfo").html("请输入正确的QQ号");
+				return false;
+			}
+		}
+		$("#amount").bind("propertychange input",amountQuery);
+		function amountQuery(){
+			var rule = "^[1-9]\\d{0,4}$";
+			var amount = $("#amount").val();
+			var flag = new RegExp(rule).test(amount);
+			if(flag){
+			$("#amountInfo").html("请输入Q币充值数量($!item.numberList)");
+			var salesPrice = $("#salesPrice").val();
+			var amount = $("#amount").val();
+			$("#priceShow").val(((salesPrice*1000)*amount)/1000);
+			if(qqQuery()){
+				passButton();
+			}
+			}else{
+				$("#amountInfo").html("数量格式错误");
+				unPassButton();
+			}
+			if(amount==""){
+				$("#amountInfo").html("请输入Q币充值数量($!item.numberList)");
+				$("#priceShow").val("");
+				unPassButton();
+			}
+		}
+		
+		function passButton(){
+			$('#rechargeButton').attr("class","goto-recharge");
+			$("#rechargeButton").attr("disabled",false);
+		}
+		
+		function unPassButton(){
+			$('#rechargeButton').attr("class","btn disabled");
+			$("#rechargeButton").html("立即充值");
+			$("#rechargeButton").attr("disabled",true);
+		}
+		
+		function submitForm(){
+			$("#rechargeButton").html("提交中..");
+			$("#rechargeButton").attr("disabled",true);
+			return true;
+		}
+	</script>
+	
+	#modalPayPwdEdit()
+</body>
+</html>

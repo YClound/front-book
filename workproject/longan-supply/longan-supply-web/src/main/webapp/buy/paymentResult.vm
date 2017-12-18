@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head()
+
+#set($contextPath = $!context.contextPath)
+
+<body>
+	
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+		
+			#if($!bizOrder.isBizPhone)
+				#sidebar('phone')
+			#elseif($bizOrder.isBizFlow)
+				#sidebar('flow')
+			#else 
+				#sidebar()
+			#end
+			
+			
+			<div class="span10">
+				
+				#if($!bizOrder.isBizPhone)
+				    #stepBarPhone(3)
+				#elseif($bizOrder.isBizFlow)
+					#stepBarPhone(3)
+				#else 
+					#stepBarPhone(3)
+				#end
+				
+				
+				<div class="sortable row-fluid">
+					<div class="span12">
+						<div class="content-result">
+									<div class="alert #showBizOrderResultClass($!bizOrder)">
+									 #showBizOrderResult($!bizOrder)
+									 
+									 #if($!errorMsg)
+									 	<p>错误信息：</p> 
+										<ul>
+										    <li> $!errorMsg  请点击  <a href='#' id="return1" " >这里</a>重试 </li>		
+										</ul> 							 
+									 	
+									 #else
+										  <p>订单信息：</p> 
+										 <ul>
+										    <li>订单号：<strong>$!bizOrder.id</strong></li>
+							                <li>商品名称：<strong>$!bizOrder.bizName</strong></li>
+							                <li>充值号码：<strong>$!bizOrder.itemUid</strong></li>
+							                <li>订单金额：<strong>$!bizOrder.itemFacePriceDesc</strong></li>
+										 </ul>
+										  <p style="padding-left:110px;">点击  <a href='#' id="return2" " >这里</a>继续充值</p> 
+									 #end  
+									 
+									</div>
+						</div>						
+					</div>
+				</div>
+
+			
+
+			</div>
+
+		</div>
+	</div>
+	#footer()
+	<script type="text/javascript">
+		 $(document).ready(function() {
+			 countDonwJump();
+		 }); 
+			
+		var redirectUrl = '$!{contextPath}main.htm';
+		var sysSecond = 30 * 1000;
+		var interValObj;
+		
+		function countDonwJump(){
+			interValObj = window.setInterval(setRemainTime, 1000);
+		}
+		
+		function setRemainTime(){
+			sysSecond -= 1000;
+			if(sysSecond<=0){
+			 		window.clearInterval(interValObj);
+					window.location.href= redirectUrl;
+					return;
+			}
+		   if (sysSecond > 0) {
+		  	  var second = sysSecond / 1000;
+		   	  $("#remain").html(second);
+		   } 
+		   
+		}
+		
+		$("#return1").bind("click",returnBack);
+		$("#return2").bind("click",returnBack);
+		
+		function returnBack(){
+			var url;
+			#if($!bizOrder.isBizPhone())
+				url = 'phoneRecharge.htm';
+			#elseif($!bizOrder.isBizFlow())
+				url = 'flowRecharge.htm';
+			#else
+				url = '$!{contextPath}main.htm';
+			#end
+			window.location.href=url;
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "subjectId": "1",
+        "subjectName":"数学",
+        "subjectImage":"chem",
+        "subjectShort":"",
+        "subjectOrder":"0",
+        "subjectEnable":true
+    }
+}

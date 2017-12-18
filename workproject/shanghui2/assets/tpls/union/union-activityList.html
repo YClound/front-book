@@ -1,0 +1,72 @@
+<div class="main-view-wrapper">
+    <!-- 条件筛选 -->
+    <form class="form-inline form-search" style="margin-bottom: 7px;">
+        <div class="form-group m-5">
+            <label>关键字:</label>
+            <input type="text" ng-model="queryModel.key" class="form-control" placeholder="标题" />
+        </div>
+        <div class="form-group m-5">
+            <button type="button" class="btn btn-primary" ng-click="search()"><i class="fa fa-search mr-3"></i>查询</button>
+            <button type="button" class="btn btn-default" ng-click="clear()"><i class="fa fa-undo mr-3"></i>重置</button>
+        </div>
+    </form>
+    
+    <div class="mt-5 mb-5">
+        <a ui-sref="union.activityedit" class="btn btn-success vat" href="javascript:;"><i class="fa fa-plus mr-3"></i>新建</a>
+    </div>
+    <!-- 数据展示 -->
+    <div class="table-wrapper">
+      <table class="table table-bordered table-condensed table-striped table-hover">
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>来源</th>
+            <th>创建时间</th>
+            <th>查看权限</th>
+            <th>状态</th>
+            <th>置顶</th>
+            <th style="width:150px;">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in dataList">
+            <td><span ng-bind="item.articleTitle"></span></td>
+            <td>
+                <span ng-bind="item.sociatyName"></span>
+                <span ng-if="item.sociatyName==null">商联创建</span>
+            </td>
+            <td><span ng-bind="item.articleDate"></span></td>
+            <td>
+                <span ng-repeat="(key,value) in item.articleReadAuth.split(',')">
+                    <i ng-if="$index!=0">、</i><u ng-bind="{'1':'同乡','2':'会员','3':'服务组','4':'到期会员'}[value]"></u>
+                </span>
+            </td>
+            <td><span ng-bind="{'0':'草稿','1':'发布中'}[item.articleStatus]"></span></td>
+            <td>
+                <a href="javascript:;" class="c-primary" ng-click="topAction(item)" ><span ng-bind="{'0':'置顶','1':'取消置顶'}[item.top]"></span></a>
+            </td>
+            <td class="text-center">
+
+              <a href="javascript:;" class="c-primary" ui-sref="article.member({id:item.articleId})">统计</a>
+              <a href="javascript:;" class="c-primary" ui-sref="union.activityedit({id:item.articleId})">编辑</a>
+              <a href="javascript:;" class="c-primary" ng-click="articlePublish(item)"><u ng-bind="{'0':'发布','1':'取消','2':''}[item.articleStatus]"></u></a>
+              <a href="javascript:;" class="c-primary" ng-click="del(item.articleId)">删除</a>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+      
+    </div>
+    <!-- 数据分页 -->
+    <div class="table-pager clearfix">
+      <ul class="pagination pull-left">
+          <li>
+              <a>共{{pagerOption.pages}}页,{{pagerOption.total}}条记录</a>
+          </li>
+      </ul>
+      <!-- 分页插件 -->
+      <uib-pagination total-items="pagerOption.total" ng-model="queryModel.page" max-size="10" ng-change="query()" items-per-page="pagerOption.pagesize" boundary-links="true" class="pagination-md pull-right" rotate="false" num-pages="pagerOption.pages"></uib-pagination>
+    </div>
+</div>
+    

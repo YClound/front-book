@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<rss version="2.0">
+    
+    <channel> 
+    <title>首页</title>  
+    <link>http://www.w3schools.com</link>  
+    <description>Free web building tutorials</description>  
+    <item> 
+      <title>首页</title>  
+      <link>index.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+  </channel>
+
+  <channel> 
+    <title>项目</title>  
+    <link>http://www.w3schools.com</link>  
+    <description>Free web building tutorials</description>  
+    <item> 
+      <title>项目发起介绍</title>  
+      <link>project-sponsor.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item> 
+    <item> 
+      <title>项目发起-基本信息</title>  
+      <link>create1.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>项目发起-项目内容</title>  
+      <link>create2.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>项目发起-团队架构</title>  
+      <link>create3.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>项目发起-融资计划</title>  
+      <link>create4.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item> 
+    <item> 
+      <title>项目列表</title>  
+      <link>search-company.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>项目详情</title>  
+      <link>project-detail.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    
+  </channel>
+
+  <channel> 
+    <title>投资人</title>  
+    <link>http://www.w3schools.com</link>  
+    <description>Free web building tutorials</description>  
+    <item> 
+      <title>投资人列表</title>  
+      <link>investor-list.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>投资人详情</title>  
+      <link>investor-information.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>投资人认证</title>  
+      <link>investor-approve.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item> 
+  </channel>
+
+
+  <channel> 
+    <title>用户</title>  
+    <link>http://www.w3schools.com</link>  
+    <description>Free web building tutorials</description>  
+    <item> 
+      <title>注册和登录</title>  
+      <link>login-register.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+
+    <item> 
+      <title>注册成功</title>  
+      <link>register-succeed.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item> 
+
+    <item> 
+      <title>投资人认证</title>  
+      <link>investor-approve.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+  </channel>
+
+  <channel> 
+    <title>个人中心</title>  
+    <link>http://www.w3schools.com</link>  
+    <description>Free web building tutorials</description>  
+    <item> 
+      <title>我的主页</title>  
+      <link>my.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>我投资的项目</title>  
+      <link>my-invest-project.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>我创建的项目</title>  
+      <link>my-create-project.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>我收藏的项目</title>  
+      <link>my-collect-project.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>账户信息</title>  
+      <link>my_account.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item> 
+  </channel>
+
+  <channel> 
+    <title>我要跟投资</title>  
+    <link>http://www.w3schools.com</link>  
+    <description>Free web building tutorials</description>  
+    <item> 
+      <title>确定金额</title>  
+      <link>invest.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>确认合同</title>  
+      <link>invest2.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>线下支付</title>  
+      <link>invest_pay_offline.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item> 
+  </channel>
+
+
+  <channel> 
+    <title>用户引导</title>  
+    <link>http://www.w3schools.com</link>  
+    <description>Free web building tutorials</description>  
+    <item> 
+      <title>认识雏鹰网</title>  
+      <link>user-guide.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>常见问题</title>  
+      <link>user-guide1.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>风险安全</title>  
+      <link>user-guide2.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item> 
+  </channel>
+
+  <channel> 
+    <title>关于我们</title>  
+    <link>http://www.w3schools.com</link>  
+    <description>Free web building tutorials</description>  
+    <item> 
+      <title>公司简介</title>  
+      <link>aboutus.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>我们的团队</title>  
+      <link>aboutus1.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>我们的优势</title>  
+      <link>aboutus2.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>联系我们</title>  
+      <link>aboutus3.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item> 
+  </channel>
+
+
+
+  <channel> 
+    <title>移动端</title>  
+    <link>http://www.w3schools.com</link>  
+    <description>Free web building tutorials</description>  
+    <item> 
+      <title>首页</title>  
+      <link>../mobile/index.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>项目列表</title>  
+      <link>../mobile/project-list.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>投资人</title>  
+      <link>../mobile/investor-list.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item>
+    <item> 
+      <title>我的</title>  
+      <link>../mobile/my.html</link>  
+      <description>New RSS tutorial on W3Schools</description> 
+    </item> 
+  </channel>
+
+
+
+
+</rss>

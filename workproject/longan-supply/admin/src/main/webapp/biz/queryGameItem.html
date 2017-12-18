@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>产品管理</title>
+    #parse("common/common.vm")
+    #parse("common/select.vm")
+    #parse("common/pagination.vm")
+    
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/doubleDate.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/doubleDate2.0.js"></script>
+</head>
+
+<body class="list-body">
+    $!errorMsg
+    <div class="list-container">
+        <div class="alert-title fz-16">产品管理</div>
+         <form id="gameItemQuery" class="queryForm" action="queryGameItem.do" method="post" onsubmit="return submitCheck();">
+            <input type="hidden" name="bizId" value="$!itemQuery.bizId" />
+            <input id="requestType" type="hidden" name="requestType" value="" />
+                
+            <table class="table query-style table-striped table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <td colspan="8" class="auto-style2">请填写查询条件 </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="w-8em">商品编号</td>
+                        <td class="detail">
+                            <input type="text" name="id" value="$!itemQuery.id"  />
+                        </td>
+                        <td class="w-8em">商品名称</td>
+                        <td class="detail">
+                            <input type="text" name="itemName" value="$!itemQuery.itemName" />
+                        </td>
+                        <td class="w-8em">游戏</td>
+                        <td class="detail">
+                            #select($!gameNameList,'itemCategoryId',$!itemQuery.itemCategoryId)
+                        </td>      
+                        #if($!itemQuery.bizId != 400)
+                        <td class="w-8em">销售区域(不支持多省域查询)</td>
+                        <td class="detail">
+                            #select($!provinceList,'salesArea',$!itemQuery.salesArea) 
+                        </td>
+                        #end                    
+                    </tr>
+                    <tr>
+                        <td class="w-8em">商品面值</td>
+                        <td class="detail">
+                            <input type="text" id="itemFacePrice" name="itemFacePrice" value="$!itemQuery.getPriceDesc($!itemQuery.itemFacePrice)" /></td>
+                        </td>       
+                             
+                        <td class="w-8em">商品状态 </td>
+                        <td class="detail">
+                            #select($!statusList,'status',$!itemQuery.status)
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td colspan="8" align="left">
+                            <a class="btn btn-inverse"  onclick="javascript:query();"  >查询</a>
+                            <input class="btn btn-inverse" type="reset" value="清空" />
+                            <a href="gameItemAdd.do?bizId=$!itemQuery.bizId" class="btn btn-inverse add" >新增商品</a>
+                        </td>
+                    </tr>
+                </tbody>
+             </table>
+            <div class="line"></div>
+        <table class="table table-list table-striped table-bordered table-condensed" id="list">
+            <div style="padding: 4px 6px 4px  0px;"><input type="checkbox" name="select-list" value="all"  onclick="selectAll()" />
+                <a class="btn btn-warning"  onclick="javascript:batchUp();"  >批量上架</a>
+                <a class="btn btn-warning" onclick="javascript:batchDown();"  >批量下架</a>
+                <a class="btn btn-warning" onclick="javascript:conditionUp();"  >按条件上架</a>
+                <a class="btn btn-warning" onclick="javascript:conditionDown();"  >按条件下架</a>
+                <a class="btn btn-danger add" onclick="javascript:batchAdd();"  >批量关联供货</a>
+                <a class="btn btn-danger add" onclick="javascript:conditionAdd();"  >条件关联供货</a>
+            </div>      
+            <thead>
+                <tr class="tr_detail">
+                    <td></td>               
+                    <td>商品编号</td>
+                    <td>业务编号</td>
+                    <td>商品名称</td>
+                    <td>游戏</td>
+                    <td>商品面值(元) </td>
+                    #if($isFlow)
+                     <td>流量大小</td>
+                    #end
+                    <td>供货价格(元)</td>
+                    #if(!$!userInfo.isDownStreamUser())
+                        <td>价格2(元)</td>
+                        <td>价格3(元)</td>
+                        <td>价格4(元)</td>
+                    #end
+                    #if($!itemQuery.bizId != 400)
+                    <td style="width:100px">销售区域</td>
+                    #end
+                    <td>供货状态</td>
+                    <td>状态</td>
+                    <td>操作 </td>
+                </tr>
+            </thead>
+            <tbody>
+                
+                #foreach($!item in $!itemList)
+                    <tr>
+                    <td><input type="checkbox" name="" value="$!item.id"/></td>                 
+                    <td>$!item.id</td>
+                    <td>$!item.bizId</td>
+                    <td>$!item.itemName</td>
+                    <td><a href="queryGame.do?bizId=500&id=$!item.itemCategoryId">$!item.gameName</a></td>
+                    <td>$!item.getPriceDesc($!item.itemFacePrice)</td>
+                    #if($isFlow)
+                     <td>$!item.itemExt1</td>
+                    #end                
+                    <td>$!item.getPriceDesc($!item.itemSalesPrice)</td>
+                    #if(!$!userInfo.isDownStreamUser())
+                        <td>$!item.getPriceDesc($!item.itemSalesPrice2)</td>
+                        <td>$!item.getPriceDesc($!item.itemSalesPrice3)</td>
+                        <td>$!item.getPriceDesc($!item.itemSalesPrice4)</td>
+                    #end
+                    #if($!itemQuery.bizId != 400)
+                    <td>
+                    <span  title="$!item.itemSalesAreaDesc" style="overflow: hidden;display: block; text-overflow: ellipsis;width: 10em; white-space: nowrap;">$!item.itemSalesAreaDesc
+                    </span>
+                    </td>
+                    #end
+                    <td>
+                        #if($!item.associated) <font color=green>已关联</font> #else <font color=red>未关联 </font> #end
+                    </td>
+                    <td>
+                        <font #if($!item.showRed())color=red #end #if($!item.showGreen())color=green #end >
+                        $!item.statusDesc
+                        </font>
+                    </td>
+                    <td>
+                        #if($!userInfo.isAdmin()) 
+                            <a href="gameItemEdit.do?bizId=$!item.bizId&id=$!item.id" class="btn  btn-mini btn-primary add" >修改</a>
+                            #if($!item.associated) 
+                                <a href="gameItemSupplyAdd.do?itemId=$!item.id&bizId=$!item.bizId" class="btn  btn-mini btn-primary  add" >关联供货</a>
+                                <a href="queryGameItemSupply.do?itemId=$!item.id&bizId=$!item.bizId" target="_blank" class="btn  btn-mini btn-primary  add" >查看供货 </a>
+                            #else 
+                                <a href="itemSupplyAdd.do?itemId=$!item.id&bizId=$!item.bizId" class="btn  btn-mini btn-primary  add" >关联供货</a>
+                            #end
+                            #if($!item.canUp)
+                              <a href="itemDeal.do?requestType=up&itemId=$!item.id&bizId=$!item.bizId" class="btn btn-mini btn-danger" onclick="return confirm('是否确认上架操作')">上架</a>
+                            #end
+                            #if($!item.canDownOperation())  
+                              <a href="itemDeal.do?requestType=down&itemId=$!item.id&bizId=$!item.bizId" class="btn btn-mini btn-danger" onclick="return confirm('是否确认下架操作')">下架</a>
+                            #end
+                        #end
+                    </td>
+                </tr>
+                #end
+               
+            </tbody>
+        </table>
+
+         #pagination2($!itemQuery,'gameItemQuery','queryGameItem.do')
+        
+        </form>
+    
+    </div>
+    
+      <script type="text/javascript">
+            function submitCheck(){
+                var itemFacePrice = jQuery('#itemFacePrice').val();
+                if(itemFacePrice.length == 0){
+                    return true;
+                }
+                if(!jQuery.isNumeric(itemFacePrice)){
+                    alert("金额必须是数字");
+                    return false;
+                }
+                jQuery('#itemFacePrice').val(itemFacePrice * 1000);
+                return true;
+            }   
+            
+            function query(){
+               jQuery('#gameItemQuery').attr("action", "queryGameItem.do");
+               jQuery('#gameItemQuery').submit();
+            }           
+            
+            function batchUp(){
+                var list = getCheckBox();
+                if(list==null || list.length==0){
+                    return;
+                }
+                window.location.href = "itemDeal.do?requestType=batchUpIndex&bizId=$!itemQuery.bizId&ids=" + list;
+            }
+            
+            function batchDown(){
+                var list = getCheckBox();
+                if(list==null || list.length==0){
+                    return;
+                }
+                window.location.href = "itemDeal.do?requestType=batchDownIndex&bizId=$!itemQuery.bizId&ids=" + list;
+            }   
+            
+            function batchAdd(){
+                var list = getCheckBox();
+                if(list==null || list.length==0){
+                    return;
+                }
+                window.location.href = "itemSupplyAdd.do?requestType=batchAddIndex&bizId=$!itemQuery.bizId&ids=" + list;
+            }
+            
+            function conditionAdd(){
+                jQuery('#gameItemQuery').attr("action", "itemSupplyAdd.do");
+                jQuery('#requestType').val("conditionAddIndex");
+                jQuery('#gameItemQuery').submit();
+            }
+            
+            function conditionUp(){
+                jQuery('#gameItemQuery').attr("action", "itemDeal.do");
+                jQuery('#requestType').val("conditionUpIndex");
+                jQuery('#gameItemQuery').submit();  
+            }
+            function conditionDown(){
+               jQuery('#gameItemQuery').attr("action", "itemDeal.do");
+               jQuery('#requestType').val("conditionDownIndex");
+               jQuery('#gameItemQuery').submit();
+            }
+            
+            function getCheckBox(){
+                 var a = document.getElementsByTagName("input");
+                 var list = "";
+                 var count = 0;
+                 for(var i = 0;i<a.length;i++){
+                    if(a[i].type != "checkbox") {
+                        continue;
+                    }
+                    
+                     if(a[i].checked) {
+                        if(a[i].value=="all"){
+                            continue;
+                        }
+                        count++;
+                        if(count == 1){
+                            list = a[i].value; 
+                        }else{
+                            list = list + "," + a[i].value; 
+                        }
+                        
+                     }
+                 }
+                 if(list.length==0){
+                    alert("必须选择一个商品");
+                    return null;
+                 }
+                 return list;
+            }
+                
+            function selectAll(){
+                var a = document.getElementsByTagName("input");
+                 var tag = true;
+                 for(var i = 0;i<a.length;i++){
+                    if(a[i].type != "checkbox") {
+                        continue;
+                    }
+                     if(a[i].checked) {
+                         tag = false;
+                         break;
+                     }else{
+                         tag = true;
+                         break;
+                     }
+                 }
+                 
+                 for(var i = 0;i<a.length;i++){
+                    if(a[i].type != "checkbox") {
+                        continue;
+                    }
+                     if(tag) {
+                        a[i].checked = false;
+                     }else{
+                        a[i].checked = true;
+                     }
+                 }
+                
+            }
+      </script>      
+</body>
+</html>

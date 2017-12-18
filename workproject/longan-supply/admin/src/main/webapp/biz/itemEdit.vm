@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>商品修改</title>
+    #parse("common/common.vm")
+    #parse("common/select.vm")
+    #parse("common/errorUtils.vm")
+    #parse("common/checkbox.vm")
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+	
+</head>
+<body class="list-body">
+    $!errorMsg
+    <div class="list-container">
+        <div class="alert-title fz-16">商品修改</div>
+        <form id="form" class="queryForm" action="itemEdit.do" method="post" >
+            <input type="hidden" name="id" value="$!item.id"/>
+            <input type="hidden" name="itemType" value="$!item.itemType"/>
+            <input type="hidden" name="bizId" value="$!item.bizId"/>
+            <table class="table query-style table-striped table-bordered table-condensed list">
+                <thead>
+                    <tr>
+                        <td colspan="4">商品基本信息</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="w-8em">商品名称 <font color="#FF0000">*</font></td>
+                        <td class="detail">
+                            <input type="text" name="itemName"  size="20" value="$!item.itemName">
+                                 #getErrorMessage($errorList,"itemName")
+                        </td>
+                        <td class="w-8em">商品类型 <font color="#FF0000">*</font></td>
+                        <td class="detail">
+                           $!item.ItemTypeDesc
+                           #getErrorMessage($errorList,"itemType")
+                        </td> 
+                        <td class="w-8em">面额<font color="#FF0000"> *</font></td>
+                        <td class="detail">
+                            <input type="text" name="itemFacePrice"  size="20" value="$!item.getPriceDesc($!item.itemFacePrice)">
+                                 #getErrorMessage($errorList,"itemFacePrice")
+                        </td>          
+                    </tr>
+                    <tr>
+                        
+                        <td class="w-8em">价格一</td>
+                        <td class="detail">
+                            <input type="text" name="itemSalesPrice"  size="20" value="$!item.getPriceDesc($!item.itemSalesPrice)">
+                                #getErrorMessage($errorList,"itemSalesPrice")
+                        </td>
+                        <td class="w-8em">价格二</td>
+                        <td class="detail">
+                            <input type="text" name="itemSalesPrice2"  size="20" value="$!item.getPriceDesc($!item.itemSalesPrice2)">
+                                #getErrorMessage($errorList,"itemSalesPrice2")
+                        </td>
+                         <td class="w-8em">价格三</td>
+                        <td class="detail">
+                            <input type="text" name="itemSalesPrice3"  size="20" value="$!item.getPriceDesc($!item.itemSalesPrice3)">
+                                #getErrorMessage($errorList,"itemSalesPrice3")
+                        </td>
+                    </tr>      
+                    <tr>
+                        <td class="w-8em">价格四</td>
+                        <td class="detail">
+                            <input type="text" name="itemSalesPrice4"  size="20" value="$!item.getPriceDesc($!item.itemSalesPrice4)">
+                                #getErrorMessage($errorList,"itemSalesPrice4")
+                        </td>   
+                        <td class="w-8em">运营商<font color="#FF0000"> *</font></td>
+                        <td class="detail">
+                            #select($carrierTypeList,"carrierType",$!item.carrierType)
+                            #getErrorMessage($errorList,"carrierType")
+                        </td> 
+                        <td class="w-8em" nowrap="true" style="word-wrap: break-word;">是否支持下游同步供货</td>
+                        <td class="detail">
+                            <span style="display:inline-block">
+                                <label><input type="checkbox" name="canSync" value="1" #if($!item.canSync) checked="true" #end/></label>
+                            </span> 
+                        </td>              
+                    </tr>
+                    <tr>
+                        <td class="w-8em pt-8" valign="top">销售区域<font color="#FF0000"> *</font></td>
+                        <td class="detail" nowrap="true"  valign="top">
+                            #select($!salesAreaTypeList,"salesAreaType",$!item.salesAreaType) #getErrorMessage($errorList,"salesAreaType") #getErrorMessage($errorList,"salesAreaList") <br /><br />
+                            <div id="areaList" style="display:none">
+                                #checkBoxFlat("salesAreaList", $!areaInfoList,$!item.salesAreaList)
+                            </div>
+                        </td>
+
+                        <td class="w-8em pt-8" valign="top">#if($!isFlow) 流量大小<font color="#FF0000"> *</font>  #else 其他属性1  #end</td>
+                        <td class="detail" nowrap="true" style="word-wrap: break-word;" valign="top">
+                            <input id="itemExt1" type="text" name="itemExt1"  size="20" value="$!item.itemExt1"> 
+                            #getErrorMessage($errorList,"itemExt1")
+                            #if($!isFlow) <span>注： 流量大小必须以大写字母'G'或者'M'结尾 </span>#end
+                        </td>
+                        #if($!isFlow)
+                        <td class="w-8em pt-8" valign="top"> 流量使用范围 </td>
+                        <td class="detail" valign="top">
+                            #select($usableAreaList,"itemExt2",$!item.itemExt2)
+                            #getErrorMessage($errorList,"itemExt2")
+                        </td>
+                         #else 
+                         <td colspan="2"></td>
+                         #end
+                          
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td colspan="4">注： 是否支持下游同步供货选项，具体看上游供货方式，供货时间少于10秒的商品可以开启。</td>
+                    </tr>               
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <input class="btn btn-inverse" id="find" type="submit" value="保存" />
+                            <input class="btn btn-inverse" type="button" onclick="javascript:history.go(-1)" value="取消" />
+                        </td>
+                    </tr>
+                </tfoot>        
+            </table>
+        </form>
+    </div>
+
+<script>
+jQuery(document).ready(function(){
+ if(jQuery('#salesAreaType').val()==2){
+ 	jQuery("#areaList").show();
+ }
+ jQuery('#salesAreaType').bind('change',function(){
+      if(this.value==2){
+      	jQuery("#areaList").show();
+      }else{
+	    jQuery("#areaList").hide();
+	  }
+ });
+ }
+);
+</script>
+
+</body>
+</html>

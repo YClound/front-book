@@ -1,0 +1,185 @@
+<div class="main-view-wrapper">
+    <form class="form-horizontal pt-10" name="submitForm" novalidate="novalidate">
+        <input type="text" class="form-control" ng-model="formData.sociatyId" hidden="hidden"/>
+
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="required">商会名称：</label></div>
+            <div class="flex-1 control-field">
+                <input type="text" class="form-control" ng-model="formData.sociatyName" required>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">管辖范围：</label></div>
+            <div class="flex-1 control-field">
+                <label ng-bind="formData.area" class="m-0" style="font-weight: normal;"></label>
+            </div>
+        </div>
+    
+        <div class="control-group flex  mb-7 ">
+            <div class="w-10em control-title"><label class="">商联组织架构：</label></div>
+            <div class="flex-1 control-field">
+                <div class="mb-5"><button type="button" class="btn btn-primary" ng-click="addUnionFrameView()" data-toggle="modal" data-target="#unionFrameModal">添加</button></div>
+                <div class="table-wrapper w-80">
+                  <table class="table table-bordered table-condensed table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>姓名</th>
+                        <th>头像</th>
+                        <th>商联职务</th>
+                        <th>单位/岗位</th>
+                        <th style="width:120px;">操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="item in unionFrameList">
+                        <td><span ng-bind="item.frameName"></span></td>
+                        <td><img ng-src="{{item.framePhoto}}" alt="" style="width: 60px;"></td>
+                        <td><span ng-bind="item.frameSociatyPosition"></span></td>
+                        <td><span>{{item.frameCompany}}/{{item.framePosition}}</span></td>
+                        <td class="text-center">
+                            <button class="btn btn-danger btn-tiny" type="button" ng-click="delUnionFrame(item)">删除</button>
+                        </td>
+                      </tr> 
+                    </tbody>
+                  </table>
+                </div>
+            </div>   
+        </div>
+
+        <div class="control-group flex  mb-7 ">
+            <div class="w-10em control-title"><label class="">加盟商会：</label></div>
+            <div class="flex-1 control-field">
+                <div class="mb-5"><button type="button" class="btn btn-primary" ng-click="addSociatyView()" data-toggle="modal" data-target="#addSociatyView">添加</button></div>
+                <div class="table-wrapper w-80">
+                  <table class="table table-bordered table-condensed table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>商会名称</th>
+                            <th>商会人数</th>
+                            <th>商会地址</th>
+                            <th>加盟时间</th>
+                            <th style="width:120px;">操作</th>
+                        </tr>
+                      
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="item in sociatyList">
+                        <td><span ng-bind="item.sociatyName"></span></td>
+                        <td><span ng-bind="item.sociatyPeopleNumber"></span></td>
+                        <td><span ng-bind="item.sociatySite"></span></td>
+                        <td><span ng-bind="item.sociatyJointime"></span></td>
+                        <td class="text-center">
+                            <button class="btn btn-danger btn-tiny" type="button" ng-click="unbindSociaty(item)">解绑</button>
+                        </td>
+                      </tr> 
+                    </tbody>
+                  </table>
+                </div>
+            </div>   
+        </div>
+
+        
+       
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title">&nbsp;</div>
+            <div class="flex-1 control-field">
+                <button class="btn btn-primary" type="button" ng-click="save($event)" ng-disabled="submitForm.$invalid || loading">保存</button>
+                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+            </div>
+
+        </div>
+    </form>
+
+    <!-- 加盟商会 -->
+    <div class="modal fade" id="addSociatyView" role="dialog" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">加盟商会</h4>
+          </div>
+          <div class="modal-body">
+                <form action="" class="form-inline form-search mb-5">
+                    <div class="form-group m-5">
+                        <label>关键字</label>
+                        <input type="text" ng-model="queryModel.key" class="form-control" placeholder="商会名称" />
+                    </div>
+                    <div class="form-group m-5">
+                        <button type="button" class="btn btn-primary" ng-click="searchSociaty()"><i class="fa fa-search mr-3"></i>查询</button>
+                    </div>
+                </form>
+                <div style="height: 250px;overflow-y: auto;">
+                    <table class="table table-bordered table-condensed table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>商会名称</th>
+                                <th style="width:120px;">操作</th>
+                            </tr>
+                          
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="item in sociatyListAll">
+                            <td><span ng-bind="($index+1)"></span></td>
+                            <td><span ng-bind="item.sociatyName"></span></td>
+                            <td class="text-center">
+                                <button ng-disabled="item._done" class="btn btn-danger btn-tiny" type="button" ng-click="bindSociaty(item)">加入</button>
+                            </td>
+                          </tr> 
+                        </tbody>
+                    </table>
+                </div>
+                    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 添加职位 -->
+    <div class="modal fade" id="positionModal" role="dialog" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">职位编辑</h4>
+          </div>
+          <div class="modal-body">
+            <form action="" novalidate="novalidate" name="positionForm">
+                <input type="hidden" name="positionId" ng-model="positionId" >
+                <div class="control-group flex aic mb-7">
+                    <div class="w-8em tar"><span>名称：</span></div>
+                    <div class="flex-1">
+                        <input type="text" name="positionName" ng-model="positionModel.positionName" required="">
+                    </div>
+                </div>
+                <div class="control-group flex aic mb-7">
+                    <div class="w-8em tar"><span>图标：</span></div>
+                    <div class="flex-1">
+                        <label class="radio-inline">
+                            <input type="radio"  value="../assets/images/admin/icon/22.png" ng-model="positionModel.positionIcon" name="positionIcon"> <img style="width:20px" src="../assets/images/admin/icon/22.png" alt="">
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio"  value="../assets/images/admin/icon/23.png" ng-model="positionModel.positionIcon" name="positionIcon"> <img style="width:20px" src="../assets/images/admin/icon/23.png" alt="">
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio"  value="../assets/images/admin/icon/24.png" ng-model="positionModel.positionIcon" name="positionIcon"> <img style="width:20px" src="../assets/images/admin/icon/24.png" alt="">
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio"  value="../assets/images/admin/icon/25.png" ng-model="positionModel.positionIcon" name="positionIcon"> <img style="width:20px" src="../assets/images/admin/icon/25.png" alt="">
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group flex aic mb-7">
+                    <div class="w-8em tar">&nbsp;</div>
+                    <div class="flex-1">
+                        <button class="btn btn-primary" type="button" ng-click="savePosition()" ng-disabled="positionForm.$invalid" data-dismiss="modal">保存</button>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+    

@@ -1,0 +1,31 @@
+<div class="main-view-wrapper">
+    <form class="form-horizontal" name="submitForm" method="post" >
+        <input type="text" class="form-control" ng-model="formData.userId" hidden="hidden"/>
+        
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="required">帐号：</label></div>
+            <div class="flex-1 control-field">
+                <input ng-if="isNew" type="text" ng-model="formData.userName" class="form-control" required/>
+                <input ng-if="!isNew" type="text" ng-model="formData.userName" class="form-control" required disabled="disabled"/>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7" ng-if="isNew">
+            <div class="w-10em control-title"><label class="required">密码：</label></div>
+            <div class="flex-1 control-field">
+                <input  type="text" ng-model="formData.userPassword" class="form-control" required/>
+            </div>
+        </div>
+        
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title">&nbsp;</div>
+            <div class="flex-1 control-field">
+                <button class="btn btn-primary" type="button" ng-click="saveAndPublish()" ng-disabled="submitForm.$invalid || loading">保存</button>
+                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+            </div>
+
+        </div>
+        
+    </form>    
+</div>
+
+    

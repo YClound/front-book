@@ -1,0 +1,200 @@
+html,body,#container{
+    margin:0px;
+    padding:0px;
+    }
+h1, h2, h3, h4{
+   
+    color: #000;
+    padding: 0px;
+    margin:0px;
+}
+
+#Container,#certification{
+    width:100%;
+    background-color:#ecf0f1;
+    min-height:300px;
+}
+    
+.spacer10{
+    height:10px;
+}
+.spacer15{
+    height:15px;
+}
+.spacer20{
+    height:20px;
+}
+.spacer25{
+    height:25px;
+}
+.spacer30{
+    height:30px;
+}
+.spacer35{
+    height:35px;
+}
+.spacer40{
+    height:40px;
+}
+#Container .container{
+    width:1000px;
+    height:630px;
+    background-color:#FFF;
+    margin:0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+#certification .container{
+    width:1000px;
+    padding-bottom: 20px;
+    background-color:#FFF;
+    margin:0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+.container .centered{
+    text-align:center;
+}
+h2{
+    font-size: 28px;
+}
+h4{
+    font-size:18px;
+    color:#8f8f8f;
+}
+.shadow{
+  width: 100%;
+  height: 20px;
+  margin: 5px 0px;
+  background: transparent url(../img/rounded-shadow.png) no-repeat scroll 50% top;
+}
+.login-method{
+    float: left;
+    min-height: 360px;
+    border-left: 1px dashed #CCC;
+    width: 332px;
+    margin-bottom: 15px;
+}
+.no-border{
+    border-left: medium none;
+}
+.login-method h3 {
+    font-weight: normal;
+    color: #999;
+    padding-top: 0px;
+}
+.align-center{
+    text-align:center;
+    }
+.align-center a.block {
+    display: block;
+}
+.align-center a {
+    color: #08C;
+    text-decoration: underline;
+}
+.align-center a img{
+    border-radius:3px;
+}
+.login-method form{
+    width:285px;
+    height:419px;
+    padding:20px 40px 0px;
+}
+.login-method form .feild{
+    padding: 5px 0px;
+}
+.login-method form label{
+    padding: 8px 0px 3px;
+    color: #666;
+    display:block;
+}
+div.login-method form input[type="text"],div.login-method form input[type="password"] {
+    width: 205px;
+}
+textarea, input[type="text"], input[type="password"], input[type="tel"] {
+    padding: 11px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+    background: #FFF none repeat scroll 0% 0%;
+    width: 270px;
+    height: 40px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1) inset;
+}
+.pull-left{
+    float:left;
+}
+.pull-left a{
+    color: #08C;
+    text-decoration: underline;
+}
+.pull-right{
+    float:right;
+}
+#Container .btn .bold {
+    font-weight: bold;
+}
+#Container .btn {
+    height:40px;
+    padding: 10px 10px 9px;
+    font-size: 16px;
+    color: #666;
+    border: 1px solid #C7C7C7;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 1em;
+    display: inline-block;
+    color: #fff;
+}
+.login{
+    background: #1ba2dc repeat scroll 0% 0%;
+    width: 80px;
+}
+.btn-sms{
+    width: 65px;
+    background-color: #bdc3c7;
+    z-index: 1000px;
+}
+.btn-register{
+    width: 100%;
+    background: #1ba2dc repeat scroll 0% 0%;
+}
+.login:hover,.btn-register:hover{
+    background: #1483b3 repeat scroll 0% 0%;
+}
+.btn-sms:hover{
+    background-color: #a8acaf;
+}
+
+.clear{
+    clear:both;
+}
+/*font icon*/
+@font-face{
+    
+    font-family:"play-icon";
+    src:url(../fonts/iconfont.eot) format("embedded-opentype")
+    ,url(../fonts/iconfont.ttf) format("truetype")
+    ,url(../fonts/iconfont.woff) format("woff");
+    font-weight:normal;
+    font-style:normal;
+}
+.play{
+    font-family:"play-icon";
+    font-weight:normal;
+    font-style:normal;
+    font-size:13px;
+}
+
+.certification-box input{
+    width: 100%;
+}
+.certification-box .feild {
+    margin-bottom: 20px;
+}
+.certification-box .action button{
+    width: 100%;
+}

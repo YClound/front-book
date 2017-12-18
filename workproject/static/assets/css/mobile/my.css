@@ -1,0 +1,35 @@
+.banner{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-image: url("../../images/mobile/my/my-banner.jpg");
+  background-position: center center;
+  margin-bottom: 12px;
+}
+.banner .avatar{
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+  width: 6.8em;
+  height: 6.8em;
+}
+
+.banner .avatar img{
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+.banner .avatar-name{
+  margin-top: 8px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2em;
+}
+.main-content .panel{
+  padding-left: 15px;
+  padding-right: 0px;
+}
+.panel i{margin-right: 10px; font-size: 1.2em}
+.panel .item-link{display: block;}
+.col-red{color: #f25f49;}
+.col-green{color: #62debe;}
+.col-blue{color: #73a6f5;}
+.col-orange{color: #ffc454;}

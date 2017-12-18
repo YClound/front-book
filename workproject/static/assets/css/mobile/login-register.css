@@ -1,0 +1,112 @@
+html,body{
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Microsoft Yahei','微软雅黑';
+  font-size: 14px;
+  max-width: 640px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-weight: normal;
+  min-height: 567px;
+}
+.container-wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/mobile/login-register/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.logo{
+  position: absolute;
+  left: 0;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+}
+.logo .logo-img{
+  display: inline-block;
+  vertical-align: top;
+  width: 31.25%;
+  height: 14.43%;
+  min-height: 80px;
+  background-image: url(../../images/mobile/login-register/logo.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+}
+.login,.register{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 40%;
+}
+.login .login-form,.register .register-form{
+  width: 82.5vw;
+  margin: 0 auto;
+}
+
+.login-form .form-item,.register-form .form-item{
+  border-bottom: #ffffff 1px solid;
+  padding-left: 5px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 1.2em;
+  width: 100%
+}
+.form-item .inputText{
+  width: 85%;
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+  color: #fff;
+  text-shadow: none;
+  filter: alpha(opacity=0);
+  -webkit-tap-highlight-color: transparent;
+}
+.form-item .inputText:focus{border: 0; box-shadow: none;}
+
+.login-form .operation{
+  padding-top: 10px;
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 1.2em;
+  width: 100%
+}
+.operation .register-link{float: right;}
+.login-form .login-btn,.register-form .register-btn{
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.6em 0px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #fff;
+  border: #fff 1px solid;
+}
+.register-form .register-btn{margin-top: 20px;}
+
+
+/*验证*/
+.register-form .identifying-code .inputText{width: 63%;}
+.get-code{
+  float: right;
+  background-color: #cdbdce;
+  color: #fff;
+  font-size: 0.9em;
+  border-radius: 5px;
+  padding: 3px 15px;
+  margin-top: .6em;
+}
+
+@media screen and (min-width: 414px){
+  body{font-size: 16px;}
+}
+@media screen and (min-width: 640px){
+  .logo .logo-img{
+    width: 198px;
+    height: 164px;
+  }
+}

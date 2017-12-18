@@ -1,0 +1,69 @@
+{
+  "code": 0,
+  "message": "操作成功",
+  "url": null,
+  "data": {
+    "questionId": "SXDXT00001",
+    "typeCode" : "COMPLEX",
+    "syllabus":[
+      {
+        "syllabusId": 8,
+        "syllabusName": "考纲4"
+      },
+      {
+        "syllabusId": 8,
+        "syllabusName": "考纲8"
+      }
+    ],
+    "questionAnswerJson": {
+      "children":[
+        {
+          "number":1,
+          "typeCode": "SELECT",
+          "question": {
+            "answer":"<p>A|B|C</p>"
+          }
+        },
+        {
+          "number":2,
+          "typeCode": "FILLBLANK",
+          "question": {
+            "answer":["<p>A|B|C</p>","<p>A#$%^&B</p>"]
+          }
+        },
+        {
+          "number":3,
+          "typeCode": "QANDA",
+          "question": {
+            "answer": "SHUSHWQSGWTDFTWFDTWFDDFWRD"
+          }
+        }
+      ]
+    },
+    "questionAnalysisJson": {
+      "children":[
+        {
+          "number":1,
+          "typeCode": "SELECT",
+          "question": {
+            "analysis":"<p>已知函数f(x+1)=3x+2,则f(x)的解析式是</p>"
+          }
+        },
+        {
+          "number":2,
+          "typeCode": "FILLBLANK",
+          "question": {
+            "analysis":"<p>已知函数f(x+1)=3x+2,则f(x)的解析式是</p>"
+          }
+        },
+        {
+          "number":3,
+          "typeCode": "QANDA",
+          "question": {
+            "analysis": "<p>已知函数f(x+1)=3x+2,则f(x)的解析式是</p>"
+          }
+        }
+      ]
+    }
+  }
+}

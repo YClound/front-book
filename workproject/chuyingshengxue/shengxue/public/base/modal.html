@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>Modal</title>
+    <link rel="stylesheet" href="../assets/css/mobile/base.css">
+    
+ 
+    <style>
+    .wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    min-height: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body class="">
+<div class="wrapper ">
+    <h2>遮罩</h2>
+    <div>
+        <button class="btn btn-primary" onclick="mAlert()">alert</button>
+        <button class="btn btn-danger" onclick="mConfirm()">confirm</button>
+        <button class="btn btn-athens" onclick="mConfirm2()">confirm2</button>
+        <button class="btn btn-o" onclick="mNotice()">notice</button>
+        <button class="btn btn-success" onclick="mLoading()">loading</button>
+        <button class="btn btn-success" onclick="mLoading2()">loading hide</button>
+    </div>
+        
+</div>
+<script src="../assets/vendor/jquery/jquery-2.1.4.min.js"></script>
+<script src="../assets/js/plugins/dm.modal.js"></script>
+<script>
+    var mAlert = function(){
+        dm.alert('我是一本正经的')
+    };
+    var mConfirm = function(){
+        dm.confirm('你决定要不要陪我',{},function(){
+            alert('nice')
+        },function(){
+            alert('oh no')
+        })
+    };
+    var mConfirm2 = function(){
+        dm.confirm('你决定要不要陪我',{yes:'确定吗',no:'不确定吗'})
+    };
+    var mNotice = function(){
+        dm.notice('你有一条未读消息',function(){
+
+        });
+    };
+    var mLoading = function(){
+        dm.loading('死命加载中');
+    };
+    var mLoading2 = function(){
+        dm.loading('hide');
+    };
+</script>
+
+</body>
+</html>

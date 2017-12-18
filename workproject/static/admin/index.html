@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>后台管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <link rel="stylesheet" href="../vendor/bootstrap-3.3.5/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="../vendor/font-awesome/4.2.0/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" href="../assets/css/base_m.css"></link>
+    <link rel="stylesheet" href="../assets/css/admin.css"></link>
+
+    <style>
+    .container1 {
+      margin: 20px;
+      border: 1px solid #D0D0D0;
+      box-shadow: 0 0 8px #D0D0D0;
+      height: auto !important;
+    }
+    .container1 h1 {
+        color: #444;
+        background-color: transparent;
+        border-bottom: 1px solid #D0D0D0;
+        font-size: 19px;
+        font-weight: normal;
+        margin: 0 0 14px 0;
+        padding: 14px 15px 10px 15px;
+    }
+    .container1 p {
+
+      margin: 12px 15px 12px 15px;
+    }
+    code {
+        font-family: Consolas, Monaco, Courier New, Courier, monospace;
+        font-size: 12px;
+        background-color: #f9f9f9;
+        border: 1px solid #D0D0D0;
+        border-radius: 0;
+
+        color: #002166;
+        display: block;
+        margin: 14px 10px 14px 10px;
+        padding: 12px 10px 12px 10px;
+    }
+    .main-view >div {
+      height: 100%;
+    }
+    .iframe {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .iframe-wrapper {
+      height: 100%;
+    }
+    </style>
+
+  </head>
+  <body class="admin">
+    <div class="header">
+      <div class="s-wrap">
+        <a href="#home" class="header-logo fl">
+          <img src="../assets/images/admin/logo.png" alt="" style="width:60px;"></img>
+          <!-- <span class="header-line"></span> -->
+          <span class="header-title">后台管理系统</span>
+        </a>
+        <div class="fr header-user">
+	          <i class="fa fa-user"></i>
+	          <a href="javascript:;" class="mr-5" ui-sref="admin.edit({id:admin.id})"><u ng-bind="admin.name"></u></a>
+	          <!-- <a href="javascript:;" ng-click="logout()">退出</a> -->
+	          <a href="/logout">退出</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+
+      <div class="main-sidebar">
+        <div class="headline"><i class="fa fa-navicon mr-3"></i>左侧导航</div>
+        <div class="sidebar">
+          <!-- <dl>
+            <dt><i class="fa fa-table mr-5"></i>管理员模块</dt>
+            <dd>
+              <a href="javascript:;" ui-sref="admin.list">用户列表</a>
+            </dd>
+          </dl> -->
+          <dl ng-repeat="item in SideMenu">
+            <dt><i class="fa fa-table mr-5"></i><span ng-bind="item.node.title"></span></dt>
+            <dd ng-repeat="menu in item.list" ng-if="menu.display!=false">
+              <a href="javascript:;" ui-sref="{{menu.name}}" ng-bind="menu.title"></a>
+            </dd> 
+          </dl>
+          
+        </div>
+      </div>
+
+      <div class="main-content">
+        <!-- position -->
+        <div class="headline ">
+          <div class="pull-left">
+            <b class="">位置：</b><span class="" id="cur">首页</span>
+          </div>
+          <a href="javascript:history.go(-1);" class="btn  pull-right mr-10 mt-3">返回</a>
+        </div>
+         <!-- view -->
+        <div class="main-view" ui-view=""></div>
+          
+      </div>
+
+    </div>
+  
+  <!-- <script src="../vendor/require/require.js"></script> -->
+  <script src="../vendor/jquery/jquery-2.1.4.min.js"></script>
+  <script src="../vendor/angular/js/angular.min.js"></script>
+  <script src="../vendor/angular/js/angular-route.min.js"></script>
+  <script src="../vendor/angular/ui-router/angular-ui-router.min.js"></script>
+  <script src="../vendor/angular/plugins/ui-bootstrap-tpls-0.14.3.min.js"></script> 
+  <script src="../vendor/angular/ocLazyLoad/ocLazyLoad.min.js"></script>
+
+  
+  <script src="../assets/js/dm.util.js"></script>
+  <script src="../assets/js/dm.api.js"></script>
+  <script src="../assets/js/dm.base.js"></script>
+  <script src="../assets/js/admin.js"></script>
+  <script src="../assets/js/admin.menu.js"></script>
+  <script src="../assets/js/admin.modules.js"></script>
+
+  
+  
+  <script>
+  
+
+
+  $(function(){
+
+    angular.bootstrap(document,['awApp']);
+  })
+
+  </script>
+  </body>
+</html>

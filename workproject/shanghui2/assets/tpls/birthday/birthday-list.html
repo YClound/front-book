@@ -1,0 +1,101 @@
+<div class="main-view-wrapper">
+    <!-- 查询条件 -->
+    <form class="form-inline form-search">
+        <div class="form-group m-5">
+            <label>生日时间</label>
+            <input type="text" ng-model="queryModel.startDate" class="form-control laydate-icon" laydate />
+            <span>-</span>
+            <input type="text" ng-model="queryModel.endDate" class="form-control laydate-icon" laydate />
+        </div>
+
+        <div class="form-group m-5">
+            <label>关键字</label>
+            <input type="text" ng-model="queryModel.keyword" class="form-control" placeholder="姓名/手机号">
+        </div>
+        <div class="form-group m-5">
+            <button class="btn btn-primary" ng-click="search()" type="button"><i class="fa fa-search"></i>查询</button>
+            <button type="button" class="btn btn-default" ng-click="clear()"><i class="fa fa-undo mr-3"></i>重置</button>
+        </div>
+    </form>
+    <div class="p-6">默认只显示近10天内生日的商会会员信息</div>
+    <div class="mb-5">
+        <a  class="btn btn-danger vat" href="javascript:;" ng-click="batchDel()" data-toggle="modal" data-target="#birthdayModal">批量发送祝福</a>
+        <label class="ml-5 mt-3 fz-medium vam">
+            <input type="checkbox" name="autoMessage" ng-model="autoSendMessage" ng-checked="autoSendMessage" ng-change="autoSend()">
+            生日当天自动发送祝福短信
+        </label>
+    </div>
+    <div class="table-wrapper">
+        <table class="table table-bordered table-condensed table-striped table-hover">
+            <thead>
+                <th style="width:50px;">
+                    <input name="cbAll" type="checkbox" ng-model="cbAll" ng-checked="cbAll" ng-change="cbAllchange()">
+                </th>
+                <th>姓名</th>
+                <th>商会职务</th>
+                <th>生日</th>
+                <th>距离天数</th>
+                <th>生日祝福</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in dataList">
+                    <td><input type="checkbox" name="selected" ng-model="item._selected" ng-checked="item._selected"></td>
+                    <td><span ng-bind="item.realName"></span></td>
+                    <td><span ng-bind="item.positionName"></span></td>
+                    <td><span ng-bind="item.birthday"></span></td>
+                    <td><span ng-bind="item.dateString" ng-class="{'1': 'c-warning'}[item.dateClass]"></span></td>
+                    <td class="text-center">
+                        <a href="javascript:;" ng-click="sendMessage(item)" data-toggle="modal" data-target="#birthdayModal" class="btn btn-primary">生日短信发送</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 数据分页 -->
+    <div class="table-pager clearfix">
+        <ul class="pagination pull-left">
+            <li>
+              <a>共{{pagerOption.pages}}页,{{pagerOption.total}}条记录</a>
+          </li>
+        </ul>
+        <!-- 分页插件 -->
+        <uib-pagination total-items="pagerOption.total" ng-model="queryModel.page" max-size="10" ng-change="query()" items-per-page="pagerOption.pagesize" boundary-links="true" class="pagination-md pull-right" rotate="false" num-pages="pagerOption.pages"></uib-pagination>
+    </div>
+
+    <!-- 编辑生日祝福 -->
+    <div class="modal fade" id="birthdayModal" role="dialog" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">生日祝福编辑</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="bb mb-7">
+                        <div class="pb-5">
+                            <div class="inner-tag-wrapper">
+                                <span class="inner-tag-name" ng-click="selectArticleType('祝福')" style="padding-right: 10px">祝福</span>
+                            </div>
+                            <div class="inner-tag-wrapper">
+                                <span class="inner-tag-name" ng-click="selectArticleType('祝福你')" style="padding-right: 10px">祝福你</span>
+                            </div>
+                            <div class="inner-tag-wrapper">
+                                <span class="inner-tag-name" ng-click="selectArticleType('祝福他')" style="padding-right: 10px">祝福他</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form novalidate="novalidate" name="birthdayForm">
+                        <input type="hidden" name="userId" ng-model="formData.userId">
+                        <div class="form-group m-5 fz-medium">被祝福的人：<span ng-bind="formData.realName"></span></div>
+                        <textarea rows="5" id="greetings" name="message" ng-model="formData.message" required placeholder="请输入生日祝福......"></textarea>
+                        <div class="pt-10">
+                            <button class="btn btn-primary" ng-click="send()" data-dismiss="modal">发送</button>
+                            <button class="btn btn-default" data-dismiss="modal">返回</button>
+                        </div>   
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

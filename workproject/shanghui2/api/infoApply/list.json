@@ -1,0 +1,102 @@
+{
+    "code":0,
+    "message":"ok",
+    "data":{
+        "pager":{
+            "page":2,
+            "pages":22,
+            "total":220,
+            "pagesize":10
+        },
+        "list":[
+            {
+                "applyId":"19",
+                "relatedId":"190",
+                "applyUserId":"11",
+                "refreshTime":"2016-08-12",
+                "applyStatus":"0",
+                "refreshModule":"1",
+                "user":{
+                    "positionId":"2",
+                    "userPassword":"admin",
+                    "groupIds":"1,2",
+                    "userId": "1",
+                    "userPhone":"13456535357",
+                    "userPhoto":"http://www.chuyingfund.com/files/account/headImg/120/2016/20160612131503913_1280x960.jpg",
+                    "groupIds":"1,2",
+                    "userIdcard":"330989484948383748",
+                    "joinTime":"2016-12-12",
+                    "realName": "马赛克",
+                    "registerCompany":"杭州千奇百怪科技有限公司",
+                    "registerPosition":"董事",
+                    "overdueTime":"2017-12-12",
+                    "companyAddress":"杭州市西湖区德力西大厦",
+                    "live_address":"杭州市拱墅区塘河新村",
+                    "userAddress":"绍兴嵊州",
+                    "inviter_id":"2",
+                    "memberType":2,
+                    "userIntro":"自古多情空余恨，从此绵绵无绝期"
+                }
+            },
+            {
+                "applyId":"1",
+                "relatedId":"190",
+                "applyUserId":"11",
+                "refreshTime":"2016-08-12",
+                "refreshModule":"1",
+                "applyStatus":"1",
+                "user":{
+                    "positionId":"2",
+                    "userPassword":"admin",
+                    "groupIds":"1,2",
+                    "userId": "1",
+                    "userPhone":"13456535357",
+                    "userPhoto":"http://www.chuyingfund.com/files/account/headImg/120/2016/20160612131503913_1280x960.jpg",
+                    "groupIds":"1,2",
+                    "userIdcard":"330989484948383748",
+                    "joinTime":"2016-12-12",
+                    "realName": "司马懿",
+                    "registerCompany":"杭州千奇百怪科技有限公司",
+                    "registerPosition":"董事",
+                    "overdueTime":"2017-12-12",
+                    "companyAddress":"杭州市西湖区德力西大厦",
+                    "liveAddress":"杭州市拱墅区塘河新村",
+                    "userAddress":"绍兴嵊州",
+                    "inviter_id":"2",
+                    "memberType":2,
+                    "userIntro":"自古多情空余恨，从此绵绵无绝期"
+                }
+            },
+            {
+                "applyId":"1",
+                "relatedId":"190",
+                "applyUserId":"11",
+                "refreshTime":"2016-08-12",
+                "refreshModule":"2",
+                "applyStatus":"2",
+                "user":{
+                    "positionId":"2",
+                    "userPassword":"admin",
+                    "groupIds":"1,2",
+                    "userId": "1",
+                    "userPhone":"13456535357",
+                    "userPhoto":"http://www.chuyingfund.com/files/account/headImg/120/2016/20160612131503913_1280x960.jpg",
+                    "groupIds":"1,2",
+                    "userIdcard":"330989484948383748",
+                    "joinTime":"2016-12-12",
+                    "realName": "刘玄德",
+                    "registerCompany":"杭州千奇百怪科技有限公司",
+                    "registerPosition":"董事",
+                    "overdueTime":"2017-12-12",
+                    "companyAddress":"杭州市西湖区德力西大厦",
+                    "liveAddress":"杭州市拱墅区塘河新村",
+                    "userAddress":"绍兴嵊州",
+                    "inviter_id":"2",
+                    "memberType":2,
+                    "userIntro":"自古多情空余恨，从此绵绵无绝期"
+                }
+            }
+
+        ]
+    }
+}

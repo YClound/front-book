@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="pragram" content="no-cache">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="email=no"/>
+    <meta name="format-detection" content="address=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-title" content="雏鹰网"/>
+    <title>向Ta推荐—雏鹰网</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="keywords" content="众筹,雏鹰网,雏鹰众筹,基金,种子基金,股权众筹,天使轮,种子轮,天使投资,风险投资,众筹平台,创业融资,私募股权融资,私募股权投资平台,融资平台">
+    <meta name="description" content="雏鹰网是致力于帮助有梦想、有决心、有能力、够努力的早期创业者获得股权投资的互联网平台。打造融合众筹投资人和创业者学习、互助、交流的在线众创空间。梦想再小也要呵护，力量再小也要支持。">
+    <!-- apple icon -->
+    <link rel="apple-touch-icon-precomposed" href="/static/assets/img/apple-touch-icon.png">
+    <link type="image/png" href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../assets/css/mobile/base_m.css">
+    <link rel="stylesheet" href="../assets/css/mobile/app.css">
+    
+    <script src="../assets/vendor/seajs/2.0.0/sea.js"></script>
+    <script src="../assets/js/config.m.js"></script>
+    
+    
+    <style>
+    
+    </style>
+    
+  </head>
+  <body class="m-recommend">
+        <form action="/static/assets/data/form.json" class="ajax-form"  method="post">
+            <div class="panel mt-6 pt-6 pb-6">
+                <h3>请选择推荐的项目</h3>
+                <div class="recommend-project">
+                    <div class="check-project">
+                      <input type="radio" class="check-radio" id="s0_1" name="focus">
+                      <label class="check-txt" for="s0_1">杭州项目</label>
+                    </div>
+                    <div class="check-project">
+                      <input type="radio" class="check-radio" id="s0_2" name="focus">
+                      <label class="check-txt" for="s0_2">杭州啥啥XXXXX项目</label>
+                    </div>
+                    <div class="check-project">
+                      <input type="radio" class="check-radio" id="s0_3" name="focus">
+                      <label class="check-txt" for="s0_3">杭州啥啥XXXXX项目</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel mt-6 pt-6 pb-10">
+                <h3>推荐说明</h3>
+                <div class="ctrl-wrap">
+                    <textarea class="" name="describe" placeholder="推荐给Ta的理由..." rows="5"></textarea>
+                </div>
+            </div>
+
+            <div class="ctrl-wrap pl-6 pr-6 mt-20 m-action">
+                <button type="submit" class="btn-height btn-primary w-100 fz-medium">提交</button>
+            </div>
+        </form>
+
+    <script src="/static/assets/js/api.js"></script>
+    <script src="/static/assets/vendor/jquery/jquery-2.1.4.min.js"></script>
+    <script src="/static/assets/js/dm.base.js"></script>
+
+    <script>
+    seajs.use('/static/assets/js/module/mobile/m-register');
+    </script>
+  
+  </body>
+</html>

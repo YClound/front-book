@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head("话费充值")
+
+<body>
+	
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+			#sidebar('phone')
+			
+			<div class="span10">
+				
+				#stepBarPhone(1)
+				
+				<div class="sortable row-fluid">
+					<div class="span12 recharge-tab">
+						
+						#phoneTab('phone')
+						
+						<div class="row-fluid">
+							<div class="content-main">
+							
+								<form id="phoneRechargeForm" class="form-horizontal" action="phoneRechargeConfirm.htm" method="post">
+								<fieldset>
+								  <div class="control-group recharge-form">
+									<label class="control-label" for="phoneNum">号码：</label>
+									<div class="controls">
+									  <div class="input-prepend">
+										<input id="phoneNum" name="uid" maxlength="11" type="text">
+									  </div>
+									  <p id="phoneInfo" class="help-inline red"> 请输入充值号码 </p>
+									</div>
+								  </div>
+								  <div class="control-group" style="margin-bottom: 0px;">
+									<label class="control-label" for="appendedInput">面值：</label>
+									<div class="controls">
+										<div class="phone-faceprice" id ="items">
+											<ul>
+												<li class="itemRadio current">
+													<input type="radio"  name="itemRadio" datas="100000" checked="checked" id="itemRadio1"  value="pre">
+													<label for="itemRadio1"> <span class="item">100元</span>
+													</label>
+												</li>
+												<li class="itemRadio"> 
+													<input type="radio"  datas="50000" name="itemRadio" id="itemRadio2" value="pre"> 
+													<label for="itemRadio2">
+													<span class="item">50元</span>
+													</label>
+												</li>
+												<li class="itemRadio"> <input type="radio" datas="30000" name="itemRadio" id="itemRadio3" value="pre"><label for="itemRadio3"> <span class="item"> 30元</span></label></li>
+												<li class="btn-group itemRadio" id="btnGroup">
+													<input type="radio" id="otherRadio"  datas="-1" name="itemRadio" value="pre">
+													<span class="dropdown-toggle other-item" data-toggle="dropdown" id="otherItemShow">其他
+													<span class="caret" ></span>
+													<span></span>
+													</span>
+													<ul class="dropdown-menu">
+												        <li><a datas="200000" value="pre" name="otherItem" >200元</a></li>
+														<li><a datas="300000" value="pre" name="otherItem" >300元</a></li>
+														<li><a datas="500000" value="pre" name="otherItem" >500元</a></li>
+														<li><a datas="10000"  value="pre" name="otherItem" >10元</a></li>
+														<li><a datas="20000"  value="pre" name="otherItem" >20元</a></li>
+													</ul>
+												</li>
+											</ul>
+							            </div>
+									</div>
+								  </div>
+								  
+								  <div class="control-group recharge-form">
+									<label class="control-label" for="facePriceShow">价格：</label>
+									<div class="controls">
+									  <div class="input-prepend">
+										<input id="priceShow" name="price" class= "input-mini" readonly="readonly" size="8" type="text">
+										<span class="help-inline red" id="priceInfo"></span>
+									  </div>								
+									</div>
+								  </div>							  
+								  
+								  <div class="control-group">
+								  <div class="controls">
+									<button id="rechargeButton" type="submit" class="btn disabled" data-loading-text="处理中...">立即充值</button>
+									</div>
+								  </div>							  
+									
+								</fieldset>
+							</form>
+							</div>						
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	#footer()
+	
+	<script src="$!{assetsServer}assets/js/aes.js"></script>
+	<script src="$!{assetsServer}assets/js/md5.js"></script>
+	<script src="$!{assetsServer}assets/js/mode-ecb-min.js"> </script>
+	<script src="$!{assetsServer}assets/js/jquery.validate.min.js"></script>
+	
+	<script type="text/javascript">
+		function removeCurrent(){
+			$(".phone-faceprice .current").removeClass("current");
+		}
+		
+		function addCurrent(obj){
+			obj.addClass("current");
+		}
+		
+		function changeItemRadio(itemMap){
+			var itemRadios= $('input[name="itemRadio"]');
+			var checkedPrice =  $("input[name='itemRadio']:checked").attr("datas");
+			
+			$.each(itemRadios,function(){
+				var radio = $(this);
+				var itemFacePrice = radio.attr("datas");
+				var item = itemMap[itemFacePrice];
+				if(item != null){
+					$(this).val(item.id);
+					if(checkedPrice==itemFacePrice){
+						$('#priceShow').val(item.itemSalesPriceDesc);
+						$("#priceInfo").html("");
+						passButton();
+					}
+				}else{
+					$(this).val("pre");
+					if(checkedPrice==itemFacePrice){
+						$('#priceShow').val("");
+						$("#priceInfo").html("抱歉该面额，未上架");
+						unPassButton();
+					}
+				}
+			});
+			
+			var otherItems = $('a[name="otherItem"]');
+			$.each(otherItems,function(){
+				var otherItem = $(this);
+				var itemFacePrice = otherItem.attr("datas");
+				var item = itemMap[itemFacePrice];
+				if(item != null){
+					$(this).val(item.id);
+				}
+			});
+			
+			bindPrice(itemRadios,itemMap);
+		}
+		
+		function bindPrice(itemRadios,itemMap){
+			itemRadios.unbind("click"); 
+			itemRadios.bind("click",function(){
+				var itemFacePrice = $("input[name='itemRadio']:checked").attr("datas");
+				var item = itemMap[itemFacePrice];
+				if(item!=null){
+					$('#priceShow').val(item.itemSalesPriceDesc);
+					$("#priceInfo").html("");
+					passButton();
+				}else{
+					$('#priceShow').val("");
+					$("#priceInfo").html("抱歉该面额，未上架");
+					unPassButton();
+				}
+			});
+		}
+		
+		
+		function passButton(){
+			$('#rechargeButton').attr("class","goto-recharge");
+			$("#rechargeButton").attr("disabled",false);
+		}
+		
+		function unPassButton(){
+			$('#rechargeButton').attr("class","btn disabled");
+			$("#rechargeButton").html("立即充值");
+			$("#rechargeButton").attr("disabled",true);
+		}
+
+		function resetForm(){
+			$("#priceInfo").html("");
+			$('#priceShow').val("");
+			var otherItems =  $('a[name="otherItem"]');
+			$.each(otherItems,function(){
+				var otherItem = $(this);
+				otherItem.val("pre");
+			});
+			
+			var itemRadios= $('input[name="itemRadio"]');
+			
+			$.each(itemRadios,function(){
+				 $(this).val("pre");
+			});			
+			
+			itemRadios.unbind("click");
+			unPassButton();
+		}
+		
+	
+		$().ready(function() {
+			$("#phoneRechargeForm").validate({
+				focusInvalid:false, 
+			    submitHandler: function(form){ 
+			    	if(!checkForm()){
+			    		return;
+			    	}
+			        form.submit();  
+			    },
+			});
+			
+			resetForm();
+			
+			$("#phoneNum").bind("propertychange input",phoneQuery);
+			//$("#phoneNum").bind("blur",phoneQuery);
+			
+			 function phoneQuery() {
+					var rule = "^1(3[0-9]|5[0-35-9]|8[0235-9])\\d{8}$";
+					var phone = $("#phoneNum").val();
+					var flag = new RegExp(rule).test(phone);
+					//alert(document.createEventObject);
+					 if (document.createEventObject){
+						 //ie10 event is null
+						if(event!=null && event.propertyName.toLowerCase() != "value"){
+							//alert("fuck ie " + event.propertyName);
+							return;
+						} 
+					 }
+		
+					if(flag){
+						$.ajax({
+							url:"$!{context.contextPath}api/phoneQuery.htm?uid=" +phone,
+							async:true,
+							dataType:"json",
+							beforeSend:function(){
+								resetForm();
+							},
+							success: function(data, textStatus){
+								var status = data.status;
+								if(data == "" || data == undefined || data == null){
+									$("#phoneInfo").html("网络连接超时");
+									return;
+								}
+								if(status == "error"){
+									$("#phoneInfo").html(data.errorMsg);
+									return;
+								}
+								var phoneQuery = data.module;
+								$("#phoneInfo").html(phoneQuery.mobileBelong.cityName + " " + phoneQuery.mobileBelong.carrierName);
+								var itemMap = phoneQuery.itemMap;
+								if(itemMap == null ){
+									$("#phoneInfo").html("商品已下架，或者不存在");
+									return;
+								}
+								var i = 0;
+								$.each(itemMap,function(k,v){
+									 i++;
+								});
+								
+								if(i<=0){ 
+									$("#phoneInfo").html("商品已下架，或者不存在");
+									return;
+								}
+								changeItemRadio(itemMap);
+							}
+						});
+					}else{
+						resetForm();
+						$("#phoneInfo").html("请输入正确的手机号");
+					}
+				}			
+			
+			$(".phone-faceprice li").bind("click", function () {
+				if(document.getElementById("btnGroup") != this){
+					removeCurrent();
+					addCurrent($(this));
+				}
+			});
+			
+			$(".phone-faceprice .dropdown-menu li").bind("click", function () {
+				removeCurrent();
+				var otherItem = $("a",this);
+				$("#btnGroup").addClass("current");
+				$("#otherItemShow").html(otherItem.html() +  "<span class='caret' ></span>&nbsp");
+				$("#otherRadio").val(otherItem.val());
+				$("#otherRadio").attr("datas",otherItem.attr("datas"));
+				$("#otherRadio").attr("checked","checked");
+				$("#otherRadio").trigger("click");
+			});		
+			
+			
+			$('#phoneNum').val("");
+		});
+		
+		function checkForm(){
+			var rule = "^1(3[0-9]|5[0-35-9]|8[0235-9])\\d{8}$";
+			var phone = $("#phoneNum").val();
+			var flag = new RegExp(rule).test(phone);
+			if(!flag){
+				$("#phoneInfo").html("请输入正确的手机号");
+				return false;
+			}
+			var itemFacePrice = $("input[name='itemRadio']:checked").attr("datas");
+			if(itemFacePrice == null){
+				$("#phoneInfo").html("必须选择充值面额");
+				return false;
+			}
+			
+			var radioValue = $("input[name='itemRadio']:checked").val();
+			if(radioValue == "pre"){
+				//$("#phoneInfo").html("请重新输入手机号");
+				return false;
+			}
+			$("#rechargeButton").html("提交中..");
+			$("#rechargeButton").attr("disabled",true);
+			return true;
+		}
+	</script>
+	
+	#modalPayPwdEdit()
+</body>
+</html>

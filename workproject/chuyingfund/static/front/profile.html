@@ -1,0 +1,489 @@
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>编辑个人信息—聚募网 专注早期创业项目的众筹融资平台</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <meta name="keywords" content="众筹,聚募网,聚募众筹,股权众筹,天使轮,种子轮,天使投资,风险投资,众筹平台,创业融资,私募股权融资,私募股权投资平台,融资平台,孟杨,孟杨访谈,孟杨访谈录">
+    <meta name="description"
+          content="聚募众筹是致力于帮助有梦想、有决心、有能力、够努力的早期创业者获得股权投资的互联网平台。打造融合众筹投资人和创业者学习、互助、交流的在线众创空间。梦想再小也要呵护，力量再小也要支持。">
+    <meta name="baidu-site-verification" content="j4d5H6qJuY"/>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+
+    <link rel="stylesheet" href="/static/assets/css/mobile/base_m.css?4">
+    
+    <style>
+        .login-banner,.tab-title-login>div.active{
+            position:relative;
+        }
+        .login-banner{
+            background:url(../img/dreammove-login.png) center 1rem no-repeat #3399e0;
+            background-size:54% auto;
+            padding-top:5rem;
+            overflow:hidden;
+            color:rgba(255,255,255,.9);
+        }
+        .tab-title-login>div{padding-bottom:20px}
+        .tab-title-login>div.active:before{
+            content:'';
+            position:absolute;
+            top:0;
+            border-bottom:8px solid #F7F7F7;
+            border-left:8px solid transparent;
+            border-right:8px solid transparent;
+            left:50%;
+            margin-left:-8px;
+            bottom:0;
+        }
+        .tab-title-login>div.active:after{
+            content:'';
+            position:absolute;
+            width:3em;
+            height:3em;
+            left:50%;
+            bottom:-3em;
+            margin-left:-1.5em;
+            margin-top:-1.5em;
+            background-color:#3399e0;
+            box-shadow:0 0 150px 15px rgba(255,255,255,.8);
+        }
+        .s-question .check-tag-o label{min-width:5em;text-align:center;}
+        .s-question dd{
+            display:inline-block;
+            *display:inline;
+            *zoom:1;
+            margin:.5em .5em .5em 0;
+        }
+        .check-choose-investor-type input[type=radio]{
+            position:absolute!important;
+            clip:rect(1px 1px 1px 1px);
+            clip:rect(1px,1px,1px,1px);
+            padding:0!important;
+            border:0!important;
+            overflow:hidden;
+        }
+        body:hover .check-choose-investor-type input[type=radio] a,body:hover .check-choose-investor-type input[type=radio] button,body:hover .check-choose-investor-type input[type=radio] input{display:none!important}
+        .check-choose-investor-type input[type=radio]~label{background-color:#D4D4D4}
+        .check-choose-investor-type input[type=radio]~label .icon-check{visibility:hidden}
+        .check-choose-investor-type input[type=radio]:checked~label{background-color:#3399e0}
+        .check-choose-investor-type input[type=radio]:checked~label .icon-check{visibility:visible}
+        .form-default-addr input[type=radio]:checked~label{color:#3399e0}
+        .select-gender{background:#fff}
+        .form-change-mobile .tab-title{
+            white-space:nowrap;
+            border:1px solid #e6e6e6;
+            border-radius:4px;
+            overflow:hidden;
+        }
+        .form-change-mobile .tab-title li{
+            width:50%;
+            padding-top:8px;
+            padding-bottom:8px;
+            cursor:pointer;
+        }
+        .form-change-mobile .tab-title li.active{color:#fff;background:#3399e0}
+        .form-change-mobile .tab-content li{display:none}
+        .form-change-mobile .tab-content li.show{display:block}
+    </style>
+    
+    <script>
+        var serverData = {
+            appid: "dreammove",
+            requireAuth: "0",
+            doSSOAutoLogin: ""
+        }, dm = {}
+        var api = {
+            login: "/member/login.html?redirect_url=" + encodeURIComponent(location.href),
+            sms: "/member/getregmsg.html",
+            ssoAutoLogin: 'http://user.undm.cn/user/sso?callback=?',
+            ssoAutoLoginLocal: "/member/ssologin.html"
+        }
+        /*window.addEventListener('error', function (e) {
+            var target = e.target
+            if (target.tagName === 'IMG' && !target.hasAttribute('noerr')) {
+                target.setAttribute('noerr', '1')
+                var dft = target.dataset ? target.dataset.default : target.getAttribute('data-default')
+                target.src = '/Public/Home/mobile/img/' + (dft || 'default-img.jpg')
+            }
+        }, true)*/
+        // fz = 320px/20=16px, max-width=640px
+        !function () {
+            var a = document.documentElement;
+            var b = a.clientWidth / 20;
+            a.style.fontSize = (b > 32 ? 32 : b) + "px"
+        }();
+    </script>
+   
+</head>
+<body class=" ">
+
+
+
+<!-- 顶部标题 -->
+<div class="s-header flex white">
+    <div class="w-3em" onclick="dm.back()">
+       <i class="if icon-angle-left"></i>
+    </div>
+    <div class="flex-1">编辑个人信息</div>
+    <div class="w-3em"></div>
+</div>
+
+<div class="padding-header"></div>
+<div>
+    <i class="if icon-qq-fill"></i>
+    <i class="if icon-weibo-circle-fill" style="color:green"></i>
+</div>
+    <div>
+    <!-- 个人基础信息 -->
+    <div class="panel mt-6">
+        <!-- 头像 -->
+        <div class="flex space-between aic pb-6 pl-4 bb">
+            <div>头像</div>
+            <div class="ci-7 c-8">
+                <img class="" src="http://7xjckn.com2.z0.glb.qiniucdn.com/2016-05-18_573c17b6b719a.jpg" alt="">
+                <!--<i class="if icon-angle-right"></i>-->
+            </div>
+        </div>
+        <!-- 昵称 -->
+        <div class="flex space-between aic pt-6 pb-6 pl-4 bb" data-router="/nickname" data-field="nickname">
+            <div>昵称</div>
+            <div class="c-8">
+                <var data-name="nickname" class="var-field">damon04</var>
+                <i class="if icon-angle-right"></i>
+            </div>
+        </div>
+        <!-- 性别 -->
+        <div class="flex space-between aic pt-6 pb-6 pl-4 bb" data-router="/personal" data-field="gender">
+            <div>性别</div>
+            <div class="c-8 flex-1 tar">
+                <var class="var-gender" data-value="0">保密</var>
+            </div>
+            <i class="db if icon-angle-right"></i>
+        </div>
+        <!-- 生日 -->
+        <div class="flex space-between aic pt-6 pb-6 pl-4 bb" data-router="/personal" data-field="birthday">
+            <div>生日</div>
+            <div class="c-8">
+                <var data-name="birthday" class="var-field">2016-04-07</var>
+                <i class="if icon-angle-right"></i>
+            </div>
+        </div>
+        <!-- 地区 -->
+        <div class="flex space-between aic pt-6 pb-6 ml-4 bb" data-router="/personal">
+            <div>地区</div>
+            <div class="c-8">
+                <var class="var-city"></var>
+                <i class="if icon-angle-right"></i>
+            </div>
+        </div>
+        <!-- 邮箱 -->
+        <div class="flex space-between aic pt-6 pl-4" data-router="/personal" data-field="email">
+            <div>邮箱</div>
+            <div class="c-8">
+                <var data-name="email" class="var-field">504397517@qq.com</var>
+                <i class="if icon-angle-right"></i>
+            </div>
+        </div>
+
+        
+    </div>
+    <!-- 联系方式 -->
+    <div class="panel">
+        <!-- 职位 -->
+        <div class="flex space-between aic pb-6 ml-4 bb" data-router="/company" data-field="position">
+            <div>职位</div>
+            <div class="c-8">
+                <var data-name="position" class="var-field"></var>
+                <i class="if icon-angle-right"></i>
+            </div>
+        </div>
+        <!-- 公司 -->
+        <div class="flex space-between aic pt-6 pb-6 ml-4 bb" data-router="/company" data-field="company">
+            <div>公司</div>
+            <div class="c-8">
+                <var data-name="company" class="var-field"></var>
+                <i class="if icon-angle-right"></i>
+            </div>
+        </div>
+        <!-- 简介 -->
+        <div class="flex space-between aic pt-6 pl-4" data-router="/intro" data-field="describe">
+            <div class="mr-20">简介</div>
+            <var data-name="describe" class="db flex-1 c-8 ovh tar ellipsis var-field"></var>
+            <i class="db if icon-angle-right c-8"></i>
+        </div>
+    </div>
+    <!-- 投资意向 -->
+    <div class="panel">
+        <div class="flex space-between aic pl-4 intro" data-router="/idea" data-field="idea">
+            <div class="mr-11">投资理念</div>
+            <var data-name="invest_idea" class="flex-1 db c-8 ovh tar ellipsis var-field"></var>
+            <i class="db if icon-angle-right c-8"></i>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="view-wrap">
+    <!-- 修改昵称 -->
+    <div class="view view-nickname">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <!-- 顶部信息 -->
+                <div class="w-3em" onclick="dm.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">昵称</div>
+                <div class="w-3em"></div>
+            </div>
+            <div class="padding-header"></div>            
+            <div class=""></div>
+            <form action="">
+                <div class="panel mt-6 pt-0 pb-0">
+                    <div class="ctrl-wrap">
+                        <input class="line" type="text" name="nickname" placeholder="请输入新的昵称" value="">
+                    </div>
+                </div>
+                <div class="ctrl-wrap pl-6 pr-6 fz-medium">
+                    <button type="submit" class="btn-primary w-100 ">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 修改简介 -->
+    <div class="view view-intro">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <div class="w-3em" onclick="dm.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">简介</div>
+                <div class="w-3em"></div>
+            </div>
+            <div class="padding-header"></div>            
+            <form action="" class="form-intro">
+                <div class="panel mt-6 pt-0 pb-0">
+                    <div class="ctrl-wrap">
+                        <textarea class="line" name="describe" placeholder="" maxlength="50" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="ctrl-wrap pl-6 pr-6">
+                    <button type="submit" class="btn-primary w-100 fz-medium">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 修改个人信息 -->
+    <div class="view view-personal">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <div class="w-3em" onclick="dm.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">个人信息</div>
+                <div class="w-3em"></div>
+            </div>
+            <div class="padding-header"></div>            
+            <form action="/static/assets/data/form.json" method="get" class="ajax-form">
+                <div class="panel pt-0 pb-0">
+                    <!-- 性别修改 -->
+                    <div class="flex bb pt-6 pb-6">
+                        <label class="db w-4em" for="select-gender">性别</label>
+                        <div class="flex-1 pl-6">
+                            <select name="gender" class="ghost select-gender w-100" id="select-gender">
+                                <option value="0">保密</option>
+                                <option value="1">男</option>
+                                <option value="2">女</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- 生日修改 -->
+                    <div class="flex bb pt-2 pb-2 aic">
+                        <label class="db w-4em" for="input-birthday">生日</label>
+                        <div class="flex-1">
+                            <input type="date" name="birthday" class="ghost w-100" value="2016-04-26" id="input-birthday">
+                        </div>
+                    </div>
+                    <!-- 地区修改 -->
+                    <div class="flex aic bb pt-6 pb-6">
+                        <div class="w-4em">地区</div>
+                        <div class="city-select">
+                        <input type="hidden" id="province" name="province" value="330000">
+                        <input type="hidden" id="city" name="city" value="330100">
+                        <input type="button" class="btn btn-o btn-city-text" value="请选择城市" pattern="/\//" data-pattern-msg="请选择城市" data-bubble-left="172">
+
+                        <div class="dropdown-content" style="display: none;">
+                            <ul class="tab-title">
+                                <li class="active" data-target=".prov-box">省份</li>
+                                <li data-target=".city-box">城市</li>
+                            </ul>
+                            <ul class="tab-content">
+                                <li class="prov-box"></li>
+                                <li class="city-box" style="display: none;"></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <script>
+                            api.cities = "/static/assets/data/city.json"
+                        </script>                    
+                    </div>
+                    <!-- 邮箱修改 -->
+                    <div class="flex aic ">
+                        <div class="w-4em">邮箱</div>
+                        <div class="ctrl-wrap flex-1">
+                            <input type="email" name="email" class="line" placeholder="请填写邮箱地址">
+                        </div>
+                    </div>
+                </div>
+                <!-- 保存修改 -->
+                <div class="ctrl-wrap pl-6 pr-6">
+                    <button type="submit" class="btn-primary w-100 fz-medium">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 修改工作信息 -->
+    <div class="view view-company">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <div class="w-3em" onclick="dm.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">工作信息</div>
+                <div class="w-3em"></div>
+            </div>
+            <div class="padding-header"></div>            
+            <form action="">
+                <div class="panel mt-6 pt-0 pb-0">
+                    <div class="flex aic bb">
+                        <label class="db w-3em tac">职位</label>
+                        <div class="ctrl-wrap">
+                            <input class="line" type="text" name="position" placeholder="请输入您的职位">
+                        </div>
+                    </div>
+                    <div class="flex aic">
+                        <label class="db w-3em tac">公司</label>
+                        <div class="ctrl-wrap">
+                            <input class="line" type="text" name="company" placeholder="请输入公司名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="ctrl-wrap pl-6 pr-6">
+                    <button type="submit" class="btn-primary w-100 fz-medium">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 修改投资理念 -->
+    <div class="view view-idea">
+        <div class="view-content">
+            <div class="s-header flex ">
+                <div class="w-3em" onclick="dm.back()">
+                    <i class="if icon-angle-left"></i>
+                </div>
+                <div class="flex-1">投资理念</div>
+                <div class="w-3em"></div>
+            </div>
+            <div class="padding-header"></div>            
+            <form action="" class="form-idea">
+                <div class="panel mt-6 pt-0 pb-0">
+                    <div class="ctrl-wrap">
+                        <textarea class="line" name="invest_idea" placeholder="" maxlength="50" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="ctrl-wrap pl-6 pr-6">
+                    <button type="submit" class="btn-primary w-100 fz-medium">保 存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="/static/assets/vendor/jquery/jquery-2.1.4.min.js"></script>
+<script src="http://www.dreammove.cn/Public/static/js/fastclick.min.js"></script>
+<script>
+    $('.infinite-loading').each(function () {
+        var $this = $(this)
+        if (!$this.siblings('ul').children().length) {
+            $this.find('[name=offset]').val(1)
+        }
+    })
+</script>
+
+
+
+<script src="/static/assets/js/dm.base.js?4.2"></script>
+
+<!-- <script>
+    $(function () {
+        FastClick.attach(document.body)
+    })
+</script> -->
+
+
+
+
+<script>
+    // 路由
+    $(function () {
+        dm.router(['/nickname', '/intro', '/personal', '/company', '/idea'], function (path) {
+            console.log(22);
+            dm.view.show(path.replace(/^\//, ''))
+        })
+    })
+
+    // 焦点
+    $(function () {
+        var field
+        $('[data-router]').click(function () {
+            field = $(this).data('field')
+        })
+        $('.view').on('shown', function () {
+            var $this = $(this)
+            var $fo = $this.find('[name=' + field + ']')
+            if (!$fo.length) $fo = $(this).find('input:visible').eq(0)
+            $fo.focus()
+        })
+    })
+
+    // 表单赋值
+    $('.var-field').each(function () {
+        var $this = $(this)
+        var name = $this.data('name')
+        $('[name="' + name + '"]').val($.trim($this.text()))
+    })
+    $('.select-gender').val($('.var-gender').data('value'))
+    // 表单提交
+    $('form').on('success', function () {
+        history.back()
+        setTimeout(function () {
+            if (location.hash.replace(/^#[!\/]*/, '')) {
+                dm.router.go('/')
+            }
+        }, 0)
+
+        $('.var-field').each(function () {
+            var $this = $(this)
+            var name = $this.data('name')
+            $this.html($('[name="' + name + '"]').val())
+        })
+        $('.var-gender').html($('.select-gender :selected').text())
+        $('.var-city').html($('.city-select .btn-city-text').val().replace(/\s*\/\s*/, ' '))
+    })
+</script>
+
+
+</body>
+</html>

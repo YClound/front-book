@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>手工试题</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width =1080,initial-scale=0.9, user-scalable=yes" />
+    <meta name="Keywords" content="" />
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../assets/css/questionBank.css">
+</head>
+<body>
+    <div class="full full03">
+        <div class="box1000 pathNav">
+            <h3>手工组卷</h3>
+            <div class="path">
+                <a href="/">易题库</a>&gt;<strong>手工组卷</strong>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <form action="../api/sgExamIndex.json" method="get" name="sgExamIndexForm" id="sgExamIndexForm">
+        <div class="box1000 chooseSubject guideStep">
+            <div class="blueTitle">
+                <h3>选择科目</h3>
+            </div>
+            <div class="select select01">
+                <h4 class="selectorbtn">高中数学</h4>
+                <ul class="selectorContent">
+                    <li id="5">高中数学</li>
+                </ul>
+            </div>
+            <input type="hidden" value="5" name="type_g" />
+            <div class="clear"></div>
+        </div>
+        <div class="box1000 guideStep">
+            <div class="blueTitle">
+                <h3>选择试卷版式</h3>
+            </div>
+            <div class="navIcon">
+                <ul>
+                    <li class="icon1">
+                        <label class="js_aaa">
+                            <span>随堂练习</span>
+                            <font><input type="radio" name="model_name" value="1" id="随堂练习" checked /></font>
+                            <u>A4/B5竖版</u>
+                        </label>
+                    </li>
+                    <li class="icon1">
+                        <label class="js_aaa">
+                            <span>单元测试</span>
+                            <font><input type="radio" name="model_name" value="2" id="单元测试"  /></font>
+                            <u>A4/B5竖版</u>
+                        </label>
+                    </li>
+                    <li class="icon2">
+                        <label class="js_aaa">
+                            <span>期中考试卷</span>
+                            <font><input type="radio" name="model_name" value="3" id="期中考试卷"  /></font>
+                            <u>B4/A3横版</u>
+                        </label>
+                    </li>
+                    <li class="icon2">
+                        <label class="js_aaa">
+                            <span>期末考试卷</span>
+                            <font><input type="radio" name="model_name" value="4" id="期末考试卷"  /></font>
+                            <u>B4/A3横版</u>
+                        </label>
+                    </li>
+                    <li class="icon2">
+                        <label class="js_aaa">
+                            <span>高考模拟卷</span>
+                            <font><input type="radio" name="model_name" value="5" id="高考模拟卷"  /></font>
+                            <u>B4/A3横版</u>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="box1000">
+            <div class="blueTitle">
+                <h3>试卷名称</h3>
+            </div>
+            <div class="quesName">
+                <ul>
+                    <li>
+                        <label>试卷名称</label>
+                        <input type="text" class="wh1" value="" name="paper_title" />
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="box1000 guideStep" id="stepflow03">
+            <div class="blueTitle">
+                <h3>选择题型</h3>
+            </div>
+            <div class="quesTypes">
+                <ul></ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="box1000 guideStep" id="stepflow04">
+            <div class="blueTitle"><h3>选择难度系数</h3></div>
+            <div class="level">
+                <ul>
+                    <li>
+                        <a href="javascript:;" id="1" class="nany">1.00-0.86</a>
+                        <span>容易</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;" id="2" class="nany">0.85-0.71</a>
+                        <span>较易</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;" id="3" class="nany this">0.70-0.56</a>
+                        <span>中等</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;" id="4" class="nany">0.55-0.41</a>
+                        <span>较难</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;" id="5" class="nany">0.40-0.26</a>
+                        <span>困难</span>
+                    </li>
+                </ul>
+                <input type="hidden" value="3" name="type_nanyi" />
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="box box1000">
+            <div class="knowledgeBtnBox" style="margin-bottom: 50px;">
+                <a href="javascript:;" class="btn btn1" id="submit_1">选择试题</a>
+            </div>
+        </div>
+    </form>
+
+    <script src='../assets/js/jquery-1.7.1.js'></script>
+    <!-- <script src='../assets/js/questionBank.js'></script> -->
+    <script src='../assets/js/quespop.js'></script>
+    <script src='../assets/js/manual-paper.js'></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head("账户充值")
+
+<body>
+	$!errorMsg
+	#header()
+	
+	<div class="container main-container ">
+		<div class="row-fluid">
+			#sidebar('acctIn')
+			
+			<div class="span10">
+				#breadcrumb("账户充值",'acctIn.htm')
+				
+				#acctInTab('offline')
+				
+				<div class="row-fluid">
+					<div class="content-main">
+						<div><h4 style="color: #4ba7f5;">银行转账充值流程：</h4></div>
+						<div class="bizflow">
+							<div class="step">向流量包子收款银行完成转账
+							</div>
+							<div class="arrowthick">
+							  	<span class="icon32 icon-blue icon-triangle-e"></span>
+							</div>
+							<div class="step">填写信息申请入账
+							</div>
+							<div class="arrowthick">
+								<span class="icon32 icon-blue icon-triangle-e">
+								</span>
+							</div>
+							<div class="step">审核通过</div>
+						</div>
+						
+						<div class="clearfix"></div>
+						
+						<div class="mt30">
+							<form id="acctInForm" class="form-horizontal" action="acctInCommit.htm" method="post">
+								#csrfTokenInput()
+								#if($!errorMsg)
+									#showMessage($errorMsg,'acctIn.htm') 
+								#else
+								<fieldset>
+								  <div class="control-group">
+									<label class="control-label">收款银行账户信息 <span class="red">*</span></label>
+									<div class="controls">
+									  <div class="input-prepend">
+										 #radio('bank',$!bankList,$!acctInForm.bank)
+									  </div>
+									  <div class="clearfix"></div>
+									  #getErrorMessage($errorList,'bank')
+									</div>
+								  </div>
+								  <div class="control-group error-tip">
+									<label class="control-label" for="amount">加款金额 <span class="red">*</span></label>
+									<div class="controls">
+											<div class="input-prepend bank-input">
+												<span class="add-on"><strong>¥</strong></span><input name="amount" id="amount" value="$!acctInForm.amount" type="text" class="input-medium" placeholder="请输入加款金额">
+								            </div>
+								             <div class="clearfix"></div>
+									 		 #getErrorMessage($errorList,'amount')
+									</div>
+								  </div>
+								  
+								  <div class="control-group error-tip">
+									<label class="control-label" for="bankSerialNO">银行流水号(备注)</label>
+									<div class="controls">
+									  <div class="input-prepend bank-input">
+										<span class="add-on"><i
+										class="icon-edit"></i></span>
+										<input id="bankSerialNO" name="bankSerialNO" value="$!acctInForm.bankSerialNO" class="input-medium" type="text" placeholder="请输入备注">
+										<div class="clearfix"></div>
+										#getErrorMessage($errorList,'bankSerialNO')
+									  </div>								
+									</div>
+								  </div>
+								  <div class="control-group">
+								  	  <div class="alert alert-info span9">
+								  	  	<h5 class="red">温馨提醒：</h5>
+										<p class="red"> 1. 提交前，请确认已完成银行即时转账 </p>
+										<p class="red"> 2. 请如实填写充值信息，如发生实际转账金额和加款金额不符造成堂堂账户充值失败，请重新提交充值信息，可联系客服进行加急处理。</p>
+										<p class="red"> 3. 请尽量填写银行转账流水号（备注），提升审核效率，工作人员可在30分钟内完成到账审核。</p>
+										<p class="red"> 4. 提交后，工作人员会在最迟3小时内进行人工审核。</p>
+									  </div>
+								  </div>
+								  
+								  <div class="control-group">
+								  <label class="control-label"> </label>
+									   <div class="controls">
+											<button type="submit" class="btn btn-primary" >提交</button>
+									   </div>
+								  </div>				  
+								</fieldset>
+								#end	
+							
+							</form>
+						</div>	
+					</div>
+				</div>
+					
+			</div>
+			
+		</div>
+	</div>
+	#footer()
+	
+	#set($assetsServer = $context.assetsServer)
+	<script src="$!{assetsServer}assets/js/jquery.validate.min.js"></script>
+	
+	 <script type="text/javascript">
+		$().ready(function() {
+			$("#acctInForm").validate({
+				focusInvalid:false, 
+			    submitHandler: function(form){  
+			        form.submit();  
+			    },
+				rules : {
+					bank : "required",
+					amount : {
+						required: true,
+						isMoney: true
+					}
+				},
+				messages: {
+					bank: "请选择加款银行",
+					amount:{
+						required: "请填写加款金额",
+						isMoney : "请正确填写加款金额"
+					}
+				},
+				errorPlacement: function(error, element) {  
+					 if (element.is(":radio")){
+						 error.appendTo( element.parent().next().next() );
+					 }  else{
+						 error.appendTo( element.parent().next() );
+					 }
+				}
+				
+			});
+		});
+		
+		$.validator.addMethod("isMoney", function(value, element) {
+				var length = value.length;  
+			    var money = /^(([1-9]{1}\d*)|([0]{1}))(\.(\d){1,2})?$/;
+			    return this.optional(element) || (length<=10 && (money.test(value)));
+			}, "请正确填写加款金额"
+		);
+	</script>
+</body>
+</html>

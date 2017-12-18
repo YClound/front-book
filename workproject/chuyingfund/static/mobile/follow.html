@@ -1,0 +1,330 @@
+<!doctype html>
+<!--[if lte IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="zh-CN"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon.png">
+    <link type="image/png" href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="email=no"/>
+    <meta name="format-detection" content="address=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-title" content="雏鹰网"/>
+    <title>我要跟投-雏鹰网</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="keywords" content="众筹,雏鹰网,雏鹰众筹,基金,种子基金,股权众筹,天使轮,种子轮,天使投资,风险投资,众筹平台,创业融资,私募股权融资,私募股权投资平台,融资平台">
+    <meta name="description" content="雏鹰网是致力于帮助有梦想、有决心、有能力、够努力的早期创业者获得股权投资的互联网平台。打造融合众筹投资人和创业者学习、互助、交流的在线众创空间。梦想再小也要呵护，力量再小也要支持。">
+    <!-- apple icon -->
+    <link type="image/png" href="../assets/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../assets/css/mobile/base_m.css">
+    <link rel="stylesheet" href="../assets/css/mobile/app.css">
+    
+    <script src="../assets/vendor/seajs/2.0.0/sea.js"></script>
+    <script src="../assets/js/config.m.js"></script>
+    
+    
+    <style>
+    
+    </style>
+    
+  </head>
+  <!-- data-limit="1" 表示有权限查看并跟投 data-limit="0" 需要审核-->
+  <body class="bg app m-body m-project-detail m-my-proj-detail" data-limit="1">
+    <!-- 主题 -->
+    <div class="m-main">
+        <div class="s-header flex headroom" id="proj-header">
+            <a class="db pl-6 pr-6" href="javascript:history.back()">
+                <i class="if icon-angle-left m-0"></i>
+            </a>
+            <div class="flex-1 ellipsis">e订生活，互联网购物新模式、新体验！</div>
+            <div class="w-3em"></div>
+        </div>
+
+        <div id="view">
+            <form id="form-follow" class="ajax-form" action="/static/assets/data/form.json" method="get">
+                <input type="hidden" id="project_id" name="project_id" value="GQ14599209670019367">
+
+                <input type="hidden" id="need_fund" name="need_fund" value="2000000.00">
+                <input type="hidden" id="min_follow_fund" name="min_follow_fund" value="10000.00">
+                <input type="hidden" id="fund_step" name="fund_step" value="5000">
+                <input type="hidden" id="final_valuation" name="final_valuation" value="60000000.00">
+                <div class="panel mt-7">
+                    <div class="flex  tac ">
+                        <div class="flex-1">
+                          <div class="br ">
+                              <div class="text c-9">
+                                    <u class="fz-medium ">15.5</u>万元
+                                </div>
+                                <div class="text">
+                                    <u class="fz-base">项目估值</u>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1">
+                          <div class="br">
+                              <div class="text c-9">
+                                    <u class="fz-medium ">1000</u>万元
+                                </div>
+                                <div class="text">
+                                    <u class="fz-base">投资总额</u>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1">
+                          <div class="br">
+                              <div class="text c-9">
+                                    <u class="fz-medium ">1</u>万元
+                                </div>
+                                <div class="text">
+                                    <u class="fz-base">最低跟投</u>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1">
+                          <div class="">
+                              <div class="text c-9">
+                                    <u class="fz-medium ">15.5</u>万元
+                                </div>
+                                <div class="text">
+                                    <u class="fz-base">投资总额</u>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel mt-7">
+                    <div class="flex space-between aic">
+                        <div class="">请输入您的跟投金额</div>
+                        <div class="number-pick">
+                            <span class="ctrl-wrap dib">
+                                <button type="button" class="btn btn-minus" data-bubble-left="-80px"> 
+                                  <u class="fz-x-large  lh-10">-</u>
+                                </button>
+                            </span>
+                            <span class="ctrl-wrap dib input-prefix" data-prefix="¥">
+                                <input style="width:90px;padding-top:0.4em;padding-bottom:0.4em;" type="number" id="amount" name="amount" min="2000.00" max="30000" step="2000" value="2000" data-bubble-left="-80px" data-bubble-dir="down">
+                            </span>
+                            <span class="ctrl-wrap dib"><button type="button" class="btn btn-plus"><u class="fz-x-large  lh-10">+</u></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel mt-7">
+                    <div class="panel-header p-0"><span class="fz-base">投资原因</span></div>
+                    <textarea name="reason" id="reason" rows="3" class="mb-5 mt-5" placeholder="请输入您对项目的投资理由"></textarea>
+                </div>
+
+                <div class="panel mt-7">
+                    <!-- 地址id -->
+                    <input type="hidden" name="addr" value="4430">
+                    <div class="panel-header p-0"><span class="fz-base">出资证明书收获地址</span></div>
+                    <!--没数据的时候 -->
+                    <div class="s-address flex aic no-data" style="display:none">
+                        <i class="db if icon-map-marker pr-6 pl-6 m-0"></i>
+                        <a class="db flex-1" data-router="/address-edit" href="javascript:;">您还没有邮寄地址，请添加</a>
+                        <i class="db if icon-angle-right pl-6 pr-4 m-0"></i>
+                    </div>
+                    <!-- 有数据的时候 -->
+                    <div class="s-address panel flex aic has-data" style="">
+                      <i class="db if icon-map-marker pr-6 pl-6 m-0"></i>
+                      <a class="db flex-1 no-data-1" data-router="/address" href="javascript:;" style="display:none">请选择邮寄地址</a>
+                      <a class="db flex-1 has-data-1" data-router="/address" href="javascript:;" style="">邮寄地址: <var id="addr-text">江苏省 南京市  苏州园林</var></a>
+                      <i class="db if icon-angle-right pl-6 pr-4 m-0"></i>
+                  </div>
+
+                </div>
+                <div class="pl-6 mb-10 clearfix">
+                    <input type="checkbox" name="agree" class="fl w-5 mt-2" checked="">
+                    <p class="fl w-90 m-0">
+                        我同意并遵守投资规则
+                        <a href="/static/about/key/follow.html" class="btn-link c-primary" target="_blank">《跟投规则》</a>
+                        <a href="/static/about/key/fenpei.html" class="btn-link c-primary" target="_blank">《投资利益分配规则》</a>
+                        <a href="/static/about/key/after.html" class="btn-link c-primary" target="_blank">《投后管理规则》</a>
+                    </p>
+                </div>
+
+                <div class="action tac ">
+                  <button type="submit" class="btn-primary btn-confirm w-95 fz-medium">确定投资</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+  <!-- router -->
+  <div class="view-wrap">
+      <!-- 地址列表 -->
+      <div class="view view-address" >
+          <div class="view-content">
+
+              <div class="s-header poa flex aic">
+                <a class="db pl-6 pr-6" onclick="dm.back()" href="javascript:;">
+                  <i class="if icon-angle-left m-0"></i>
+                </a>
+                <div class="flex-1" data-router="/address-edit">收货地址管理</div>
+                <a class="pr-5 btn-new-address" href="javascript:;" data-router="/address-edit">添加</a>
+              </div>
+              <div class="padding-header"></div> 
+              <div class="s-address-list p-6">
+
+                <div class="panel  addr-item" data-id="4430" data-prov="11" data-city="175" data-postno="310000" data-default="0">
+                  <div class="fz-medium">马金慧 &nbsp; &nbsp; &nbsp; 18042324007</div>
+                  <div class="fz-small c-6 bb pt-5 pb-7 full addr-detail">浙江省 杭州市 德力西大厦</div>
+                  <div class="flex space-between fz-small pt-8 pt-3 c-6">
+                    <div>
+                      <!-- <form action="" class="dib mr-5 ajax-form" name='form-setdefault'>
+                        <input type="hidden" name="id" value="4430">
+                        <button type="submit" class="set-default p-0 active">
+                          <i class="if icon-check"></i>
+                          <u>设为</u>默认地址</button>
+                      </form> -->
+                    </div>
+                    <div>
+                      <a class="dib mr-5 edit" href="javascript:;" data-router="/address-edit">编辑</a>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="panel  addr-item" data-id="4454" data-prov="10" data-city="162" data-postno="310000" data-default="1">
+                  <div class="fz-medium">马金慧 &nbsp; &nbsp; &nbsp; 18042324007</div>
+                  <div class="fz-small c-6 bb pt-5 pb-7 full addr-detail">江苏省 南京市 苏州园林</div>
+                  <div class="flex space-between fz-small pt-8 pt-3 c-6">
+                    <div>
+                      <!-- <form action="/address/setdefault.html" class="ajax-form dib mr-5" name='form-setdefault'>
+                        <input type="hidden" name="id" value="4454">默认地址
+                      </form> -->
+                    </div>
+                    <div>
+                      <a class="dib mr-5 edit" href="javascript:;" data-router="/address-edit">编辑</a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+          </div>
+              
+
+              
+      </div>
+
+      <!-- 编辑地址 -->
+      <div class="view view-address-edit" >
+        <div class="view-content">
+          <div class="s-header poa flex aic">
+            <a class="db pl-6 pr-6"  href="javascript:history.back()">
+              <i class="if icon-angle-left m-0"></i>
+            </a>
+            <div class="flex-1">收货地址管理</div>
+            <div class="pr-5"></div>
+          </div>
+          <div class="padding-header"></div>
+          <div class="s-address-edit mt-7">
+            <form  action="/static/assets/data/addr.json" class="form-address-edit ajax-form" name='form-address-edit' method="get">
+              <input type="hidden" name="id" value="">
+              <input type="hidden" name="name" value="马金慧">
+              <input type="hidden" name="phone" value="18042324007">
+              <div class="panel p-0">
+                <div class="p-6 flex aic bb">
+                  <label for="addr-name" class="nowrap w-5em">收货人：</label>
+                  <div class="ctrl-wrap flex-1">
+                    <input type="text" name="name" class="ghost" id="addr-name" placeholder="请输入收件人姓名" required maxlength="25" data-bubble-dir="down" nocount value="马金慧" disabled></div>
+                </div>
+                <div class="p-6 flex aic bb">
+                  <label for="addr-tel" class="nowrap w-5em">手机号：</label>
+                  <div class="ctrl-wrap flex-1">
+                    <input type="text" name="phone" class="ghost" id="addr-tel" placeholder="请输入您的手机" required maxlength="25" data-bubble-dir="down" nocount value="18042324007" disabled></div>
+                </div>
+                <div class="p-6 bb">
+                  <div class="ctrl-wrap flex aic">
+                    <label class="nowrap w-5em">省市区：</label>
+                    <div class="city-select">
+                      <input type="hidden" id="province" name="province" value="">
+                      <input type="hidden" id="city" name="city" value="">
+                      <input type="button" class="btn btn-o btn-city-text" value="请选择城市" pattern="/\//" data-pattern-msg="请选择城市" data-blur-silence="true" data-bubble-left="172">
+                      <div class="dropdown-content" style="display: none;">
+                        <ul class="tab-title">
+                          <li class="active" data-target=".prov-box">省份</li>
+                          <li data-target=".city-box">城市</li></ul>
+                        <ul class="tab-content">
+                          <li class="prov-box"></li>
+                          <li class="city-box" style="display: none;"></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 flex aic bb">
+                  <label for="addr-detail" class="nowrap w-5em">详细地址：</label>
+                  <div class="ctrl-wrap flex-1">
+                    <input type="text" name="address" class="ghost" id="addr-detail" placeholder="请输入详细地址" required maxlength="100" data-bubble-dir="down" nocount></div>
+                </div>
+                <div class="p-6 flex aic bb">
+                  <label for="postno" class="nowrap w-5em">邮编：</label>
+                  <div class="ctrl-wrap flex-1">
+                    <input type="text" name="postno" class="ghost" id="postno" placeholder="请输入邮编号码" maxlength="6" data-bubble-dir="down" nocount></div>
+                </div>
+              </div>
+              <div class="p-6 mt-8">
+                <button type="submit" class="btn-primary w-100 fz-medium">添 加</button></div>
+            </form>
+          </div>
+        </div>
+          
+      </div>
+
+
+    
+  </div>
+
+
+  <script type="text/html" id="addr-item">
+    <div class="panel addr-item {{if active}}active{{/if}}" data-id="{{id}}" data-prov="{{province}}"
+         data-city="{{city}}"
+         data-postno="{{postno}}" data-default="{{status}}">
+        <div class="fz-medium">马金慧 &nbsp; &nbsp; &nbsp; 18042324007</div>
+        <div class="fz-small c-6 bb pt-5 pb-7 full addr-detail">{{address}}</div>
+        <div class="flex space-between fz-small pt-8 pt-3 c-6">
+            <div>
+                <!-- <form action="/address/setdefault.html" class="dib mr-5" name='form-setdefault'>
+                    <input type="hidden" name="id" value="{{id}}">
+                    <button type="submit" class="set-default p-0 {{if status}}active{{/if}}"><i
+                            class="if icon-check" name='btnSetDefault'></i><u>设为</u>默认地址
+                    </button>
+                </form> -->
+            </div>
+            <div>
+                <a class="dib mr-5 edit" href="javascript:;"  data-router="/address-edit" name='btnAdd'>编辑</a>
+            </div>
+        </div>
+    </div>
+  </script>
+
+
+  <script src="/static/assets/js/api.js"></script>
+  <script src="/static/assets/vendor/jquery/jquery-2.1.4.min.js"></script>
+  <script src="/static/assets/js/dm.base.js"></script>
+
+  <script>
+   seajs.use('/static/assets/js/module/mobile/m-invest-follow');
+  </script>
+  
+  </body>
+</html>

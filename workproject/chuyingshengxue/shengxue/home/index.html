@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>雏鹰升学</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" type="text/css" href="/public/assets/css/base_m.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pc/chuyingentrance.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pc/index.css">
+  <script type="text/javascript">
+    var serverData = {
+    		 /* userData:{
+            id: 9,
+            name: "Damon5",
+            location: null,
+            subjectId: "4",
+            teachGrades: "1,2"
+          } */
+          userData:{
+        	  id: "[[${session.teacher eq null?null:session.teacher.id}]]",
+              name: "[[${session.teacher eq null?null:session.teacher.name}]]",
+              location: "[[${session.teacher eq null?null:session.teacher.location}]]",
+              subjectId: "[[${session.teacher eq null?null:session.teacher.subjectId}]]",
+              subjectName: "[[${session.teacher eq null?null:session.teacher.subjectName}]]",
+              teachGrades: "[[${session.teacher eq null?null:session.teacher.teachGrades}]]"
+          }    }
+  </script>
+</head>
+<body class="bg">
+  <!-- fixed显示公众号 -->
+  <div class="QRcode">
+    <span class="if icon-times close-QRcode"></span>
+  </div>
+  
+  <div class="header">
+    <div class="header-content clearfix">
+      <a class="header-logo" href="index.html"></a>
+      <div class="header-nav">
+        <ul class="header-nav-list">
+          <li class="nav-title"> 
+            <a href="javascript:;" class="">组卷</a>
+            <div class="nav-content">
+              <a href="manual-paper.html">手工组卷</a>
+              <a href="auto-paper.html">智能组卷</a>
+            </div>
+          </li>
+          <li class="nav-title">
+            <a href="javascript:;">试题宝库</a>
+            <div class="nav-content nav-subject-list">
+              <div class="flex flex-center flex-wrap">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <a class="header-user" href="my-paper.html">
+        <span class="user-avatar"><img src="./assets/images/pc/icon/avatar.png"></span>
+        <span class="user-info"></span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="main-container">
+    <!-- banner -->
+    <div class="container-banner">
+      <div class="banner-content">
+        <div class="tab-title flex">
+          <div class="tab-title-login active flex-1" data-tab="login">登录</div>
+          <div class="tab-title-register flex-1" data-tab="register">注册</div>
+        </div>
+        <div class="tab-content">
+          <div class="tab-content-login" data-tab="login">
+            <form class="ajax-form login-form" action="/api/teacher/login" method="post">
+              <div class="form-group por">
+                <div class="form-icon icon-user"></div>
+                <div class="user-indentity">我是老师</div>
+              </div>
+              <div class="form-group por">
+                <div class="form-icon icon-phone"></div>
+                <input type="tel" name="phone" placeholder="手机号码" required data-rule="cellphone">
+              </div>
+              <div class="form-group por">
+                <div class="form-icon icon-password"></div>
+                <input type="password" name="password" placeholder="密码" required>
+              </div>
+              <div class="form-group por pt-8 pb-13">
+                <button class="w-100 tac bg-blue confirm-btn confirm-login">确认登录</button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-content-register" data-tab="register">
+            <form class="ajax-form register-form" action="/api/teacher/register" method="post">
+              <div class="form-group por">
+                <div class="form-icon icon-user"></div>
+                <div class="user-indentity">我是老师</div>
+              </div>
+              <div class="form-group por">
+                <div class="form-icon icon-phone"></div>
+                <input type="tel" name="phone" placeholder="手机号码" required data-rule="cellphone">
+              </div>
+              <div class="form-group por">
+                <div class="form-icon icon-msg"></div>
+                <input type="hidden" id="codeflag" name="flag" value="1">
+                <input type="text" name="code" placeholder="验证码" required>
+                <button type="button" class="btn-sms" data-disabled-text="重新获取<var>60</var>秒" >获取验证码</button>
+              </div>
+              <div class="form-group por">
+                <div class="form-icon icon-name"></div>
+                <input type="text" name="name" placeholder="姓名" required>
+              </div>
+              <div class="form-group por">
+                <div class="form-icon icon-password"></div>
+                <input type="password" name="password" placeholder="密码" required>
+              </div>
+              <div class="form-group por">
+                <button class="w-100 tac bg-blue confirm-btn confirm-register">确认注册</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- banner end-->
+    <!-- content -->
+    <div class="main-content">
+      <div class="content-header">让组卷变得更轻松</div>
+      <div class="flex space-between content-detail">
+        <div class="content-item">
+          <div class="item-image" style="background-image: url('./assets/images/pc/index/paper.png')">
+            <div class="item-logo" style="background-image: url('./assets/images/pc/index/paper-logo.png')"></div>
+          </div>
+          <div class="c-blue tac pt-10 fz-x-large pb-10">组卷</div>
+          <div class="c-9 tac pb-13 pl-10 pr-10 fz-medium">针对日常教学作业与测试，速成一套高质量全新试卷！为老师增效减负，告别繁琐找题！</div>
+        </div>
+        <div class="content-item">
+          <div class="item-image" style="background-image: url('./assets/images/pc/index/bank.png')">
+            <div class="item-logo" style="background-image: url('./assets/images/pc/index/bank-logo.png')"></div>
+          </div>
+          <div class="c-yellow tac pt-10 fz-x-large pb-10">题库</div>
+          <div class="c-9 tac pb-13 pl-10 pr-10 fz-medium">高质量试题及时更新，权威老师把关，精选题型，全方面内容即刻满足！</div>
+        </div>
+      </div>
+    </div>
+    <!-- content end-->
+  </div>
+
+  <div class="footer">
+    <div class="footer-container clearfix">
+      <div class="footer-item">
+        <h2>现在开始</h2>
+        <ul>
+          <li><a href="javascript:;">梦想发起</a></li>
+          <li><a href="javascript:;">账号注册</a></li>
+          <li><a href="javascript:;">账号登录</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-item">
+        <h2>关于我们</h2>
+        <ul>
+          <li><a href="javascript:;">FAQ</a></li>
+          <li><a href="javascript:;">用户引导</a></li>
+          <li><a href="javascript:;">联系我们</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-item">
+        <h2>法律</h2>
+        <ul>
+          <li><a href="javascript:;">服务条款</a></li>
+          <li><a href="javascript:;">隐私政策</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-item">
+        <ul class="footer-infor">
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/phone.png"></span>
+            <span>0571-88489062</span>
+          </li>
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/message.png"></span>
+            <span>bp@chuyingfund.cn</span>
+          </li>
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/weibo.png"></span>
+            <span>雏鹰网</span>
+          </li>
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/history.png"></span>
+            <span>周一至周五9:00-18:00 </span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-QRcode">
+        <img src="./assets/images/pc/icon/QRcode.jpg">
+        <p>扫码关注微信公众号</p>
+      </div>
+    </div>
+    <span class="copyright">Copyright © 2016 杭州树德科技有限公司 浙ICP备15019518号-2.</span>
+  </div>
+  <script src="./assets/js/dm.api.js"></script>
+  <script src="/public/vendor/jquery/jquery-2.1.4.min.js"></script>
+  <script src="/public/assets/js/dm.base.js"></script>
+  <script src="./assets/js/pc.js"></script>
+  <script src="./assets/js/pc/index.js"></script>
+
+</body>
+</html>

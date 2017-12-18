@@ -1,0 +1,44 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "pager": {
+            "page": 1,
+            "pages": 22,
+            "total": 220,
+            "pagesize": 10
+        },
+        "list": [
+            {
+                "typeId": "1",
+                "typeName":"法律服务",
+                "typeIcon":"../assets/images/mobile/fellowship/1.png",
+                "typeSort":"1"
+            },
+            {
+                "typeId": "2",
+                "typeName":"金融服务",
+                "typeIcon":"../assets/images/mobile/fellowship/2.png",
+                "typeSort":"2"
+            },
+            {
+                "typeId": "3",
+                "typeName":"教育资源",
+                "typeIcon":"../assets/images/mobile/fellowship/3.png",
+                "typeSort":"1"
+            },
+            {
+                "typeId": "4",
+                "typeName":"企业合作",
+                "typeIcon":"../assets/images/mobile/fellowship/4.png",
+                "typeSort":"1"
+            },
+            {
+                "typeId": "5",
+                "typeName":"老家特产",
+                "typeIcon":"../assets/images/mobile/fellowship/5.png",
+                "typeSort":"1"
+            }
+        ]
+    }
+}

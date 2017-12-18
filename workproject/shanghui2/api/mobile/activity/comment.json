@@ -1,0 +1,41 @@
+{
+    "status" : 0,
+    "data" : {
+        "page" : {
+            "current_page" :  1,
+            "total_page" : 3
+        },
+        "list" :[
+            {
+                "realName" : "齐小吓",
+                "userPhoto" : "../assets/images/mobile/activity.jpg",
+                "userIdentity" : "会员",
+                "comment" : "不错不错，继续努力！我很看好你哦！不错不错，继续努力！我很看好你哦！",
+                "publishDate" : "2016-05-12",
+                "publishTime" : "13:00",
+                "commentUserId" : 1234,
+                "commentId" : 234
+            },
+            {
+                "realName" : "汪灵",
+                "userPhoto" : "../assets/images/mobile/activity.jpg",
+                "userIdentity" : "会长",
+                "comment" : "不错不错，继续努力！我很看好你哦！不错不错，继续努力！我很看好你哦！",
+                "publishDate" : "2016-12-12",
+                "publishTime" : "23:00",
+                "commentUserId" : 456,
+                "commentId" : 1234
+            },
+            {
+                "realName" : "张小利",
+                "userPhoto" : "../assets/images/mobile/activity.jpg",
+                "userIdentity" : "同乡",
+                "comment" : "不错不错，继续努力！我很看好你哦！不错不错，继续努力！我很看好你哦！",
+                "publishDate" : "2016-06-12",
+                "publishTime" : "09:00",
+                "commentUserId" : 789,
+                "commentId" : 2334
+            }
+        ]
+    }
+}

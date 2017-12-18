@@ -1,0 +1,50 @@
+{
+  "code": 0,
+  "message": "操作成功",
+  "url": null,
+  "data": [
+    {
+      "typeId": 1,
+      "typeName": "单选题",
+      "typeShort": "dxt",
+      "typeSubjectId": 4,
+      "typeModule": "SELECT",
+      "typeCount": 6,
+      "typeOrder": 1,
+      "typeEnable": 1,
+      "collectCount":233
+    },
+    {
+      "typeId": 2,
+      "typeName": "填空题",
+      "typeShort": "tkt",
+      "typeSubjectId": 4,
+      "typeModule": "FILLBLANK",
+      "typeCount": 0,
+      "typeOrder": 0,
+      "typeEnable": 1,
+      "collectCount":65
+    },
+    {
+      "typeId": 3,
+      "typeName": "计算题",
+      "typeShort": "asd",
+      "typeSubjectId": 4,
+      "typeModule": "SELECT",
+      "typeCount": 2,
+      "typeOrder": 0,
+      "typeEnable": 1
+    },
+    {
+      "typeId": 4,
+      "typeName": "解答题",
+      "typeShort": "df",
+      "typeSubjectId": 4,
+      "typeModule": "SELECT",
+      "typeCount": 0,
+      "typeOrder": 0,
+      "typeEnable": 1,
+      "collectCount":19
+    }
+  ]
+}

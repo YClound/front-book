@@ -1,0 +1,117 @@
+<!doctype html>
+<!--[if lte IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>分页</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <meta name="keywords" content="众筹,雏鹰网,股权众筹,天使轮,种子轮,天使投资,风险投资,众筹平台,创业融资,私募股权融资,私募股权投资平台,融资平台">
+    <meta name="description" content="雏鹰网是致力于帮助有梦想、有决心、有能力、够努力的早期创业者获得股权投资的互联网平台。打造融合众筹投资人和创业者学习、互助、交流的在线众创空间。梦想再小也要呵护，力量再小也要支持。">
+
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+
+    <link rel="stylesheet" href="../../assets/css/mobile/base.css">
+    <link rel="stylesheet" href="list.css">
+
+    <script src="../../assets/vendor/seajs/2.0.0/sea.js"></script>
+    <script src="../../assets/js/config.js"></script>
+  </head>
+  <body>
+  <div class="">
+    <div class="feed-list feed-no-avatar project-active-list">
+        <div class="feed-item">
+            <div class="feed-content">             
+              <div class="feed-text">近日，北大一硕士论文因其主题研究身体和情趣走红校园，该论文也被称为“史上最羞羞的毕业论文”http://ww1.sinaimg.cn/orj480/4364c6bejw1f47eflzm6bj20e60e6760.jpg</div>
+              <div class="feed-photo">
+                  <ul class="feed-photo-list">
+                      <li class="feed-photo-item" data-role="photoItem" data-original="http://www.chuyingfund.com/zcworks/null/article/2016/966bc3a7-737f-438f-80a9-8db7cc8fc799.jpg">
+                          <img src="http://ww2.sinaimg.cn/thumb180/afb4603bgw1f46h8acklbj20500500sq.jpg" alt="" />
+                      </li>
+                      <li class="feed-photo-item" data-role="photoItem" data-original="http://www.chuyingfund.com/zcworks/null/article/2016/966bc3a7-737f-438f-80a9-8db7cc8fc799.jpg">
+                          <img src="http://ww2.sinaimg.cn/thumb180/afb4603bgw1f46h8acklbj20500500sq.jpg" />
+                      </li>
+                      <li class="feed-photo-item" data-role="photoItem" data-original="http://www.chuyingfund.com/zcworks/null/article/2016/966bc3a7-737f-438f-80a9-8db7cc8fc799.jpg">
+                          <img src="http://ww2.sinaimg.cn/thumb180/afb4603bgw1f46h8acklbj20500500sq.jpg" alt=""  />
+                      </li>
+                      
+                  </ul>
+              </div>
+              <div class="feed-info">
+                  <span>发布时间：</span><span class="feed-date">2015-12-12 08:08:12</span>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- data-template 模板ID ；data-total-page 总页数; form.action ajax提交路径，隐藏域为参数-->
+    <div class="more-loading mt-8 " data-type="json" data-template="projActive" data-list-wrap=".project-active-list" data-total-page="3" >
+        <form class="ajax-form" action="/static/assets/data/loading-more.json" data-ajax-method="get">
+            <input type="hidden" name="type" value="">
+            <input type="hidden" name="offset" value=""  data-name="offset">
+            <input type="hidden" name="keyword" value="">
+        </form>
+        <div class="tac loading">
+            <button type="button" class="btn btn-primary more">加载更多</button>
+            <div class="loading-text" >正在加载中...</div>
+            <div class="end-text">已经没有数据了</div>
+        </div>
+    </div>
+
+
+  </div>
+
+ <script type="text/tempalte" id="projActive">
+    <div class="feed-list feed-no-avatar">
+      <div class="feed-item">
+        <div class="feed-content"> 
+            <div class="feed-text">{{content}}</div>
+            {{ if photo }}
+            <div class="feed-photo">
+                <ul class="feed-photo-list">
+                    {{each _photo}}
+                    <li class="feed-photo-item">
+                        <a href="javascript:;" class="feed-photo-link" data-role="photoItem" data-original="{{$value}}">
+                            <img src="{{$value}}" alt="">
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+            </div>
+            <div class="feed-info">
+                <span class="c-9">发布时间：</span><span class="feed-date">{{date}}</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+    <script>
+      seajs.use(['template','dm.modal','dm.scroll','dm.ajaxpost'],function(){
+        $(function(){
+            $('.more-loading').moreLoading({
+                parseData:function(list){
+                    
+                    for (var i = list.length - 1; i >= 0; i--) {
+                        var data = {};
+                        var arr = list[i].photo.split(',');
+
+                        list[i]._photo = arr;
+                    }
+                    
+                }
+            });
+        })
+            
+      });
+    </script>
+  </body>
+</html>

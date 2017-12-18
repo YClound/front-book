@@ -1,0 +1,59 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "pager": {
+            "page": 1,
+            "pages": 1,
+            "total": 5,
+            "pagesize": 10
+        },
+        "list": [
+            {
+                "subjectId": "1",
+                "subjectName":"数学",
+                "subjectImage":"math",
+                "count":1100,
+                "subjectShort":"",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "2",
+                "subjectName":"语文",
+                "subjectImage":"chinese",
+                "count":1100,
+                "subjectShort":"",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "3",
+                "subjectName":"英语",
+                "subjectImage":"english",
+                "count":1100,
+                "subjectShort":"",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "4",
+                "subjectName":"物理",
+                "subjectImage":"physical",
+                "count":1100,
+                "subjectShort":"",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            },
+            {
+                "subjectId": "5",
+                "subjectName":"化学",
+                "subjectImage":"chem",
+                "count":1100,
+                "subjectShort":"",
+                "subjectOrder":"0",
+                "subjectEnable":true
+            }
+        ]
+    }
+}

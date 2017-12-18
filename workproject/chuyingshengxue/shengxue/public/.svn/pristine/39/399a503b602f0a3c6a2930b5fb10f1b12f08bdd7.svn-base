@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+        <title>tag</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <link rel="stylesheet" href="../assets/css/base_m.css?4.9">
+    
+   
+    
+    
+</head>
+<body class="bgc-w p-7"> 
+<section>
+    <p>tag</p>
+    <span class="tag-danger m-5">tag-danger</span>
+    <span class="tag-light m-5">tag-light</span>
+    <span class="tag-gray m-5">tag-gray</span>
+    <span class="tag-primary m-5">tag-primary</span>
+    <span class="tag-success m-5">tag-success</span>
+    <span class="tag-warning m-5">tag-warning</span>
+    <span class="tag-o tag-risk-a m-5">tag-o tag-risk-a</span>
+    <span class="tag-o tag-risk-b m-5">tag-o tag-risk-a</span>
+    <span class="tag-o tag-risk-c m-5">tag-o tag-risk-a</span>
+    <span class="tag-danger tag-small m-5">tag-small</span>
+
+</section>
+<section>
+    <p>红点</p>
+    <i class="icon-red-dot"></i>
+</section>
+    
+
+
+
+
+</body>
+</html>

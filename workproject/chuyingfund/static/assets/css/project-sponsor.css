@@ -1,0 +1,170 @@
+.project-sponsor-top{
+    position: relative;
+    height: 650px;
+    background: url(../img/project-sponsor.jpg) no-repeat center center;
+    text-align: center;
+    color: #fff;
+    padding-top: 180px;
+} 
+.project-sponsor-top h1{ 
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+.project-sponsor-top .happy-newYear{
+    width: 400px;
+    height: 30px;
+    margin: 0 auto;
+}
+.project-sponsor-top .happy-newYear hr{
+    margin-top:24px; 
+    float: left;
+    display: block;
+    width: 100px;
+    line-height: 1px;
+    border-color: #d3d3d3;
+}
+.project-sponsor-top .happy-newYear p{
+    width: 200px;
+    float: left;
+    line-height: 1px;
+    font-size: 24px;
+    color: #d3d3d3;
+}
+.project-sponsor-top h2{
+    font-size: 30px;
+}
+.project-sponsor-button{
+    position: absolute;
+    left: 50%;
+    height: 50px;
+    width: 200px;
+    background-color: #1ba2dc;
+    border-radius: 5px;
+    color: #fff;
+    bottom: 180px;
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
+    transform: translateX(-100px);
+    line-height: 50px;
+    text-align: center;
+}
+.project-sponsor-button a{
+    display: block;
+    height: 50px;
+    width: 200px;
+    color: #fff;    
+}
+.project-sponsor-button:hover{
+    background-color: #0a84b9;
+}
+
+.project-sponsor-how{
+    position: relative;
+    width: 100%;
+    padding: 80px 0px 30px;
+}
+.how-wrap{
+    position: relative;
+    width: 1170px;
+    text-align: center;
+    color: #1ba2dc;
+    margin: 0 auto;
+}
+.how-way{
+    margin-top: 100px;
+}
+.circle{
+    float: left;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #1ba2dc;
+    border-radius: 200px;
+    margin-bottom: 213px;
+    text-align: center;
+    padding-top: 35px;
+}
+.circle .icon-pad-pencil,
+.circle .icon-man-3,
+.circle .icon-alarm-clock,
+.circle .icon-display{
+    font-size: 85px;
+    line-height: 85px;
+    margin: 0 auto;
+}
+.circle u{
+    color: #1ba2dc;
+    display: block;
+    font-size: 16px;
+}
+.how-icon{
+    float: left;
+    padding: 72px 27px 0;
+}
+.how-icon .icon-arrow-right{
+    font-size: 68px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.project-sponsor-how .project-button{
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    -webkit-transform: translateX(-150px);
+    -moz-transform: translateX(-150px);
+    -ms-transform: translateX(-150px);
+    -o-transform: translateX(-150px);
+    transform: translateX(-150px);
+    height: 50px;
+    width: 300px;
+    border: #1cb2f2 2px solid;
+    border-radius: 5px;
+    color: #1ba2dc;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+.project-button a{
+    display: block;
+    height: 50px;
+    width: 300px;
+    border-radius: 5px;
+}
+.project-button a:hover{
+    color: #fff;
+}
+.project-button:hover{
+    background-color:#1cb2f2; 
+}
+
+
+
+.project-sponsor-issue{
+    width: 100%;
+    background-color:#32baf3;
+    padding: 80px 0 100px;
+}
+.issue-wrap{
+    width: 1170px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+.issue-wrap h2{
+    font-size: 32px;
+}
+.issue-wrap h4{
+    font-size: 24px;
+}
+.issue-wrap p{
+    line-height: 30px;
+    height: 100px;
+    font-size: 16px;
+}
+.issue-wrap ul li{
+    text-align: left;
+    padding: 20px 0 0;
+    width: 514px;
+}

@@ -1,0 +1,85 @@
+.header{
+  top: 0;
+  height: 45px;
+  line-height: 45px;
+  background: #0087ff;
+  color: #fff;
+  font-size: 1.2em;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+.banner{
+  width: 100%;
+  min-height: 132px;
+}
+.banner img{width: 100%;}
+.evaluation-result{background-color: #fff; padding: 15px 10px;}
+.evaluation-result div{
+  float: left;
+  font-size: 1.2em;
+  line-height: 2.2em;
+}
+.evaluation-result .upload-test{
+  display: block;
+  float: right;
+  background-color: #0087ff;
+  padding: .4em 1em;
+}
+.sigle-result{
+  padding-top: 15px;
+  margin-top: 12px;
+  background-color: #fff;
+}
+.sigle-result .evaluation-title{
+  margin: 0 10px 15px 10px;
+  padding-left: 10px;
+  border-left: #0087ff 4px solid;
+}
+.sigle-result .panel{padding: 20px 10px;}
+.sigle-result .result-item{position: relative; display: block;}
+.sigle-result .result-item + .result-item{margin-top: 20px;}
+.sigle-result .progress{
+  height: 10px;
+  width: 70%;
+  border-radius: 5px;
+  position: absolute;
+  background-color: #cfd8dc;
+  top: 50%;
+  margin-top: -5px;
+  left: 13%;
+  overflow: hidden;
+}
+.sigle-result .progress-bar{
+  height: 10px;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  background:linear-gradient(left, #0388ff, #7fb0ff); 
+  background:-webkit-linear-gradient(left, #0388ff, #7fb0ff); 
+  background:-moz-linear-gradient(left, #0388ff, #7fb0ff);   
+}
+.sigle-result .bg-green{
+  background:linear-gradient(left, #1bc7df, #87e8f5); 
+  background:-webkit-linear-gradient(left, #1bc7df, #87e8f5); 
+  background:-moz-linear-gradient(left, #1bc7df, #87e8f5);
+}
+.sigle-result .bg-orange{
+  background:linear-gradient(left, #fe9c02, #ffcd7f); 
+  background:-webkit-linear-gradient(left, #fe9c02, #ffcd7f); 
+  background:-moz-linear-gradient(left, #fe9c02, #ffcd7f);
+}
+.sigle-result .bg-pink{
+  background:linear-gradient(left, #ff6c54, #ffb3a6); 
+  background:-webkit-linear-gradient(left, #ff6c54, #ffb3a6); 
+  background:-moz-linear-gradient(left, #ff6c54, #ffb3a6);
+}
+
+/*学科详情*/
+body.subject{padding-bottom: 0px;}
+.subject-banner{padding-top: 45px;}

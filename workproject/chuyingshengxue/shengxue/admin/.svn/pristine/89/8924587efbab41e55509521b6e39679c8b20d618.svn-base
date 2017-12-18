@@ -1,0 +1,14 @@
+{
+  "code": 0,
+  "message": "操作成功",
+  "url": null,
+  "data": {
+    "questionId": "SXDXT00001",
+    "questionAnswerJson": {
+      "answer": "A|B|C"
+    },
+    "questionAnalysisJson": {
+      "analysis": "已知函数f(x+1)=3x+2,则f(x)的解析式是"
+    }
+  }
+}

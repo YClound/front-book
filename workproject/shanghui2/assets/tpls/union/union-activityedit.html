@@ -1,0 +1,80 @@
+<div class="main-view-wrapper">
+    <form class="form-horizontal" name="submitForm">
+        <input type="text" class="form-control" ng-model="formData.articleId" hidden="hidden"/>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label>来源：</label></div>
+            <div class="flex-1 control-field">
+                <span ng-bind="formData.sociatyName"></span>
+                <span ng-if="formData.sociatyName == null">商联创建</span>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="required">标题：</label></div>
+            <div class="flex-1 control-field">
+                <input  type="text" ng-model="formData.articleTitle" class="form-control" required />
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">封面：</label></div>
+            <div class="flex-1 control-field">
+                <!-- 属性wu表示上传插件  ng-model绑定数据-->
+                <div class="wu" wu ng-model="formData.articlePhoto" >
+                    <input type="hidden" class="form-control file-upload" ng-model="formData.articlePhoto" name="articlePhoto" >
+                    <div class="pick-wrap">
+                        <div class="pick" data-preview="true" >上传图片</div>
+                    </div>
+                    <div class="file-list">
+                        
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title "><label class="required">内容：</label></div>
+            <div class="flex-1 control-field" style="width:100%;">
+                <textarea name="content" ng-model='formData.articleContent' meta-umeditor meta-umeditor-config="all_config"></textarea>
+            </div>
+        </div>
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="">查看权限：</label></div>
+            <div class="flex-1 control-field ctrl-wrap">
+                <label class="checkbox-inline" >
+                    <input type="checkbox"  value="{{readAuth.id}}" name="readAuth" ng-checked="readAuth._selected" ng-model="readAuth._selected" ng-change="readAuthChange(readAuth)"> <span ng-bind="readAuth.text"></span>
+                </label>
+                <div>
+                    <label class="checkbox-inline" ng-repeat="group in readAuthList" >
+                        <input  type="checkbox"  value="{{group.id}}" name="articleReadAuth" ng-checked="group._selected" ng-model="group._selected" ng-change="readAuthSync()"> <span ng-bind="group.text"></span>
+                    </label>
+                </div> 
+            </div>
+        </div>
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="">统计会员阅读：</label></div>
+            <div class="flex-1 control-field ctrl-wrap">
+                <label class="checkbox-inline" >
+                    <input type="checkbox"  value="{{formData.articleReadCount}}" name="readAuth" ng-checked="formData.articleReadCount" ng-model="formData.articleReadCount" > <span>统计</span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title">&nbsp;</div>
+            <div class="flex-1 control-field">
+                <button class="btn btn-primary" type="button" ng-click="saveAndPublish()" ng-disabled="submitForm.$invalid || loading">保存并发布</button>
+                <button class="btn btn-primary" type="button" ng-click="saveAsDraft()" ng-disabled="submitForm.$invalid || loading">存为草稿</button>
+                <button class="btn btn-primary" type="button" ng-click="saveAndPreview()" ng-disabled="submitForm.$invalid">预览</button>
+                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+            </div>
+        </div>   
+    </form>
+</div>
+<div class="activity-detail">
+    <div class="detail-content">
+        <a href="javascrip:;" class="closeContent" ng-click="closeArticle()">&times;</a>
+        <div class="activity-content">
+            <h3 class="tac pb-6"><span ng-bind="formData.articleTitle"></span></h3>
+            <div><img src="{{formData.articlePhoto}}"></div>
+            <div id="container" class="pt-8"></div>
+        </div>
+    </div>
+</div> 

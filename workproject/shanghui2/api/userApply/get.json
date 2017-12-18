@@ -1,0 +1,18 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "applyId":"1",
+        "applyUserId":"11",
+        "applySociatyId":"100",
+        "applyTime":"2016-08-12",
+        "applyStatus":"0",
+        "userPhone":"13456535357",
+        "userIdcard":"330989484948383748",
+        "userLocation":"绍兴/新昌/羽林街道",
+        "inviter":{
+            "name":"唐僧",
+            "id":"22"
+        }
+    }
+}

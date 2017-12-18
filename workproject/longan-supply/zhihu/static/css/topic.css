@@ -1,0 +1,202 @@
+.zu-topic-section{
+    font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    padding-bottom: 10px;
+    border-bottom: #ccc 1px solid;
+}
+.summary-link{
+    float: right;
+    font-size: 12px;
+    font-weight: 400;
+}
+/*话题列表*/
+.topic-cat-main{
+    padding: 18px 0px 8px;
+    border-bottom: #eee 1px solid;
+}
+.topic-cat-main .topic-cat-item{
+    display: inline-block; 
+    margin-bottom: 10px; 
+    margin-right: 10px;
+    list-style: none;
+}
+.topic-cat-main .topic-cat-item a{
+    display: block;
+    padding: 0 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid #daecf5;
+    color: #259;
+}
+.topic-cat-main .topic-cat-item a:hover,
+.topic-cat-main .topic-cat-item a.current{
+    background-color: #259;
+    border-color: #259;
+    color: #fff;
+}
+.topic-title{
+    padding-top: 15px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    line-height: 40px;
+    border-bottom: #eee 1px solid;
+}
+.topic-title-img .Avatar{width: 40px; height: 40px; margin-right: 10px;}
+.topic-title-name{
+    color: #555;
+    font-weight: 700;
+    font-size: 14px;
+    max-width: 40%;
+    word-wrap: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*话题显示条件*/
+.topic-title .feed-switcher{
+    float: right;
+    color: #999;
+    font-size: 12px;
+}
+.feed-switcher a{
+    color: #259;
+    margin: 0 3px;
+} 
+.topic-title .feed-switcher a.current{
+    color: #666;
+}
+.topic-title .feed-switcher a.current:hover{cursor: text; text-decoration: none;}
+
+.topic-main-feed{position: relative;}
+.feed-item .itme-main-nomargin{margin-left: 0px;}
+
+/*话题广场*/
+.topics-plaza{
+    margin-bottom: 20px;
+    padding: 34px 0;
+    border: 1px solid #cce1ef;
+    border-radius: 4px;
+    background: #eff6fA;
+    text-align: center;
+}
+.topics-button{background-color: #1472cf;}
+.topics-button:hover{text-decoration: none;}
+.topics-text{display: block;margin-top: 20px;font-size: 13px;color: #5488b4;}
+
+/*推荐话题*/
+.main-sidebar .topic-recommend {
+    border-radius: 0;
+    border-width: 1px 0 0;
+    padding-bottom: 10px;
+    box-shadow: none;
+    margin-top: 25px;
+}
+.topic-recommend {
+    margin-top: 66px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 #f2f4f5;
+}
+
+
+.main-sidebar .topic-recommend .topic-recommend-head {
+    border-bottom: 0;
+    padding: 15px 0 9px;
+    clear: both;
+    overflow: hidden;
+
+}
+
+.topic-recommend .topic-name {
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 0;
+}
+.topic-recommend .topics-pager{float: right;color: #698ebf;}
+.topics-pager {
+    position: relative;
+    margin-left: 12px;
+    top: 2px;
+    font-weight: 400; 
+}
+
+.main-sidebar .topic-recommend .topic-recommend-list{padding: 0px;}
+.topic-recommend-list .topic-item{
+    position: relative;
+    padding: 6px 0 10px;
+    border-top: 0;
+}
+.topic-item .topic-avatar{width: 40px;height: 40px;float: left;}
+.topic-item .topic-avatar a{display: block;}
+.topic-item .topic-avatar .Avatar{
+    width: 40px;
+    height: 40px;
+}
+.main-sidebar .topic-item .topic-content{
+    margin: 0 0 0 56px;
+    line-height: 40px;
+    position: relative;
+}
+.topic-item .topic-content{margin: -3px 0 0 60px;}
+.topic-item .topic-content h3{
+    margin: 0 60px 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #259;
+}
+.topic-item .topic-meta-item{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #698ebf;;
+}
+.topic-item .topic-meta-item i{font-size: 5px; color: #999;}
+.topic-item .topic-meta-item:hover{color: #259;}
+
+/*无关注的话题时*/
+.no-topic-content{
+    color: #999;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 58px;
+    text-align: center;
+}
+.no-topic-content h6 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 13px;
+    font-weight: 400;
+}
+.main-content-inner .topic-recommend-head{
+    padding: 15px;
+    border-bottom: #eee 1px solid;
+}
+.main-content-inner .topics-pager{float: left;}
+.main-content-inner .topic-recommend-list{padding: 15px;}
+.main-content-inner .topic-item{
+    padding-bottom: 20px;
+    border-bottom: #eee 1px solid;
+    margin-bottom: 6px;
+}
+.main-content-inner .topic-content h3{color: #000;}
+.main-content-inner .topic-avatar,
+.main-content-inner .topic-avatar .Avatar{width: 50px;height: 50px;}
+.zg-btn-follow{
+    display: block;
+    width: auto;
+    min-width: 78px;
+    color: #3e5e00!important;
+    background: #8ab923;
+    border: 1px solid #6d8f29;
+    text-align: center;
+    border-radius: 3px;
+    padding: 2px 0;
+    cursor: pointer;
+}
+
+.topic-feed-item{margin-bottom: 6px; color: #259;}

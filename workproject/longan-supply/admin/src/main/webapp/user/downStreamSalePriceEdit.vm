@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>销售价格修改</title>
+    #parse("common/common.vm")
+    #parse("common/select.vm")
+    #parse("common/errorUtils.vm")
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+	
+</head>
+<body class="list-body">
+    $!errorMsg
+     <div class="list-container">
+        <div class="alert-title fz-16">销售价格修改</div>
+        <form id="form" class="queryForm" action="downStreamSalePriceEdit.do" method="post" >
+            <input type="hidden" name="id" value="$!userInfo.acctId"/>
+            <table class="table query-style table-striped table-condensed list">
+                <thead>
+                    <tr>
+                        <td colspan="4">用户基本信息</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="100">用户名</td>
+                        <td class="detail">
+                            $!userInfo.userName
+                        </td>   
+                        <td width="100">公司信息</td>
+                        <td class="detail">
+                            $!userInfo.compayInfo
+                        </td>           
+                    </tr>
+                    <tr>
+                        <td width="100">用户类型</td>
+                        <td class="detail">
+                            $!userInfo.typeDesc
+                        </td>
+                        <td width="100">销售价格</td>
+                        <td class="detail">
+                            #select($salesPriceList,"salesPrice",$!userInfo.salesPrice)
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <input class="btn btn-inverse" id="find" type="submit" value="保存" />
+                            <input class="btn btn-inverse" type="button" onclick="javascript:window.location.href='queryDownStreamInfo.do?type=2'" value="取消" /></td>
+                    </tr>
+                </tfoot>        
+            </table>
+        </form> 
+    </div>
+</body>
+</html>

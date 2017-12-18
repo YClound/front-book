@@ -1,0 +1,129 @@
+.main-container{
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: #e5e5e5 1px solid;
+  width: 1190px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 50px 100px 50px 30px;
+  -webkit-box-shadow:1px 1px 1px #e5e5e5,-1px -1px 1px #e5e5e5;
+  -moz-box-shadow:1px 1px 1px #e5e5e5,-1px -1px 1px #e5e5e5;
+  box-shadow:1px 1px 1px #e5e5e5,-1px -1px 1px #e5e5e5;
+  padding: 50px 120px 80px 40px;
+}
+.guid-potho{
+  margin-top: 50px;
+  width: 166px;
+  height: 216px;
+  float: left;
+  background-image: url('../../images/pc/icon/guid.png');
+}
+.main-content{
+  position: relative;
+  float: right;
+  border-radius: 8px;
+  width: 855px;
+  border: #e5e5e5 1px solid; 
+  -webkit-box-shadow:1px 1px 1px #e5e5e5,-1px -1px 1px #e5e5e5;
+  -moz-box-shadow:1px 1px 1px #e5e5e5,-1px -1px 1px #e5e5e5;
+  box-shadow:1px 1px 1px #e5e5e5,-1px -1px 1px #e5e5e5;
+  padding: 50px 40px 50px 40px;
+}
+.main-content:after{
+  content: "";
+  border: 0px;
+  background-color: #fff;
+  z-index: 20;
+  padding: 25px;
+  border-top: #e5e5e5 1px solid;
+  border-left: #e5e5e5 1px solid;
+  -webkit-box-shadow:-1px -1px 1px #e5e5e5;
+  -moz-box-shadow:-1px -1px 1px #e5e5e5;
+  box-shadow:-1px -1px 1px #e5e5e5;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  position: absolute;
+  left: -25.5px;
+  top: 110px;
+}
+
+/*form表单*/
+.guid-form{
+  padding: 20px 0;
+  width: 500px;
+  margin: 0 auto;
+}
+.form-group{
+  padding: 25px 0;
+}
+.form-group input[type='text']{
+  background-color: #fafafa;
+  border-radius: 20px;
+  box-shadow: none;
+}
+.form-group .subject-type{
+  display: inline-block; 
+  width: 96px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.formControl .subject-img input[type="radio"]{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 3px;
+  left: 18px;
+  z-index: -10;
+}
+.subject-show .subject-active{
+  display: none;
+}
+.class-show,.subject-show{
+  color: #999999;
+}
+input[type="radio"]:checked + .subject-show,
+input[type="checkbox"]:checked + .class-show{
+  color: #1f7ace;
+}
+input[type="radio"]:checked + .subject-show .subject-active{
+  display: inline-block;
+}
+input[type="radio"]:checked + .subject-show .subject-hide{
+  display: none;
+}
+.formControl .subject-name{
+  padding-top: 8px;
+}
+.form-group .class-type{
+  display: inline-block; 
+  width: 163px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.form-group .class-type input[type="checkbox"]{
+  z-index: -10;
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  top: 3px;
+  left: 39px;
+}
+.class-show .class-active{display: none;}
+.class-type input[type="checkbox"]:checked + .class-show .class-hide{
+  display: none;
+}
+.class-type input[type="checkbox"]:checked + .class-show .class-active{
+  display: inline-block;
+}
+/*完成引导*/
+.finish-btn{
+  background-color: #1f7ace;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  width: 300px;
+}

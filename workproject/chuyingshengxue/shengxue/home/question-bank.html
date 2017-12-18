@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>雏鹰升学-试题宝库</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="/public/assets/css/base_m.css">
+  <link rel="stylesheet" href="/public/vendor/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pc/chuyingentrance.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pc/question-bank.css">
+  <script type="text/javascript">
+    var serverData = {
+    		 /* userData:{
+            id: 9,
+            name: "Damon5",
+            location: null,
+            subjectId: "4",
+            teachGrades: "1,2"
+          } */
+          userData:{
+        	  id: "[[${session.teacher eq null?null:session.teacher.id}]]",
+              name: "[[${session.teacher eq null?null:session.teacher.name}]]",
+              location: "[[${session.teacher eq null?null:session.teacher.location}]]",
+              subjectId: "[[${session.teacher eq null?null:session.teacher.subjectId}]]",
+              subjectName: "[[${session.teacher eq null?null:session.teacher.subjectName}]]",
+              teachGrades: "[[${session.teacher eq null?null:session.teacher.teachGrades}]]"
+          }
+    }
+  </script>
+</head>
+<body class="bg">
+  <!-- 头部 -->
+  <div class="header">
+    <div class="header-content clearfix">
+      <a class="header-logo" href="index.html"></a>
+      <div class="header-nav">
+        <ul class="header-nav-list">
+          <li class="nav-title"> 
+            <a href="javascript:;" class="">组卷</a>
+            <div class="nav-content">
+              <a href="manual-paper.html">手工组卷</a>
+              <a href="auto-paper.html">智能组卷</a>
+            </div>
+          </li>
+          <li class="nav-title">
+            <a href="javascript:;" class="show">试题宝库</a>
+            <div class="nav-content nav-subject-list">
+              <div class="flex flex-center flex-wrap">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <a class="header-user" href="my-paper.html">
+        <span class="user-avatar"><img src="./assets/images/pc/icon/avatar.png"></span>
+        <span class="user-info"></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 题库 -->
+  <div class="bank-container flex">
+    <div class="bank-left">
+      <div class="subject-title"></div>
+      <div class="left-top">
+        <a href="javascript:;" class="change-choose changeMult">切换多选</a>
+        <a href="javascript:;" class="change-choose changeSingl">切换单选</a>
+        <div class="mult-button flex">
+          <input type="hidden" name="questionSyllabus">
+          <button class="btn flex-1 btn-gray mr-6 choose-all">全选</button>
+          <button class="btn flex-1 btn-gray mr-6 reset-choose">清空</button>
+          <button class="btn flex-1 btn-gray confirm-choose">确定</button>
+        </div>
+        <a href="javascript:;" class="choose-all-syllabus">全部知识点</a>
+      </div>
+      <div class="outline-content"></div>
+    </div>
+    <div class="bank-right flex-1">
+      <div class="question-filter">
+        <div class="filter-type flex">
+          <div class="filter-title">
+            <span class="fz-medium pr-8 pt-3 db">题型</span>
+          </div>
+          <div class="filter-list flex-1 type-list">
+          </div>
+        </div>
+        <div class="filter-type flex">
+          <div class="filter-title">
+            <span class="fz-medium pr-8 pt-3 db">难度</span>
+          </div>
+          <div class="filter-list flex-1 difficult-list">
+          </div>
+        </div>
+        <div class="filter-type flex">
+          <div class="filter-title">
+            <span class="fz-medium pr-8 pt-3 db">来源</span>
+          </div>
+          <div class="filter-list flex-1 from-list">
+          </div>
+        </div>
+        <div class="flex">
+          <div class="filter-question">
+            <label class="pr-20 por filter-used">
+              <input type="checkbox" name="usedQuestion" value="1" class="used-question" />
+              <div class="border poa t-2 l-0"><div class="circle"></div></div>
+              <span class="pl-4">过滤掉使用过的试题</span>
+            </label>
+            <label class="por fliter-collect">
+              <input type="checkbox" name="collectQuestion" value="1" / class="collect-question">
+              <div class="border poa t-2 l-0"><div class="circle"></div></div>
+              <span class="pl-4">只选收藏过的试题</span>
+            </label>
+          </div>
+          <div class="flex-1 filter-question filter-order">
+            <div class="sort-type active default-order">默认顺序</div>
+            <div class="sort-type view-order">浏览次数<span class="down-circle t-2 ml-4"></span></div>
+            <div class="sort-type difficult-order">难度<span class="down-circle t-2 ml-4"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="question-container">
+        <div class="question-list">
+        </div>
+
+        <div class="pagination flex">
+          <div class="pagination-list flex-1">
+          </div>
+          <div class="pagination-go">
+            <span>跳转到</span>
+            <input type="text" name="page" class="page-number">
+            <a href="javascript:;" class="goToPage">GO</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 我的试卷 -->
+  <div class="my-paper flex">
+    <div class="paper-left">
+      <a href="javascript:;" class="close-paper-btn">&times;</a>
+      <a href="javascript:;" class="open-paper-btn">展开</a>
+      <div class="total-score">
+        <span>我</span><br><br>
+        <span>的</span><br><br>
+        <span>试</span><br><br>
+        <span>卷</span>
+      </div>
+      <a href="javascript:;" class="back-top"><span>回到</span><br><span>顶部</span></a>
+    </div>
+    <div class="paper-right flex-1 por">
+      <form class="paper-form" action="/manual" method="post">
+      <input type="hidden" name="title">
+      <input type="hidden" name="subjectId">
+      <input type="hidden" name="templetId">
+      <input type="hidden" name="typeConfig">
+        <ul class="question-type-list">
+        </ul>
+        <div class="my-paper-btn">
+          <a href="javascript:;" class="make-paper">生成试卷</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer">
+    <div class="footer-container clearfix">
+      <div class="footer-item">
+        <h2>现在开始</h2>
+        <ul>
+          <li><a href="javascript:;">梦想发起</a></li>
+          <li><a href="javascript:;">账号注册</a></li>
+          <li><a href="javascript:;">账号登录</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-item">
+        <h2>关于我们</h2>
+        <ul>
+          <li><a href="javascript:;">FAQ</a></li>
+          <li><a href="javascript:;">用户引导</a></li>
+          <li><a href="javascript:;">联系我们</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-item">
+        <h2>法律</h2>
+        <ul>
+          <li><a href="javascript:;">服务条款</a></li>
+          <li><a href="javascript:;">隐私政策</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-item">
+        <ul class="footer-infor">
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/phone.png"></span>
+            <span>0571-88489062</span>
+          </li>
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/message.png"></span>
+            <span>bp@chuyingfund.cn</span>
+          </li>
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/weibo.png"></span>
+            <span>雏鹰网</span>
+          </li>
+          <li class="clearfix">
+            <span><img src="./assets/images/pc/icon/history.png"></span>
+            <span>周一至周五9:00-18:00 </span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-QRcode">
+        <img src="./assets/images/pc/icon/QRcode.jpg">
+        <p>扫码关注微信公众号</p>
+      </div>
+
+    </div>
+
+    <span class="copyright">Copyright © 2016 杭州树德科技有限公司 浙ICP备15019518号-2.</span>
+  </div>
+
+  <!-- 我的试卷题型显示模板 -->
+  <script type="text/html" id="questionTypeList">
+    <li class="question-type-item" data-type="{{typeId}}" data-id="{{questionId}}">
+      <span class="">{{typeName}}</span>
+      <span class="c-blue number">(<var>{{count}}</var>)</span>
+    </li>
+  </script>
+
+  <!-- 选择题 -->
+  <script type="text/html" id="questionSelectList">
+    <div class="question-item" data-id="{{property.questionId}}" data-type="{{property.questionTypeId}}" data-collect="{{isCollect}}">
+      <div class="question-header">来源：{{property.questionFromSource}}</div>
+      <div class="question-content">
+        <div class="question-title">{{question.questionContentJson.title}}</div>
+        <div class="question-option">
+          {{each question.questionContentJson.option as option}}
+          <div class="option-item db por">
+            <div class="option-icon">{{optionIcon[$index]}}.</div>
+            <div class="text-in">{{option}}</div>
+          </div>
+          {{/each}}
+        </div>
+        <div class="question-answer"></div>
+      </div>
+      <div class="question-operat flex">
+        <div class="operat-btn">
+          <a href="javascript:;" class="join-paper">加入试卷</a>
+          <a href="javascript:;" class="look-detail bg-blue">查看解析</a>
+          {{if isCollect == 0}}
+          <a href="javascript:;" class="collect-question bg-yellow">收藏试题</a>
+          {{else}}
+          <a href="javascript:;" class="cancle-collect bg-yellow">取消收藏</a>
+          {{/if}}
+        </div>
+        <div class="flex-1 tar c-6">
+          <span class="pr-13">题型：{{property.propertyValue.typeName}}</span>
+          <span class="pr-13">难度：{{property.propertyValue.difficultName}}</span>
+          <span>浏览：{{relation.questionBrowseCount}}次</span>
+        </div>
+      </div>
+    </div>
+  </script>
+  <!-- 填空题/解答题 -->
+  <script type="text/html" id="questionFillList">
+    <div class="question-item" data-id="{{property.questionId}}" data-type="{{property.questionTypeId}}" data-collect="{{isCollect}}">
+      <div class="question-header">来源：{{property.questionFromSource}}</div>
+      <div class="question-content">
+        <div class="question-title">{{question.questionContentJson.title}}</div>
+        <div class="question-answer"></div>
+      </div>
+      <div class="question-operat flex">
+        <div class="operat-btn">
+          <a href="javascript:;" class="join-paper">加入试卷</a>
+          <a href="javascript:;" class="look-detail bg-blue">查看解析</a>
+          {{if isCollect == 0}}
+          <a href="javascript:;" class="collect-question bg-yellow">收藏试题</a>
+          {{else}}
+          <a href="javascript:;" class="cancle-collect bg-yellow">取消收藏</a>
+          {{/if}}
+        </div>
+        <div class="flex-1 tar c-6">
+          <span class="pr-13">题型：{{property.propertyValue.typeName}}</span>
+          <span class="pr-13">难度：{{property.propertyValue.difficultName}}</span>
+          <span>浏览：{{relation.questionBrowseCount}}次</span>
+        </div>
+      </div>
+    </div>
+  </script>
+  <!-- 组合题 -->
+  <script type="text/html" id="questionComplexList">
+    <div class="question-item" data-id="{{property.questionId}}" data-type="{{property.questionTypeId}}" data-collect="{{isCollect}}">
+      <div class="question-header">来源：{{property.questionFromSource}}</div>
+      <div class="question-content">
+        <div class="question-title">{{question.questionContentJson.title}}</div>
+        <div class="question-children">
+          {{each question.questionContentJson.children as children}}
+            {{if children.typeCode == "SELECT"}}
+            <!-- 子题目选择题 -->
+              <div class="question-children-content">
+                <div class="question-title por">
+                  <div class="question-number">({{$index + 1}})</div>
+                  <div class="text-in">{{children.question.title}}</div>
+                </div>
+                <div class="question-option">
+                  {{each children.question.option as option}}
+                  <div class="option-item db por">
+                    <div class="option-icon">{{optionIcon[$index]}}.</div>
+                    <div class="text-in">{{option}}</div>
+                  </div>
+                  {{/each}}
+                </div>
+              </div>
+            {{/if}}
+            {{if children.typeCode == "FILLBLANK" || children.typeCode == "QANDA"}}
+            <!-- 子题目问答题或填空题 -->
+              <div class="question-children-content">
+                <div class="question-title por">
+                  <div class="question-number">({{$index + 1}})</div>
+                  <div class="text-in">{{children.question.title}}</div>
+                </div>
+              </div>
+            {{/if}}
+          {{/each}}
+        </div>
+        <div class="question-answer"></div>
+      </div>
+      <div class="question-operat flex">
+        <div class="operat-btn">
+          <a href="javascript:;" class="join-paper">加入试卷</a>
+          <a href="javascript:;" class="look-detail bg-blue">查看解析</a>
+          {{if isCollect == 0}}
+          <a href="javascript:;" class="collect-question bg-yellow">收藏试题</a>
+          {{else}}
+          <a href="javascript:;" class="cancle-collect bg-yellow">取消收藏</a>
+          {{/if}}
+        </div>
+        <div class="flex-1 tar c-6">
+          <span class="pr-13">题型：{{property.propertyValue.typeName}}</span>
+          <span class="pr-13">难度：{{property.propertyValue.difficultName}}</span>
+          <span>浏览：{{relation.questionBrowseCount}}次</span>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <!-- 解析 -->
+  <script type="text/html" id="questionAnswer">
+    <div class="content-item flex">
+      <div class="item-title">考纲</div>
+      <div class="flex-1 c-blue pt-5">{{syllabusName}}</div>
+    </div>
+    <div class="content-item flex">
+      <div class="item-title">解析</div>
+      <div class="flex-1 pt-5">{{questionAnalysisJson.analysis}}</div>
+    </div>
+    <div class="content-item flex">
+      <div class="item-title">答案</div>
+      <div class="flex-1 pt-5">{{questionAnswerJson.answer}}</div>
+    </div>
+  </script>
+  
+  <!-- js文件 -->
+  <script src="./assets/js/dm.api.js"></script>
+  <script src="/public/vendor/jquery/jquery-2.1.4.min.js"></script>
+  <script src="/public/vendor/jqPage/jquery.paging.min.js"></script>
+  <script src="/public/assets/js/dm.base.js"></script>
+  <script src="/public/assets/js/template.js"></script>
+  <script src="./assets/js/pc.js"></script>
+  <script src="./assets/js/pc/question-bank.js"></script>
+</body>
+</html>

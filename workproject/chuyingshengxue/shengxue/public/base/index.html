@@ -1,0 +1,1024 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>base 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../vendor/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="../assets/css/base_m.css">
+    
+    <style>
+    body {background-color: #FFF;}
+    h1,h2,h3,h4,h5,h6,p{
+      margin: 0;
+    }
+    .code-content {
+      display: none;
+    }
+    .example {
+    border: none;
+    height: 520px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+.example-box {
+  width: 324px;
+}
+      .banner {background-color: #03a9f4;
+    padding: 60px;
+    font-size: 20px;
+    color: #ffffff;}
+.book-summary {
+    /* position: fixed; */
+    top: 0; 
+    /* bottom: 0; */
+    z-index: 1;
+    width: 100%;
+    color: #364149;
+    background: #fafafa;
+    overflow-y: auto;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+.book-summary ul.summary li a, .book .book-summary ul.summary li span {
+    display: block;
+    padding: 3px 15px;
+    border-bottom: 0;
+    color: #364149;
+    background: transparent;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+.main {
+  padding: 15px;
+  overflow: hidden;
+}
+.book-content, .book-content p {
+    
+}
+.page-header {
+    padding-bottom: 9px;
+    margin: 20px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.hljs{
+  color: #657b83;
+
+}
+.hljs-comment,
+.hljs-template_comment,
+.diff .hljs-header,
+.hljs-doctype,
+.hljs-pi,
+.lisp .hljs-string,
+.hljs-javadoc {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-winutils,
+.method,
+.hljs-addition,
+.css .hljs-tag,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-command,
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-rules .hljs-value,
+.hljs-phpdoc,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor,
+.hljs-link_url {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-name,
+.hljs-localvars,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier,
+.vhdl .hljs-literal,
+.hljs-id,
+.css .hljs-function {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.haskell .hljs-type,
+.hljs-link_reference {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-preprocessor,
+.hljs-preprocessor .hljs-keyword,
+.hljs-pragma,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-subst,
+.hljs-cdata,
+.clojure .hljs-title,
+.css .hljs-pseudo,
+.hljs-header {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-deletion,
+.hljs-important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.hljs-link_label {
+  color: #6c71c4;
+}
+
+.tex .hljs-formula {
+  background: #eee8d5;
+}
+
+
+.code {
+  
+}
+pre {
+  width: 400px;
+  padding: 0em;
+  border: none;
+  overflow: auto;
+  line-height: 1.3;
+  
+  position: relative;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AgMAAABHkjHhAAAACVBMVEWAgIBaWlo+Pj7rTFvWAAAAA3RSTlMHCAw+VhR4AAAA+klEQVQoz4WSMW7EQAhFPxKWNh2FCx+HkaZI6RRb5DYbyVfIJXLKDCFoMbaTKSw/8ZnPAPjaH2xgZcUNUDADD7D9LtDBCLZ45fbkvo/30K8yeI64pPwl6znd/3n/Oe93P3ho9qeh72btTFzqkz0rsJle8Zr81OLEwZ1dv/713uWqvu2pl+k0fy7MWtj9r/tN5q/02z89qa/L4Dc2LvM93kezPfXlME/O86EbY/V9GB9ePX8G1/6W+/9h1dq/HGfTfzT3j/xNo7522Bfnqe5jO/fvhVthlfk434v3iO9zG/UOphyPeinPl1J8Gtaa7xPTa/Dk+RIs4deMvwGvcGsmsCvJ0AAAAABJRU5ErkJggg==') #F6F6F6;
+  -moz-background-size: 30px, 30px;
+  -o-background-size: 30px, 30px;
+  -webkit-background-size: 30px, 30px;
+  background-size: 30px, 30px;
+}
+.header-content {
+    font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+    max-width: 1140px;
+    margin: auto;
+    line-height: 50px;
+    
+}
+.header-content .title-area {font-size: 30px;font-weight: 300;}
+.fixed-tools {
+  position: fixed;
+    right: 30px;
+    bottom: 80px;
+    z-index: 9;
+}
+.backtop {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    background-color: #bbb;
+    color: #FFF;
+}
+.books a.active {color: red!important;}
+blockquote {
+    background-color: #f5f2f0;
+    padding: 1em;
+    margin: 2em 2em;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    border-width: 0.3em;
+    border-color: #e0dfcc;
+    border-style: solid;
+    text-shadow: 0 1px white;
+    overflow: auto;
+}
+    </style>
+   
+  
+  </head>
+  <body class="">
+    <div class="fixed-tools">
+      
+      <div class="backtop in">
+          <div class="icon-wrap"><i class="if icon-backtop"></i>回到顶部</div>
+      </div>
+    </div>
+      
+
+    <div class="header">
+      <div class="header-content">
+        <div class="title-area"><a href="/" class="c-primary">Dream UI</a></div>
+      </div>
+    </div>
+    <div class="banner" id="banner">
+      <h2>2.0 开发使用文档</h2>
+      <p>全新UI框架</p>
+    </div>
+    <div class="content flex">
+
+      <div class="sidebar" style="width: 173px; ">
+        <nav class="book-summary"  id="nav-list" style="width: 173px; height: 500px;overflow-y: auto;">
+          <ul class="summary books" id="summary">
+            <li>
+              <a href="http://www.auicss.com">2.0开发文档</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#content-1">2.0概述</a>
+              </li>
+              <li>
+                <a href="#content-2">基本结构/辅助元素</a>
+              </li>
+              <li>
+                <a href="#content-5">导航栏</a>
+              </li>
+              <li>
+                <a href="#content-10">按钮</a>
+              </li>
+              <li>
+                <a href="#content-11">标签/角标/圆点</a>
+              </li>
+              <li>
+                <a href="#content-12">列表布局</a>
+              </li>
+              <li>
+                <a href="#content-14">表单</a>
+              </li>
+              <li>
+                <a href="#content-28">图标</a>
+              </li>
+              <li>
+                <a href="#content-32">JS组件-dialog</a>
+              </li>
+              
+              <li>
+                <a href="#content-35">JS组件-tab</a>
+              </li>
+              <!-- <li>
+                <a href="javascript:mScroll(36)">JS组件-aui-slide</a>
+              </li> -->
+              <li>
+                <a href="#content-39">JS组件-aui-pull-refresh</a>
+              </li> 
+            </ul>
+        </nav>
+      </div>
+      <div class="main flex-1">
+
+        <div id="content-1">
+          <h3 class="page-header">2.0概述</h3>
+          <div class="book-content">
+            
+            <p>完美兼容IOS 7+ 到Android 4.4+。</p>
+
+            <p>rem说明</p>
+            <p>
+              采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。
+              以下6个属性设置在容器上。
+            </p>
+            <blockquote>
+                <ul>
+              <li>flex-direction: row | row-reverse | column | column-reverse;(即项目的排列方向）</li>
+              <li>flex-wrap</li>
+              <li>justify-content: flex-start | flex-end | center | space-between（两端对齐，项目之间的间隔都相等） | space-around（每个项目两侧的间隔相等）;</li>
+              <li>align-items</li>
+              <li>align-content</li>
+              </ul>
+              </blockquote>
+            <p><img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wgARCAE9A4MDAREAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAUGAQMEBwII/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAQFAgMGAQf/2gAMAwEAAhADEAAAAPcQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEKWShewAAAAAACkkeejAAAAAA5TQSIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABVyln2SJ2Eac52EqaDhIkvxTzYbjsL4eVFvIMvR5+R59FrKibyWIwtBQCYPk9QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKucpTyRPUTyckztKaSZPHwcZUy7EYeogjjy4lC6FCNJaSPMEWbC7lXNZYTSW8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjioE6fZYCAI4txWDeSpUCzEccxIFgBUD6J4qxNlALKTZQy6kmVUuJFEuVAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK+WA4jlJcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAw8PdGOUfhI+nkjsj7PfDzL0AAADAOfzKLxliVyib/ccgAAAAwD4ecW7Tqyx7NW3pw2ZAAAAABzkcTBkAAAAAAAwDDzXoz5oG373eddhpyAAAAAAAAAAAAAAAAAc/nvn0Loq1Ft/rH3X6zn5dpnP3eVS5MgAAA+ChRr+nxej+fMXvn09ukvnL1IovoAAAGDm15Qs6FR7Sozlr2ZND221FxY4U7ty8yAAAAfBxFSPt7JPJIlTIAAAAMHyQEqvi9WqS5C/h/NcxbYSWvdvm6uuZrAAAAAAAAAAAAAAAAHweN13YQEe12sfo+TUz0MvRZ/MejyueyAAAYKBHvaPD6nblH9jseE+Xvjld3evCRfZ3J3vfSZAAAPk8kqOiiZdXL1uEf3fGJOjj92dcK19D5S+nN+rtlYZAAANJWilZ49O/Ddn5GY+8kXbZvHpBkAAAA1e+Ue157Xz8yU4/pILueUiulpub3ffqTo56osOybrAAAAAAAAAAAAAAAAFZjQ/I67o4/Ps5XZCslhzGzRnp5eyzGz34Yeldpy/TKwAAA5nvhdZ9A+cN9olUHq0zlh5JD6yuRrzZnG90suB3vAAAObDPxznes+tOPVq08vRVMN2PG8+WWjGR7Nw93M1+2S6WNkAAAo5VtmCygdTZ1Y5xzPg1+xkDf634soAAAMFVnVMZz2/t5m96O3p+yVhVrGngZsDi1yvYOe6eR8zAAAAAAAAAAAAAAAAHnNZUVqJpqsj6t6H03z6Pm1vyWnkrrp+c3wm+1rJfoYgAAFX1zfIK7vDy+TOZ9Lk86PL4vS0eL0mfPPZbLgbFnFAAArMOf5dS9L069W9GrPechy2MLjw2adez3Xg7bZq32/pYGQAAfJ4edNpXapMWS17MwrCoxLWUuudla6b2xd/qRkAAAwUmNX9HHX3B9E5a16bQc2WHnV9y3BlndqjoL1AsAAAAAAAAAAAAAAAAB5hVUsPGja9959dpV8G3Xj1aKefP/Huue+S3XQJzp4IAAFO12HkVf3Q9Dl8t6XJ54eXxukoMTph7FYcHbNkEAACoQ7HzCp6T68x4rKqr/UcvJw90DM169G39GfLreNssL719dkAAHIePHDeVWnZos0fZx0fRyVxz9UnxpaFN21Nj7GZAABg16faxxdhX/ovEc1zW489Pfg5fc+H3bZ6659Kq7UAAAAAAAAAAAAAAAAed19ZWoNf9El002jXUPf5n6VwHSdfD3Pxmnu5qpe6jAAAV3GR4ZXfQs+PQJfM+qSebHksXp6LG6P5ee92Pz2by0AAARevZ4VT9h2x/d3mHFJjw1jWQV3T2znZnpPIWfV0Wi839RkAAGk8pOS4q4WwrrTV2WdmnXJgRe7CeqbqFrrH2oyAADBF89Kp8mqjO85Oah2d5qOjHy8j9urB3atvV5kAAAAAAAAAAAAAAAAILTo8tq6Xfrx2+pGZK1a91h4PrPrDbrsMLl9Apd2zwAADWfnuB3MZrtLbvo/bZnHDw2F2lX03Exuqv0DN4j6AAAMHi0Do4GFY9mhxSoUDZ1cnFkW2im8m7O639FfZEEAADB5MTW+PXruh5tuj683bvdPRp37uf6Tr8y9JAAAPnBXOItY/6Jy1Ru+f2+eW6qv5aNNq0+rqVlWcWEr23nejkMcwAAAAAAAAAAAAAAABg8/iwKbArt+GGSdoenlqq655flp7KqlrKPkAAAFPwneIwe5yy9lmcT8MvG4Xa/fuHuM7hLXnDAAAAiMdnhsDp9caT16ctuOO3Bo2Y22yqPTp1Ls98AAAEOeJHp+7RpsKrj26pKNKia+0o+OfvxuAAAPjX7XuMsp/t6vzO4ooGdW/R8nN7lzebvUqS8t0OZn0AAAAAAAAAAAAAAAABgqemNSYsHiibbVQdbI2Oix30CRl6sgAAAGCrYTPII/TQeqxPJ7bW+wSOas2cTIAAABqKz5n53otIePPzhl35abDMq/RtsHvMgAAAEOeOnOSRwk6ernUAAADHiI56Zs34fe/GuXdZWLODy5YSeiReK+fM6t2QAAAAAAAAAAAAAAAAADAHjBn0MgAAAAGDB8GHux5kyAAAAAYPk1mD78bPWQAAAAAYOU5zsNxkAAAAGAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIUwfJJnybDQfZk3mwAAAEaRRNmT5Ps+DcbwAAACCMEkDhMncDqMgAAAEASB9kCTpk0kkAAAAACLOY7CRAAAAAAAAAAAAAAAAAABVCxlDJA6D4IgkT4J0mwAAAVYnShE6QJKkkcpbQAAAConyfRxmskzBDnogAAAAIEjDSdJEEudRZAAAAAAVs5SeJAAAAAAAAAAAAAAAAAAAHAc50GTB8mT7NJuO0AAAGghzSSJoO40H2SIAAABxmQc58nSc4JI+gAAACENx8nSRpKg6wAAAAAcZzn0SQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABqKcbCykGWkAAAAAFNLCQpNkOc5bj6AAAAAIM4TUYLSbwAAAAAUAuBXCfI4sgAAAAAOMgiHJImyUAAAAAAAAAAAAAAAAAAAOcqBOE2cB3gAAAAAhDQZJU4DsO8AAAAAFOOw+SYO8AAAAAAqpuOkmDlO0AAAAAAhCFLCSJ9gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/8QANhAAAQQBAwIFAwAJBAMAAAAABAECAwUGAAcREjATFBUhMRAgUBciIyQyNkFgkBYlUXAzNED/2gAIAQEAAQgA/wAZuX2k9JjhlkJWZZnlkEw4HF87msbn0W67+W5vLU2bKeoiy3NBZ4ks+5YmRAAkGEUVtDdVUFkL/Z+5v8j2msN3EqaLGg60rGVXMM/9fTc28No72jnFoKfLZ7gW3u7a7vMnywigx63XKcDeMfNuVaHQAUl9T7iXzxcQjnrdsrE1/q9Tb4VaH3OW31iuOEXuclFPfidVc1TCmXQp97nlwcyqgsrvD8pBqbnc28No72jnFoKfLZ7gW3u9ZgOfjWbplY2OZtS5CqQjbvnmgVYDwQXK4KBztsbE869vozDrfIf0jWNVUZCBl2KipcxFXbrPbwm3FxJmV5ZSMYymuL3GMvgob/cLJjwDAqOisqDMaUB9pDiuQrkWLPP1iNllmRV0lVXZhSXAWBL5zAMasp6qqtGf2fub/I9prbN4yYNWpNePC/SnVLjm7HvkmO/TDZ2UW4t2FY7wWQqUEQCXFJLLtagE1EUuSn4fVLkxa4rndiWzaYBAMQQuS4wOjvebGn21uLKxW1prHBscprQ86sv2be4sAcOq7se+SY79UuKuQqYPW6oVMCUCVTbxMnXGqiWcG4rkx8exfs3N49vez6Q8et3lJlM3PtRBsRLgWoGkF2dnZNs7ZCLQSArlxMd1uXSiAZ6vpO41NbE5PcACY2YVJtSJLBhZ88uyHHpNlrc1OcHtNbZFQLhICJ/Z95Uw3VVPWlfokoNY7htNjz1mAyHFAb80MwvWR4lU5H0OPpdu6CnLYUx7WvarX4xg9XjZ0hoOVYjXZSoynhAQCVkNfFJtTQPfyygx+tx8ZYKzIcIpL+ZSS6PbyipjozYMhxQG/NDML+l5t7RXZ0pk9Ht9Q0xTCorasDuAZA7ATa7HICUmWjxgCjsTzQfThLXdq0BPE2vx0YpJ1zJEbiFuiYPh1RkuIwynY1h1PjivlBuKgC7CUSyg2sxyGdJVYJCwPykOLYwFjA08ABY0Jg0oxIW2dCFYwnQ/3NBigMOUS5C3VmDHZVxAM+OUQuPVqABf4BefoQWOM3kh+S1LPZYchqpV4SKVkzEfFzrnt86KMHEj6ypMto4/mPLKN/sgpcBUfiDIvc50+RrGq58l0BF7ObkFc7Q5wxP/AIOe6aSwMWQiSSxLG6ZS0X/4Odc651JNHEn7R9oKxeFgsBp1RrE/CEkQiwPnIu85mIe6GqcXJNIr5vMe2nzc6FtC6+TxA8bzmEyRgtsi657KuREVVyHNVV7xqSeaQiVZSYvEnlWIeXrhlSKceeUWVJRcdzXrewW7RU/p2OdSGQsLjFdkWVC1XVDEVkJJ8vVNFK5URXueiJpSpYndUeN5A8zmKMOyGNfLHBz2nuRjVc4p7CxpI1LscUq+iM9Nw8d0Fk9canUFBbjvVjJkXt86c5GtVzrDJxoFVgkdzdHv4GYUVBGrZz7qGJ/DqWSosWfsJ6sd7f2QMiyjMc/8E5yNRVXNMokuj3jwMl02bXj6dNp8unya25yp8qpTnp2dwr9WP9FD6uPgIaY84cEeqrBaoJggNzVC3AMghk8UwZU4hKqjkVF2+v1m5qDeU7DtZTbmPysrySBqQ9XT14o4EUk7nWEk8rpZnF8pqad/PLaKaCexiimsgi54GkwVRiHgwk6T47E88Y8L5prS/gCE8/Y2ZlpfSo+3qqVkaqkCiOTlqn1EXPiP8yaJA57cIzTklKq0Re1LI2KNz33l1LYSLFFX1jpuJJ5p4xouIzDZJ0VscjNK6SCRssGJZMlsxRTK9P3dHfg82sPKViQR3Y3hyISxr145SjpzbmVzRoscpYvadmL05K9Ar8SFY9WSJiALtD4mFBNHNEHMk47JOwYRGIJMTNKXKbPKZP1prbaBJ8kfMqaVNbiQINlMj9dehT5K4uA6GCVk8Mc0X3mExiiykSmE+aNnJWJfjRznLUk+HDXFOFSaVsrkYnXKW1F41MQiJymLW3rOOgmSV69BU0Wk+Oxl9wxbaGrQopxMi2xcD1gVVkjLe2RHx2sksB0zCpLFkCLJJEW98iFR3wHlViMBwa49Wpolk7H9NZeeqdAEVXXc8TTmFsiZ7C48pKJNavxmrViol7STVio/UjdOllEIYQPSGxWFWMXB+CzohZbtItTxMnifFJFBO2yaAlxLHVtjow2T6eRqiNW1rZfF0uqGTqgkZ2NxSFgxA/XV766tbSoimWr/AK7sJxb1z9dWurn2XAp1JxCrev35/KsVBIiMdyvOonfGo7QOF3TLYnveVLGjyuG86mJa74iKRszOukpG0EBo0GS2r6owDwU+9yo1FVWkSWtkQSt6Q2KySCOCVxHU90YnQIhz8jv6y6L6xHlMLJ6FEhMNlVoLQpyKI6OXbIhRnwQ6T47C68FT7ckmQwlkUa80xMD7hs53rVZr1us0dY1Rgcw0j/dvuWn6utrC1eEaJ+DzH2yQn6CCMXIqczWSufFkdiyRJ9On1t89VNP0mlXWOcr469jdP+UZddXvrq1tB/Hb/Xd72PqtdWur31tl7YYD2Nyke6garIX6KV74OhljUPnEaoqMnSTwdNx65khV7SXOierHjsmLIbCPEQ6WMZ2rUVbTJ6lz0+Pvs3KytLVuOwKx9curRCDshLEAAp7Mw+SBlliazRV1YHlFADWiRj1oFmtNQCgxWUlu98xT8HleQVY+PjMqjX7BkT4+9dSPRjFcsitgi8JhpCkScorkb8+K3Xit1JKzjUkjdFPTj22q59Rsvwe4IyxWsBOkXnSKqKityMF2RCstq15Lo3qyQFhViQ0cGjrmUta4Runu4RdY9F0hrJ2M7EU7EbSBjZEciOTq1s7N+/2sX13flT1sCPXXp8vQxzlw8JQMXrBX/fkQa2FIaK2GRerhY386SV8fu2TJhYuekzMj+v8Acz7GY4qQoraoJVPNtHtMQcOGLWIyRn3hMyp8feQxJYJI1reIZKeOS/jngPgmfOwg0h0xUM0OKVzxYKkIGxEsbklTprEboltIlWLw0w2t8CoMNfgz1ts2ZMxPv/pq2I8ONG6uTOhUHa16LrFiI4bZGS+FHrwo9PbCxquf63T6W+pE+QChTIPGC/BZZVra08kcUUn9FReU1BPKNKksEl35hE8/60eS9AawaFg0DIY3O41Gx5RDIIoImwxNiZ972o9itdkdW+ivC653Vra49BMsiiei6VdbknoblxaM6tYjUPvr8ULSJwnYXW4dItLdqTDBNqOX/g+mCsOqR8mIG8/sqrEIopUecG2Cpr2CB2FhLHA90W1VLOBVznnfeus/Emq7OV8ADg8ux5kkEY0wBSppRF6ndQXmkKnDBpkf1EQTA1c9sb4bNyr0ekpmUgGzlIotdLaz/fIvDV0e5ZzljbmtT4Y8J8DZP+WzcKitp8ujViRWb8lqEZzrIsoU+Jwwk8/CLqKKc8yIQWmAjqqwcKL8EqazXGXpI+0rIp0VNJIi6V6ImseESKNxcj5k40srpXpHFSVnko1km7Of4qmRAJKLMyWCaSGeAiUeeOeDHtxKg8VqWOSbi1QIcjKmSV8sj5JB4ZiiIxxcExhmOV3E/ZyKuGtqyYI23rSaQx0E8RHxpk+mzaaRwnsQfHCnMmIY0w1YjrRiIjURvYyWkHv6qUIlhdxgV+/rq7ShzQVFGJxYuJVWH/TBchDXOFxNzJZHz5Pm9TjIjwaTDMZscyu1sbMWCMaBkMP3yfw6hT/dv1pI2yxujkyjH56eRxArSk15hunEompSvnTVmKnZANhGKJSxebNT8Iqav8LDs3vIDPxm9rlXrDhmmKbFNG6aThkAlHYlKiy1tSNXpzHx2lTWWYhV37PFnvsYsKadUVXcezkcrvZuPYufdS6xPFKugiVRETtSxJI1U1e43HYROY+zwQ8Z6qG+muYFXriBtJFVGjY7dEqiJQ7esYShRoADR2ImkThO1kWO19+G4c6/21uKidSKsLLczqOIpk3Iv5E4Us/Ib/8AUkxzbCUhWT3QAI4AzRxewqcpo6ue+TxoIijGojZHedIardWmAglIsgZeCX0CqkCYZkz/AG0BtufL72NHj1bRx8BJ+G410ppWovz0ppE41x3ONKxq/Kjwr8oPCnwjGp8InHc406Jjv4nBwO+UCHT4aPE34RqJ8dzhF1PXBELzMlBVp8QCDjpxBx2+Nca41xrjXCa41x/0tcXiAFRAiCWVs9Z0Pob8U2sr5DZzBR3q2dbIFBEMUUsYmDxxkta1ZYYkSyAcWobTDwwGI4+ORk0bZIuxd249OGk88t/bBRKVZNPEWGCZQ7AI9HKDJZgQlIJNOYKO9WzvtK+MVhcgxEBULZhuzd3RYNmCAAp9ugSyFEWAY3ioSRZACQslKyG9GpaSayWmPllBkLPEPCNjWQL1APyfndIqKnKdky9KSzmrakEyaQFSLESzAMZI4OryKW3uyYAY7WulJUSIiwDG8VCRypJrSZidzIbX0WonP1d3JYFkAABVkWRHWtn+GDlYLn9kwo7/ANIjUFUCzalZEMFisspoEMLGHlzgEUqCKMTMbUcCGsDTalZ9X9cIHjlZNBNCcbnNrHDi1TPSgzDEdjLHtGucdOItChgq4gktgSMoMJEtTIIA85pvIUNTY3mPFIpdYk2UUAljZkwMsx6oTBlVDL+Jezk6HLltClZkyWaUEfqyADm5+e8qSA0vN7SKG6ppafAbaArJIYn3WOhzmQQiZzUeQRIFynyfbsqN8x7rGsiyJJqaSO2GSVmdhJPjUgoEGSGzX0rn1NcXEgA5ufnvKAREzqzRO5uH/KB2sngIJyygjEqxDBI3od+GtakC2gbFY1+O1dc6R4iVISVHpKemi+agKSzqwbWJsZ1dUgVsEkQaU4KU/pKF1whgrBSLSjrrVzHnV1eNWDeXC7BI8BY7xyoMQooJGPZlgHnzaSOSro62rlkmCMxelMKkInStEQuAvVnR11pLHMZV1QNWkqV3ZmAHmNgNkPBGsIWwltBGjPlObaUddauY85KGsSqkq9HgC2Qzhza+hra3xFESkrfSUqdNTpaido/Gag8uQsmSiq31ja5QcfqwCWEjD1og7Co4o8Ro4k4RoI0Z8pzWgjxnynM7liAPZByCG21DXXEkEh9VUBVKSoF/0zIxJI3sW6pQKomrSm3FBfPTTlvs7EathbKXi2SwWLFgn7mWAPS2qDpbSpFtWMjOxaCKC7uYau2BfYjoOzB5oxcIDmfBl4a3xbHtVHNRU7dvRU5T5TrjGwHWeJDwWVYGKBmMg9LNl4aXwjGDTsJgZPF3JSRba2tX2VNOETUiy1mWAPS2qDpba4EqmIhWIX8VrVhRv7h8EpIckEGCQMFFtoGAVUNriU2Qz2uVMhxRCdVFwJasVBfw5ck0Q00g1S++GnlOOy8Imyx0sQLVSAytHfAzuZIESctX5bLHXKwQj01HKZBAoTKqUyYCGSxw4EmtxwQQ2KvZFbkWKdy/bcG3CQLYn38tI91djfnQ+gJZa9klsPYL3YobajMsUrqcK0pKuqAhyQIk5avyz29bHNWpBbW1YoEfdxsEkFLTzTALwGlIx4Keoilx19KkbehiMT/JX//EAEoQAAIBAwICBgUGCwYEBwAAAAECAwAEERIhMUEFEzBRYXEQIjKBkRRCUFKhwQYjQ1NicpKxsrPhJDNAYILRcJCiwhUWIDREY9L/2gAIAQEACT8A/wCWaI3mgC6RKCV3YDfBBroKwmtpOD+RIOxkro42N/8AeBnBB/wFib7pN8HRyTNfguHikcAGAMOJwMnLAdqcQwRtI/fgDNJIkM4JUSgBtiRvgkf5Q7o/5i1bXzzQa8mJEK7uWHFgaMNtb23CAygyvhcDYVPOIQS8sCSlRMAwrpbRDu72EbsAAQcKRw2NXhsbW0yJpxsxKnDGumH6WsJJAkqT1fXMVs53RJSocMA6agKmdJ79oxA8RIcA+tkEVdS3F5YXO7zSFzg7bE+K1d3UthbZEMGs6Nz6uF4eytfhU/Rjo/qWsHd5BlyBXS3y8EjqDzA3ySSM5Pma6Vfovom1IAeL23z5EGukn6SsL7ASaX21J8SSdjU84hBLywJKVEwDCultEO7vYRuwABBwpHDY+i0N1ZuBr7k9TQQanMN3+Yn2ary4tS85BMEpTlRJYxKSTxJxV7cTpE40CaUuE3ar18zgRIJnLRQDSrFwtfhHPfpG466OTOBnwJIovBK9k7goSDG4BBwfA105LY2tsShn3eadydW7ZBwAavHvba70iKVySfWOFINbdI3vz+aBjpUDPMmvwonupoEMssByVwNzgMSDQEVygdJgnJwM5HmCDV+6FJTJcX88pLgEAKgNdOzzm13nTc/KNUgC5YnOBX4SX0NsH1/IRq0YWQ5X28YP+UO6P+YtGH8r/NejFnXEJzbcNWo6/D2K5v8A96+hxCbguInfmS+pfiKkR7qadSE8ADSH5TbWSS+IZAGIrdLCNpJv9LnAP+lFFHQnSXRshHhJpP26krY3UjzE+A2q7FpOTrE1s4aKrr5WLUER3PHmV9rmKlmgvoXxGgcJnBIYbjcg1dzpcdapiR7lQXYVzf8A719N9bfKIjpkiaQBgfI0YYeki5Lx2pHmGwKG4mAl8GKVdQi1ECsX1jA9Xh51wfQ/xZqcRxOdBfkCYqnQzXQCRJ7wSa2L2U8nuYsRUqC5inJ0cyppxMbZ4xKyeDl2+C1tZkR5fkNLENVzC0b27iLDg6yVIAFAgXEkhj8ggFfn1ruj/mLUqZTWj+B1n/KDyJDOAGMRAYYIO2QRV30n+3H/APioCbgjHXzHU9TXCSWZzGIioHEHfKn0Qnrk2E8R0uBUU9zNHuhuXBCnvAAAoAqwwQeYqW5kldDH+PdSACQdsKKknjNvkIYCASDxByDQJgihEIBO5UDG5FS38Q+okw+9Sag0Bzl2O7OfE1A8dydjNAdLHz2Ir5VLPEcoZpPuUCprhJLM5jERUDiDvlT6Rcwzy+20MvE+TAiopridN0e5cHB7wAAKiEsEnEcweRB5Gvlc45RTSjR9gBoy675tToSuhNycKABgVCJoJYz/AC1IIoXU4HCGaUFPsANcBZyfw1G6TpNIgmgOGxUTtOdjPMdT4+AAq3E0J+KnvB4g0b2YfmpJhp+wA0gjgEfVqiAAKuMYFSzyCZw5M5BIIGOQFRrJDKpR0bgwPEU97mGUSIhlBUEHyz/mea5N3LxQldG6hdhpzwHf6GdY7iMxuUIBAIxtnNSTSRBy+ZiC2T5Af8giaOMfpsBV6nuBNX0QP6WVp1dTwKnI7aeOFO+RgorpBD+ojN+4Vfxj9cMv7xU0cyfWRgw+ztmVQOZOBVypPgCanI80NTxv4A79tnRGuSBxNWqLASNQVssgJxk9/wDhHVfM05PkKkGo8Ads/QsixxIMs7HAArMMP54+21SNI54s5yTRo1cSRN+idj5jga0wzHZJhsjdnsBxNHwN2dx/oFSPNKeLyMWP21FNPIOKQxs5HngbVHLDIeCTRshPkCN6lkhlHB420n+vvrAJ2S6Gyk9zjkezb8bIpZV8BxoiW4HEcl86mZs8F5D3VqGeGdqP21JkjfGcU5lkjGXt5dpAO9G4MPA7056yI4kRhpZfcezIAG5J4CkXqHXDPKcKR4d9dKvO8T60RpywVvAVez+Z1V0kknhIAw+K7iiImc4R9QaNz4Nwz4HB7U4A4k0huGHPgtNHEv1gmw95zV48znjsAB5YFMZGzuE3x76kZ5R7UcnqsPd/tS9W/JgTxr2tw3mNvoMgAcSaJFjAxVB9dh84/wDrfL//ABnP8B7J8FgGunXiFPBB58T6DiW4kEYbjpHEt7gCajEcSfEnmSeZNJlW9lx7UbcmU8iK/vreRo5COBI5+8YNYIOxB50+XjTNs7cWQcVPivZSFJLZ9CvwCACrhyzHJIxWZOrBbLAcB3UxLHlnZR3D0Gp3s7ouDb3aHIR+QYc1PCsW3TMMezIfVl71J5gnhml0s6Ash4qeY7FwkaDUzHgBQIQ/+2tPnN3Fh3+HKriWCB94uj7bZmH6Rqyt4lCFiETrJOHEk/1q8BPMGBCKtImkG/XWeYpV8cc/j7quPlNq2xmK7jwlTn57EUccBFITnRngCeankezYKqjJJ4AUSlqDsv1/E/7V6qccHnWEQbZolE5959DtHIhyrKcEGiEvYx5CQDmPvFfOLH4n6DOJLk6fHSONDZtnx38jRpQsSf3kz7Kn9fCr64nfmYhhau5xIeCSNj7qNwGHLX/SjP8At/0qW4SSNgysJNwRw5VzG/nz7DaOKNnY+AGTRzLcOZXz3nl7hgejhbWrEebED08LmCOT4ZU+gnXbSCQeIHtD3jIo5SRQynvBGR2HsRqWPupVVppDIwHefQpZgmQo57irARREZaeVwqoPHfj4U2WxueGa4d9HbvFNqmCmORv0lOD8awBxx2LDqrcLPc+LfMU/xUOsJbq7KJjtnmx/f5UxaWT1ncjBb/Ydw5U5V8YBBwQeRrSJQQCVGA22xx40RpAyc1GAznBiPCRO4+PcfdwoaomBkg8vnRn3fA0+uWNF35uhHqt58j2R9oa5fLkK4DcA0DpzhVXix7hTuO6CJsBB3E8SaikjP1llb79qPW27HCycCD3N/v6GKSo2pSKGEkQHT9U8CPcc/QfCGJR7zvQyrDBoZleQRqORycA0cQ2yjriOMkh3OaNGjm5tcamPFkPA+n5r5+PYcZQkX7TAH0GuUcK/a59PO2k+xl9HA1xEOj9klew4O6qfTcxLk4wWqZpIY5CIxn1QPCvhWxrdNQyDzGaObR7kzW45qrqMr7iDXt3VxFCe/Gd+w4AZNMc31w8gPcmrSv2ClwlrGsaDkCRlj/CK9rO5q5t1tVYCSQyf3Z7iOOfLjRmjlijwWKgq45EnO1SL1SHJycaz/tVu85jwWK4AXzPAVFpNu/Wxbg7j2sY5ZBrgtzNae5lEqfA6x2X92JSB5DYfuo4Re7malWNIkLIG4auA+GTV7FV7FV5DpkQiuPP0fkZQ48mH0HzCfwj0fkbqMSeK5+41nV17H3HcfZijRr2BakN6e9fv7DlcQ/x+n/6fv9P5mX96+nvl/mN2HBZgX9BILHBI7qA6yPJ0fW/rUMvWZxo0HPwqzYjHs6hq+Gc0rKy7FSMEHxqNpH46V44HE/CidG4Y/q0+Y7Zi6p3uTxPgAD2HtCFyPga4Gyice8N99RF53kLrlSQF238ABzNXVriNtLzGcLEfLOM+4VepO88zPNLFgpHgDjg8hnGamkEkk5XSWBDoPnd+3OrKGSVlZ1lnQNhSxxtzq9UlgMgKFCgHgoGw40Ms1ppZh5jG1c+krY+/qWz2J4CjgDJZv3mtkX2R99MB5nFSLUi/tU4/aplog1w6pPoPhNFpPmp9BwQcg91DN9EgS8tx7TY4MK9R12KsMEfGoXnlY40oM48SeQ8akEl05zcuu4B+qD4en8o+R5DbsN3EJkXzQhq4EZHo5xRP8Cw9PK1Y/F/RwUZrZ0gUv+sdz2G7yQtp/WG4+0VkHmDyNcqXUPDjUiFht41KEUeAxThpZDliAAD7q9iGFoo/F2pt1G/nzpwWt4xpXz2z2HBlIPwrikc9g/68TlgPejUFmSNGjWOVcpkccjnyODUj3E8hA1MNzyAA5DuApVl6VnAM/cg5IT3Dn3mnne+tYyxhkcFCMbYwAdOafrEQ+oGQAp4DuHhSE8GJ7hW3XHq08htmt4uvluf9IGhOxO5o+s2Gfy5D0Y0zIYwT9bORSJ8BSJ8BSoAoySQNhV5b1fWtSRyxEka04Ejj9BjM8frxeJHL3itiO/l6JGjccGU4ro+xu2Hz5YRq+NRW9ish04towpxzOa9lRjJ4nvJ9A9ZzjyHM0PVQADsACp2IPMV7CNmDxibdT7uHoO13C8Pv2Yek5S2RIPQCYQwluO4Rqcn4nAoY8OxXFpeEuncj/OX0Gowk7D+8XPHvI51cwMvvB/dUq3HcgGFz499AKopTJIBhEzsT4nuo5nvSD7h2O0d5Kl1bPyS5QYx5OtYWb7UccVPiKUR3K7K7DIQ/WHee741ksSSzE5JPfnnTRq0tuVdXIGsEjZckZPOkKyRsQwIxuOO3KgQpPrHkB3edOBcSpp/UT5zGkw9yAIvCMdjvghRQ2hAjm/V5N7j6CQRuCDwrIf8APLwbzHI1dg+StSmOA+0T7T/7CjSlppnCoPHv8q4QoFJ7zzPvP0JGWD7zwr/EBRo0aHrybJ4L/WjQLOxwFG5NYNw43/RHcOywvSFtkwnk45oTUbxTRsVkjcYZD3EU5SWJw6OOKsNwauEsbvg6S5CHxVqnS9vG2TRuiHvLU5d3YszNxYnck1E808raY40GSx8K0Pfz4aeT9yDwHZJqjcbHmrciPEUNUefxcqjZx9x8KNGjRqQAnvNbxHDJb/u1UAABsBy7HmMo3NTyNIWDHEiHZLgDmDyepgl2PbhfaRDRWRah08FY4DZXO+xFTNoLFizbM3iTWi7vtwdHsR+bCi72pfXLK/5U0oWNBhQOx/O0oZGGGUjYigZbAnzMPgfDuNH0EUajeWZzhEQZJNYe/kHuiX6o+hj8kum3JG6OfEVZPPH9e39cH3cfsqGVFG76kI2qCRuQCoaUW8fMud/hSl5SN5G4ntM292owLmL2vJhzFAXcXKSBW+1SMildfBlI+6ldj+ipP3Vi0h5yTIxPuUfeRSGa6cYe5l9vyH1R2ihga3Hc1WUpx9XerGfI+suP31b6AebNQ62btIQ3c1OZ4hum5DjyYVd3OByuoBKP2qvbRPK1NT9I3at8wDqo/u/cawkPKAVEscajAA7I+vzHfirRmbvBxmkjhQjB1esfhU72s58ihP6tCC5XvSXTViB5zJV7FAndDl2qH1yMNM+7n6J3/wAAAfMVEh81FRIPJRQA8h2yg1GKjFIO3tomPeVqzjqGOP8AVUD/AIU2kt70hMpdLeLAwg21Ox2Vc7ZroZbRUhZ1lF0sqkjkQADV3Zw311CshgEoUkkclJzVzFE2gyEO4U6RgFt+QyN6vbYWh4TmVdH7WcVcwzQ/nI3DL8RtV/amSdQ0SdeuZAeBUZ3Bq9tmuhxgEqlx/pzmruC2DHCtNIqAnwyadXRhlWU5BHeD2KvIzuI4YYhl5XPBVFfg68Vmo1O8N2krxrzJQAcOeCauoRFcDMLFwNY06ts8dgT5VeW9yEOGMMqvpPjg1e20dy2NMLzKHOe5c5q5iibQZCHcKdIwC2/IZG9X9qls/sTGZQjeTZwamjmib2XjYMp8iOysEvJ7tJXGu46oKE05+ac+1VvYdGyiaNVM911iOCwBGQFw3IDmavLeLqgrSdZIq6Ac4Jyds4OKvbaCJ/YklmVVbyJNSQyYTMCmQASseABrpDouaIflbMnq078sWIq7t7hBszwyq4HmQau4PkmM9f1q9XjOM6s4o5HZdGG9nt0V5y04iSPVnSMkEkkAnhVqLB1J1o8ysFA56htir62uFT22imVwvng7Vd9GC1gnMWguXnmCgFnXDYC5OBsa6QtHuRxhWZS/7Oc1eW8XVBWk6yRV0A5wTk7ZwcVcWb2wgR40jfMoJJ9ZuWkjGD2sPXdUUGjXpzqYLxwa6PS8nvFlYa5+qChNOd9J+tVhFZkEaBHc9dq/6Rj6H2kvLOFrUnmqag6ivzTfuq1iMpsDPrKb68ZBodanyCSRkfcOQUxqFQxm0isJJLWIqNHW6wGIHDIWkCQSdGLLPHHsBNqYKfMrUCGb5D13W/P1jcHVUCJPDdWrLLga9RdQSW4knnR6O1wW0AgF7bmX1CDqKYYfO2NTxSa7h5UWFCiRK2DoUEnAB7Ha0hunSU8gzoQhNOot44yzljsRjhQ2N0NaP4qxVSKiSKSaC4FyIgBmMAFSwH6VP0Trupphcme0d50k1kbtrG45U/ykwdHyay/CZ10Dcee9dDw3t3FAbhRJpjjhQnTkEg4JI4AVBDbgXwJggk1ojFF1YOBz8B2T2yXHUXWDcoWTgnJSDUlo8vy+2wbVGQaesXjqJqMSiGxhKI+41FnGrB2yBkA0ejQYLaAW6XtsZMREHUUAYYGrY1JBNmczRCGMqkKs6HQoJNRp8gkuZTJGQAjyCMmMEcDUSRvcW84uxEBvGoUoWA8dgaL/APl75dnl1Xy3Gerz9XPu19nfy2F+UCOygPHKBwDoe7vGDVhHd3Q6QPR3UxYMU8o3BGrYLXR9pYu9hMHSCbXrTUuNQ0rSBEtukrlyQm4RVUmug7Swga8t5LeUTKJQS4IwirjJH6VRiUQ2MJRH3Gos41YO2QMgGuVhb/xP2vfD/NSrx7OUw3REyRq54JyYEV0lLfMzZV5IkTSO71QPoe1jnC7pq2KnvBG4q3ZXlQxuzzO5KnllmNQ/2Hqup6rW3sYxjOc1D+Pt4jDE2o7IcZGM4PAVbiXQ2pDkqyHvVgQR7jVuIxKcyHJZnPD1mJJPvNQf2Hquq6rW3sd2c5qLVDGyMq6iMFCCu4OdiBVsHkjBCSK7I4HdqUg4qIxxAlsaixJPEkkkk9jEk0Ugw8cighh4irAEx7oJJXkRT4KxIFWjXFsLtuvGgsoUxsMtVtplcANI7s7Ed2WJIFWX42XeQxyugk/WCkA1CBNbxGKIhiNKHGRjOOQq3LTRqVWRJHjYKeWVIJFW6QCUguEBwSAAOyjzc26usT6iNIbGrbODnA41H1iLIsgGSPWU5B28RUeLiWNY3fJ3VckDHDmatg8kYISRXZHA7tSkHFW39ikOXj1tljkHJbOc5A51Cs0TEHDciOBHcfEVblZJRh5Wld5CO7WxLAe+rUfIRsI9Td+c6s5znfOc1wA7K1YzyY1uk8iasDAyFYA7VYxC0QhkiQFdLDfII3Bqz03CBgJmkZ3IbGckkk8BxqBQl1K0s6klg7MMMTnvAqwzggoHmdtGCCNOW9XccqjxcSxrG75O6rkgY4czUeLmWNY3fUd1UkgY4cz2sfWwSYLJqK5wQRuDniBULyPAGERSZ0K6sZ9kiklUSYLa53k4cPaJx/waZl1AjKnBGe48jSPF0rNeRgSCVmeSMHMhfJ9ZdPGrubqYBHothshcyAamPE0ZQrNpHVwPKc+SAmpriS4e5nCZtJFXQHbSC2nSMKOZ7W7mcHpS3SGDgkWxycDiSRxNLI8SNq6sSMqv+sAfW8jWV6KiMaBMkoJwDrCeW2au5bZGYda0WzOnNQ3zc943rIiiSQnSCxADtyGSamuzaC2iMafIZshyz6jjRnhprgRntE6xUTczStoiUDcgZwtPdGF3Z4wZWV2h1nQHIOSCtAw2cVmTexR7xiQsNHk+NVTXYtDbSmVPkM2S4ZNJxozw1VqMcgDLqQqcHvBAI9/a9G3/AEpFZ3Bt4raFMxxKoGWILAMxNEG0MYEOBjCjYD3YxV3M4PSlukMHBItjk4HEkjiaMwMisU6u3kl4d+lTipZ5L02yvMXtnRS2Bk6ioU9rdPayOABMigsozvjPPGRnlxrWUi6UnUFyWYgadyTRf/xiaOW6juhIwaEgsUVe5QABTzRX8/RouIils7qGZMj1gpUUZi0aqX6y3ki492pRn6IhM8yoxji1BdbAbLk7DJ51+DdzcdJT7STC7gConJEGvZRUeueTRpTIGcOpO524D0SFw88s2T3u5Yj3Z7WPWIOkYppdwNKLqyd6tJZUmYi4mhmRHjQcl1Ebmvwefo+GGEmHXcxsC3JfVJO/HJqBLe7ZcyxI+oKe7NJonj16kyDjLsRuNqcl54I4SnIBCxz/ANXa9CTXfREOlwiXESC5fY5cMwOlT82uhngv3l0CN54iY05ye1pPcBmugLm1hYs811NdRSMXIyWfSxLEmnIeCGSIJyIcqSf+ntujBf215cG5jInWMxOwGoNq5ZGcioIrn8axvZNekRBizkqDx3NR6xB0jFNLuBpRdWTvXMEU5dbaJYgx2JAGM9tHo6/pGaaPcHUjYwdqsEkhOuK3vjOoVInJ9pfa1KDyBpykJtfkwccQunTRzpAH/Ms//8QANhEAAgICAAUCBQIDBwUAAAAAAQIAAwQRBRIhMDEQQQYTIlBRMmEjQnEUFTNAgaChIJGxwdH/2gAIAQIBAT8A/wB1mWA8mG+se8FyHwYCD3iQPM+an5gsQ+DAQe8ATFosPtDi2j2jVsvkfY7ciqobdtSzjWIn80x+J4155Ubr9lLADZluST0WEk+fVXZT0MqyQ3RvPcsv10WFifMCs3gQqy+RA7DxK799D2zYocJ7mUYxs6nxEpSseIHRv0nc1GQEdZk1BD16f+JzDmK+/wDnq8N36noJl3YeGNWHbfiZvGXduVBoTE4HnZ/1v9K/vF+HKMf/ABBuX8HoZd1jlYeJhWNZSC3nx9kvs5zoeP8AqMx7N/Se1fZoco9EXmbUUco0Iy8w0Y68ra9KbOYaPavblv8Amb8Q/EFo6KgmXxTJz7FpU8oPTpMPErxaRWgnLqECZSEoemxHsAY1MdEeDMa4XL08joe2lbMek+Qo/UYKEPiHG9wYQVOj3B1mNjBF528zinH+UmnFPX3b/wCRRfmWmunbE+TOFfDlOJqy76n/AOIPGoVDjR8TLx/k7YeJg/4W/wAkn7HlWciaEQzUrpew9InDCR1mRw29VJrmRnZFDcjjRh4vb+0/vm8HY1MPIGTStg9+wToR25m3DMcdd+uQPq36I3KwMB32LHCKWMscuxJjSoatU7lWXnswVH3Ky3IObzCYdEaM4uRXcROFWsuZZUf69qpC7ai1hRoRk2OsrGwNS2xKhtoE+am2HX2jAhtHt4VW92N7TjvGTYTj0HSjyf8A1MTFuzrBXV4HkzEpqwa/l0D+p9zBlWg+Zj5Qs6Hz6W0rdWUbwYafkH5Y9vseW221AdRdt0EwscIm4VnLPibhwen5i+R1nn0+Hbeahk/B7Fh+k+uN49cnwPWs/SOxnH+Fqa6RhBiW2A8izhtC1Y6nX1EdYWhaM+gZxm1XuDb6ytNZhsX8DfaxK9JucohO25NdZbcMCvdh/wBPeYVd2bZ8+7wPAjuqnrMoDfMO3xbiHyKBRX5Pn9pj49mdcKKf9TK+HrhY4qpH9TDTZ+J8mz8RK7VYECA7EE4gmnDfY8kfxDNShgHG5jEGoampqcbKriNv8H1+HB9LnsW/pM1NTG8H1yfA9NSv9A7GaN1xhE1vZnD89aLSH8GLlVcvMGGo3GcPn5OaGwMNjqJfYFqZv2l7crc7HZ3OG5LW7XXViP8At2TKWVaATGvRV2REy9FnYa14lmG2ZaGPmJiJzaU9B+ItCDoJxBAqjXausFaFjMu+zJu5V6sTqcF4WuBQAR9R8w9IGBmxNicwgYTiJBC/Y8tdHfoDo9Jw7NUrytAwPiO6oNsZ8T8V5h8lD59EGzOB0lMbmPv2HG1Prj+D65PsJqAbOoo0oHYtXmQiMsI1OUN5i4Fz+0o4LWV/iSmpaUCKOgnxFkMqLUp6nzBTzuTOE4wU8x9u1g8tlRUwBUXQGhLFfLs0P0iMHoZa18H3gpWs7ETzOI2bcKPbtcYyeReUGfCvDQ7HLs9vHpnISgI9pszZmyek+Vb+J8q38GMGB032O6vnXUZSJ4isVO1iZ9q+DMriLLWXY6l9pusNh94q7mJiNc4UStBWgUe3ZtXlb0oOm163nb69Kl2e1fVoxljLMfOuo6b6ReL1a6g7mTxdmXVY1LWe9+d5TQrMN9JjrrZA0O1j3Gl+aMRcg0ekRQg0PEtCcoZ/Yy0DoQehl960p+8di7Ens2HSziDG/L+WP6ThBFFYo9vQgEaMuwSDtIMa3xqY+Fynmf0dwiljHcuxb7JdTvqIV1OWanFLy7/KXwItRMoxnZtAbmBgLjps+e06BhGUg6MBIOxFtUjrHtCjpCdncVeboIiBRrtMoYaMspIjVwpOSFIlLnqBMfEC9WgGu3Ve1R+kxOID+cQ8Qr5dCPxEkAKIzsx23at/TKQP7y+r8wdDsTGyxYOVvPrr0dlQbMysk2nQ8fZnpVusfHYTJBrQkDrBiWO29b3MfhFjdW6THw66B9PnuPWG8xqSOohRh7QIx9otB8mKgXx3CAR1j0BvEOOZ/Zmgw2ldXIPP+bI2NTO4XY1nzqPMqzc1V5Xq2ZzZ9vsE/wCTMTLtpQK7c37xc+o+ekOdT+ZZxEfyCW3WWn6j9pKg+YAB9j1/uZv/xAA0EQABAwIEBAQEBgIDAAAAAAABAAIDBBEFEiExEDBBURMiMlAGFCNhM0BCUnGBoKEVYtH/2gAIAQMBAT8A/wArG/Bsb3+kXTaGods1Oo527tTmlpsRwvzGRvebMF03Dqp2zCnYfVN3YU5jmGzhbnEgbo1EY6oVcR6psrHbH2K6DSdghTSHonwSMFyPZWMdI4NaNVSYO0AOl1PZCJrBZosFlQCkpopRZ7bquwh0Qzxaj/fL1VBg+cCSfbso4Y4hZgsFLURR+s2UVRFIPI66kgjmFpBdV+EGO74dR25YYS0u6BTVIZo3dTzPcd0S4aO0WZNkIO6p5SRvdWNg7pzrfkJ8Sii0GpVPPV1R8jbN7qnpSBd5uqjFKWl8o1P2TMSM4uwplU8HzG4UgAcbexk2WE0LI4hLuSiLrKi1BqDUAsYw4M+vHt15WD0IkPjPGg2X2VXOIITIVLK6V2Z51UMronZmlU0wniDx1VrrGKERO8Vg0O/KpIGOpg13VOwCK5JcUzDYKNrpCLlVNU+aUvKzHZRDXVU9gd9VEbWJ1HVSMyuty3PDVnJ2V3BCQ9UDcX5hNhdV1eXu8Nmyw/Bs1paj+h/6nOipY88mgVfjUtQSyPRqF91HIWG7VSVQmGU7qT1ex1kuRlhuV8LYmXNNK86jZC24VZWxUrbvOql+JX38g0UPxHI42NkzE5XDM2y/5Kb7J9dJI0scBYqRuVxHIY0vcGjqqeERRNYOnDHn2ia0deOBPzQlvY8KyATQuaeqIIJB5DGF7g0dVEzw4w3snIgF1jsqmgw1t3OFlJCwvOTZNhsmtsqclzLqYXYHDlSSBjbp0hcblMlsnusdVEx8zrMCe5sTyAboEOFxy8UqCxoibuVhOGZQJ5Rc9Ap52UrM79SdgpYXVTs85/roE7D6Yj0qsoDB5mahNKglMbw4dEyTxGh3f2OvN3gKmqHU8rZWbhUteyamE42ssSrH1ExJV1dYZU3OU8axtng8jDm5qlnHHz5mDjgB0eEFZVzctS8ffkYa0GcIhFTvbFq42VdM+WY3OiDEGoMVO2zbKJoc2x+/Kqn3dZZ7IXtmvoqWmfiEgbEP5PRYi+HDYfl4fUdymNLwqe4BB5dNSePVOmfsFPUR0sRkk/pQVnzNSZZjtsvmYf3BfMw/uCfPA9hbmCIAcQE3dYe+7CPY6wHxeGE1xijfTk6OGn8qa4kN1mWZYbcy8Cq7ccjCjaqajwx/1s4/D+7+OJEGqfyMMIE2vCyxSlM8Yy7hOp5A6xbqvkZwL5UGEaFMZdwAQbluEY7Mz9uSE+MvlKdA4utdGlOjWm91TYmKCEt0tb/alr5CMzxdx6plSVRyF7zflAEmyiYyGPMdgsTrzWTf9RsgCdlldssj1lf2QY7smtN9lhwIJv7HXN8wPAOtqpG+O0Pbv1ViDYpsbnGwWGUoYMx41bryW5FG/wAOdrj3QNxfh8QN1Y7j8PjyvKsnENBJVS/PM5335ED8krXJp0urogJ0sI9TgqmvYNItU4lzsxVFES7MVku4lVx8OIMHXlVj3QyZgnSulcmPbSx66kppbOx0jtwjK5wylByw9lmFx5VOzMbrH6wtAgZ/aIWFSASlp6rKOyyjsiGjVePD3C8aHuE0tIu32Ooj8RhCLSN0NE1xabtQqifUAVDI+Z4jYLfwooxGwNC6qR4Y0kokk3PIG6wyqFRAO44Y7EX0wcP0njgkOSlzHqUbrFakQQEDc8rDqnxY8p3CCIU9BFLqRqjhUl91DhmU3ebpkDWiwTmFrSWhVslyGdt/55VTAJmW6oEwPOYap8jnm7jqqYE3AO6cMrrKmp3zP+yYwNaAOnKhAZHmKxaAy/VG6ITSWm43VNiTHNtJujWQgXzKrxDOMkeyaO6hiL3BoUbcjQ32SppyfM1OZZWVlhFLkZ4rhqeBcGi5U8xkOm3KoK11JJm6HdQzMmYHMOiljbKwsdsVVYVUQu8ouFSYTPM7ziwUbGsaGt2CnnZAwueVXVjqqXMdunKhldE8OaqeqZM3TdX4EKyJaDYlVuI7xxo3JueXNTsmbZwUuFPH4ZTMPqAUzDLuzPKZG1gs3lDdP/A0RAIsVV0JZ5mbLIsqylBijiLjYKlphELnf2aWma/UaFPpnt6XVJS+LMGkWCDmMAAOgUlWxu2qkmdJvzKSumpnXYdOyp8dhePqaFNrqZwuHhOr6ZguXhVGOwsH0hcqqrZql13nTtzGPcx2ZpsVBihGkgTcRgd1Tq+Bv6k7FYQLDVT1jpPSLfnIagAZXbJ0cZNw5Wibvqp6KKQ3aLJ2HyDbVChl7KPDj+oqOFke3tR1/I3/AMnj/9k=" alt=""></p>
+            <p>html默认定义的尺寸为20px，那么1rem=20px；开发者在定义尺寸及字号时可以根据此比例来控制，比如，14px = 0.7rem*20。</p>
+
+          </div>
+        </div>
+        
+        <div id="content-2">
+          <h3 class="page-header">基本结构/辅助元素</h3>
+          <div class="book-content">
+            <p>2.0版本中布局结构更要严谨和灵活。</p>
+
+            <p>aui-content和aui-content-padded作为AUI整个框架中的外层容器</p>
+
+            <p>aui-list和aui-card-list为列表类布局容器</p>
+
+            <p>aui-row 栅格布局容器</p>
+
+            <p>aui-grid 宫格布局容器</p>
+
+            <p>aui-bar 定义工具栏类</p>
+
+            <p>......</p>
+
+            <p>同时我们也提供了一些常用的样式来辅助布局</p>
+
+            <p>aui-ellipsis-1 单行文字，超出自动省略</p>
+
+            <p>aui-ellipsis-2 两行文字，超出自动省略</p>
+
+            <p>aui-hr 水平线</p>
+
+            <p>aui-padded-位置-数值 ： 控制某个方向的内边距剧，位置有t（顶部），b（顶部），l（左侧），r（右侧），数值有0，5，10，15</p>
+
+            <p>aui-margin-位置-数值，控制某个方向的外边距，位置有t（顶部），b（顶部），l（左侧），r（右侧），数值有0，5，10，15</p>
+
+            <p>aui-font-size-数值，文字大小，数值有12，14，16，18，20</p>
+
+            <p>aui-text-颜色名，字体颜色，颜色名有 default，primary，success，info，warning，danger，pink，purple，indigo</p>
+
+            <p>aui-bg-颜色名，背景颜色，颜色名有 default，primary，success，info，warning，danger，pink，purple，indigo</p>
+
+            <p>aui-pull-left 左对齐</p>
+
+            <p>aui-pull-right 右对齐</p>
+
+            <p>aui-show 显示</p>
+
+            <p>aui-hide 隐藏（隐藏容器不占空间）</p>
+
+            <p>aui-invisible 隐藏（隐藏后继续占用布局空间）</p>
+
+            <p>aui-mask 遮罩层，层序为8</p>
+
+            <p>&nbsp;</p>
+
+            <p>常用色值的对应</p>
+
+            <p>default &nbsp; &nbsp; &nbsp;#212121</p>
+
+            <p>primary &nbsp; &nbsp; &nbsp;#00bcd4</p>
+
+            <p>success &nbsp; &nbsp; &nbsp;#009688</p>
+
+            <p>info &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;#03a9f4</p>
+
+            <p>warning &nbsp; &nbsp; &nbsp;#ffc107</p>
+
+            <p>danger &nbsp; &nbsp; &nbsp; #e51c23</p>
+
+            <p>pink &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #e91e63</p>
+
+            <p style="
+                color: #e91e63;
+            ">purple &nbsp; &nbsp; &nbsp; &nbsp; #673ab7</p>
+
+            <p>indigo &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;#3f51b5</p>
+          </div>    
+        </div>
+
+        <div id="content-4">
+          <h3 class="page-header">文本样式</h3>
+          <div class="book-content">
+            <p>基础文本样式.</p>
+
+            <p>同时按照Google Material色彩规范提供了几个固定色值</p>
+
+            <p>
+              <span class="c-primary mr-5">c-primary</span>
+              <span class="c-alt mr-5">c-alt</span>
+              <span class="c-success mr-5">c-success</span>
+              <span class="c-info mr-5">c-info</span>
+              <span class="c-warning mr-5">c-warning</span>
+              <span class="c-danger mr-5">c-danger</span>
+            </p>
+            <h1>标题一 H1</h1>
+            <h2>标题二 H2</h2>
+            <h3>标题三 H3</h3>
+            <h4>标题四 H4</h4>
+            <h5>标题五 H5</h5>
+            <h6>标题六 H6</h6>
+            <p>P标签字体，默认为14px</p>
+            <section class="">
+              <div class="c-text">c-text</div>
+              <div class="c-3">c-3</div>
+              <div class="c-4">c-4</div>
+              <div class="c-5">c-5</div>
+              <div class="c-6">c-6</div>
+              <div class="c-7">c-7</div>
+              <div class="c-8">c-8</div>
+              <div class="c-9">c-9</div>
+              <div class="c-a">c-a</div>
+              <div class="c-b">c-b</div>
+              <div class="c-c3">c-c3</div>
+              <div class="c-c">c-c</div>
+              <div class="c-d4">c-d4</div>
+              <div class="c-d">c-d</div>
+              <div class="c-e6">c-e6</div>
+              <div class="c-e">c-e</div>
+              <div class="c-f5">c-f5</div>
+              <div class="c-f9">c-f9</div>
+
+          </section>
+          </div>
+        </div>
+
+        <div id="content-5">
+          <h3 class="page-header">导航栏</h3>
+          <div class="book-content">
+              <p>2.0版本中导航栏分蓝色调和浅色调，支持嵌套按钮，tab切换栏等其他控件。</p>
+
+              <p>为了兼容APICloud状态栏沉浸式的处理，当导航栏中只有中间文字或者tab等时，请不要使用.aui-title</p>
+
+              <p>案例代码</p>
+          </div>
+          <div class="flex">
+            <div class="code flex-1 pr-9">
+              <textarea class="code-content" style="width: 100%;" data-target="code1"></textarea>
+            </div>
+            <div class="example-box">
+              <iframe class="example" src="base_bar.html"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div id="content-10">
+          <h3 class="page-header">按钮</h3>
+          <div class="book-content">
+            <p>2.0中按钮按照Google Material 设计规范提供了多个色值的样式</p>
+          </div>
+          <div class="flex">
+            <div class="code flex-1 pr-9">
+              <textarea class="code-content" style="width: 100%;" data-target="code10"></textarea>
+            </div>
+            <div class="example-box">
+              <iframe class="example" src="base_btn.html"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div id="content-11">
+          <h3 class="page-header">标签</h3>
+          <div class="book-content">
+            <p></p>
+          </div>
+          <div class="flex">
+            <div class="code flex-1 pr-9">
+              <textarea class="code-content" style="width: 100%;" data-target="code11"></textarea>
+            </div>
+            <div class="example-box">
+              <iframe class="example" src="base_tag.html"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div id="content-12">
+          <h3 class="page-header">列表</h3>
+          <div class="book-content">
+            <p></p>
+          </div>
+          <div class="flex">
+            <div class="code flex-1 pr-9">
+              <textarea class="code-content" style="width: 100%;" data-target="code12"></textarea>
+            </div>
+            <div class="example-box">
+              <iframe class="example" src="base_list.html"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div id="content-14">
+          <h3 class="page-header">表单</h3>
+          <div class="book-content">
+            <div class="dm-demo-dom">
+              <!-- 块 -->
+              <div class="form-wrapper" >
+                <div class="ctrl-wrap flex aic form-group mb-7">
+                  <div class="w-6em form-label">
+                    <label for="">你的名字:</label>
+                  </div>
+                  <div class="flex-1 form-field">
+                    <input type="text">
+                  </div>
+                </div>
+                <div class="ctrl-wrap flex aic form-group mb-7">
+                  <div class="w-6em">
+                    <label for="">所属行业:</label>
+                  </div>
+                  <div class="flex-1">
+                    <select class="select">
+                      <option value="">教育行业</option>
+                      <option value="">游戏行业</option>
+                      <option value="">互联网信息技术行业</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="ctrl-wrap flex aic form-group mb-7">
+                  <div class="w-6em form-label">
+                    <label for="">单身时间:</label>
+                  </div>
+                  <div class="flex-1 form-field">
+                    <div class="radio-circle">
+                      <span class="dib vam mr-5">
+                        <input type="radio" name="dd" value="1" id="d1"><label class="dummy-check" for="d1"></label>
+                        <label for="d1">1-3年</label>
+                      </span>
+                      <span class="dib vam mr-5">
+                        <input type="radio" name="dd" value="1" id="d2"><label class="dummy-check" for="d2"></label>
+                        <label for="d2">5-9年</label>
+                      </span>
+                      <span class="dib vam mr-5">
+                        <input type="radio" name="dd" value="1" id="d3"><label class="dummy-check" for="d3"></label>
+                        <label for="d3">11年</label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ctrl-wrap flex  form-group mb-7">
+                  <div class="w-6em form-label">
+                    <label for="">你的爱好:</label>
+                  </div>
+                  <div class="flex-1 form-field">
+                    <div class="check-square">
+                      <span class="db mb-3">
+                        <input type="checkbox" name="dd" value="1" id="dd1"><label class="dummy-check" for="dd1"></label>
+                        <label for="dd1">足球</label>
+                      </span>
+                      <span class="db mb-3">
+                        <input type="checkbox" name="dd" value="1" id="dd2"><label class="dummy-check" for="dd2"></label>
+                        <label for="dd2">游戏</label>
+                      </span>
+                      <span class="db mb-3">
+                        <input type="checkbox" name="dd" value="1" id="dd3"><label class="dummy-check" for="dd3"></label>
+                        <label for="dd3">购物</label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ctrl-wrap flex  form-group mb-7">
+                  <div class="w-6em form-label">
+                    <label for="">人生格言:</label>
+                  </div>
+                  <div class="flex-1 form-field">
+                    <textarea class=""></textarea>
+                  </div>
+                </div>
+                <div class="ctrl-wrap flex  aic form-group mb-7">
+                  <div class="w-6em form-label">
+                    <label for="">上传头像:</label>
+                  </div>
+                  <div class="flex-1 form-field">
+                    <div id="picker"> <span>选择要上传的文件</span> </div>
+                  </div>
+                </div>
+                <div class="form-action">
+                  <div class="dib w-6em"></div><button class="btn-primary">提交</button>
+                </div>
+
+
+              </div>
+              <!-- 行内 -->
+              <div class="form-wrapper form-inline mt-12" >
+                <div class="ctrl-wrap flex aic form-group mr-7">
+                  <div class="form-label">
+                    <label for="">行内:</label>
+                  </div>
+                  <div class="flex-1 form-field">
+                    <input type="text" style="width: 120px;">
+                  </div>
+                </div>
+                <div class="ctrl-wrap flex aic form-group mr-7">
+                  <div class="form-label">
+                    <label for="">我是方的:</label>
+                  </div>
+                  <div class="flex-1 form-field">
+                    <input type="text" style="width: 120px;" class="square">
+                  </div>
+                </div>
+                <div class="ctrl-wrap flex aic form-group mr-7">
+                  <div class="form-label">
+                    <label for="">后缀:</label>
+                  </div>
+                  <div class="flex-1 form-field ctrl-wrap" data-suffix="$">
+                    <input type="text" style="width: 120px;" class="square">
+                  </div>
+                </div>
+                <div class="ctrl-wrap flex aic form-group mr-7">
+                  <div class="form-label">
+                    <label for="">前缀:</label>
+                  </div>
+                  <div class="flex-1 form-field ctrl-wrap" data-prefix="@">
+                    <input type="text" style="width: 120px;" class="square">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="dm-demo-code">
+              <textarea class="code-content" style="width: 100%;" data-target="code14"></textarea>
+            </div>
+          </div>
+          
+        </div>
+
+        <div id="content-28">
+          <h3 class="page-header">图标</h3>
+          <div class="book-content">
+            <p></p>
+          </div>
+          <div class="flex">
+            
+            <div class="example-box" style="width: 100%;">
+              <iframe class="example" src="./iconfont/demo_fontclass.html" style="width: 100%;"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div id="content-32">
+          <h3 class="page-header">dialog</h3>
+          <div class="book-content">
+            <p></p>
+          </div>
+          <div class="flex">
+            <div class="code flex-1 pr-9">
+              <textarea class="code-content" style="width: 100%;" data-target="code32"></textarea>
+            </div>
+            <div class="example-box" >
+              <iframe class="example" src="base_modal.html" ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div id="content-35">
+          <h3 class="page-header">tab</h3>
+          <div class="book-content">
+            <p></p>
+          </div>
+          <div class="flex">
+            <div class="code flex-1 pr-9">
+              <textarea class="code-content" style="width: 100%;" data-target="code35"></textarea>
+            </div>
+            <div class="example-box" >
+              <iframe class="example" src="base_tab.html" style="height: 200px;"></iframe>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    
+  
+<script type="text/html" id="code1">
+<div class="s-header flex white">
+    <div class="w-3em" onclick="dm.back()"><i class="if icon-angle-left"></i></div>
+    <div class="flex-1 ellipsis">我的s消息</div>
+    <div class="w-3em"></div>
+</div>
+
+<div class="s-footer flex tac fz-small c-a pl-4 pr-4 bgc-w">
+    <a href="/list/index.html" class="flex-1 pt-3 por ">
+        <div class="fze-16 lh-11">
+            <i class="if icon-home off"></i>
+            <i class="if icon-home on"></i>
+        </div>
+        <div>主页</div>
+    </a>
+    <a href="/discover/" class="pt-3 por flex-1 ">
+        <div class="fze-16 lh-11">
+            <i class="if icon-satellite off"></i>
+            <i class="if icon-satellite on"></i>
+        </div>
+        <div>发现</div>
+    </a>
+    <a href="/msg/index.html" class="flex-1 pt-3 por active">
+        <div class="fze-16 lh-11">
+            <i class="if icon-msg-dot-3-square off">
+                <i class="icon-red-dot red-dot-msg hide poa r--5 t--1"></i>
+            </i>
+            <i class="if icon-msg-dot-3-square-fill on">
+                <i class="icon-red-dot red-dot-msg hide poa r--5 t--1"></i>
+            </i>
+        </div>
+        <div>消息</div>
+    </a>
+    <a href="/my/index.html" class="flex-1 pt-3 por  ">
+        <div class="fze-16 lh-11">
+            <i class="if icon-user-circle off"></i>
+            <i class="if icon-user-circle-fill on"></i>
+        </div>
+        <div>我的</div>
+    </a>
+</div>
+</script>
+
+<script type="text/html" id="code10">
+<section>
+    <p>普通按钮</p>
+    <button class="btn-athens">btn-athens</button>
+    <button class="btn-primary">btn-primary</button>
+    <button class="btn-danger">btn-danger</button>
+    <button class="btn-success">btn-success</button>
+    <button class="btn-warning">btn-warning</button>
+    <button class="btn-gray">btn-gray</button>
+    <button class="btn-info">btn-info</button>
+    <button class="btn-smoke">btn-smoke</button>
+    <button class="btn-o">btn-o</button>
+    <button class="btn-o c-primary">btn-o.c-primary</button>
+    <button class="btn-o c-danger">btn-o.c-danger</button>
+    <button class="btn-o btn-small">btn-small</button>
+    <button class="btn-o btn-large">btn-large</button>
+    <button class="btn-o btn-tiny">btn-tiny</button>
+    <button class="btn-o btn-square">btn-square</button>
+    <a href="javascript:;" class="btn btn-o btn-link c-primary">a btn-link</a>
+    <a href="javascript:;" class="btn btn-primary">a btn-link</a>
+
+</section>
+<section>
+    <p>块状按钮</p>  
+    <p><button class="btn-primary btn-block">btn-block</button></p>
+    <p><button class="btn-o c-primary btn-block">提交</button></p>
+</section>
+</script>
+
+<script type="text/html" id="code11">
+<section>
+    <p>tag</p>
+    <span class="tag-danger m-5">tag-danger</span>
+    <span class="tag-light m-5">tag-light</span>
+    <span class="tag-gray m-5">tag-gray</span>
+    <span class="tag-primary m-5">tag-primary</span>
+    <span class="tag-success m-5">tag-success</span>
+    <span class="tag-warning m-5">tag-warning</span>
+    <span class="tag-o tag-risk-a m-5">tag-o tag-risk-a</span>
+    <span class="tag-o tag-risk-b m-5">tag-o tag-risk-a</span>
+    <span class="tag-o tag-risk-c m-5">tag-o tag-risk-a</span>
+    <span class="tag-danger tag-small m-5">tag-small</span>
+
+</section>
+<section>
+    <p>红点</p>
+    <i class="icon-red-dot"></i>
+</section>
+
+</script>
+
+<script type="text/html" id="code12">
+
+<ul class="msg-sys-list mb-8">
+  <li class="pt-6 pb-6 bb">
+      <div class="tac fz-small c-a">2017-01-04 10:39</div>
+      <a href="/info/notice_detail/id/285.html" class="db m-7 panel round">
+          <div class="por fwb fz-medium mb-6"><i class="icon-red-dot hide mr-3"></i>2017股权众筹进入筹智时代，“众智众测”为投资保驾护航</div>
+          
+          <div class="cover mb-6" style="background-image: url('http://7xjckn.com2.z0.glb.qiniucdn.com/2017-01-04_586c604c2934f.jpg');"></div>
+          
+          <div class="c-a bb pb-6 mb-6">2016年的最后一周聚募APP做了本年度的最后一次更新。</div>
+          <div class="flex space-between c-8">
+              <div>阅读全文</div>
+              <div><i class="if icon-angle-right"></i></div>
+          </div>
+      </a>
+  </li>
+</ul>
+
+</script>
+
+<script type="text/html" id="code14">
+<div class="form-wrapper" >
+  <div class="ctrl-wrap flex aic form-group mb-7">
+    <div class="w-6em form-label">
+      <label for="">你的名字:</label>
+    </div>
+    <div class="flex-1 form-field">
+      <input type="text">
+    </div>
+  </div>
+  <div class="ctrl-wrap flex aic form-group mb-7">
+    <div class="w-6em">
+      <label for="">所属行业:</label>
+    </div>
+    <div class="flex-1">
+      <select class="select">
+        <option value="">教育行业</option>
+        <option value="">游戏行业</option>
+        <option value="">互联网信息技术行业</option>
+      </select>
+    </div>
+  </div>
+  <div class="ctrl-wrap flex aic form-group mb-7">
+    <div class="w-6em form-label">
+      <label for="">单身时间:</label>
+    </div>
+    <div class="flex-1 form-field">
+      <div class="radio-circle">
+        <span class="dib vam mr-5">
+          <input type="radio" name="dd" value="1" id="d1"><label class="dummy-check" for="d1"></label>
+          <label for="d1">1-3年</label>
+        </span>
+        <span class="dib vam mr-5">
+          <input type="radio" name="dd" value="1" id="d2"><label class="dummy-check" for="d2"></label>
+          <label for="d2">5-9年</label>
+        </span>
+        <span class="dib vam mr-5">
+          <input type="radio" name="dd" value="1" id="d3"><label class="dummy-check" for="d3"></label>
+          <label for="d3">11年</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="ctrl-wrap flex  form-group mb-7">
+    <div class="w-6em form-label">
+      <label for="">你的爱好:</label>
+    </div>
+    <div class="flex-1 form-field">
+      <div class="check-square">
+        <span class="db mb-3">
+          <input type="checkbox" name="dd" value="1" id="dd1"><label class="dummy-check" for="dd1"></label>
+          <label for="dd1">足球</label>
+        </span>
+        <span class="db mb-3">
+          <input type="checkbox" name="dd" value="1" id="dd2"><label class="dummy-check" for="dd2"></label>
+          <label for="dd2">游戏</label>
+        </span>
+        <span class="db mb-3">
+          <input type="checkbox" name="dd" value="1" id="dd3"><label class="dummy-check" for="dd3"></label>
+          <label for="dd3">购物</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="ctrl-wrap flex  form-group mb-7">
+    <div class="w-6em form-label">
+      <label for="">人生格言:</label>
+    </div>
+    <div class="flex-1 form-field">
+      <textarea class=""></textarea>
+    </div>
+  </div>
+  <div class="ctrl-wrap flex  aic form-group mb-7">
+    <div class="w-6em form-label">
+      <label for="">上传头像:</label>
+    </div>
+    <div class="flex-1 form-field">
+      <div id="picker"> <span>选择要上传的文件</span> </div>
+    </div>
+  </div>
+  <div class="form-action">
+    <div class="dib w-6em"></div><button class="btn-primary">提交</button>
+  </div>
+
+
+</div>
+<!-- 行内 -->
+<div class="form-wrapper form-inline mt-12" >
+  <div class="ctrl-wrap flex aic form-group mr-7">
+    <div class="form-label">
+      <label for="">行内:</label>
+    </div>
+    <div class="flex-1 form-field">
+      <input type="text" style="width: 120px;">
+    </div>
+  </div>
+  <div class="ctrl-wrap flex aic form-group mr-7">
+    <div class="form-label">
+      <label for="">我是方的:</label>
+    </div>
+    <div class="flex-1 form-field">
+      <input type="text" style="width: 120px;" class="square">
+    </div>
+  </div>
+</div>
+</script>
+
+
+<script type="text/html" id="code32">
+var mAlert = function(){
+    dm.alert('我是一本正经的')
+};
+var mConfirm = function(){
+    dm.confirm('你决定要不要陪我',{},function(){
+        alert('nice')
+    },function(){
+        alert('oh no')
+    })
+};
+var mConfirm2 = function(){
+    dm.confirm('你决定要不要陪我',{yes:'确定吗',no:'不确定吗'})
+};
+var mNotice = function(){
+    dm.notice('你有一条未读消息',function(){
+
+    });
+};
+var mLoading = function(){
+    dm.loading('死命加载中');
+};
+var mLoading2 = function(){
+    dm.loading('hide');
+};
+</script>
+
+
+<script type="text/html" id="code35">
+//tab
+$('.tabs').tab();
+
+</script>
+
+
+
+
+
+
+
+  <script src="../vendor/jquery/jquery-2.1.4.min.js"></script>
+  <script src="../vendor/highlight/highlight.pack.js"></script>
+  <script src="../vendor/webuploader/webuploader.html5only.min.js"></script>
+  <script src="../assets/js/dm.base.js"></script>
+
+
+
+    
+  <script>
+  var escapeHtml = function (s) {
+        return s ? s.replace(
+            /[&<>'"]/g,
+            function (c, offset, str) {
+                if (c === "&") {
+                    var substr = str.substring(offset, offset + 6);
+                    if (/&(amp|lt|gt|apos|quot);/.test(substr)) {
+                        // already escaped, do not re-escape
+                        return c;
+                    }
+                }
+                return "&" + {
+                    "&": "amp",
+                    "<": "lt",
+                    ">": "gt",
+                    "'": "apos",
+                    '"': "quot"
+                }[c] + ";";
+            }
+        ) : "";
+    };
+  $(function(){
+    var codehighlight = function(){
+      $('.code-content').each(function(i,item){
+
+        var targetID = $(this).data('target');
+        var str = $.trim($('#'+targetID).html());
+        var parent = $(this).parent();
+        var width = parent.width();
+        console.log('width',width,targetID,parent)
+        var show = $('<pre style="width:'+width+'px"><code></code></pre>').appendTo(parent);
+        str = escapeHtml(str);
+        show.find('code').html(str);
+        hljs.highlightBlock(show.find('code')[0]);
+      });
+    };
+    codehighlight();
+    $('#nav-list').stick();
+      var uploader = WebUploader.create({
+       
+        // 文件接收服务端。
+        server: 'http://webuploader.duapp.com/server/fileupload.php',
+
+        // 选择文件的按钮。可选。
+        // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+        pick: '#picker',
+
+        // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+        resize: false
+    });
+    $('.backtop').backtop();
+    $('.books').scrollAnchor();
+
+    
+  });
+
+  </script>
+  </body>
+</html>

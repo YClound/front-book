@@ -1,0 +1,129 @@
+/*会员*/
+.m-member .s-member-list{
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.m-member .s-member-background{
+    width: 100%;
+    height: 160px;
+    background-image: url(../../images/mobile/profilebg1.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+.m-member .s-member-intro{
+    position: absolute;
+    top: 100px;
+    left: 15px; 
+    padding-left: 120px;
+}
+.m-member .s-member-image{
+    position: absolute;
+    left: 0px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: #fff 5px solid;
+    background-position: center center;
+    background-size: cover;
+}
+.m-member .s-member-image img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.m-member .s-member-name{
+    color: #FFF;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.m-member .s-member-from{
+    color: #666;
+    margin-right: 7px;
+}
+.m-member .s-member-info{
+    padding: 60px 30px 30px;
+}
+.m-member .look-member{
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    border: #d4b168 1px solid;
+    border-radius: 4px;
+    padding: 7px 0;
+    color: #d4b168;
+}
+/*搜索页面*/
+.m-member .view-search input[type=search] {
+    padding: 5px 0 5px 35px;
+    line-height: 20px;
+}
+.m-member .clear-search-history{color: #d4b168;}
+.m-member .clear-search-history:visited{color: #d4b168;}
+.m-member .memberGroup .tag:first-of-type{
+    background-color: #3fc1be;
+}
+.m-member .memberGroup .tag:nth-child(2){
+    background-color: #d3b167;
+}
+
+
+
+
+/*会员详情*/
+.m-member-detail .s-avatar{
+    background: url(../../images/mobile/profilebg1.jpg) no-repeat center bottom;
+    background-size: cover;
+    color: #FFF; 
+}
+/*tab*/
+.m-member-detail .tab-title{
+    background-color: #fff;
+    height: 50px;
+    line-height: 50px;
+}
+.m-member-detail .tab-title-detail a{
+    display: inline-block;
+    padding: 0 5px;
+    height: 50px;
+}
+.m-member-detail .tab-title-detail a:hover{
+    text-decoration: none;
+}
+.m-member-detail .tab-title-detail a.active {
+    border-bottom: #d4b168 4px solid;
+    color: #d4b168;
+    text-decoration: none;
+}
+
+/*教育经历*/
+.m-member-detail .panel-title{
+    margin: 0px;
+    padding: 14px 0 0px;
+}
+
+/*企业介绍*/
+.company-intro{display: none;}
+
+/*footer*/
+.m-member-detail .padding-footer-index{padding-bottom: 60px;}
+.m-member-detail .s-footer{height: 60px;}
+.m-member-detail .s-footer .btn{
+    border-radius: 4px;
+    line-height: 40px;
+}
+.m-member-detail .connection{
+    color: #fff;
+    background-color: #d4b168;
+}
+.m-member-detail .share-friend{
+    border: #eeefef 1px solid;
+    color: #262626;
+}
+.m-member-detail .modal-title{
+    padding-left: 5px;
+}
+.m-member-detail .modal-body{
+    padding-top: 10px;
+}

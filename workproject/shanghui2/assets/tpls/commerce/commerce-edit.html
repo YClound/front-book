@@ -1,0 +1,240 @@
+<div class="main-view-wrapper">
+    <form class="form-horizontal pt-10" name="submitForm" novalidate="novalidate">
+        <input type="text" class="form-control" ng-model="formData.sociatyId" hidden="hidden"/>
+        
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="required">商会名称：</label></div>
+            <div class="flex-1 control-field">
+                <input type="text" class="form-control" ng-model="formData.sociatyName" required>
+            </div>
+        </div>
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="required">商会会长：</label></div>
+            <div class="flex-1 control-field">
+                <input type="text" class="form-control" ng-model="formData.sociatyMaster" required>
+            </div>
+        </div>
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="">联系电话：</label></div>
+            <div class="flex-1 control-field">
+                <input type="text" class="form-control" ng-model="formData.sociatyPhone" >
+            </div>
+        </div>
+        
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="required">同乡认证区域：</label></div>
+            <div class="flex-1 control-field">
+                <!-- data-field formData保存以及初始化的属性名称 -->
+                <select name="idcardArea" id="idcardArea" class="form-control" data-field="idcardArea"></select>
+                
+            </div>
+        </div>
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="required">商会目录二级域名：</label></div>
+            <div class="flex-1 control-field">
+                <input type="text" class="form-control" ng-model="formData.sociatyLink" required style="display: inline-block;">
+                <div class="c-a">比如: hzxc</div>
+
+            </div>
+        </div>
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="required">管辖城市：</label></div>
+            <div class="flex-1 control-field ctrl-wrap">
+                <select name="province" ng-options="option.code as option.text for option in provinceList" ng-model="formData.province" class="form-control" style="width: 150px;display: inline-block;" ng-change="provinceChange()"></select>
+                <select ng-if="formData.province" name="city" ng-options="option.code as option.text for option in cityList" ng-model="formData.city" class="form-control" style="width: 150px;display: inline-block;" ng-change="cityChange()"></select>
+                <select ng-if="formData.city" class="form-control" ng-options="option.code as option.text for option in districtList" ng-model="formData.district" style="width: 150px;display: inline-block;" ng-change="districtChange()">
+            </select>
+            </div>
+
+        </div>
+
+        <div class="control-group flex aic mb-7 ng-scope">
+            <div class="w-10em control-title"><label class="">缴费标准：</label></div>
+            <a href="javascript:;" class="c-primary" ui-sref="commerce.paymentedit({id:formData.sociatyId})">点击编辑</a>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">标志(LOGO)：</label></div>
+            <div class="flex-1 control-field">
+                <!-- 属性wu表示上传插件  ng-model绑定数据-->
+                <div class="wu" wu ng-model="formData.sociatyLogo" >
+                    <input type="hidden" class="form-control file-upload" ng-model="formData.sociatyLogo" name="sociatyLogo" >
+                    <div class="pick-wrap">
+                        <div class="pick" data-preview="true">上传图片</div>
+                    </div>
+                    <div class="file-list">
+                        
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">背景图：</label></div>
+            <div class="flex-1 control-field">
+                <!-- 属性wu表示上传插件  ng-model绑定数据-->
+                <div class="wu" wu ng-model="formData.sociatyBackground" >
+                    <input type="hidden" class="form-control file-upload" ng-model="formData.sociatyBackground" name="sociatyBackground" >
+                    <div class="pick-wrap">
+                        <div class="pick" data-preview="true">上传图片</div>
+                    </div>
+                    <div class="file-list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control-group flex  mb-7">
+            <div class="w-10em control-title"><label class="">职位设置：</label></div>
+            <div class="flex-1 control-field">
+                <div class="mb-5"><button type="button" class="btn btn-primary" ng-click="addPositionView()" data-toggle="modal" data-target="#positionModal">添加</button></div>
+                <div class="table-wrapper w-50">
+                  <table class="table table-bordered table-condensed table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>职位名称</th>
+                        <th>图标</th>
+                        <th style="width:120px;">操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="item in positionList">
+                        <td><span ng-bind="item.positionName"></span></td>
+                        <th><img ng-src="{{item.positionIcon}}" alt="" ng-if="item.positionIcon"></th>
+                        <td class="text-center">
+                          <button class="btn btn-primary btn-tiny" type="button" ng-click="editPositionView(item)" data-toggle="modal" data-target="#positionModal">编辑</button>
+                            <button class="btn btn-danger btn-tiny" type="button" ng-click="delPosition(item)">删除</button>
+                        </td>
+                      </tr> 
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group flex  mb-7 ">
+            <div class="w-10em control-title"><label class="">分组设置：</label></div>
+            <div class="flex-1 control-field">
+                <div class="mb-5"><button type="button" class="btn btn-primary" ng-click="addGroupView()" data-toggle="modal" data-target="#groupModal">添加</button></div>
+                <div class="table-wrapper w-50">
+                  <table class="table table-bordered table-condensed table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>分组名称</th>
+                        <th style="width:120px;">操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="item in groupList">
+                        <td><span ng-bind="item.groupName"></span></td>
+                        <td class="text-center">
+                            <button class="btn btn-primary btn-tiny" type="button" ng-click="editGroupView(item)" data-toggle="modal" data-target="#groupModal">编辑</button>
+                            <button class="btn btn-danger btn-tiny" type="button" ng-click="delGroup(item)">删除</button>
+                        </td>
+                      </tr> 
+                    </tbody>
+                  </table>
+                </div>
+            </div>   
+        </div>
+
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">高级权限：</label></div>
+            <div class="flex-1 control-field">
+                <input type="checkbox" id="permiUnion" ng-model="formData.permiUnion" value="{{formData.permiUnion}}" ng-checked="formData.permiUnion">
+                <label for="permiUnion" style="font-weight: normal;">可发起商会联盟</label>
+
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7" ng-if="formData.permiUnion">
+            <div class="w-10em control-title"><label class="required">商联地址：</label></div>
+            <div class="flex-1 control-field">
+                <input type="text" ng-model="formData.unionSite" class="form-control" required placeholder="比如:hzxc_union">
+            </div>
+        </div>
+       
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title">&nbsp;</div>
+            <div class="flex-1 control-field">
+                <button class="btn btn-primary" type="button" ng-click="save($event)" ng-disabled="submitForm.$invalid || loading">保存</button>
+                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+            </div>
+
+        </div>
+    </form>
+
+    <!-- 添加分组 -->
+    <div class="modal fade" id="groupModal" role="dialog" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">分组编辑</h4>
+          </div>
+          <div class="modal-body">
+            <form action="" novalidate="novalidate" name="groupForm">
+                <input type="hidden" name="groupId" ng-model="groupId" >
+                <div class="control-group flex aic mb-7">
+                    <div class="w-8em tar"><span>名称：</span></div>
+                    <div class="flex-1">
+                        <input type="text" name="groupName" ng-model="groupModel.groupName" required="">
+                    </div>
+                </div>
+                <div class="control-group flex aic mb-7">
+                    <div class="w-8em tar">&nbsp;</div>
+                    <div class="flex-1">
+                        <button class="btn btn-primary" type="button" ng-click="saveGroup()" ng-disabled="groupForm.$invalid" data-dismiss="modal">保存</button>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 添加职位 -->
+    <div class="modal fade" id="positionModal" role="dialog" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">职位编辑</h4>
+          </div>
+          <div class="modal-body">
+            <form action="" novalidate="novalidate" name="positionForm">
+                <input type="hidden" name="positionId" ng-model="positionId" >
+                <div class="control-group flex aic mb-7">
+                    <div class="w-8em tar"><span>名称：</span></div>
+                    <div class="flex-1">
+                        <input type="text" name="positionName" ng-model="positionModel.positionName" required="">
+                    </div>
+                </div>
+                <div class="control-group flex aic mb-7">
+                    <div class="w-8em tar"><span>图标：</span></div>
+                    <div class="flex-1">
+                        <label class="radio-inline">
+                            <input type="radio"  value="../assets/images/admin/icon/22.png" ng-model="positionModel.positionIcon" name="positionIcon"> <img style="width:20px" src="../assets/images/admin/icon/22.png" alt="">
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio"  value="../assets/images/admin/icon/23.png" ng-model="positionModel.positionIcon" name="positionIcon"> <img style="width:20px" src="../assets/images/admin/icon/23.png" alt="">
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio"  value="../assets/images/admin/icon/24.png" ng-model="positionModel.positionIcon" name="positionIcon"> <img style="width:20px" src="../assets/images/admin/icon/24.png" alt="">
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio"  value="../assets/images/admin/icon/25.png" ng-model="positionModel.positionIcon" name="positionIcon"> <img style="width:20px" src="../assets/images/admin/icon/25.png" alt="">
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group flex aic mb-7">
+                    <div class="w-8em tar">&nbsp;</div>
+                    <div class="flex-1">
+                        <button class="btn btn-primary" type="button" ng-click="savePosition()" ng-disabled="positionForm.$invalid" data-dismiss="modal">保存</button>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+    

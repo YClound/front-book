@@ -1,0 +1,18 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "idcardArea":"浙江省杭州市",
+        "sociatyMaster":"马如玉",
+        "id": "1",
+        "sociatyLink":"xxxx",
+        "sociatyName": "新昌商会",
+        "province":"330000",
+        "city":"330100",
+        "district":"330106",
+        "area":"浙江省,杭州市",
+        "permiUnion":true,
+        "unionSite":"http://wwww.xxx.com",
+        "role": 1
+    }
+}

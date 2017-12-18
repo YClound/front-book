@@ -1,0 +1,49 @@
+.user-guide-head{
+    width: 100%;
+    height: 66px;
+    border-top: #000 1px solid;
+    text-align: center;
+    font-size: 14px;
+    line-height: 62px;
+    background-color: #242424;
+    color: #fff;
+}
+.user-guide-head a{
+    display: inline-block;
+    margin-right: 80px;
+}
+.user-guide-head .active{
+    border-bottom: #fff 3px solid;
+}
+.user-guide-head a:hover{
+    cursor: pointer;
+    color: #fff;
+}
+
+.user-guide-head a:last-child{
+    margin-right: 0px;
+}
+
+
+
+.know-des-content{
+    margin: 0 auto;
+    width: 100%;
+    height: 2890px;
+    background-image: url('/static/assets/img/user-guide/guide.jpg');
+    background-position: center 0;
+}
+.commom-problem-content{
+    margin: 0 auto;
+    width: 100%;
+    height: 3339px;
+    background-image: url('/static/assets/img/user-guide/guide-problem.jpg');
+    background-position: center 0;
+}
+.safe-warn-content{
+    margin: 0 auto;
+    width: 100%;
+    height: 1068px;
+    background-image: url('/static/assets/img/user-guide/guide-safe.jpg');
+    background-position: center 0;
+}

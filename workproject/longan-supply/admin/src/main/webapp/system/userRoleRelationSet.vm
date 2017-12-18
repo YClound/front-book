@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用户角色设置</title>
+    #parse("common/common.vm")
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/doubleDate.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+	<script type="text/javascript" src="$!staticServer/js/doubleDate2.0.js"></script>
+	
+</head>
+
+#macro(checkSelected $userAuthset $roleId )
+	#if($!userAuthset.contains($!roleId))
+		checked="checked"       		
+	#end
+#end
+
+<body class="list-body">
+    $!errorMsg
+   <div class="list-container">
+        <div class="alert-title fz-16">用户角色设置</div>
+        <form id="userRoleRelationSetForm" class="queryForm" action="userRoleRelationSet.do" method="post">
+                #parse("common/select.vm")
+            <input id="userId" type="hidden" name="userId" value="$!userId" />  
+            <input id="requestParam" type="hidden" name="requestParam" value="" />
+            <font color="red" style="margin-bottom: 10px;">用户：$!userName</font> </br>
+            <ul class="relationSet">
+            #foreach($!roleInfo in $!roleInfoList)
+                <li style="list-style-type:none;">
+                    <input id="$!roleInfo.id" type="checkbox" name="" value="$!roleInfo.id" #checkSelected($!userRoleSet,$!roleInfo.id)>
+                    $!roleInfo.roleDesc
+                </li>   
+                #end
+            </ul>
+            </br>
+            <input class="btn btn-inverse" id="find" type="button" onclick="boxSubmit()" value="保存" />
+            <input class="btn btn-inverse" type="button" onclick="javascript: history.go(-1)" value="取消" /></td>
+        </form>
+    </div>
+     
+    <script type="text/javascript">
+            $(function(){
+            $('.doubledate').kuiDate({
+                className:'doubledate',
+                isDisabled: "1"
+            });
+            });
+    function boxSubmit(){
+            var allBox= document.getElementsByTagName("input");
+            var param="";
+            for (var i=0;i<allBox.length-1;i++){
+                if(document.getElementById(allBox[i].id).checked){
+                    param+=document.getElementById(allBox[i].id).value+",";
+                }
+            }
+            jQuery('#requestParam').val(param);
+            jQuery('#userRoleRelationSetForm').submit();
+    }
+</script>
+</body>
+</html>

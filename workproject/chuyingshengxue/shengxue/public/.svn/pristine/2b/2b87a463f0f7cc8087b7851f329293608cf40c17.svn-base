@@ -1,0 +1,129 @@
+<!doctype html>
+<!--[if lte IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="zh-CN"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="email=no"/>
+    <meta name="format-detection" content="address=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-title" content="雏鹰网"/>
+    <title>icon</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="keywords" content="众筹,雏鹰网,雏鹰众筹,基金,种子基金,股权众筹,天使轮,种子轮,天使投资,风险投资,众筹平台,创业融资,私募股权融资,私募股权投资平台,融资平台">
+    <meta name="description" content="雏鹰网是致力于帮助有梦想、有决心、有能力、够努力的早期创业者获得股权投资的互联网平台。打造融合众筹投资人和创业者学习、互助、交流的在线众创空间。梦想再小也要呵护，力量再小也要支持。">
+    <!-- apple icon -->
+    <link type="image/png" href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+ 
+    <link rel="stylesheet" href="../assets/css/mobile/base.css">
+    
+    <script src="../assets/vendor/jquery/jquery-2.1.4.min.js"></script>
+    
+    <style>
+    body {
+      padding: 50px;
+    }
+    .form-content {
+      position: relative;
+      margin-bottom: 15px;
+    }
+    #icons {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    #icons span {
+      display: inline-block;
+      margin: 12px 7px;
+      
+      width: 220px;
+      vertical-align: top;
+    }
+    </style>
+    
+  </head>
+  <body class="">
+    <h1>字体图标使用（example： class="if  icon-home"）</h1>
+    <form action="" class="form form-login" novalidate="novalidate" id="loginform" method="post" data-success-url="http://user.undm.cn/member/register_success.html">
+
+      
+        <!-- <div class="form-content">
+            <div class="form-control">
+              <textarea name="note" id="note" cols="30" rows="5" ></textarea>
+              
+            </div>
+        </div>
+
+        <div class="form-control submit">
+          <button id="submit" type="button" class="full btn btn-primary btn-submit" >提交</button>
+        </div> -->
+        <div id="result">
+          
+
+        </div>
+
+
+        <div id="icons">
+          
+        </div>
+        
+        
+
+
+    </form>
+  
+    <script>
+    $(function(){
+      var aa = '.icon-upload,.icon-download,.icon-home,.icon-paper-o,.icon-trash-bin,.icon-pad-paper,.icon-shopping-bag,.icon-shield-grid,.icon-heart-o,.icon-man-2-o,.icon-star-o,.icon-user,.icon-plus-thin,.icon-card-o,.icon-comment-dot-circle,.icon-display,.icon-announcement-board,.icon-identity-card,.icon-comment-dot-square,.icon-paper-check-o,.icon-triangle-down,.icon-pad-pencil-tough,.icon-fire,.icon-comment-dot-square-o,.icon-pencil,.icon-envelope-clean,.icon-star,.icon-heart,.icon-settings,.icon-star-o-cute,.icon-building-2,.icon-envelope,.icon-envelope-o,.icon-mobile,.icon-user-plus,.icon-plus-square-o,.icon-item-browse,.icon-dollar-circle-stack,.icon-toupiao,.icon-lightning-o,.icon-plus-circle-o,.icon-wenhao,.icon-rmb-alarm,.icon-question-circle,.icon-man-3,.icon-i-circle,.icon-radio-checked,.icon-paper-scroll,.icon-wechat,.icon-shutdown-thick,.icon-guard-o,.icon-angle-right,.icon-angle-left,.icon-error-circle-break-o,.icon-smile,.icon-inspect,.icon-shopping-bag1,.icon-square-o,.icon-check-circle,.icon-question-bubble,.icon-mobile-o,.icon-scan-qr,.icon-eye,.icon-gold-stack-2,.icon-angle-up,.icon-quote-open,.icon-minus-circle,.icon-identity-card-o,.icon-phone,.icon-thumb-up,.icon-check-circle-o,.icon-envelope-open,.icon-angle-down,.icon-thumb-up-o,.icon-angle-top-circle-o,.icon-user-round-o,.icon-check-square-break-o,.icon-lang,.icon-mouse-display,.icon-map-marker,.icon-user-3-o,.icon-user-circle-o,.icon-loop,.icon-address-o,.icon-paper-rmb-o,.icon-paper-zong-o,.icon-user-split-o,.icon-check,.icon-reply,.icon-angle-right-thin,.icon-triangle-right,.icon-angle-up-thin,.icon-gold-stack-2-o,.icon-download1,.icon-plus-circle,.icon-identity-card-check,.icon-wechat-circle,.icon-map-marker-o,.icon-rmb-out,.icon-bank-card,.icon-card-plus,.icon-arrow-up,.icon-at,.icon-envelope-check,.icon-identity-card-check-o,.icon-tag,.icon-dot-line-3,.icon-pad-pencil,.icon-robot,.icon-envelope-clean-o,.icon-comment-line-square,.icon-user-simple-o,.icon-weibo,.icon-line-3,.icon-newspapaer,.icon-question-circle-o,.icon-paper-2,.icon-rmb-in,.icon-wallet-o,.icon-rmb-loop,.icon-home-o,.icon-ldquo,.icon-i-italic,.icon-cash,.icon-pad-tripod,.icon-plus-thick,.icon-comment-line-round,.icon-check-triangle,.icon-square-4,.icon-phone-o,.icon-password-o,.icon-contacts-o,.icon-circle-o,.icon-rocket-lean-o,.icon-rmb-article-square,.icon-trade-log,.icon-rmb-card-o,.icon-file,.icon-invest-hexagon-o,.icon-check-tough,.icon-check-circle-break-o,.icon-weibo-circle,.icon-signpost-o,.icon-address-marker-o,.icon-alarm-clock,.icon-paper-check,.icon-hexagon,.icon-rmb-hexagon-o,.icon-tag-slim,.icon-pdf,.icon-sad,.icon-board-blank,.icon-wechat-square,.icon-quote-close,.icon-home-round,.icon-user-o,.icon-weibo-square,.icon-paper-check-3,.icon-paper-pencil,.icon-shutdown,.icon-eye-o,.icon-fire1,.icon-pdf-win8,.icon-user-2-o,.icon-newspaper,.icon-triangle-up,.icon-angle-left-thin,.icon-angle-down-thin,.icon-angle-down-2,.icon-thumb-down,.icon-thumb-down-o,.icon-triangle-left,.icon-lock-o,.icon-rmb-circle-o,.icon-v,.icon-back-top,.icon-paper,.icon-point-qr,.icon-warn-circle,.icon-jian-square,.icon-ling-circle,.icon-pencil-o,.icon-data-inspect,.icon-check-hexagon-o,.icon-rmb-bag,.icon-magnifier,.icon-rmb-card,.icon-check-circle-tough,.icon-arrow-right,.icon-arrows-switch-h,.icon-back-square,.icon-check-circle-break-tough-o,.icon-warn-triangle-cylinder,.icon-rdquo,.icon-paper-plus-o,.icon-arrow-down';
+
+
+      var fn = function(str){
+        var arr = str.split(',');
+        console.log(arr)
+        for(var i = 0;i<arr.length;i++){
+          var iconClass = arr[i];
+          _iconClass = iconClass.replace('.','');
+          $span = $('<span></span>').addClass('if').addClass(_iconClass).text(iconClass);
+          $('#icons').append($span)
+        }
+      };
+
+      fn(aa);
+
+      $('#submit').on('click',function(){
+        var content = $('#note').val();
+
+        //var content = content.replace("\r\n",",");
+        var content = content.replace(/(\:before\{\S+\})/g,",");
+        content=content.replace(/\n/g,"");
+        console.log(content);
+        $('#reuslt').html(content);
+
+        var Things = content.split(',');
+
+
+        for (var i = Things.length - 1; i >= 0; i--) {
+          var iconClass = Things[i];
+          if(iconClass && iconClass.length>0){
+            $('#icons').append('<span class="if '+ iconClass +'">'+iconClass+'</span>')
+          }
+        }
+
+
+
+
+      });
+
+    });
+    </script>
+    
+
+
+    
+  </body>
+</html>

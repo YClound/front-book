@@ -1,0 +1,17 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "list": [
+            {
+                "workId": "1",
+                "workCompany": "杭州树德科技有限公司",
+                "workPosition":"ceo",
+                "workUserId": "1",
+                "startDate": "2012-06",
+                "endDate": "2016-06",
+                "role": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="  
+        http://www.springframework.org/schema/beans       
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd ">
+
+	<bean id="commonDealService"
+		class="com.longan.getway.biz.service.impl.CommonDealServiceImpl" />
+
+	<!-- <bean id="downStreamInfoContext" class="com.longan.getway.biz.service.DownStreamInfoContext" -->
+	<!-- init-method="init" /> -->
+
+	<bean id="requestLimitInitService" class="com.longan.getway.core.RequestLimitInitService"
+		init-method="init" />
+
+
+	<!-- 供货服务 -->
+
+	<bean id="supplyDispatcherService" class="com.longan.getway.core.impl.SupplyDispatcherServiceImpl" />
+
+	<bean id="manChargeSupplyService" class="com.longan.getway.core.impl.ManChargeSupplyServiceImpl" />
+	
+	<bean id="directChargeSupplyService"
+		class="com.longan.getway.core.impl.DirectChargeSupplyServiceImpl" />
+		
+	<bean id="cardSupplyService" class="com.longan.getway.core.impl.CardSupplyServiceImpl" />
+	
+	<bean id="cardForwardChargeSupplyService"
+		class="com.longan.getway.core.impl.CardForwardChargeSupplyServiceImpl" />
+		
+	<bean id="cardChargeSupplyService" class="com.longan.getway.core.impl.CardChargeSupplyServiceImpl" />
+	
+	<bean id="notifyManagerImpl" class="com.longan.getway.core.impl.DefaultNotifyManagerImpl" />
+	<!-- end -->
+
+	<!-- 上游供货 -->
+	<bean id="upstreamSupplyDispatcherService"
+		class="com.longan.getway.upstream.common.impl.UpstreamSupplyDispatcherServiceImpl" />
+
+	<bean id="bizDealService" class=" com.longan.getway.core.impl.BizDealServiceImpl" />
+
+	<bean id="upstreamCardSupplyMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				 <entry key="${unicomFlow.traderId}">
+					<ref bean="${unicomFlow.service}" />
+				</entry>
+				<entry key="${wtjCardForward.traderId}">
+					<ref bean="${wtjCardForward.service}" />
+				</entry> 
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="upstreamSupplyMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="${JihuDayuFlow.traderId}">
+					<ref bean="${JihuDayuFlow.service}" />
+				</entry>
+				<!-- 调用生产环境测试 -->
+				<!-- <entry key="${baoziFlow.traderId}">
+					<ref bean="${baoziFlow.service}" />
+				</entry> -->
+				<!-- <entry key="${unicomFlowHunanOff.traderId}">
+					<ref bean="${unicomFlowHunanOff.service}" />
+				</entry>
+				<entry key="${slcxSupply.traderId}">
+					<ref bean="${slcxSupply.service}" />
+				</entry>
+				<entry key="${hcTelecomFlow.traderId}">
+					<ref bean="${hcTelecomFlow.service}" />
+				</entry>
+				<entry key="${unicomFlowShuiJS.traderId}">
+					<ref bean="${unicomFlowShuiJS.service}" />
+				</entry>
+				<entry key="${yuanMaiSupply.traderId}">
+					<ref bean="${yuanMaiSupply.service}" />
+				</entry>
+				<entry key="${suKaTelecomFlow.traderId}">
+					<ref bean="${suKaTelecomFlow.service}" />
+				</entry>
+				<entry key="${yiSaiSupply.traderId}">
+					<ref bean="${yiSaiSupply.service}" />
+				</entry>
+				<entry key="${juYouSupply.traderId}">
+					<ref bean="${juYouSupply.service}" />
+				</entry>
+				<entry key="${renChuangSupply.traderId}">
+					<ref bean="${renChuangSupply.service}" />
+				</entry>
+				<entry key="${nanJingQbSupply.traderId}">
+				<ref bean="${nanJingQbSupply.service}" />
+				</entry>
+				<entry key="${jinFengSupply.traderId}">
+					<ref bean="${jinFengSupply.service}" />
+				</entry>
+				<entry key="${duanFengSupply.traderId}">
+					<ref bean="${duanFengSupply.service}" />
+				</entry>
+				<entry key="${yuanMaiFlow.traderId}">
+					<ref bean="${yuanMaiFlow.service}" />
+				</entry>
+				<entry key="${sanTongSupply.traderId}">
+					<ref bean="${sanTongSupply.service}" />
+				</entry>
+				<entry key="${dingChiSupply.traderId}">
+					<ref bean="${dingChiSupply.service}" />
+				</entry>
+				<entry key="${dianDianSupply.traderId}">
+					<ref bean="${dianDianSupply.service}" />
+				</entry>
+				<entry key="${moPinFlow.traderId}">
+					<ref bean="${moPinFlow.service}" />
+				</entry>
+				<entry key="${yongliu.traderId}">
+					<ref bean="${yongliu.service}" />
+				</entry>
+				<entry key="${yongliu.traderId}">
+					<ref bean="${yongliu.service}" />
+				</entry>
+				<entry key="${maiyuanFlow.traderId}">
+					<ref bean="${maiyuanFlow.service}" />
+				</entry>
+				<entry key="${threeTFlow.traderId}">
+					<ref bean="${threeTFlow.service}" />
+				</entry>
+				<entry key="${dingxinGprs.traderId}">
+					<ref bean="${dingxinGprs.service}" />
+				</entry>
+				<entry key="${ruiyiFlow.traderId}">
+					<ref bean="${ruiyiFlow.service}" />
+				</entry>
+				<entry key="${LTShikeFlow.traderId}">
+					<ref bean="${LTShikeFlow.service}" />
+				</entry>
+				<entry key="${MiaoxunFlow.traderId}">
+					<ref bean="${MiaoxunFlow.service}" />
+				</entry>
+				<entry key="${LTKuandaiFlow.traderId}">
+					<ref bean="${LTKuandaiFlow.service}" />
+				</entry>
+				<entry key="${guoxinLiantongFlow.traderId}">
+					<ref bean="${guoxinLiantongFlow.service}" />
+				</entry>
+				<entry key="${tianyiFlow.traderId}">
+					<ref bean="${tianyiFlow.service}" />
+				</entry>
+				<entry key="${shanxiLiantong.traderId}">
+					<ref bean="${shanxiLiantong.service}" />
+				</entry>
+				<entry key="${guangdongFlow.traderId}">
+					<ref bean="${guangdongFlow.service}" />
+				</entry>
+				麦穗流量
+				<entry key="${maisuiFlow.traderId}">
+					<ref bean="${maisuiFlow.service}" />
+				</entry>
+				酷易冲流量
+				<entry key="${KuyichongFlow.traderId}">
+					<ref bean="${KuyichongFlow.service}" />
+				</entry>
+				创蓝流量
+				<entry key="${chuangLanFlow.traderId}">
+					<ref bean="${chuangLanFlow.service}" />
+				</entry>
+				西城流量
+				<entry key="${xiChengFlow.traderId}">
+					<ref bean="${xiChengFlow.service}" />
+				</entry>	 -->
+			</map>
+		</constructor-arg>
+	</bean>
+<!-- 模拟供货 -->
+	<bean id="mock"
+		class="com.longan.getway.upstream.telephone.service.impl.AsyncMockSupplyServiceImpl" />
+	<!-- 吉虎大禹流量充值 -->
+	<bean id="jihuDayuFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.JihuDayuFlowSupplyServiceImpl" />
+	<!-- 调用生产环境测试 -->
+	<bean id="BaoZiFlowSupply" class="com.longan.getway.upstream.flow.service.impl.BaoZiFlowSupplyImpl"></bean>
+		<!-- 
+	<bean id="unicomFlowService"
+		class="com.longan.getway.upstream.unicomflow.service.impl.UnicomFlowServiceImpl" />
+
+	<bean id="unicomFlowMockService"
+		class="com.longan.getway.upstream.unicomflow.service.impl.UnicomFlowMockServiceImpl" />
+
+	<bean id="unicomFlowHunanOfficService"
+		class="com.longan.getway.upstream.unicomflow.service.impl.UnicomFlowHunanOfficServiceImpl" />
+
+	<bean id="unicomFlowHunanOfficMockService"
+		class="com.longan.getway.upstream.unicomflow.service.impl.UnicomFlowHunanOfficMockServiceImpl" />
+
+	<bean id="slcxSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.SlcxSupplyServiceImpl" />
+
+	<bean id="hcTelecomFlowSupplyService"
+		class="com.longan.getway.upstream.telecomflow.service.impl.HcTelecomFlowSupplyServiceImpl" />
+
+	<bean id="unicomFlowShuiJSService"
+		class="com.longan.getway.upstream.unicomflow.service.impl.UnicomFlowShuiJSServiceImpl" />
+
+	<bean id="yuanMaiSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.YuanMaiSupplyServiceImpl" />
+
+	<bean id="suKaSupplyService"
+		class="com.longan.getway.upstream.telecomflow.service.impl.SuKaTelecomFlowSupplyImpl" />
+
+	<bean id="yiSaiSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.YiSaiSupplyServiceImpl" />
+
+	<bean id="juYouSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.JuYouSupplyServiceImpl" />
+
+	<bean id="renChuangSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.RenChuangSupplyServiceImpl" />
+	模拟供货
+	<bean id="asyncMockSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.AsyncMockSupplyServiceImpl" />
+
+	<bean id="wtjCardForwardService"
+		class="com.longan.getway.upstream.cardforward.service.impl.WtjCardForwardServiceImpl" />
+
+	<bean id="nanJingQbSupplyService"
+	class="com.longan.getway.upstream.tencent.service.impl.NanJingQbSupplyServiceImpl" 	/>
+
+	<bean id="syncMockSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.SyncMockSupplyServiceImpl" />
+
+	<bean id="jinFengSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.JinFengSupplyServiceImpl" />
+
+	<bean id="duanFengSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.DuanFengSupplyServiceImpl" />
+
+	<bean id="yuanMaiFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.YuanMaiFlowSupplyImpl" />
+
+	<bean id="sanTongSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.SanTongSupplyServiceImpl" />
+
+	<bean id="dingChiSupplyService"
+		class="com.longan.getway.upstream.telephone.service.impl.DingChiSupplyServiceImpl" />
+
+	<bean id="dianDianSupplyService"
+		class="com.longan.getway.upstream.game.service.impl.DianDianSupplyImpl" />
+
+	<bean id="yongLiuFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.YongLiuFlowSupplyServiceImpl" />
+	鼎信流量充值
+	<bean id="dingxinFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.DingxinFlowSupplyServiceImpl" />
+	<bean id="ruiyiFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.RuiyiFlowSupplyImpl" />
+	联通时科流量充值
+	<bean id="lTShiKeFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.LTShiKeFlowSupplyServiceImpl" />
+	<bean id="miaoxunFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.MiaoxunFlowSupplyServiceImpl" />
+	<bean id="lTKuandaiFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.LTKuandaiFlowSupplyServiceImpl" />
+	<bean id="guoxinLiantongFlowService"
+		class="com.longan.getway.upstream.flow.service.impl.GuoxinLiantongFlowSupplyImpl" />
+	<bean id="tianyiFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.TianyiFlowSupplyImpl" />
+	<bean id="shanxiLiantongFlowService" 
+		class="com.longan.getway.upstream.flow.service.impl.ShanxiLiantongFlowSupplyImpl" />
+	<bean id="guangdongFlowService" 
+		class="com.longan.getway.upstream.flow.service.impl.GuangdongFlowSupplyImpl" />
+麦穗流量service 
+	<bean id="maisuiSupplyService" class="com.longan.getway.upstream.flow.service.impl.MaisuiFlowSupplyImpl">
+	</bean>
+	酷易冲流量service 
+	<bean id="kuyichongSupplyService" class="com.longan.getway.upstream.flow.service.impl.KuyichongFlowSupplyImpl">
+	</bean>
+	创蓝流量service 
+	<bean id="chuangLanFlowService" class="com.longan.getway.upstream.flow.service.impl.ChuangLanFlowSupplyImpl">
+	</bean>
+	西城流量service 
+	<bean id="xiChengFlowSupplyService" class="com.longan.getway.upstream.flow.service.impl.XiChengFlowSupplyImpl">
+	</bean> -->
+	<!-- end -->
+	<!-- hession 服务 -->
+	<bean id="callBackService" class="com.longan.getway.remoteserver.impl.CallBackServiceImpl">
+	</bean>
+
+	<bean id="requestLimitService"
+		class="com.longan.getway.remoteserver.impl.DefaultRequestLimitServiceImpl">
+	</bean>
+
+	<bean id="supplyQueryService"
+		class="com.longan.getway.remoteserver.impl.SupplyQueryServiceImpl">
+	</bean>
+
+	<bean id="supplyForRemoteService"
+		class="com.longan.getway.remoteserver.impl.SupplyForRemoteServiceImpl">
+	</bean>
+
+	<bean id="shortMsgSendService"
+		class="com.longan.getway.upstream.shortmsg.service.impl.BaiWuShortMsgImpl">
+	</bean>
+
+	<bean id="moPinFlowSupplyService"
+		class="com.longan.getway.upstream.flow.service.impl.MoPinFlowSupplyImpl" />
+
+	<bean id="maiyuanService"
+		class="com.longan.getway.upstream.flow.service.impl.MaiyuanFlowSupplyImpl">
+	</bean>
+
+	<bean id="threeTFlowService"
+		class="com.longan.getway.upstream.flow.service.impl.ThreeTFlowSupplyImpl">
+	</bean>
+
+	<!-- end -->
+
+
+
+</beans> 

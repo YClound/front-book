@@ -1,0 +1,196 @@
+{
+  "code": 0,
+  "message": "操作成功",
+  "url": null,
+  "data": {
+    "pager": {
+      "page": 1,
+      "pagesize": 10,
+      "pages": 1,
+      "total": 2,
+      "firstResult": 0,
+      "maxResult": 10
+    },
+    "list": [
+      {
+        "syllabusId": 5,
+        "syllabusName": "集合与常用逻辑用语集合与常用逻辑用语",
+        "syllabusSubjectId": 1,
+        "syllabusCount": 0,
+        "syllabusLevel": 1,
+        "syllabusOrder": 0,
+        "syllabusParentId": -1,
+        "children":[
+            {
+                "syllabusId": 4,
+                "syllabusName": "集合的概念",
+                "syllabusSubjectId": 1,
+                "syllabusCount": 0,
+                "syllabusLevel": 1,
+                "syllabusOrder": 0,
+                "syllabusParentId": 5
+            },
+            {
+                "syllabusId": 4,
+                "syllabusName": "集合的运算",
+                "syllabusSubjectId": 1,
+                "syllabusCount": 0,
+                "syllabusLevel": 1,
+                "syllabusOrder": 0,
+                "syllabusParentId": 5
+            },
+            {
+                "syllabusId": 12,
+                "syllabusName": "常用逻辑用语",
+                "syllabusSubjectId": 1,
+                "syllabusCount": 0,
+                "syllabusLevel": 1,
+                "syllabusOrder": 0,
+                "syllabusParentId": 5,
+                "children":[
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "命题及其关系",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 12
+                    },
+                    {
+                        "syllabusId": 8,
+                        "syllabusName": "充分条件与必要条件",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 12
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "简单的逻辑联结词",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 12
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "全称量词与存在性量词",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 12
+                    }
+                ]
+            }
+        ]
+      },
+      {
+        "syllabusId": 13,
+        "syllabusName": "函数与导数",
+        "syllabusSubjectId": 1,
+        "syllabusCount": 0,
+        "syllabusLevel": 1,
+        "syllabusOrder": 0,
+        "syllabusParentId": -1,
+        "children":[
+            {
+                "syllabusId": 14,
+                "syllabusName": "函数",
+                "syllabusSubjectId": 1,
+                "syllabusCount": 0,
+                "syllabusLevel": 1,
+                "syllabusOrder": 0,
+                "syllabusParentId": 13,
+                "children" : [
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "函数及其表示",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 14
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "解析式",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 14
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "函数的定义域与值域",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 14
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "函数的单调性与最值",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 14
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "函数的奇偶性",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 14
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "周期性和对称性",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 14
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "零点与方程",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 14
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "反函数",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 14
+                    },
+                    {
+                        "syllabusId": 4,
+                        "syllabusName": "函数图像",
+                        "syllabusSubjectId": 1,
+                        "syllabusCount": 0,
+                        "syllabusLevel": 1,
+                        "syllabusOrder": 0,
+                        "syllabusParentId": 14
+                    }
+                ]
+            }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head("话费充值")
+
+<body>
+	
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+			#sidebar('phone')
+			
+			<div class="span10">
+				
+				#stepBarPhone(2)
+				
+				<div class="sortable row-fluid">
+					<div class="span12">
+						#phoneTab('phone')
+						
+						<div class="content-main">
+						
+							#if($errorMsg)
+								#showMessage($errorMsg,'phoneRecharge.htm')
+							#else
+								<form id="phoneRechargeForm" class="form-horizontal" action="phoneRechargePayment.htm" method="post">
+								<input type="hidden" name="uid" value="$!phoneRechargePaymentForm.uid" >
+								<input type="hidden" name="itemId" value="$!phoneRechargePaymentForm.itemId" >
+								<input type="hidden" name="price" value="$!phoneRechargePaymentForm.price" >
+								<input type="hidden" name="itemFacePrice" value="$!phoneRechargePaymentForm.itemFacePrice" >
+								<input type="hidden" name="moblieCarrieName" value="$!phoneRechargePaymentForm.moblieCarrieName" >
+								<input type="hidden" name="mobileProvinceName" value="$!phoneRechargePaymentForm.mobileProvinceName" >
+								<input type="hidden" name="priceDesc" value="$!phoneRechargePaymentForm.priceDesc" >
+								<input id="encodePwd" type="hidden" name="payPwd">
+								<input id="token" type="hidden" name="token" value="$!phoneRechargePaymentForm.token">
+								<input id="ts" type="hidden" name="ts" value="$!phoneRechargePaymentForm.ts">
+								
+								#csrfTokenInput()
+								
+								<fieldset>
+								  <div class="control-group">
+									<label class="control-label">号码：</label>
+									<div class="controls">
+										<span class="phone-con red">$!phoneRechargePaymentForm.uid</span>
+									</div>
+								  </div>
+								  <div class="control-group">
+									<label class="control-label">号码信息：</label>
+									<div class="controls">
+									  <div>
+										<span class="phone-con"> $!phoneRechargePaymentForm.mobileProvinceName <span class="divider">-</span> $!phoneRechargePaymentForm.moblieCarrieName</span>
+									  </div>
+									</div>
+								  </div>							  
+								  <div class="control-group">
+									<label class="control-label">充值面额：</label>
+									<div class="controls">
+										<span class="phone-con"> $!phoneRechargePaymentForm.itemFacePrice 元</span>
+									</div>
+								  </div>
+								  
+								  <div class="control-group">
+									<label class="control-label">销售价：</label>
+									<div class="controls">
+									  <div>
+										<span class="phone-con red"> $!phoneRechargePaymentForm.priceDesc 元</span>
+									  </div>								
+									</div>
+								  </div>	
+								  
+								  <div class="control-group">
+									<label class="control-label">输入支付密码：</label>
+									<div class="controls">
+									  <div class="input-prepend bank-input">
+										<span class="add-on"><i class="icon-lock"></i></span>
+										<input id="pwd" name="oriPwd" type="password" class="input-medium" placeholder="支付密码"></input>
+											#getErrorMessage($errorList,"payPwd")
+									  </div>								
+									</div>
+								  </div>
+								  
+								  <div class="control-group">
+									 <div class="controls">
+									   <button type="submit" id="rechargeButton" class="goto-recharge" >确认充值</button>
+									</div>
+								  </div>							  
+									
+								</fieldset>
+								</form>
+							#end
+							
+						</div>						
+						
+					</div>
+				</div>
+
+			
+
+			</div>
+
+		</div>
+	</div>
+	#footer()
+	
+	#set($assetsServer = $context.assetsServer)
+	<script src="$!{assetsServer}assets/js/aes.js"></script>
+	<script src="$!{assetsServer}assets/js/md5.js"></script>
+	<script src="$!{assetsServer}assets/js/mode-ecb-min.js"> </script>
+	<script src="$!{assetsServer}assets/js/jquery.validate.min.js"></script>
+	
+	<script type="text/javascript">
+		function resetForm(){
+			$('#rechargeButton').attr("class","btn btn-primary");
+			$("#rechargeButton").attr("disabled",false);
+		}
+
+		$().ready(function() {
+			resetForm();
+			$("#phoneRechargeForm").validate({
+				focusInvalid:true, 
+			    submitHandler: function(form){  
+			    	prePay();
+			    	changeButton();
+			    	form.submit();
+			    },
+				rules : {
+					oriPwd : "required"
+				},
+				messages: {
+					oriPwd : "请输入支付密码"
+				}
+			});
+		});
+		
+		function changeButton(){
+			$("#rechargeButton").html("提交中..");
+			$("#rechargeButton").attr("disabled",true);
+		}
+		
+		function prePay(){
+			var pwd = jQuery('#pwd').val();
+			var token = jQuery('#token').val();
+			var ts = jQuery('#ts').val();
+			//console.log("0:"+token);
+			pwd =  CryptoJS.MD5(pwd+"longan_login");
+			//console.log("1:"+pwd);
+			pwd = pwd + "_" + ts;
+			//console.log("2:"+pwd);
+		 	var keyHex = CryptoJS.enc.Utf8.parse(token);
+		 	//console.log("3:"+keyHex);
+		 	
+		    var encrypted = CryptoJS.AES.encrypt(pwd, keyHex, {  
+		        mode: CryptoJS.mode.ECB,
+		        padding: CryptoJS.pad.Pkcs7
+		    });
+		    
+		    //console.log("4:"+encrypted);
+		    //console.log("5:"+encrypted.ciphertext.toString(CryptoJS.enc.Base64));
+			jQuery('#encodePwd').val(encrypted.ciphertext.toString(CryptoJS.enc.Base64));
+			jQuery('#pwd').val("");
+		}
+	</script>	
+</body>
+</html>

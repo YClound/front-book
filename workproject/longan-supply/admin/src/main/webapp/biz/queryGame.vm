@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>游戏管理</title>
+    #parse("common/common.vm")
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/doubleDate.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/doubleDate2.0.js"></script>
+    
+</head>
+<body class="list-body">
+    $!errorMsg
+    <div class="list-container">
+        <div class="alert-title fz-16">游戏管理</div>
+        <form id="gameQueryForm" class="queryForm" action="queryGame.do" method="post">
+                #parse("common/select.vm")
+            <input type="hidden" name="bizId" value="$!gameQuery.bizId" />
+            <table class="table query-style table-striped table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <td colspan="8" class="auto-style2">请填写查询条件 </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="w-8em">游戏编号</td>
+                        <td class="detail ">
+                            <input type="text" class="input-small" name="id" value="$!gameQuery.id"  />
+                        </td>
+                        <td class="w-8em">游戏名</td>
+                        <td class="detail ">
+                            <input type="text" class="input-small" name="gameName" value="$!gameQuery.gameName"  />
+                        </td>
+                        <td class="w-8em">厂商</td>
+                        <td class="detail ">
+                                #selectClassMedium($!carrierNameList,"carrierId",$!gameQuery.carrierId)
+                        </td>
+                         <td class="w-8em">创建日期 </td>
+                        <td class="detail">
+                            <div class="input-append">
+                                <span class="input-date">
+                                    <input class="input-small doubledate" readonly="readonly" size="10" type="text" name="startGmtCreate" value="$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.startGmtCreate)" />
+                                    <span class="add-on"><img src="../img/date.png"></span>
+                                </span>至
+                                <span class="input-date">
+                                    <input id="endtime" class="input-small doubledate" readonly="readonly" type="text" name="endGmtCreate" value="$!dateTool.format("yyyy-MM-dd", $!supplyOrderQuery.endGmtCreate)" />
+                                    <span class="add-on"><img src="../img/date.png"></span>
+                                </span>
+                            </div>
+                        </td>               
+                    </tr>
+                     <tr>
+                        <td class="w-8em">首字母</td>
+                        <td class="detail ">
+                           <input type="text" class="input-small" name="keyIndex" value="$!gameQuery.keyIndex"  />
+                        </td>
+                        <td class="w-8em">状态</td>
+                        <td class="detail ">
+                            #select($!statusList,'status',$!gameQuery.status)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" align="left">
+                            <input class="btn btn-inverse" id="find" type="submit" value="查询" />
+                            <input class="btn btn-inverse" type="reset" value="清空" />
+                            <a href="gameAdd.do?bizId=500" class="btn btn-inverse add" >新增游戏</a>
+                        </td>
+                    </tr>
+                </tbody>
+             </table>
+
+        <table class="table table-list table-striped table-bordered table-condensed" id="list">
+            <thead>
+                <tr class="tr_detail">
+                    <td>游戏编号 </td>
+                    <td>游戏名</td>
+                    <td>创建时间</td>
+                    <td>厂商</td>
+                    <td>描述介绍</td>
+                    <td>官网地址</td>
+                    <td>首字母</td>
+                    <td>状态 </td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                #foreach($!game in $!gameList)
+                <tr>
+                    <td>$!game.id</td>
+                    <td>$!game.gameName</td>
+                    <td>$!dateTool.format("yyyy-MM-dd HH:mm:ss", $!game.gmtCreate)</td>
+                    <td><a href="queryGameCarrier.do?bizId=500&id=$!game.carrierId">$!game.carrierName</a></td>
+                    <td>$!game.gameDesc</td>
+                    <td><a href="$!game.officialUrl" target="_Blank">$!game.officialUrl</a></td>
+                    <td>$!game.keyIndex</td>
+                    <td>
+                        <font #if($!game.showRed())color=red #end #if($!game.showGreen())color=green #end >
+                        $!game.statusDesc
+                        </font>
+                    </td>
+                    <td>
+                        <a href="gameEdit.do?id=$!game.id" class="btn btn-mini btn-primary add" >修改</a>
+                    </td>
+                </tr>
+                #end
+                
+                
+            </tbody>
+        </table>
+
+        #parse("common/pagination.vm")
+        #pagination($!gameQuery,'gameQueryForm')
+        </form>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+        $('.doubledate').kuiDate({
+            className:'doubledate',
+            isDisabled: "1"
+        });
+        });
+    </script>
+</body>
+</html>

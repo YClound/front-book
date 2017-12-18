@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>操作日志查询</title>
+    #parse("common/select.vm")
+    #parse("common/pagination.vm")
+    #parse("common/common.vm")
+    
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/doubleDate.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/doubleDate2.0.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery.cookie.js"></script>
+    
+</head>
+<body class="list-body">
+    $!errorMsg
+     <div class="list-container">
+        <div class="alert-title fz-16">操作日志查询</div>
+        <form id="operationLogQueryForm" class="queryForm" action="queryOperationLog.do" method="post" onsubmit="return submitCheck();">
+            #parse("common/select.vm")
+            <table class="table query-style table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <td colspan="6" class="auto-style2">请填写查询条件</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="w-8em">操作模块</td>
+                    <td class="td_detail detail">
+                        <input type="text" class="input-small" name="moduleName" value="$!operationLogQuery.moduleName" />
+                    </td>
+                    <td class="w-8em">创建用户</td>
+                    <td class="td_detail detail">
+                        #select($!userList,'userId',$!operationLogQuery.userId)
+                    </td>
+                    <td class="w-8em">业务类型</td>
+                    <td class="td_detail detail">
+                        #select($!bizList,'bizId',$!operationLogQuery.bizId)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="w-8em">创建日期 </td>
+                    <td class="detail" colspan="3">
+                        <div class="input-append">
+                            <span class="input-date">
+                                <input class="input-small doubledate" readonly="readonly" size="10" type="text" name="startGmtCreate" value="$!dateTool.format("yyyy-MM-dd", $!operationLogQuery.startGmtCreate)" />
+                                <span class="add-on"><img src="../img/date.png"></span>
+                            </span>至
+                            <span class="input-date">
+                                <input id="endtime" class="input-small doubledate" readonly="readonly" type="text" name="endGmtCreate" value="$!dateTool.format("yyyy-MM-dd", $!operationLogQuery.endGmtCreate)" />
+                                <span class="add-on"><img src="../img/date.png"></span>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td colspan="6" align="left">
+                        <a class="btn btn-inverse"  onclick="javascript:query();"  >查询</a>
+                        <input class="btn btn-inverse"  type="reset" value="清空" />
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+
+            <table class="table table-list table-striped table-bordered table-condensed list">
+                <thead>
+                    <tr class="tr_detail">
+                        <td width="50">序号 </td>
+                        <td width="100">操作模块</td>
+                        <td style="width:50%">日志内容</td>
+                        <td width="100">创建用户</td>
+                        <td width="100">创建时间</td>
+                        <td width="100">创建IP</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    #foreach($!operationLog in $!operationLogList)
+                    <tr>
+                        <td><span  title="$!operationLog.id" style="overflow: hidden;display: block; text-overflow: ellipsis;width: 4em; white-space: nowrap;">$!operationLog.id
+                        </span></td>
+                        <td><span  title="$!operationLog.moduleName" style="overflow: hidden;display: block; text-overflow: ellipsis;width: 9em; white-space: nowrap;">$!operationLog.moduleName
+                        </span></td>
+                        <td><span  title="$!operationLog.bizName $!operationLog.description" style="overflow: hidden;display: block; text-overflow: ellipsis;width:100%; white-space: nowrap;text-align: left; max-width: 60em;">$!operationLog.bizName $!operationLog.description
+                        </span></td>
+                        <td><span  title="$!operationLog.userName" style="overflow: hidden;display: block; text-overflow: ellipsis;width:100%; white-space: nowrap;">$!operationLog.userName
+                        </span></td>
+                        <td><span  title="$!dateTool.format("yyyy-MM-dd HH:mm:ss", $!operationLog.gmtCreate)" style="overflow: hidden;display: block; text-overflow: ellipsis;width: 100%; white-space: nowrap;">$!dateTool.format("yyyy-MM-dd HH:mm:ss", $!operationLog.gmtCreate)
+                        </span></td>
+                        <td>$!operationLog.loginIp</td>
+                    </tr>
+                    #end
+                    
+                    
+                </tbody>
+            </table>
+
+            #parse("common/pagination.vm")
+            #pagination($!operationLogQuery,'operationLogQueryForm')
+        </form>
+    </div>
+    
+    <script type="text/javascript">
+        $(function(){
+        $('.doubledate').kuiDate({
+            className:'doubledate',
+            isDisabled: "1"
+        });
+        });
+        
+        
+        function submitCheck()
+        {
+            if(!checkDate()){
+                return false;
+            }
+            return true;
+        }
+        
+        
+        var checkDate = function()
+        {
+            var start_date =  jQuery("input[name='startGmtCreate']").val();
+            var end_date = jQuery("input[name='endGmtCreate']").val();
+            var objDate=new Date();
+            var year = objDate.getFullYear();
+            var month = objDate.getMonth() + 1;
+            var day = objDate.getDate();
+            month = month>=10?month:'0'+month;
+            day = day>=10?day:'0'+day;
+            var date = year + "-" + month + "-" + day;
+            
+            if(!compareDate(start_date, date)){
+                alert("起始日期不能大于当前日期！");
+                return false;
+            }
+            if(!compareDate(end_date, date)){
+                alert("终止日期不能大于当前日期！");
+                return false;
+            }
+            
+            if(!compareDate(start_date, end_date))
+            {
+                alert("起始日期不能大于终止日期!");
+                return false;
+            }
+            return true; 
+        }
+    
+        function compareDate(date1, date2){
+            year1 = date1.substring(0,date1.indexOf("-"));
+            year2 = date2.substring(0,date2.indexOf("-"));
+            month1 = date1.substring(date1.indexOf("-") + 1,date1.lastIndexOf("-"));
+            month2 = date2.substring(date2.indexOf("-") + 1,date2.lastIndexOf("-"));
+            day1 = date1.substring(date1.lastIndexOf("-") + 1);
+            day2 = date2.substring(date2.lastIndexOf("-") + 1);
+            
+            if(year1 > year2){
+                return false;
+            } else if(year1 < year2){
+                return true;
+            } else if(month1 > month2){
+                return false;
+            } else if(month1 < month2){
+                return true;
+            } else if(day1 > day2){
+                return false;
+            } else if(day1 < day2){
+                return true;
+            }
+            return true;
+        }
+        
+        function query(){
+            jQuery('#operationLogQueryForm').attr("action", "queryOperationLog.do");
+            jQuery('#operationLogQueryForm').submit();
+        }
+        
+    </script>
+</body>
+</html>

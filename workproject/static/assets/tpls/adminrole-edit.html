@@ -1,0 +1,32 @@
+<div class="main-view-wrapper">
+    <h3>{{isNew?"新增":"修改"}}</h3>
+    <form class="form-horizontal" name="submitForm">
+    	<div class="form-group ">
+            <div class="col-md-8">
+                <input type="text" class="form-control" ng-model="formData.roleId" hidden="hidden"/>
+            </div>
+        </div>
+        <div class="form-group validInput">
+            <label class="control-label col-md-2 required">管理角色名</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" ng-model="formData.roleName"  required />
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label class="control-label col-md-2 required">管理员角色描述</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" ng-model="formData.roleDesc"  required />
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <button class="btn btn-primary" type="button" ng-click="save($event)" ng-disabled="submitForm.$invalid || loading">保存</button>
+                <a class="btn btn-primary" href="javascript:history.go(-1)">返回</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+    

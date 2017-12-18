@@ -1,0 +1,20 @@
+{
+    "code":0,
+    "message":"ok",
+    "data":{
+        "pager":{
+            "page":2,
+            "pages":22,
+            "total":220,
+            "pagesize":10
+        },
+        "list":[
+            {"id":"1","text":"杭州市","role":"0"},
+            {"id":"2","text":"宁波市","role":"0"},
+            {"id":"3","text":"温州市","role":"1"},
+            {"id":"4","text":"绍兴市","role":"0"},
+            {"id":"5","text":"舟山市","role":"1"}
+
+        ]
+    }
+}

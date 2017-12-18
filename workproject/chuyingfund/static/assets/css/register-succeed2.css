@@ -1,0 +1,54 @@
+.succeed-container{
+    width: 100%;
+    background-color: #ecf0f1;
+    padding:50px 0px 115px;
+}
+.succeed{
+    text-align: center;
+    margin: 0 auto;
+    width: 1170px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: #cbcfd0 1px solid;
+    padding: 110px 0px 60px;
+}
+.register-succeed{
+    height: 40px;
+    font-size: 28px;
+    line-height: 40px;
+}
+.register-succeed .icon-check-tough{
+    color: #1da5df;
+    font-size: 35px;
+}
+.succeed .content{
+    margin: 75px 0 35px;
+    min-height: 25px;
+    font-size: 18px;
+    color: #bfbfbf;
+}
+.succeed .certifiction{
+    display: block;
+    width: 230px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+    background-color: #1da5df;
+    border-radius: 3px;
+    color: #fff;
+    margin: 0 auto;
+}
+.succeed .certifiction:hover{
+    background-color: #0d7dad;
+}
+.succeed .back{
+    height: 30px;
+    line-height: 30px;
+    margin-top:15px; 
+    display: block;
+    color:#1da5df; 
+    cursor: pointer;
+}
+.succeed .blank{
+   height: 30px;
+}

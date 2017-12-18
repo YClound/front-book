@@ -1,0 +1,29 @@
+.m-my-wrapper .m-banner {
+    height: 220px;
+    background-color: #fe5b7e;
+    position: relative;
+    overflow: hidden;
+}
+.m-my-wrapper .m-info {
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: -20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(99,99,99,0.3);
+    background-color: #FFF;
+}
+.m-my-wrapper .m-info .info1 {
+    padding:20px;
+}
+.m-mywork-list {
+    margin-top: 12px;
+    overflow: hidden;
+}
+.m-mywork-item {
+    border-radius: 5px;
+    width: 95%;
+    box-shadow: 2px 2px 5px rgba(99,99,99,0.3);
+    margin: 0 auto;
+    margin-bottom: 12px;
+}

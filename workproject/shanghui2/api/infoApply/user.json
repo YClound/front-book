@@ -1,0 +1,33 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "refresh_id":"1",
+        "user_id":"11",
+        "user_sociaty_id":"100",
+
+        "oldUserPhone":"18034837878",
+        "oldRealName":"爱列克斯",
+        "oldUserIdcard":"330588678278681754",
+        "oldUserCard":"",
+        "oldUserPhoto":"http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/lV75GCNEsM9oY-8tiSOhew==/6598076919369543070.jpg_64x64x0.jpg",
+        "oldRegisterCompany":"杭州氢气球公司",
+        "oldRegisterPosition":"董事",
+        "oldRegisterTrade":"互联网",
+        "oldCompanyAddress":"杭州西湖区",
+        "oldLiveAddress":"杭州xxx",
+        "oldUserAddress":"新昌",
+
+        "newUserPhone":"18034837878",
+        "newRealName":"爱列克斯22",
+        "newUserIdcard":"330588678278681754",
+        "newUserCard":"",
+        "newUserPhoto":"http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/lV75GCNEsM9oY-8tiSOhew==/6598076919369543070.jpg_64x64x0.jpg",
+        "newRegisterCompany":"杭州氢气球公司",
+        "newRegisterPosition":"董事2",
+        "newRegisterTrade":"互联网",
+        "newCompanyAddress":"杭州西湖区",
+        "newLiveAddress":"杭州xxx1111111111",
+        "newUserAddress":"新昌"
+    }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>新昌商会</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!-- 可更改 -->
+    <meta name="keywords" content="新昌商会">
+    <meta name="description" content="新昌商会">
+    <!-- 百度统计 -->
+    <meta name="baidu-site-verification" content="j4d5H6qJuY"/>
+    <meta name="share-title" content=""/>
+    <meta name="share-img" content=""/>
+    <meta name="share-desc" content=""/>
+    <meta name="share-url" content=""/>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    
+    <link rel="stylesheet" href="../assets/css/base_m.css">
+    <link rel="stylesheet" href="../assets/css/mobile/app.css">
+    <link rel="stylesheet" href="../assets/css/mobile/activity.css">
+    <script src="../assets/js/mobile/config.js"></script>
+
+  </head>
+  <body class="bg m-activity" style="font-size: 14px;">
+    <div class="m-main">
+        <div class="s-header headroom flex por">
+            <a href="javascript:;" onclick="javascript:history.back()" class="w-3em db"><i class="if icon-angle-left"></i></a>
+            <div class="flex-1">全商动态</div>
+            <div class="w-3em"></div>
+        </div>
+        <div class="padding-header"></div>
+        <div class="activity-lists">
+            <div class="activity-list listWrap"></div>
+            <div class="infinite-loading" type="json" data-template="activity-list" data-hidden="true">
+                <form action="../api/mobile/activity/all.json" novalidate="novalidate" class="ajax-form" data-ajax-method="get">
+                    <input type="hidden" name="page" value="1" data-name="offset" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/html" id="activity-list">
+        <a class="bb flex por activity-item" href="activity-notice-detail.html">
+            <div class="img-major mr-6 por">
+                <img src="{{articlePhoto}}" alt="" onerror="imgErr(this,'nophoto')" class="proj-img-100">
+            </div>
+            <div class="flex-1 por">
+                <div class="item-info pt-3">{{articleTitle}}</div>
+                <div class="w-100 fz-small poa b-6">
+                    <div class="c-8 fl mr-6">{{publishTime}}</div>
+                    <div class="c-8">{{publisherPosition}}</div>
+                </div>
+            </div>
+        </a>
+    </script>
+
+    <script src="../vendor/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../assets/js/template.js"></script>
+    <script src="../assets/js/dm.base.js"></script>
+    <script src="../assets/js/mobile/api.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('[data-name="offset"]').val(1);
+            $('.infinite-loading').infiniteLoading();
+        })
+    </script>
+  </body>
+</html>

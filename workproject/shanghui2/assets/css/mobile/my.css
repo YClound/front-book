@@ -1,0 +1,374 @@
+.m-my .s-avatar {
+    background: url(../../images/mobile/profilebg2.jpg) no-repeat center bottom;
+    background-size: cover;
+    color: #FFF;
+}
+.m-my .s-avatar .icon-img{
+    width: 20px;
+    top: -1px;
+    margin-top: 0px;
+}
+.m-my .s-avatar .icon-img img{width: 100%;}
+/*个人信息*/
+.m-my-baseInfo .baseInfo-link{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.m-my-baseInfo .baseInfo-finish{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    background-color: #d4b168;
+}
+.m-my-baseInfo .changeAvatar{
+    background-color: #d4b168;
+    color: #fff;
+    padding: .4em .8em;
+    display: inline-block;
+    border-radius: 2px;
+}
+.m-my-baseInfo .btn-sms{
+    background-color: #d4b168;
+    color: #fff;
+}
+.m-my-baseInfo .modify-phone{
+    background-color: #d4b168;
+    color: #fff;
+}
+.m-my-baseInfo .line.readonly{
+    color: #999;
+}
+.m-my-baseInfo .identityCode{
+    display: none;
+}
+.m-my-baseInfo  .btn-sms[disabled]{background-color: #bdbdbd;}
+/*同乡注册*/
+.m-village-register .tab-title{
+    background-color: #fff;
+    height: 50px;
+    line-height: 50px;
+}
+.m-village-register .tab-title-detail a{
+    display: inline-block;
+    padding: 0 5px;
+    height: 50px;
+}
+.m-village-register .tab-title-detail.active a{
+    border-bottom: #d4b168 4px solid;
+    color: #d4b168;
+}
+.m-village-register .tab-content{padding-top: 12px;}
+.m-village-register .btn-sms{
+    background-color: #d4b168;
+    color: #fff;
+    right: 10px;
+}
+.m-village-register  .btn-sms[disabled]{background-color: #bdbdbd;}
+.icon-img{
+    position: absolute; 
+    top: 50%;
+    margin-top: -0.85em;
+}
+.icon-img img{width: 16px;}
+.icon-img-min img{width: 10px; left: 2px;}
+.m-village-register input{padding-left: 0px;}
+
+/*加入服务组*/
+.join-group label input[type="checkbox"]{
+  vertical-align:text-bottom; 
+  margin-bottom: 1px; 
+  margin-bottom:-2px\9;
+}
+.join-group .group{display: none;}
+.group ul li{display: inline-block;}
+.check-tag.check-tag-o input[type=radio]:checked~label {
+    color: #d4b168;
+    background-color: #fff;
+    border-color: #d4b168;
+}
+/*工作经历*/
+.my-content{
+    padding-top: 57px;
+}
+/*.my-content .icon-img{
+    top:25px;
+}*/
+.my-content .content-item{position: relative;}
+.my-content .content-item .angle-right{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -15px;
+}
+/*教育经历*/
+.m-my-education-exp .view-wrap input,
+.m-my-work-exp .view-wrap input,
+.m-my-company-info .view-wrap input{padding-left: 0px;}
+
+.placeholder:before{
+    content: attr(placeholder);
+    color: #777;
+}
+.no-info{
+    display: none;
+}
+[data-content="0"] .no-info{
+    text-align: center;
+    display: block;
+    padding-top: 20%;
+}
+[data-content="0"] .panel{
+    display: none;
+}
+[data-content="0"] .info-img{
+    margin: 0 auto;
+    width: 60%;
+    height: 240px;
+    background-image: url("../../images/mobile/noInfo.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+[data-content="0"] .message-info-img{
+    width: 45%;
+    background-image: url("../../images/mobile/no-message.png");
+}
+[data-content="0"] .infinite-loading{display: none;}
+/*企业信息*/
+.delete-infomation{
+    margin-top: -2px;
+    height: 45px;
+    padding: 0;
+    line-height: 45px;
+    font-size: 18px;
+}
+
+/*申请入会待审核状态*/
+.m-my-membership-state .phone{color: #d4b168;}
+.m-my-membership-state .phone .icon-img img{width: 28px;}
+
+/*头像上传*/
+.wu-avatar .pick-wrap .pick {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.wu-avatar .webuploader-pick {
+    height: 100%;
+}
+
+/*资料修改审核中*/
+.view-company,.view-edit{min-height: 568px;}
+.footer-tip{
+    display:none;
+    color: red;
+}
+
+.view-company .footer-tip{
+    bottom: 10%;
+    position: absolute;
+    left: 50%;
+    margin-left: -49px;
+}
+.view-edit .footer-tip{}
+
+/*账号登录*/
+html.member-login, body.m-account-login{
+    background-color: #fff;
+    min-height: 567px;
+    height: 100%;
+}
+.m-account-login .m-main{
+    height: 100%;
+}
+.m-account-login .logo{
+    padding-top: 10%;
+    text-align: center;
+    padding-bottom: 10%;
+}
+.m-account-login .logo-img{
+    width: 20%;
+    margin: 0 auto;
+}
+.m-account-login .logo-text{
+    padding-top: 3%;
+    color: #d4b168;
+}
+.m-account-login .login-form{
+    padding: 0 5%;
+}
+.m-account-login .form-control input{
+    padding: 15px 0 15px 35px;
+}
+.form-control .if{
+    position: absolute;
+    z-index: 1;
+    color: #bbb;
+    font-size: 20px;
+    left: 13px;
+    top: 10px;
+}
+.m-account-login .form-control .btn-sms{
+    color: #d4b168;
+    text-decoration: underline;
+    padding: 0px;
+    right: 13px;
+    top: 15px;
+}
+.m-account-login .form-control .btn-sms[disabled]{color: #999;}
+.m-account-login .form-control  .forget-psw{
+    color: #d4b168;
+    text-decoration: underline;
+    text-align: right; 
+}
+.m-main .c-yellow{color: #d4b168;}
+
+/*企业家认证*/
+.m-company-identity input{
+    padding-left: 0px;
+}
+.m-company-identity .avatar,.m-my-baseInfo .avatar{
+    width: 6rem;
+    height: 4rem;
+}
+.m-company-identity .avatar-card{
+    width: 6rem;
+    height: 2.5rem;
+}
+.m-company-identity .avatar-card img{
+    width: 4rem;
+    height: 2.5rem;
+}
+.m-company-identity [name="agreement"]{
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+#regulations .modal-content .modal-body,
+#rules .modal-content .modal-body{
+    height: 300px;
+    overflow-y: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/*企业家认证行业的下拉菜单*/
+.m-company-identity select,.m-my-company-info select{
+    width: 100%;
+    padding: .6em .8em;
+    padding-left: 0px;
+    border: 1px solid transparent;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    outline: none;
+}
+.m-company-identity select option,.m-my-company-info select option{
+    font-size: 14px;
+}
+/*公司名称获取*/
+.m-company-identity .form-search input{
+    padding: .4em 0px .4em 30px;
+    line-height: 20px;
+}
+.m-company-identity .company-list{
+    background-color: #fff;
+    padding: 0px;
+}
+.m-company-identity .company-list li{
+    list-style: none;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+.m-company-identity .company-list li + li{
+    border-top: #eee 1px solid;
+}
+.m-company-identity .company-list .industry{
+    background-color: #eee;
+    padding: 2px 14px;
+    color: #999;
+    border-radius: 22px;
+    font-size: 12px;
+}
+/*介绍人搜索*/
+.m-company-identity .inviter-list a{
+    display: block;
+    background-color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: #e6e6e6 1px solid;
+}
+.m-company-identity .inviter-list a:last-of-type{
+    border-bottom: 0px;
+}
+
+/*同乡注册成功*/
+.m-register-success{background-color: #fff;}
+.result-show{
+    padding: 35% 0 15%;
+    text-align: center;
+}
+.result-container{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.result-show .result-content{
+    position: relative;
+    padding-left: 60px; 
+}
+.result-container .show-img{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 10px;
+    top: 50%;
+    margin-top: -25px;
+}
+.result-container .show-img img{
+    width: 100%;
+}
+.result-show > div{display: inline-block;}
+
+/*我的消息*/
+.m-my-message .message-img{
+    width: 50px;
+}
+.m-my-message .message-img img{width: 100%;}
+.m-my-message .message-text{
+    line-height: 50px;
+}
+.m-my-message .message-text .bubble,.m-my .bubble{
+    position: absolute;
+    color: #fff;
+    background-color: #d4b168;
+    border-radius: 13px;
+    width: 25px;
+    height: 25px;
+    line-height: 13px;
+    text-align: center;
+    box-shadow: none;
+    border: 0px;
+    font-size: 10px;
+}
+.m-my-message .message-text .bubble{
+    right: 20px;
+    top: 12px;
+}
+.m-my .bubble{
+    right: 30px;
+    top: -2px;
+}
+/*我的私信*/
+.m-my-person-letter .message-img{
+    width: 60px;
+    border-radius: 5px;
+}
+.m-my-person-letter .message-img img{width: 100%;}
+/*黄色字体*/
+.colorYellow{
+    color: #d4b168;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head()
+
+<body>
+	$!errorMsg
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+			#sidebar('userInfo')
+			
+			<div class="span10">
+				
+				#breadcrumb("商户信息修改",'userInfoEdit.htm')
+				
+				<div class="sortable row-fluid">
+					<div class="span12">
+						#userInfoTab('userInfoEdit')
+						<div class="content-main" style="height:345px;">
+						<form id="form" class="form-horizontal" action="userInfoEdit.htm" method="post" >
+							#csrfTokenInput()
+							#getErrorMessage($errorList,"errorMsg")
+							<div class="row-fluid show-grid error-tip">
+								<div class="span6" style="background:#fff;">
+								<label class="control-label" for="amount">登录名</label>
+								<input  readonly="true" type="text" id="loginId"  name="loginId" value="$!user.loginId">
+								<span class="red">*</span>
+								</div>
+							</div>
+							<div class="row-fluid show-grid error-tip">
+								<div class="span6" style="background:#fff;">
+								<label class="control-label" for="amount">用户名 </label>
+								<input  type="text" id="userName"  name="userName" value="$!user.userName">
+								<span class="red">*</span>
+								#getErrorMessage($errorList,"userName")
+								</div>
+							</div>
+							<div class="row-fluid show-grid  error-tip">
+								<div class="span6" style="background:#fff;">
+								<label class="control-label" for="amount">门店或公司名</label>
+								<input  type="text"  id="compayInfo"  name="compayInfo" value="$!user.compayInfo">
+								<span class="red">*</span>
+								#getErrorMessage($errorList,"compayInfo")
+								</div>
+							</div>
+							<div class="row-fluid show-grid  error-tip">
+								<div class="span6" style="background:#fff;">
+								<label class="control-label" for="amount">邮箱</label>
+								<input  type="text" id="email"  name="email" value="$!user.email">
+								<span class="red">&nbsp;&nbsp;</span>
+								#getErrorMessage($errorList,"email")
+								</div>
+							</div>
+							<div class="row-fluid show-grid">
+							<div class="span6" style="background:#fff;">
+							<input class="btn btn-primary" type="submit" value="提交" />
+							</div>
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	#footer()
+	<script src="$!{assetsServer}assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript">
+		$().ready(function() {
+			$("#form").validate({
+				focusInvalid:false, 
+			    submitHandler: function(form){  
+			        form.submit();  
+			    },
+				rules : {
+					userName : {
+						required : true,
+						noSpecialCharacter : true
+						},
+					compayInfo : {
+						required : true,
+						noSpecialCharacter : true
+						},
+					email : {
+						required: false,
+						email: true
+						}
+					},
+				messages: {
+					userName : {
+						required : "请填写用户名",
+						noSpecialCharacter : "用户名不能含特殊字符"
+						},
+					compayInfo : {
+						required : "请填写门店或公司名",
+						noSpecialCharacter : "门店或公司名不能含特殊字符"
+						},
+					email: "请正确填写邮箱"
+					}
+			});
+		});
+		$.validator.addMethod("noSpecialCharacter", function(value, element) {
+			var length = value.length;  
+		    var specialCharacter = /^[a-zA-Z0-9\u4e00-\u9fa5]+$/;
+		    return specialCharacter.test(value);
+		}
+		);
+	</script>
+</body>
+</html>

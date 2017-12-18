@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>游戏修改</title>
+	#parse("common/common.vm")
+	#parse("common/select.vm")
+	#parse("common/errorUtils.vm")
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+	
+</head>
+<body onload="load('$!userInfo.type')" class="list-body">
+	$!errorMsg
+	<div class="list-container">
+        <div class="alert-title fz-16">游戏修改</div>
+        <form id="form" class="queryForm" action="gameEdit.do" method="post" >
+        	<input type="hidden" name="id" value="$!game.id"/>
+            <table class="table query-style table-striped table-bordered table-condensed list">
+                <thead>
+                    <tr>
+                        <td colspan="8">游戏基本信息</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+        				<td width="100">游戏名<font color="#FF0000">*</font> </td>
+        				<td width="450" class="detail">
+        					<input type="text" name="gameName"  size="20" value="$!game.gameName">
+        						#getErrorMessage($errorList,"gameName")
+                        </td>
+        				<td width="100">厂商</td>
+                        <td width="450" class="detail">
+                           #selectClassMedium($!carrierNameList,"carrierId",$!game.carrierId)
+        					#getErrorMessage($errorList,"carrierId")
+        				</td>
+                        <td width="100">状态 <font color="#FF0000">*</font> </td>
+                         <td width="450" class="detail">
+        						#select($!statusList,'status',$!game.status)
+        						#getErrorMessage($errorList,"status")
+        				</td>				
+                    </tr>
+                    <tr>
+                     	<td width="100">官网地址 </td>
+                        <td width="450" class="detail">
+        					<input type="text" name="officialUrl"  size="20" value="$!game.officialUrl">
+        						 #getErrorMessage($errorList,"officialUrl")
+                        </td>
+                        <td width="100">logo地址 </td>
+                        <td width="450" class="detail">
+        					<input type="text" name="logo"  size="20" value="$!game.logo">
+        						 #getErrorMessage($errorList,"logo")
+                        </td>	
+                        <td width="100">描述介绍 </td>
+                        <td width="450" class="detail">
+        					<input type="text" name="gameDesc"  size="20" value="$!game.gameDesc">
+        						 #getErrorMessage($errorList,"gameDesc")
+                        </td>				
+                    </tr>
+                </tbody>
+                		
+            </table>
+            <table class="table table-striped table-bordered table-condensed list">
+            	<tbody>
+                    <tr align="left">
+                        <td colspan="6">
+                            <input class="btn btn-inverse" id="find" type="submit" value="保存" />
+                            <input class="btn btn-inverse" type="button" onclick="javascript:window.location.href='queryGame.do?bizId=500'" value="取消" />
+                            </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

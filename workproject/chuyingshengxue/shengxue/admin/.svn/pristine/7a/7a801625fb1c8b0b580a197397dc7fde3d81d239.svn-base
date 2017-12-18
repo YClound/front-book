@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>后台管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/vendor/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/vendor/umeditor/themes/default/css/umeditor.min.css">
+    <link rel="stylesheet" href="/public/assets/css/base_m.css">
+    <link rel="stylesheet" href="./assets/css/admin/admin.css">
+
+   
+  <script type="text/javascript">
+      window.serverData = {
+
+        currentUser:{
+          sociatyId:"xcsh",
+          unionId:'123',// 商联ID
+          auth:"union" // 空则是商会管理员 admin 则是超级管理员 union则有商联权限 
+        }
+      }
+  </script>
+  </head>
+  <body class="admin">
+    <!-- header -->
+    <div class="header">
+      <div class="s-wrap">
+        <a href="#home" class="header-logo fl" style="margin-top:15px;" >
+          <img src="./assets/images/admin/system-headline.png" alt="" width="300">
+        </a>
+        
+        <div class="fr header-user">
+	          <i class="fa fa-user"></i>
+	          <a href="javascript:;" class="mr-5" ui-sref="admin.edit({id:admin.id})"><u ng-bind="admin.userName"></u></a>
+	          <a href="/logout">退出</a>
+        </div>
+      </div>
+    </div>
+    <!-- main -->
+    <div class="main">
+       <!-- sidebar -->
+      <div class="main-sidebar">
+        <div class="headline"><i class="fa fa-navicon mr-3" style=""></i>左侧导航</div>
+        <div class="sidebar" id="sidebar">
+          
+          <div ng-repeat="item in SideMenu" class="collapse-panel">
+            
+              <a data-parent="#sidebar" data-toggle="collapse" href="javascript:void(0);" class="collapse-trigger collapsed link-collapse" ng-if="item.list.length>0">
+                <i class="{{item.node.icon}}"></i>
+                <u class="menu-title" ng-bind="item.node.text"></u>
+                <span class="fa fa-angle-down arrow"></span>
+              </a>
+              <a href="javascript:void(0);" class="link-menu" ng-if="item.list.length==0" ui-sref="{{item.node.link}}">
+                <i class="{{item.node.icon}}"></i>
+                <u class="menu-title" ng-bind="item.node.text"></u>
+              </a>
+              <div class="collapse-content collapse">
+                <ul class="nav-second-level">
+                  <li ng-repeat="menu in item.list"  >
+                    <a href="javascript:;" ui-sref="{{menu.link}}" class="link-menu" >
+                      <i class="fa fa-caret-right mr-3"></i><u ng-bind="menu.text"></u>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+                
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <!-- content -->
+      <div class="main-content">
+        <!-- position -->
+        <div class="headline flex">
+          <div class="flex-1">
+            <b class="">位置：</b><span class="" id="cur">首页</span>
+          </div>
+          <div>
+            <a href="javascript:history.go(-1);" class="mr-10 dib p-4 lh-10">返回</a>
+          </div>
+          
+        </div>
+         <!-- view -->
+        <div class="main-view" ui-view=""></div>
+          
+      </div>
+
+    </div>
+  
+
+  <script src="/public/vendor/jquery/jquery-2.1.4.min.js"></script>
+  <script src="/public/vendor/angular/js/angular.min.js"></script>
+  <script src="/public/vendor/angular/js/angular-sanitize.min.js"></script>
+  <script src="/public/vendor/angular/js/angular-route.min.js"></script>
+  <script src="/public/vendor/angular/ui-router/angular-ui-router.min.js"></script>
+  <script src="/public/vendor/angular/ocLazyLoad/ocLazyLoad.min.js"></script>
+  <script src="/public/vendor/angular/angular-ui-tree/angular-ui-tree.min.js"></script>
+  <script src="/public/vendor/webuploader/webuploader.html5only.min.js"></script>
+  <script src="/public/vendor/umeditor/umeditor.config.js"></script>
+  <script src="/public/vendor/umeditor/umeditor.min.js"></script>
+  <!-- 
+  <script src="/public/vendor/laydate/laydate.js"></script>
+  <script src="/public/vendor/webuploader/webuploader.html5only.min.js"></script>
+  <script src="../assets/js/city-picker.data.js"></script>
+  <script src="../assets/js/plugins/city-picker.js"></script> -->
+
+  <script src="/public/assets/js/template.js"></script>
+  <script src="./assets/js/dm.api.js"></script>
+  <script src="/public/assets/js/dm.base.js"></script>
+  <script src="/public/assets/js/dm.wu.js"></script>
+  <script src="./assets/js/admin/admin.directive.js"></script>
+  <script src="./assets/js/admin/admin.menu.js"></script>
+  <script src="./assets/js/admin/admin.main.js"></script>
+
+
+  
+  <!-- 图片模板 -->
+  <script type="text/html" id="file-item">
+      <div id="{{id}}" class="file-item square">
+          <div class="title">{{name}}</div>
+          <div class="img-wrap"></div>
+          <div class="progress"><div class="progress-bar" style="width:0;"></div></div>
+          <div class="float-bar tar">
+              <a class="remove" href="javascript:;" title="移除">&times;</a>
+          </div>
+          <div class="info"></div>
+          <div class="success" style="display:none;"></div>
+      </div>
+  </script>
+  <script>
+    
+    
+  $(function(){
+
+    /*$(document).on('click','.link-collapse',function(e){
+      var $btn = $(e.currentTarget);
+      var num = $btn.siblings('ul').find('li').length;
+      var height = num*40+'px';
+      if(!num){
+        return;
+      }
+      // 假如已经展开
+      if($btn.hasClass('expanded')){
+        $btn.siblings('ul').stop(true, false).animate({height: 0},200,function(){
+          $btn.removeClass('expanded');
+        })
+        
+      }else {
+        $btn.siblings('ul').stop(true, false).animate({height: height},200,function(){
+          $btn.addClass('expanded');
+        })
+
+      }
+
+    });*/
+
+    angular.bootstrap(document,['awApp']);
+    
+    
+  })
+
+  </script>
+  </body>
+</html>

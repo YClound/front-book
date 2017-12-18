@@ -1,0 +1,245 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "pager": {
+            "page": 1,
+            "pages": 5,
+            "total": 225,
+            "pagesize": 5
+        },
+        "list": [
+            {
+                "typeCode":"SELECT",
+                "isCollect": 0,
+                "property":{
+                    "questionId": "1",
+                    "questionTypeId": 1,
+                    "questionDifficult": 0.93,
+                    "questionSubjectId": 1,
+                    "questionFrom": "原创",
+                    "questionFromSource":"2016年高考浙江省文科数学真题",
+                    "questionSyllabusArray": ["8","9"],
+                    "propertyValue": {
+                        "typeName": "单选题",
+                        "difficultName": "容易",
+                        "subjectName": "数学",
+                        "syllabus": [
+                            {"syllabusId": 8,"syllabusName": "考纲4"},
+                            {"syllabusId": 9,"syllabusName": "考纲5"}
+                        ]
+                    }
+                },
+                "question":{
+                    "questionId": "1",
+                    "questionContentJson" :{
+                        "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是（）",
+                        "option":["3x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+23x+2","3x+1","3x-1","3x+4"]
+                    }
+                },
+                "relation":{
+                    "questionBrowseCount": 980,
+                    "questionCollectCount": 78,
+                    "questionUsedCount": 394,
+                    "question_id": "YWYDLJ028761"
+                }
+            },
+            {
+                "typeCode":"SELECT",
+                "isCollect": 0,
+                "property":{
+                    "questionId": "6",
+                    "questionTypeId": 1,
+                    "questionDifficult": 0.93,
+                    "questionSubjectId": 1,
+                    "questionFrom": "原创",
+                    "questionFromSource":"2016年高考浙江省文科数学真题",
+                    "questionSyllabusArray": ["8","9"],
+                    "propertyValue": {
+                        "typeName": "单选题",
+                        "difficultName": "容易",
+                        "subjectName": "数学",
+                        "syllabus": [
+                            {"syllabusId": 8,"syllabusName": "考纲4"},
+                            {"syllabusId": 9,"syllabusName": "考纲5"}
+                        ]
+                    }
+                },
+                "question":{
+                    "questionId": "6",
+                    "questionContentJson" :{
+                        "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是（）",
+                        "option":["3x+2","3x+1","3x-1","3x+4"]
+                    }
+                },
+                "relation":{
+                    "questionBrowseCount": 980,
+                    "questionCollectCount": 78,
+                    "questionUsedCount": 394,
+                    "question_id": "YWYDLJ028761"
+                }
+            },
+            {
+                "typeCode":"SELECT",
+                "isCollect": 1,
+                "property":{
+                    "questionId": "7",
+                    "questionTypeId": 1,
+                    "questionDifficult": 0.93,
+                    "questionSubjectId": 1,
+                    "questionFrom": "原创",
+                    "questionFromSource":"2016年高考浙江省文科数学真题",
+                    "questionSyllabusArray": ["8","9"],
+                    "propertyValue": {
+                        "typeName": "单选题",
+                        "difficultName": "容易",
+                        "subjectName": "数学",
+                        "syllabus": [
+                            {"syllabusId": 8,"syllabusName": "考纲4"},
+                            {"syllabusId": 9,"syllabusName": "考纲5"}
+                        ]
+                    }
+                },
+                "question":{
+                    "questionId": "7",
+                    "questionContentJson" :{
+                        "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是（）",
+                        "option":["<p><img src='http://www.des-club.com/fileyun//files/default/-1/20171/png/201701181429691r6N.png'></p>","3x+1","3x-1","<p><img src='http://www.des-club.com/fileyun//files/default/-1/20171/png/201701181429273Bhf.png'></p>"]
+                    }
+                },
+                "relation":{
+                    "questionBrowseCount": 980,
+                    "questionCollectCount": 78,
+                    "questionUsedCount": 394,
+                    "question_id": "YWYDLJ028761"
+                }
+            },
+            {
+                "typeCode":"FILLBLANK",
+                "isCollect": 0,
+                "property":{
+                    "questionId": "2",
+                    "questionTypeId": 2,
+                    "questionDifficult": 0.93,
+                    "questionSubjectId": 1,
+                    "questionFrom": "原创",
+                    "questionFromSource":"2016年高考浙江省文科数学真题",
+                    "questionSyllabusArray": ["8","9"],
+                    "propertyValue": {
+                        "typeName": "填空题",
+                        "difficultName": "容易",
+                        "subjectName": "数学",
+                        "syllabus": [
+                            {"syllabusId": 8,"syllabusName": "考纲4"},
+                            {"syllabusId": 9,"syllabusName": "考纲5"}
+                        ]
+                    }
+                },
+                "question":{
+                    "questionId": "1",
+                    "questionContentJson" :{
+                        "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是_______"
+                    }
+                },
+                "relation":{
+                    "questionBrowseCount": 980,
+                    "questionCollectCount": 78,
+                    "questionUsedCount": 394,
+                    "question_id": "YWYDLJ028761"
+                }
+            },
+            {
+                "typeCode":"QANDA",
+                "isCollect": 1,
+                "property":{
+                    "questionId": "3",
+                    "questionTypeId": 3,
+                    "questionDifficult": 0.93,
+                    "questionSubjectId": 1,
+                    "questionFrom": "原创",
+                    "questionFromSource":"2016年高考浙江省文科数学真题",
+                    "questionSyllabusArray": ["8","9"],
+                    "propertyValue": {
+                        "typeName": "问答题",
+                        "difficultName": "容易",
+                        "subjectName": "数学",
+                        "syllabus": [
+                            {"syllabusId": 8,"syllabusName": "考纲4"},
+                            {"syllabusId": 9,"syllabusName": "考纲5"}
+                        ]
+                    }
+                },
+                "question":{
+                    "questionId": "1",
+                    "questionContentJson" :{
+                        "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是QANDA已知函数f(x+1)=3x+2,则f(x)的解析式是QANDA已知函数f(x+1)=3x+2,则f(x)的解析式是QANDA"
+                    }
+                },
+                "relation":{
+                    "questionBrowseCount": 980,
+                    "questionCollectCount": 78,
+                    "questionUsedCount": 394,
+                    "question_id": "YWYDLJ028761"
+                }
+            },
+            {
+                "typeCode":"COMPLEX",
+                "isCollect": 0,
+                "property":{
+                    "questionId": "4",
+                    "questionTypeId": 4,
+                    "questionDifficult": 0.93,
+                    "questionSubjectId": 1,
+                    "questionFrom": "原创",
+                    "questionFromSource":"2016年高考浙江省文科数学真题",
+                    "questionSyllabusArray": ["8","9"],
+                    "propertyValue": {
+                        "typeName": "计算题",
+                        "difficultName": "容易",
+                        "subjectName": "数学",
+                        "syllabus": [
+                            {"syllabusId": 8,"syllabusName": "考纲4"},
+                            {"syllabusId": 9,"syllabusName": "考纲5"}
+                        ]
+                    }
+                },
+                "question":{
+                    "questionId": "1",
+                    "questionContentJson" :{
+                        "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是QANDA已知函数f(x+1)=3x+2,则f(x)的解析式是QANDA已知函数f(x+1)=3x+2,则f(x)的解析式是QANDA",
+                        "children":[
+                            {
+                                "number":1,
+                                "typeCode": "SELECT",
+                                "question": {
+                                    "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是()",
+                                    "option":["<p>A物体的加速度大小为<img src='http://www.des-club.com/fileyun//files/default/-1/20171/png/201701171024504XmO.png'>A物体的加速度大小为A物体的加速度大小为A物体的加速度大小为A物体的加速度大小为A物体的加速度大小为A物体的加速度大小为<img src='http://www.des-club.com/fileyun//files/default/-1/20171/png/201701171024504XmO.png'></p>","3x+1","3x-1","3x+4"]
+                                }
+                            },
+                            {
+                                "number":2,
+                                "typeCode": "FILLBLANK",
+                                "question": {
+                                    "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是_________"
+                                }
+                            },
+                            {
+                                "number":3,
+                                "typeCode": "QANDA",
+                                "question": {
+                                    "title":"已知函数f(x+1)=3x+2,则f(x)的解析式是已知函数f(x+1)=3x+2,则f(x)的解析式是"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "relation":{
+                    "questionBrowseCount": 980,
+                    "questionCollectCount": 78,
+                    "questionUsedCount": 394,
+                    "question_id": "YWYDLJ028761"
+                }
+            }
+        ]
+    }
+}

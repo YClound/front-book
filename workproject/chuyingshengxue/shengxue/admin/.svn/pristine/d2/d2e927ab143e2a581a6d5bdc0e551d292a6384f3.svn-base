@@ -1,0 +1,77 @@
+<div class="main-view-wrapper">
+    <form class="form-horizontal" name="submitForm" method="post" >
+        <input type="text" class="form-control" ng-model="formData.articleId" hidden="hidden"/>
+        
+
+        <!-- <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="required">类别：</label></div>
+            <div class="flex-1 control-field">
+                <select  class="form-control" ng-options="option.typeId as option.typeName for option in articleTypeList" ng-model="formData.articleType" required>
+                </select>
+            </div>
+        </div> -->
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="required">标题：</label></div>
+            <div class="flex-1 control-field">
+                <input  type="text" ng-model="formData.articleTitle" class="form-control" required />
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">作者：</label></div>
+            <div class="flex-1 control-field">
+                <input  type="text" ng-model="formData.articleAuthor" class="form-control"  />
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">标签：</label></div>
+            <div class="flex-1 control-field">
+                <input  type="text" ng-model="formData.articleLabel" class="form-control"  name="articleLabel"/>
+                <span class="c-b">(标签1,标签2)以英文逗号分隔</span>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title"><label class="">封面：</label></div>
+            <div class="flex-1 control-field">
+                <!-- 属性wu表示上传插件  ng-model绑定数据-->
+                <div class="wu" wu ng-model="formData.articleImage" >
+                    <input type="hidden" class="form-control file-upload" ng-model="formData.articleImage" name="articlePhoto" >
+                    <div class="pick-wrap">
+                        <div class="pick" data-preview="true" >上传图片</div>
+                    </div>
+                    <div class="file-list">
+                        
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title "><label class="required">内容：</label></div>
+            <div class="flex-1 control-field" style="width:100%;">
+                <textarea name="content" ng-model='formData.articleContent' meta-umeditor meta-umeditor-config="all_config"></textarea>
+            </div>
+        </div>
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title "><label class="">摘要：</label></div>
+            <div class="flex-1 control-field" >
+                <textarea name="articleSummary" ng-model='formData.articleSummary' style="width:100%;" class="dib vam"></textarea>
+                <span class="c-b dib vam">默认获取正文前50个字</span>
+            </div>
+        </div>
+        
+        
+        
+        <div class="control-group flex aic mb-7">
+            <div class="w-10em control-title">&nbsp;</div>
+            <div class="flex-1 control-field">
+                <button class="btn btn-primary" type="button" ng-click="saveAndPublish()" ng-disabled="submitForm.$invalid || loading">保存并发布</button>
+                
+                <button class="btn btn-primary" type="submit" ng-click="saveAndPreview()">预览</button>
+                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+            </div>
+
+        </div>
+        
+    </form>    
+</div>
+
+    

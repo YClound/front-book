@@ -1,0 +1,20 @@
+{
+    "code":0,
+    "message":"ok",
+    "data":{
+        "pager":{
+            "page":2,
+            "pages":22,
+            "total":220,
+            "pagesize":10
+        },
+        "list":[
+            {"id":"1","text":"浙江省","role":"0"},
+            {"id":"2","text":"江苏省","role":"0"},
+            {"id":"3","text":"北京市","role":"1"},
+            {"id":"4","text":"江西省","role":"0"},
+            {"id":"5","text":"山东省","role":"1"}
+
+        ]
+    }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>定时任务查询</title>
+    #parse("common/select.vm")
+    #parse("common/pagination.vm")
+    #parse("common/common.vm")
+    
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/doubleDate.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+	<script type="text/javascript" src="$!staticServer/js/doubleDate2.0.js"></script>
+	
+</head>
+<body class="list-body">
+    $!errorMsg
+     <div class="list-container">
+        <div class="alert-title fz-16">定时任务查询</div>
+        <form id="taskQueryForm" class="queryForm" action="queryTask.do" method="post" onsubmit="return submitCheck();" >
+            <table class="table query-style table-striped table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <td colspan="8" class="auto-style2">请填写查询条件</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="w-8em">任务编号</td>
+                        <td class="detail">
+                            <input type="text" name="id" value="$!taskQuery.id"  />
+                        </td>
+                        <td class="w-8em">业务类型</td>
+                        <td class="detail">
+                            #select($!bizList,'bizId',$!taskQuery.bizId)
+                        </td>                   
+                        <td class="w-8em">模块名称</td>
+                        <td class="detail">
+                            <input type="text" class="input-small" name="moduleName" value="$!taskQuery.moduleName"  />
+                        </td>
+                        <td class="w-8em">操作用户</td>
+                        <td class="detail">
+                            <input type="text" class="input-small" name="userName" value="$!taskQuery.userName"  />
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td class="w-8em">任务状态</td>
+                        <td class="detail">
+                            #select($!statusList,'status',$!taskQuery.status)
+                        </td> 
+                        <td class="w-8em">创建日期 </td>
+                        <td class="detail" colspan="3">
+                            <div class="input-append">
+                                <span class="input-date">
+                                    <input class="input-small doubledate" readonly="readonly" size="10" type="text" name="startGmtCreate" value="$!dateTool.format("yyyy-MM-dd", $!taskQuery.startGmtCreate)" />
+                                    <span class="add-on"><img src="../img/date.png"></span>
+                                </span>至
+                                <span class="input-date">
+                                    <input id="endtime" class="input-small doubledate" readonly="readonly" type="text" name="endGmtCreate" value="$!dateTool.format("yyyy-MM-dd", $!taskQuery.endGmtCreate)" />
+                                    <span class="add-on"><img src="../img/date.png"></span>
+                                </span>
+                            </div>
+                        </td>
+                                        
+                                          
+                    </tr>
+        
+                    <tr>
+                        <td colspan="8" align="left">
+                            <a class="btn btn-inverse"  onclick="javascript:query();"  >查询</a>
+                            <input class="btn btn-inverse"  type="reset" value="清空" />
+                        </td>
+                            
+                    </tr>
+                </tbody>
+             </table>
+
+            <table class="table table-list table-striped table-bordered table-condensed" id="list">
+                <thead>
+                    <tr class="tr_detail">
+                        <td>任务编号 </td>
+                        <td>业务编号</td>
+                        <td>模块名称</td>
+                        <td style="width:30%">任务描述 </td>
+                        <td>创建时间</td>
+                        <td>预期执行时间</td>
+                        <td>实际执行时间</td>
+                        <td>操作员 </td>
+                        <td>状态</td>
+                        <td>操作 </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    #foreach($!task in $!taskList)
+                        <tr>
+                        <td>$!task.id</td>
+                        <td>$!task.bizId</td>
+                        <td>$!task.moduleName</td>
+                        <td>
+                        <span  title="$!task.instanceDesc" style="overflow: hidden;display: block; text-overflow: ellipsis;width: 100%; white-space: nowrap;">$!task.instanceDesc
+                        </span>             
+                        </td>
+                        <td>$!dateTool.format("yyyy-MM-dd HH:mm:ss", $!task.gmtCreate)</td>
+                        <td>
+                            <font #if($!task.showBlue()) color=blue #end>
+                                $!dateTool.format("yyyy-MM-dd HH:mm:ss", $!task.commitTime)
+                            </font>
+                        </td>
+                        <td>
+                            #if($!task.isDone())
+                            <font #if($!task.showGreen()) color=green #end>
+                                $!dateTool.format("yyyy-MM-dd HH:mm:ss", $!task.gmtModify)
+                            </font>
+                            #else
+                                -
+                            #end                    
+                        </td>               
+                        <td>$!task.userName</td>
+                        <td>
+                            <font #if($!task.showRed())color=red #end #if($!task.showGreen())color=green #end  #if($!task.showBlue()) color=blue #end>
+                                $!task.statusDesc
+                            </font>
+                        </td>
+                        <td>
+                            #if($!task.canCancel())
+                                <a href="taskDeal.do?requestType=cancel&id=$!task.id" class="btn btn-mini btn-danger" onclick="return confirm('是否确认取消任务')">取消</a>
+                            #end
+                            #if($!task.canEdit())
+                                <a href="taskDeal.do?requestType=editIndex&id=$!task.id" class="btn btn-mini btn-primary add" >编辑</a>
+                            #end                            
+                        </td>
+                    </tr>
+                    #end
+                    
+                   
+                </tbody>
+            </table>
+             #pagination($!taskQuery,'taskQueryForm')
+        
+        </form>
+     
+    <script type="text/javascript">
+        $(function(){
+        $('.doubledate').kuiDate({
+            className:'doubledate',
+            isDisabled: "1"
+        });
+        });
+        
+        
+        function submitCheck()
+        {
+        	if(!checkDate()){
+    			return false;
+    		}
+        	return true;
+        }
+    
+		function checkDate(){
+			return true;
+		}
+		
+		function query(){
+			jQuery('#taskQueryForm').attr("action", "queryTask.do");
+			jQuery('#taskQueryForm').submit();
+		}
+    	
+    </script>
+</body>
+</html>

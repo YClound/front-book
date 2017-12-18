@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用户新增</title>
+    #parse("common/common.vm")
+    #parse("common/select.vm")
+    #parse("common/errorUtils.vm")  
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/list-common.css" />
+    <script type="text/javascript" src="$!staticServer/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="$!staticServer/js/jquery-ui-1.8.22.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="$!staticServer/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+    <script type="text/javascript" src="$!staticServer/js/tip.js"></script>
+	
+</head>
+<body>
+    $!errorMsg
+    <div class="list-container">
+        <div class="alert-title fz-16">用户新增</div>
+        <form id="form" class="queryForm" action="userInfoAdd.do" method="post" >
+            <input type="hidden" name="id" value="$!userInfo.id"/>
+            
+            <table class="table query-style table-striped table-bordered table-condensed list">
+                <thead>
+                    <tr>
+                        <td colspan="4" class="auto-style2">用户基本信息</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="w-8em">登录名 <font color="#FF0000">*</font></td>
+                        <td class="td-detail">
+                           <input type="text" name="loginId"   value="$!userInfoForm.loginId">
+                           #getErrorMessage($errorList,"loginId")
+                        </td>
+                        <td class="w-8em">用户名 <font color="#FF0000">*</font></td>
+                        <td class="td-detail">
+                            <input type="text" name="userName"   value="$!userInfoForm.userName">
+                                 #getErrorMessage($errorList,"userName")
+                        </td>            
+                    </tr>
+                    <tr>
+                        <td class="w-8em">公司信息 <font color="#FF0000">*</font></td>
+                        <td class="td-detail">
+                            <input type="text" name="compayInfo"   value="$!userInfoForm.compayInfo">
+                                 #getErrorMessage($errorList,"compayInfo")
+                        </td>
+                        <td class="w-8em">绑定手机号<font color="#FF0000">*</font></td>
+                        <td class="td-detail">
+                            <input type="text" name="mobile"   value="$!userInfoForm.mobile">
+                                #getErrorMessage($errorList,"mobile")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-8em">邮箱</td>
+                        <td class="td-detail">
+                            <input type="text" name="email"   value="$!userInfoForm.email">
+                                #getErrorMessage($errorList,"email")
+                        </td>
+                        <td class="w-8em">用户类型 <font color="#FF0000">*</font></td>
+                        <td class="td-detail">
+                            #select($typeList,"type",$!userInfoForm.type)
+                            #getErrorMessage($errorList,"type")
+                        </td>    
+                    </tr>                  
+                </tbody>        
+            </table>
+            <div id="downdiv">
+            <table class="table query-style table-striped table-bordered table-condensed list" id="downtable">
+                <tbody>
+                    <tr>
+                        <td class="w-8em">回调地址</td>
+                        <td class="td-detail">
+                           <input type="text" name="callbackUrl"   value="$!userInfoForm.callbackUrl">
+                           #getErrorMessage($errorList,"callbackUrl")
+                        </td>               
+                    </tr>       
+                </tbody>
+            </table>
+            </div>
+            <div id="updiv">
+            <table class="table query-style table-striped table-bordered table-condensed list" id="downtable">
+                 <tbody>
+                     <tr>
+                        <td class="w-8em">供货类型 <font color="#FF0000">*</font></td>
+                        <td class="td-detail">
+                            #select($supplyTypeList,"supplyType",$!userInfoForm.supplyType)
+                            #getErrorMessage($errorList,"supplyType")
+                        </td>   
+                        <td class="w-8em">是否异步供货 <font color="#FF0000">*</font></td>
+                        <td class="td-detail">
+                            #select($isAsyncSupplyList,"isAsyncSupply",$!userInfoForm.isAsyncSupply)
+                            #getErrorMessage($errorList,"isAsyncSupply")
+                        </td>       
+                    </tr>
+                    <tr>
+                        <td class="w-8em">阀值限定</td>
+                        <td class="td-detail">
+                           <input type="text" name="chargingLimit"   value="$!userInfoForm.chargingLimit">
+                           #getErrorMessage($errorList,"chargingLimit")
+                        </td>
+                        </td>               
+                    </tr>       
+                </tbody>
+            </table>
+            </div>
+            <table class="table query-style table-striped table-bordered table-condensed list">
+                <tbody> 
+                    <tr>
+                        <td colspan="4" align="left">注： 内部用户和下游代理商的初始密码为 ： Flow123456</td>
+                    </tr>
+                   <tr>
+                        <td colspan="4" align="left">注： 用户创建后默认没有权限，内部用户开通权限 和下游代理商开通业务权限,请联系系统管理员。</td>
+                    </tr>               
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" align="left">
+                            <input class="btn btn-inverse" id="find" type="submit" value="新增" />
+                            <input class="btn btn-inverse" type="button" onclick="javascript:window.location.href='queryUserInfo.do'" value="取消" /></td>
+                    </tr>
+                </tfoot>        
+            </table>
+        </form> 
+    </div>
+<script type="text/javascript">
+	window.onload=function(){
+		var sel = document.getElementById('type');
+		var downdiv = document.getElementById('downdiv');
+		var updiv = document.getElementById('updiv');
+		if(sel.value==2){
+			downdiv.style.display="block";
+			updiv.style.display="none";
+		}else if(sel.value==3){
+			updiv.style.display="block";
+			downdiv.style.display="none";
+		}else{
+			updiv.style.display="none";
+			downdiv.style.display="none";
+		}
+		sel.onchange=function(){
+			if(sel.value==2){
+				downdiv.style.display="block";
+				updiv.style.display="none";
+			}else if(sel.value==3){
+				downdiv.style.display="none";
+				updiv.style.display="block";
+			}else{
+				downdiv.style.display="none";
+				updiv.style.display="none";
+			}
+		}
+		
+	}
+</script>
+</body>
+</html>

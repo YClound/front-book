@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head()
+
+#set($contextPath = $!context.contextPath)
+
+<body>
+	
+	#header()
+
+	<div class="container main-container ">
+		<div class="row-fluid">
+		
+			#sidebar('userInfo')
+			
+			<div class="span10">
+				#if($!operName == "userInfoEdit")
+				#breadcrumb("商户信息修改",'userInfoEdit.htm')
+				#userInfoTab('userInfoEdit')
+				#elseif($!operName == "loginPwdEdit")
+				#breadcrumb("登录密码修改",'loginPwdEdit.htm')
+				#userInfoTab('loginPwdEdit')
+				#elseif($!operName == "payPwdEdit"||$!operName == "payPwdSet")
+				#breadcrumb("支付密码修改",'payPwdEdit.htm')
+				#userInfoTab('payPwdEdit')
+				#end
+				
+				<div class="sortable row-fluid">
+					<div class="span12">
+						<div class="content-result" style="border-top: 0px">
+									<div class="alert #showUserInfoOperResultClass($!result)">
+										 #showUserInfoOperResult($!result $!resultDescription)
+									</div>
+						</div>						
+					</div>
+				</div>
+
+			
+
+			</div>
+
+		</div>
+	</div>
+	#footer()
+</body>
+</html>

@@ -1,0 +1,78 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "pager": {
+            "page": 1,
+            "pages": 22,
+            "total": 220,
+            "pagesize": 10
+        },
+        "list": [
+            {
+                "articleId": "1",
+                "articleSociatyId":100,
+                "articleTitle":"西湖音乐节",
+                "sociatyName":null,
+                "articleType":"10",
+                "articleTypeName":"法律服务",
+                "articlePhoto":"http://7xjckn.com2.z0.glb.qiniucdn.com/2016-10-23_580c4c0a71777.jpg",
+                "articleOutline":"国内人均可支配收入逐年增加，可以投资理财的资金越来越多。人均可支配收入近11%的复合增长",
+                "articleContent":"国内人均可支配收入逐年增加，可以投资理财的资金越来越多。人均可支配收入近11%的复合增长",
+                "articleDate": "2016-11-11 14:00:00",
+                "articleReadAuth":"1,2",
+                "articleStatus":"1",
+                "top":0,
+                "articleClick":1000
+            },
+            {
+                "articleId": "1",
+                "articleSociatyId":100,
+                "articleTitle":"西湖音乐节2",
+                "sociatyName":"诸暨新昌商会",
+                "articleType":"10",
+                "articleTypeName":"法律服务",
+                "articlePhoto":"http://7xjckn.com2.z0.glb.qiniucdn.com/2016-10-23_580c4c0a71777.jpg",
+                "articleOutline":"国内人均可支配收入逐年增加，可以投资理财的资金越来越多。人均可支配收入近11%的复合增长",
+                "articleContent":"国内人均可支配收入逐年增加，可以投资理财的资金越来越多。人均可支配收入近11%的复合增长",
+                "articleDate": "2016-11-11 14:00:00",
+                "articleReadAuth":"1",
+                "articleStatus":"0",
+                "top":1,
+                "articleClick":1000
+            },
+            {
+                "articleId": "1",
+                "articleSociatyId":100,
+                "articleTitle":"西湖音乐节3",
+                "sociatyName":"北京新昌商会",
+                "articleType":"10",
+                "articleTypeName":"法律服务",
+                "articlePhoto":"http://7xjckn.com2.z0.glb.qiniucdn.com/2016-10-23_580c4c0a71777.jpg",
+                "articleOutline":"国内人均可支配收入逐年增加，可以投资理财的资金越来越多。人均可支配收入近11%的复合增长",
+                "articleContent":"国内人均可支配收入逐年增加，可以投资理财的资金越来越多。人均可支配收入近11%的复合增长",
+                "articleDate": "2016-11-11 14:00:00",
+                "articleReadAuth":"1",
+                "articleStatus":"0",
+                "top":1,
+                "articleClick":1000
+            },
+            {
+                "articleId": "1",
+                "articleSociatyId":100,
+                "articleTitle":"西湖音乐节4",
+                "sociatyName":"杭州新昌商会",
+                "articleType":"10",
+                "articleTypeName":"法律服务",
+                "articlePhoto":"http://7xjckn.com2.z0.glb.qiniucdn.com/2016-10-23_580c4c0a71777.jpg",
+                "articleOutline":"国内人均可支配收入逐年增加，可以投资理财的资金越来越多。人均可支配收入近11%的复合增长",
+                "articleContent":"国内人均可支配收入逐年增加，可以投资理财的资金越来越多。人均可支配收入近11%的复合增长",
+                "articleDate": "2016-11-11 14:00:00",
+                "articleReadAuth":"1",
+                "articleStatus":"0",
+                "top":1,
+                "articleClick":1000
+            }
+        ]
+    }
+}

@@ -1,0 +1,347 @@
+
+<!doctype html>
+<!--[if lte IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>分页</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <meta name="keywords" content="众筹,雏鹰网,股权众筹,天使轮,种子轮,天使投资,风险投资,众筹平台,创业融资,私募股权融资,私募股权投资平台,融资平台">
+    <meta name="description" content="雏鹰网是致力于帮助有梦想、有决心、有能力、够努力的早期创业者获得股权投资的互联网平台。打造融合众筹投资人和创业者学习、互助、交流的在线众创空间。梦想再小也要呵护，力量再小也要支持。">
+
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+
+    <link rel="stylesheet" href="../../assets/css/mobile/base.css">
+    <link rel="stylesheet" href="list.css">
+
+    <script src="../../assets/vendor/seajs/2.0.0/sea.js"></script>
+    <script src="../../assets/js/config.js"></script>
+    
+    <style>
+    .max640 {
+      max-width: 640px;
+      margin: 0 auto
+    }
+
+    .proj-item{padding:10px 10px 7px;background-color:#fff;margin:15px 0}
+.proj-item .img-box{width:150px;margin-right:10px;position:relative}
+.proj-item h4{margin:0;font-size:15px;overflow:hidden}
+.proj-item .sub-title{height:2.8572em;overflow:hidden;position:relative;color:#999}
+.proj-item .tags-box{margin-top:10px;color:#999}
+.proj-item .fund-info{-webkit-box-pack:justify;box-pack:justify;-webkit-justify-content:space-between;-moz-justify-content:space-between;-ms-justify-content:space-between;-o-justify-content:space-between;justify-content:space-between;-ms-flex-pack:justify}
+.proj-item .fund-info strong{display:block;color:#3399e0}
+.proj-item .find-lead{padding:8px 0}
+.progress{margin:20px 0}
+.progress .track{width:100%;height:6px;border-radius:3px;background-color:#ccc;position:relative;overflow:hidden;z-index:2}
+.progress .train{position:absolute;width:100%;height:6px;background-color:#3399e0}
+.infinite-loading .end-text,.infinite-loading.end .loading-text{display:none}
+.infinite-loading.end .end-text{color:#999;display:inline}
+
+.proj-item .img-box{width:100%;margin-right:0px;position:relative}
+
+
+
+
+
+
+
+    </style>
+    
+   
+</head>
+
+<body class="bg">
+
+
+
+
+<div class="s-proj-list max640">
+    <!--  -->
+    <h2>无数据的时候</h2>
+    <ul class="proj-list proj-list1">
+    
+        <li class="proj-item por">
+          <a href="/project/detail/id/GQ14564561900010824.html">
+            <div class="proj-header">
+              <div class="img-box">
+                <div class="pin pin-stage">
+                  <u style="background-color:#4094f4">
+                    合投中
+                  </u>
+                </div>
+                <img img src="http://7xjckn.com2.z0.glb.qiniucdn.com/2016-02-26_56cfc1fd9f9b1.jpg"
+                onerror="imgErr(this, 'nopic.jpg')" alt="一人弗——国内首家众筹禅修中心">
+              </div>
+              <div class="summary flex-1">
+                <h4>
+                  一人弗——国内首家众筹禅修中心
+                </h4>
+                <div class="sub-title">
+                  “ 一人弗”结合禅修和民宿的热点，在自然环境相对寂静的寺院和具有原生态农耕元素的自然村落寻找那些可遇而不可求的千年古寺和泥土古木结构的老宅，只需进行禅意化的升级改造，即可体验多元化、高品质的禅修生活
+                </div>
+                <div class="tags-box">
+                  <u class="fz-small">
+                    <i class="if icon-map-marker">
+                    </i>
+                    浙江省
+                  </u>
+                  &nbsp;
+                  <u class='fr fz-small'>
+                    <i class="if icon-eye">
+                    </i>
+                    1534
+                  </u>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="progress">
+            <div class="track">
+              <div class="train" style="left:-84%">
+              </div>
+            </div>
+          </div>
+          
+        </li>
+    
+    </ul>
+    <!-- data-template 模板ID ；data-total-page 总页数; form.action ajax提交路径，隐藏域为参数-->
+    <div class="more-loading more-loading1 mt-8 " data-type="json" data-template="projItem" data-list-wrap=".proj-list1" data-total-page="0" >
+        <form class="ajax-form" action="/static/assets/data/project_list_nodata.json" data-ajax-method="get">
+            <input type="hidden" name="type" value="">
+            <input type="hidden" name="offset" value=""  data-name="offset">
+            <input type="hidden" name="keyword" value="">
+
+        </form>
+        <div class="tac loading">
+            <button type="button" class="btn btn-primary more">点击加载更多</button>
+            <div class="loading-text" >正在加载中...</div>
+            <div class="end-text">已经没有数据了</div>
+        </div>
+    </div>
+  
+    <h2>有多页数据的时候</h2>
+    <ul class="proj-list proj-list2">
+    
+        <li class="proj-item por">
+          <a href="/project/detail/id/GQ14564561900010824.html">
+            <div class="proj-header">
+              <div class="img-box">
+                <div class="pin pin-stage">
+                  <u style="background-color:#4094f4">
+                    合投中
+                  </u>
+                </div>
+                <img img src="http://7xjckn.com2.z0.glb.qiniucdn.com/2016-02-26_56cfc1fd9f9b1.jpg"
+                onerror="imgErr(this, 'nopic.jpg')" alt="一人弗——国内首家众筹禅修中心">
+              </div>
+              <div class="summary flex-1">
+                <h4>
+                  一人弗——国内首家众筹禅修中心
+                </h4>
+                <div class="sub-title">
+                  “ 一人弗”结合禅修和民宿的热点，在自然环境相对寂静的寺院和具有原生态农耕元素的自然村落寻找那些可遇而不可求的千年古寺和泥土古木结构的老宅，只需进行禅意化的升级改造，即可体验多元化、高品质的禅修生活
+                </div>
+                <div class="tags-box">
+                  <u class="fz-small">
+                    <i class="if icon-map-marker">
+                    </i>
+                    浙江省
+                  </u>
+                  &nbsp;
+                  <u class='fr fz-small'>
+                    <i class="if icon-eye">
+                    </i>
+                    1534
+                  </u>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="progress">
+            <div class="track">
+              <div class="train" style="left:-84%">
+              </div>
+            </div>
+          </div>
+          
+        </li>
+    
+    </ul>
+    <!-- data-template 模板ID ；data-total-page 总页数; form.action ajax提交路径，隐藏域为参数-->
+    <div class="more-loading more-loading2 mt-8 " data-type="json" data-template="projItem" data-list-wrap=".proj-list2" data-total-page="3" >
+        <form class="ajax-form" action="/static/assets/data/project_list.json" data-ajax-method="get">
+            <input type="hidden" name="type" value="">
+            <input type="hidden" name="offset" value=""  data-name="offset">
+            <input type="hidden" name="keyword" value="">
+
+        </form>
+        <div class="tac loading">
+            <button type="button" class="btn btn-primary more">点击加载更多</button>
+            <div class="loading-text" >正在加载中...</div>
+            <div class="end-text">已经没有数据了</div>
+        </div>
+    </div>
+
+
+    <h2>只有1页数据的时候</h2>
+    <ul class="proj-list proj-list3">
+    
+        <li class="proj-item por">
+          <a href="/project/detail/id/GQ14564561900010824.html">
+            <div class="proj-header">
+              <div class="img-box">
+                <div class="pin pin-stage">
+                  <u style="background-color:#4094f4">
+                    合投中
+                  </u>
+                </div>
+                <img img src="http://7xjckn.com2.z0.glb.qiniucdn.com/2016-02-26_56cfc1fd9f9b1.jpg"
+                onerror="imgErr(this, 'nopic.jpg')" alt="一人弗——国内首家众筹禅修中心">
+              </div>
+              <div class="summary flex-1">
+                <h4>
+                  一人弗——国内首家众筹禅修中心
+                </h4>
+                <div class="sub-title">
+                  “ 一人弗”结合禅修和民宿的热点，在自然环境相对寂静的寺院和具有原生态农耕元素的自然村落寻找那些可遇而不可求的千年古寺和泥土古木结构的老宅，只需进行禅意化的升级改造，即可体验多元化、高品质的禅修生活
+                </div>
+                <div class="tags-box">
+                  <u class="fz-small">
+                    <i class="if icon-map-marker">
+                    </i>
+                    浙江省
+                  </u>
+                  &nbsp;
+                  <u class='fr fz-small'>
+                    <i class="if icon-eye">
+                    </i>
+                    1534
+                  </u>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="progress">
+            <div class="track">
+              <div class="train" style="left:-84%">
+              </div>
+            </div>
+          </div>
+          
+        </li>
+    
+    </ul>
+    <!-- data-template 模板ID ；data-total-page 总页数; form.action ajax提交路径，隐藏域为参数-->
+    <div class="more-loading more-loading3 mt-8 " data-type="json" data-template="projItem" data-list-wrap=".proj-list3" data-total-page="1" >
+        <form class="ajax-form" action="/static/assets/data/project_list1.json" data-ajax-method="get">
+            <input type="hidden" name="type" value="">
+            <input type="hidden" name="offset" value=""  data-name="offset">
+            <input type="hidden" name="keyword" value="">
+
+        </form>
+        <div class="tac loading">
+            <button type="button" class="btn btn-primary more">点击加载更多</button>
+            <div class="loading-text" >正在加载中...</div>
+            <div class="end-text">已经没有数据了</div>
+        </div>
+    </div>
+
+    
+</div>
+
+
+
+<script type="text/tempalte" id="projItem">
+    <li class="proj-item por abc">
+          <a href="/project/detail/id/GQ14564561900010824.html">
+            <div class="proj-header">
+              <div class="img-box">
+                <div class="pin pin-stage">
+                  <u style="background-color:#4094f4">
+                    合投中
+                  </u>
+                </div>
+                <img img src="http://7xjckn.com2.z0.glb.qiniucdn.com/2016-02-26_56cfc1fd9f9b1.jpg"
+                onerror="imgErr(this, 'nopic.jpg')" alt="一人弗——国内首家众筹禅修中心">
+              </div>
+              <div class="summary flex-1">
+                <h4>
+                  {{title}}
+                </h4>
+                <div class="sub-title">
+                  {{info}}
+                </div>
+                <div class="tags-box">
+                  <u class="fz-small">
+                    <i class="if icon-map-marker">
+                    </i>
+                    {{from}}
+                  </u>
+                  &nbsp;
+                  <u class='fr fz-small'>
+                    <i class="if icon-eye">
+                    </i>
+                    1534
+                  </u>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="progress">
+            <div class="track">
+              <div class="train" style="left:-84%">
+              </div>
+            </div>
+          </div>
+          <div class="flex fund-info">
+            <div>
+              <strong>
+                ¥50
+                <small class="dib ml-2">
+                  万
+                </small>
+              </strong>
+              <small>
+                融资金额
+              </small>
+            </div>
+            <div>
+              <strong>
+                ¥8
+                <small class="dib ml-2">
+                  万
+                </small>
+              </strong>
+              <small>
+                已筹
+              </small>
+            </div>
+            <div>
+              <strong>
+                16%
+              </strong>
+              <small>
+                已完成
+              </small>
+            </div>
+          </div>
+        </li>
+</script>
+
+<script>
+
+    seajs.use('/static/doc/page/page')
+
+</script>
+
+</body>
+</html>

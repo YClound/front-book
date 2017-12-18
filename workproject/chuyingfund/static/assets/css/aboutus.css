@@ -1,0 +1,336 @@
+.aboutus-head{
+    width: 100%;
+    height: 66px;
+    border-top: #000 1px solid;
+    text-align: center;
+    font-size: 14px;
+    line-height: 62px;
+    background-color: #242424;
+    color: #fff;
+}
+.aboutus-head a{
+    display: inline-block;
+    margin-right: 80px;
+}
+.aboutus-head .active{
+    border-bottom: #fff 3px solid;
+}
+.aboutus-head a:hover{
+    cursor: pointer;
+    color: #fff;
+}
+
+.aboutus-head a:last-child{
+    margin-right: 0px;
+}
+
+.aboutus-company-banner{
+    width: 100%;
+    height: 650px;
+    background-image: url('/static/assets/img/about-us/company-info.jpg');
+    background-position: center 0;
+    padding-top: 200px;
+    text-align: center;
+}
+.aboutus-company-banner h1{
+    color: #fff;
+    font-size: 50px;
+    margin-bottom: 200px;
+}
+.aboutus-company-banner p{
+    width: 70%;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+.aboutus-company-banner a:hover{color: #fff;}
+.aboutus-company-knowus{
+    width: 1030px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 70px;
+    padding-top: 50px;
+}
+.aboutus-company-knowus h1{
+    font-size: 39px;
+}
+.aboutus-company-knowus p{
+    font-size: 22px;
+    margin-bottom: 70px;
+}
+.aboutus-company-knowus .vjs-default-skin .vjs-big-play-button {
+    left: 45%;
+    top: 40%; 
+}
+.aboutus-company-value{
+    width: 100%;
+    height: 655px;
+    background-image: url('/static/assets/img/about-us/place-value.jpg');
+    background-position: center 0;
+}
+.aboutus-company-opendream{
+    position: relative;
+    width: 1030px;
+    height: 685px;
+    margin: 0 auto;
+    background-image: url('/static/assets/img/about-us/company-mac.jpg');
+    background-position: center 0;
+    padding-top: 40px;
+}
+.aboutus-company-opendream h1{
+    font-size: 25px;
+}
+.aboutus-company-opendream p{
+    font-size: 15px;
+}
+.aboutus-company-opendream .check-project{
+    position: absolute;
+    bottom: 40px;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: #1ba2dc 2px solid;
+    line-height: 40px;
+    text-align: center;
+    left: 41%;
+    color: #1ba2dc;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+.aboutus-company-opendream .check-project:hover{
+    color: #fff;
+    background-color: #1ba2dc;
+}
+
+/*我们的团队*/
+.aboutus-ourteam{
+    margin-bottom: 70px;
+}
+.aboutus-ourteam .bg-clorf{
+    background-color: #f4f6f8;
+}
+.aboutus-ourteam-banner{
+    width: 100%;
+    height: 630px;
+    background-image: url('/static/assets/img/about-us/our-team.jpg');
+    background-position: center 0; 
+}
+.aboutus-ourteam-title{
+    margin: 100px auto 80px;
+}
+.aboutus-ourteam-title h1{
+    font-size: 33px;
+    margin-bottom: 20px;
+}
+.aboutus-ourteam-title p{
+    font-size: 18px;
+}
+.aboutus-ourteam-info{
+    width: 100%;
+    height: 300px;
+    padding: 30px 0px;
+}
+.aboutus-ourteam-content{
+    position: relative;
+    width: 1030px;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 260px; 
+}
+.aboutus-ourteam-content .aboutus-ourteam-img{
+    position: absolute;
+    left: 0;
+    width: 210px;
+    height: 240px;
+    background-position: center 0; 
+}
+.aboutus-ourteam-content h1{
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+.aboutus-ourteam-content h2{
+    font-size: 20px;
+    margin-top: 10px;
+}
+.aboutus-ourteam-content p{
+    color: #6d7b87;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+.aboutus-ourteam-content .aboutus-ourteam-detail{
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+
+/*我们的优势*/
+.aboutus-ouradvantage .aboutus-ouradvantage-banner{
+    width: 100%;
+    height: 626px;
+    background-image: url('/static/assets/img/about-us/our-advantage.jpg');
+    background-position: center 0;
+}
+.aboutus-ouradvantage .aboutus-ouradvantage-content{
+    width: 100%;
+    background-image: url('/static/assets/img/about-us/succeed-case.jpg');
+    background-position: center 0;
+    color: #fff;
+    text-align: center;
+    padding-top: 60px;
+    background-repeat: no-repeat;
+}
+.aboutus-ouradvantage .aboutus-ouradvantage-case{
+    position: relative;
+    border-radius: 5px;
+    width: 1000px;
+    height: 270px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding-left: 360px;
+    padding-right: 40px;
+    color: #000;
+}
+.aboutus-ouradvantage-case .ouradvantage-case-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background-position: center center;
+    width: 334px;
+    height: 270px;
+}
+.aboutus-ouradvantage-case .ouradvantage-case-logo{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 90px;
+    left: 284px;
+    z-index: 100;
+    border-radius: 50%;
+    background-position: center center;
+}
+.aboutus-ouradvantage-case h1{
+    padding-top: 40px;
+    font-size: 24px;
+}
+/* .aboutus-ouradvantage-case .slogan{
+    height: 30px;
+    width: 550px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} */
+.aboutus-ouradvantage-case .finance-ratio{
+    display: none;
+    width: 175px;
+    height: 82px;
+    padding-top: 11px;
+    border: #cccccc 1px solid;
+    line-height: 30px;
+    font-size: 16px;
+}
+.aboutus-ouradvantage-case .finance-ratio:last-child{
+    margin-left: 95px;
+}
+.aboutus-ouradvantage-check{
+    border-radius: 5px;
+    width: 1000px;
+    height: 258px;
+    margin: 0 auto;
+    /* background:  -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#000));
+    background:  -moz-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#000));
+    background:  -ms-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#000));
+    background:  -o-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#000));
+    opacity: 0.4;
+    background-color:rgba(255,255,255,0.1)!important; */
+    background-image: url('/static/assets/img/about-us/opacity.png');
+    background-position: center center;
+}
+.aboutus-ouradvantage-check .if{
+    font-size: 40px;
+    color: #fff;
+    margin-top: 30px;
+}
+.aboutus-ouradvantage-check h2{
+    font-size: 22px;
+}
+.aboutus-ouradvantage-check .aboutus-ouradvantage-checkbtn{
+    display: block;
+    width: 185px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #000;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+}
+/*开启梦想*/
+.aboutus-ouradvantage .aboutus-ouradvantage-startDream{
+    width: 100%;
+    height: 375px;
+    background-color: #1ba2dc;
+    text-align: center;
+    color: #fff;
+    padding-top: 120px;
+}
+.aboutus-ouradvantage-startDream h1{
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+.aboutus-ouradvantage-startDream .ouradvantage-startDream-btn{
+    display: block;
+    width: 185px;
+    height: 45px;
+    margin: 0 auto;
+    line-height: 45px;
+    border-radius: 5px;
+    border: #fff 2px solid;
+    font-size: 18px;
+}
+.aboutus-ouradvantage-startDream .ouradvantage-startDream-btn:hover{
+    color: #fff;
+}
+/*联系我们*/
+.aboutus-connectus{
+    width: 100%;
+}
+.aboutus-connectus .aboutus-connectus-detail{
+    width: 1100px;
+    margin: 0 auto;
+    padding: 44px 0 150px;
+    text-align: center;
+}
+.aboutus-connectus .aboutus-connectus-detail h1{
+    font-size: 32px;
+}
+.aboutus-connectus .connectus-img{
+    width: 75px;
+    height: 75px;
+    background-position: center center;  
+    margin: 0 auto; 
+    margin-bottom: 40px;
+    margin-top: 80px;
+}
+
+.aboutus-connectus .aboutus-connectus-info{
+    float: left;
+    margin-right: 5%;
+    font-size: 14px;
+}
+.aboutus-connectus .aboutus-connectus-info:last-child{
+    margin-right: 0px;
+}
+
+.aboutus-connectus-map{
+    width: 100%;
+    height: 565px;
+    background-image: url('/static/assets/img/about-us/connect-us.jpg');
+    background-position: center 0;
+}

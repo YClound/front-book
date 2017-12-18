@@ -1,0 +1,562 @@
+<!doctype html>
+<!--[if lte IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="zh-CN"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="email=no"/>
+    <meta name="format-detection" content="address=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-title" content="雏鹰网"/>
+    <title>雏鹰网</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="keywords" content="众筹,雏鹰网,雏鹰众筹,基金,种子基金,股权众筹,天使轮,种子轮,天使投资,风险投资,众筹平台,创业融资,私募股权融资,私募股权投资平台,融资平台">
+    <meta name="description" content="雏鹰网是致力于帮助有梦想、有决心、有能力、够努力的早期创业者获得股权投资的互联网平台。打造融合众筹投资人和创业者学习、互助、交流的在线众创空间。梦想再小也要呵护，力量再小也要支持。">
+    <!-- apple icon -->
+    <link type="image/png" href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../assets/css/mobile/base.css">
+    <link rel="stylesheet" href="../assets/css/chuying.css">
+
+    <link rel="stylesheet" href="../assets/css/investor-list.css" type="text/css">
+
+
+    <script src="../assets/vendor/seajs/2.0.0/sea.js"></script>
+    <script src="../assets/js/config.js"></script>
+    
+    
+</head>
+  <body>
+    <div class="investor-list">
+      <div class="spacer20"></div>
+      <div class="investor-container">
+        <a class="btn-filter" href="#sidebar" onclick="investor.Page.openSidebar(this);return false;">筛选投资人</a>
+
+        <div id="sidebar" class="sidebar">
+         <a class="btn-close" onclick="investor.Page.closeSidebar(this);return false;"><span class="fa fa-close"></span></a>
+          <div class="block">
+            <div class="sub-block block-stage">
+              <h4 class="block-title">融资轮次</h4>
+              <ul class="condlist">
+                <li class="selected-item" data-id="stage-all">
+                  <a href="#"><span class="label">所有</span></a>
+                </li>
+                <li data-id="stage-1">
+                  <a href="#">
+                    <input type="radio" name="stage" value="1" />
+                    <span class="label">种子轮/天使轮</span>
+                  </a>
+                </li>
+                <li data-id="stage-2">
+                  <a href="#">
+                    <input type="radio" name="stage" value="2" />
+                    <span class="label">Pre-A轮</span>
+                  </a>
+                </li>
+                <li data-id="stage-3">
+                  <a href="#">
+                    <input type="radio" name="stage" value="3" />
+                    <span class="label">A轮</span>
+                  </a>
+                </li>
+                <li data-id="stage-4">
+                  <a href="#">
+                    <input type="radio" name="stage" value="4" />
+                    <span class="label">B轮</span>
+                  </a>
+                </li>
+                <li data-id="stage-5">
+                  <a href="#">
+                    <input type="radio" name="stage" value="5" />
+                    <span class="label">C轮</span>
+                  </a>
+                </li>
+                <li data-id="stage-6">
+                  <a href="#">
+                    <input type="radio" name="stage" value="6" />
+                    <span class="label">D轮</span>
+                  </a>
+                </li>
+                <li data-id="stage-7">
+                  <a href="#">
+                    <input type="radio" name="stage" value="7" />
+                    <span class="label">D轮以上</span>
+                  </a>
+                </li>
+              </ul>
+            </div><!--sub-block block-stage end-->
+            <!--领域标签-->
+            <div class="sub-block block-feild">
+              <h4 class="block-title">领域标签</h4>
+              <ul class="condlist">
+                <li class="selected-item" data-id="stage-all">
+                  <a href="#"><span class="label">所有</span></a>
+                </li>
+                <li data-id="stage-1">
+                  <a href="#">
+                    <input type="radio" name="stage" value="1" />
+                    <span class="label">#O2O</span>
+                  </a>
+                </li>
+                <li data-id="stage-2">
+                  <a href="#">
+                    <input type="radio" name="stage" value="2" />
+                    <span class="label">#社交</span>
+                  </a>
+                </li>
+                <li data-id="stage-3">
+                  <a href="#">
+                    <input type="radio" name="stage" value="3" />
+                    <span class="label">#智能硬件</span>
+                  </a>
+                </li>
+                <li data-id="stage-4">
+                  <a href="#">
+                    <input type="radio" name="stage" value="4" />
+                    <span class="label">#B2B</span>
+                  </a>
+                </li>
+                <li data-id="stage-5">
+                  <a href="#">
+                    <input type="radio" name="stage" value="5" />
+                    <span class="label">#汽车</span>
+                  </a>
+                </li>
+                <li data-id="stage-6">
+                  <a href="#">
+                    <input type="radio" name="stage" value="6" />
+                    <span class="label">#智能硬件</span>
+                  </a>
+                </li>
+                <li data-id="stage-7">
+                  <a href="#">
+                    <input type="radio" name="stage" value="7" />
+                    <span class="label">#B2B</span>
+                  </a>
+                </li>
+                <li data-id="stage-8">
+                  <a href="#">
+                    <input type="radio" name="stage" value="8" />
+                    <span class="label">#汽车</span>
+                  </a>
+                </li>
+
+                <li data-id="stage-9">
+                  <a href="#">
+                    <input type="radio" name="stage" value="9" />
+                    <span class="label">#智能硬件</span>
+                  </a>
+                </li>
+                <li data-id="stage-10">
+                  <a href="#">
+                    <input type="radio" name="stage" value="10" />
+                    <span class="label">#B2B</span>
+                  </a>
+                </li>
+                <li data-id="stage-11">
+                  <a href="#">
+                    <input type="radio" name="stage" value="11" />
+                    <span class="label">#汽车</span>
+                  </a>
+                </li>
+
+                <li data-id="stage-12">
+                  <a href="#">
+                    <input type="radio" name="stage" value="12" />
+                    <span class="label">#智能硬件</span>
+                  </a>
+                </li>
+                <li data-id="stage-13">
+                  <a href="#">
+                    <input type="radio" name="stage" value="13" />
+                    <span class="label">#B2B</span>
+                  </a>
+                </li>
+                <li data-id="stage-14">
+                  <a href="#">
+                    <input type="radio" name="stage" value="14" />
+                    <span class="label">#汽车</span>
+                  </a>
+                </li>
+
+                <li data-id="stage-15">
+                  <a href="#">
+                    <input type="radio" name="stage" value="15" />
+                    <span class="label">#智能硬件</span>
+                  </a>
+                </li>
+                <li data-id="stage-16">
+                  <a href="#">
+                    <input type="radio" name="stage" value="16" />
+                    <span class="label">#B2B</span>
+                  </a>
+                </li>
+                <li data-id="stage-17">
+                  <a href="#">
+                    <input type="radio" name="stage" value="17" />
+                    <span class="label">#汽车</span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+            <!--地区-->
+
+            <div class="sub-block block-arear">
+              <h4 class="block-title">地区</h4>
+              <ul class="condlist">
+                <li class="selected-item" data-id="stage-all">
+                  <a href="#"><span class="label">所有</span></a>
+                </li>
+                <li data-id="stage-1">
+                  <a href="#">
+                    <input type="radio" name="stage" value="1" />
+                    <span class="label">北京</span>
+                  </a>
+                </li>
+                <li data-id="stage-2">
+                  <a href="#">
+                    <input type="radio" name="stage" value="2" />
+                    <span class="label">上海</span>
+                  </a>
+                </li>
+                <li data-id="stage-3">
+                  <a href="#">
+                    <input type="radio" name="stage" value="3" />
+                    <span class="label">广州</span>
+                  </a>
+                </li>
+                <li data-id="stage-4">
+                  <a href="#">
+                    <input type="radio" name="stage" value="4" />
+                    <span class="label">深圳</span>
+                  </a>
+                </li>
+                <li data-id="stage-5">
+                  <a href="#">
+                    <input type="radio" name="stage" value="5" />
+                    <span class="label">杭州</span>
+                  </a>
+                </li>
+                <li data-id="stage-6">
+                  <a href="#">
+                    <input type="radio" name="stage" value="6" />
+                    <span class="label">成都</span>
+                  </a>
+                </li>
+                <li data-id="stage-7">
+                  <a href="#">
+                    <input type="radio" name="stage" value="7" />
+                    <span class="label">厦门</span>
+                  </a>
+                </li>
+                <li data-id="stage-8">
+                  <a href="#">
+                    <input type="radio" name="stage" value="8" />
+                    <span class="label">常州</span>
+                  </a>
+                </li>
+
+                <li data-id="stage-9">
+                  <a href="#">
+                    <input type="radio" name="stage" value="9" />
+                    <span class="label">苏州</span>
+                  </a>
+                </li>
+                <li data-id="stage-10">
+                  <a href="#">
+                    <input type="radio" name="stage" value="10" />
+                    <span class="label">珠海</span>
+                  </a>
+                </li>
+                <li data-id="stage-11">
+                  <a href="#">
+                    <input type="radio" name="stage" value="11" />
+                    <span class="label">东莞</span>
+                  </a>
+                </li>
+
+                <li data-id="stage-12">
+                  <a href="#">
+                    <input type="radio" name="stage" value="12" />
+                    <span class="label">青岛</span>
+                  </a>
+                </li>
+                <li data-id="stage-13">
+                  <a href="#">
+                    <input type="radio" name="stage" value="13" />
+                    <span class="label">大连</span>
+                  </a>
+                </li>
+                <li data-id="stage-14">
+                  <a href="#">
+                    <input type="radio" name="stage" value="14" />
+                    <span class="label">重庆</span>
+                  </a>
+                </li>
+
+                <li data-id="stage-15">
+                  <a href="#">
+                    <input type="radio" name="stage" value="15" />
+                    <span class="label">南京</span>
+                  </a>
+                </li>
+                <li data-id="stage-16">
+                  <a href="#">
+                    <input type="radio" name="stage" value="16" />
+                    <span class="label">武汉</span>
+                  </a>
+                </li>
+                <li data-id="stage-17">
+                  <a href="#">
+                    <input type="radio" name="stage" value="17" />
+                    <span class="label">长沙</span>
+                  </a>
+                </li>
+
+                <li data-id="stage-18">
+                  <a href="#">
+                    <input type="radio" name="stage" value="18" />
+                    <span class="label">香港</span>
+                  </a>
+                </li>
+                <li data-id="stage-19">
+                  <a href="#">
+                    <input type="radio" name="stage" value="19" />
+                    <span class="label">海外</span>
+                  </a>
+                </li>
+                <li data-id="stage-20">
+                  <a href="#">
+                    <input type="radio" name="stage" value="20" />
+                    <span class="label">其他</span>
+                  </a>
+                </li>
+              </ul>
+            </div><!--地区结束-->
+
+          </div><!--block end-->
+        </div><!--sidebar end-->
+
+
+        <div class="main-content">
+          <div class="sort clearfix">
+            <label>列表排序：</label>
+            <ul>
+              <li class="active"><a href="#">最新加入</a></li>
+              <li><a href="#">活跃度</a></li>
+            </ul>
+          </div>
+
+          <div class="inver-list">
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo" >
+                  <img src="1.png"   onerror="imgErr(this)" />
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目,关注B2B，体育类项目关注B2B，体育类项目关注B2B，体育类项目dd</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+
+
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo">
+                  <img src="../assets/img/investorphoto.png" data-type="avatar" />
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo">
+                  <img src="../assets/img/investorphoto.png" data-type="avatar"/>
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo">
+                  <img src="../assets/img/investorphoto.png" data-type="avatar" />
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo">
+                  <img src="../assets/img/investorphoto.png" data-type="avatar"/>
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo">
+                  <img src="../assets/img/investorphoto.png" data-type="avatar"/>
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo"> 
+                  <img src="../assets/img/investorphoto.png" data-type="avatar" />
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo">
+                  <img src="../assets/img/investorphoto.png" data-type="avatar" />
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo">
+                  <img src="../assets/img/investorphoto.png" data-type="avatar"/>
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+
+            <div class="user-item clearfix">
+              <a class="url" href="#" target="_blank">
+                <div class="inverstor-photo">
+                  <img src="../assets/img/investorphoto.png" data-type="avatar" />
+                </div>
+                <div class="information">
+                  <h4>李楠</h4>
+                  <div class="position">北京创梦创业有限公司·投资经理</div>
+                  <div class="intor">关注B2B，体育类项目</div>
+                </div>
+                <dl class="inverstor-tages clearfix">
+                  <dt>关注行业领域：</dt>
+                  <dd>消费互联网、B2B</dd>
+                  <dt>偏好投资阶段：</dt>
+                  <dd>种子轮/天使轮、Pre-A轮、A轮、B轮</dd>
+                </dl>
+              </a>
+            </div><!--user-item end-->
+          </div>
+
+          <div class="pagination-container">
+              <ul class="pagination" id="pagination1"></ul>
+          </div>
+
+        </div><!--main-content end-->
+        <div class="clear"></div>
+      </div><!--investor-container end-->
+    </div><!--investor-list end-->
+    
+    <script>
+      seajs.use("/static/assets/js/module/investor-list.js")
+    </script>
+  </body>
+</html>

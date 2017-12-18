@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN" "http://ibatis.apache.org/dtd/abator-config_1_0.dtd" >
+<abatorConfiguration >
+  <abatorContext >
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.109:3306/longan" userId="root" password="abcabc" >
+      <classPathEntry location="D:\java\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar" />
+    </jdbcConnection>
+    <javaModelGenerator targetPackage="com.longan.biz.dataobject" targetProject="longan-supply-biz/src/main/java" />
+    <sqlMapGenerator targetPackage="dbmaps" targetProject="longan-supply-biz/src/main/resources" />
+    <daoGenerator targetPackage="com.longan.biz.dao.impl" targetProject="longan-supply-biz/src/main/java" type="GENERIC-CI" />
+        <table schema="mysql" tableName="acct_log" >
+    </table>
+        <table schema="mysql" tableName="acct_info" >
+    </table>
+        <table schema="mysql" tableName="biz_order" >
+    </table>
+        <table schema="mysql" tableName="charge_order" >
+    </table>
+        <table schema="mysql" tableName="item" >
+    </table>
+        <table schema="mysql" tableName="order_log" >
+    </table>
+        <table schema="mysql" tableName="pay_order" >
+    </table>
+        <table schema="mysql" tableName="refund_order" >
+    </table>
+        <table schema="mysql" tableName="user_info" >
+    </table>
+    <table schema="mysql" tableName="stock" >
+    </table>
+  </abatorContext>
+</abatorConfiguration>

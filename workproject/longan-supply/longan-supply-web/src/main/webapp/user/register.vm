@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+#head()
+
+<body>
+
+	#headerUnLogin()
+
+	<div class="container main-container register-main">
+		<div class="row-fluid">
+			<div class="span9 box">
+				<div class="box-header well" data-original-title="">
+					<h2>用户注册</h2>
+					<div class="box-icon"></div>
+				</div>
+				<div class="box-content" style="padding: 15px;"> 
+					<form id="userRegisterForm" class="form-horizontal" action="registerCommit.htm" method="post">
+						<input id="pwd" type="hidden" name="pwd" >
+						<input id="token" type="hidden" name="token" value="$!userRegisterForm.token">
+						<input id="ts" type="hidden" name="ts" value="$!userRegisterForm.ts">
+						
+						<div class="tangtang-heading">
+							<i class="icon icon-user"></i> <span>基本信息</span>
+						</div>
+						<div id="errorMsg" class="#if(!$!errorMsg) hidden #end alert alert-error">
+							$!errorMsg  请重试。
+						</div>
+						
+						<div class="control-group">
+									<label class="control-label" for="loginId">登录名<font color="#FF0000">*</font>：</label>
+									<div class="controls" id="loginDiv">
+										<input id="loginId" name="loginId" type="text" placeholder="请用手机号注册" value="$!userRegisterForm.loginId">
+										#getErrorMessage($errorList,'loginId')
+									</div>
+						</div>
+						
+						<div class="control-group">
+									<label class="control-label" for="email">邮箱：</label>
+									<div class="controls">
+										<input id="email" name="email" type="text" placeholder="邮箱" value="$!userRegisterForm.email">#getErrorMessage($errorList,'email')
+									</div>
+						</div>
+						
+						<div class="control-group">
+									<label class="control-label" for="userName">用户昵称<font color="#FF0000">*</font>：</label>
+									<div class="controls">
+										<input id="userName" name="userName" type="text" placeholder="1-16字符，不含特殊字符" value="$!userRegisterForm.userName">#getErrorMessage($errorList,'userName')
+									</div>
+						</div>
+						<div class="control-group">
+									<label class="control-label" for="loginPwd">登录密码<font color="#FF0000">*</font>：</label>
+									<div class="controls">
+										<input id="loginPwd" name="loginPwd" type="password" placeholder="6~20个字符，区分大小写">#getErrorMessage($errorList,'pwd')
+									</div>
+						</div>
+						<div class="control-group">
+									<label class="control-label" for="confirmPwd">确认密码<font color="#FF0000">*</font>：</label>
+									<div class="controls">
+										<input id="confirmPwd" name="confirmPwd" type="password" placeholder="再次输入密码">
+									</div>
+						</div>		
+						
+						<div class="tangtang-heading">
+							<i class="icon icon-suitcase"></i> <span>公司信息</span>
+						</div>		
+						<div class="control-group">
+							<label class="control-label" for="compayInfo">门店或公司名<font color="#FF0000">*</font>：</label>
+							<div class="controls">
+								<input id="compayInfo" name="compayInfo" type="text" placeholder="门店或公司名" value="$!userRegisterForm.compayInfo">#getErrorMessage($errorList,'compayInfo')
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="addr">门店或公司地址<font color="#FF0000">*</font>：</label>
+							<div class="controls">
+								<input id="addr" name="addr" type="text" placeholder="省份+城市+区县+街道门牌" value="$!userRegisterForm.addr">#getErrorMessage($errorList,'addr')
+							</div>
+						</div>
+				
+						<div class="tangtang-heading">
+							<i class="icon icon-locked"></i> <span>手机验证码</span>
+						</div>
+						<div class="control-group">
+								<label class="control-label">手机验证码<font color="#FF0000">*</font>:</label>
+								<div class="controls">
+									<input id="authCode" name="authCode" type="text" placeholder="验证码" value="">#getErrorMessage($errorList,'authCode')
+									<input id="authCodeBtn" type="button" class="btn btn-primary btn-small" value="点击获取验证码">
+								</div>
+						</div>
+						
+						<div class="control-group">
+						<label class="control-label"></label>
+						<div class="controls">
+							<input class="btn btn-primary" type="submit" value="注册">
+						</div>	
+						</div>
+					</form>		
+				</div>		
+			</div>
+			
+			<div class="span3 box">
+						<div class="box-header well" data-original-title="">
+							<h2>流量包子充值</h2>
+							<div class="box-icon">
+							</div>
+						</div>
+						<div class="box-content" style="padding: 15px;"> 
+							<ul>
+						  <li>流量包子充值：全国话费、全国流量</li>
+						  <li>客服电话</li>
+						  <li>安全提示：请注册成功后，进入商品设置页面，完善用户资料，并设置支付密码</li>
+						   </ul>
+						</div>					
+			</div>								
+		</div>
+	</div>
+
+	#footer()
+	
+	#set($assetsServer = $context.assetsServer)
+	
+	<script src="$!{assetsServer}assets/js/jquery.validate.min.js"></script>
+	<script src="$!{assetsServer}assets/js/aes.js"></script>
+	<script src="$!{assetsServer}assets/js/mode-ecb-min.js"> </script>
+	<script src="$!{assetsServer}assets/js/jquery.validate.min.js"></script>
+	
+	<script type="text/javascript">
+		var flag = #if(${flag}) true #else false #end;
+	
+		function getAuthCode(){
+ 			var phone = $('#loginId').val();
+			if(phone === ""){
+				var errorMsg = '<label id="loginId-error" class="error" for="loginId">请填写登录名(手机号)</label>';
+				if($('#loginId-error').length == 0){
+					$('#loginDiv').append(errorMsg);
+				}else{
+					$('#loginId-error').html('请填写登录名(手机号)');
+				}
+				return;
+			}
+			
+		    var mobileReg = /^1[3578]\d{9}$/;
+		    if(phone.length != 11 && !(mobileReg.test(phone))){
+		    	var errorMsg = '<label id="loginId-error" class="error" for="loginId">请正确填写登录名(手机号)</label>';
+				if($('#loginId-error').length == 0){
+					$('#loginDiv').append(errorMsg);
+				}else{
+					$('#loginId-error').html('请正确填写登录名(手机号)');
+				}
+				return;
+		    }
+			
+			$.ajax({
+				url:"$!{context.contextPath}api/getRegAuthCode.htm?loginId=" +phone,
+				async:true,
+				dataType:"json",
+				beforeSend:function(){
+					$("#errorMsg").addClass("hidden");
+					$("#errorMsg").html("");
+					$("#authCode").val("");
+				},
+				success: function(data){
+					if(data == "" || data == undefined || data == null){
+						$("#errorMsg").html("网络连接超时");
+						$("#errorMsg").removeClass("hidden");
+						return;
+					}
+					var status = data.status;
+					if(status == "error"){
+						$("#errorMsg").html(data.errorMsg);
+						$("#errorMsg").removeClass("hidden");
+						return;
+					}
+					
+					countDonwJump();
+					
+					var loginToken = data.module;
+					
+					var token = loginToken.token;
+					var	ts = loginToken.ts;
+					
+					$('#token').val(token);
+					$('#ts').val(ts);
+					flag = true;
+				}
+			});
+			
+		};
+		
+		
+		$().ready(function() {
+			$('#authCodeBtn').on('click',getAuthCode);
+			
+			$("#userRegisterForm").validate({
+				focusInvalid:false, 
+			    submitHandler: function(form){  
+			    	if(!flag){
+						$("#errorMsg").html("请点击按钮获取短信验证码");
+						$("#errorMsg").removeClass("hidden");
+						return;
+			    	}
+			    	preReg();
+			    	form.submit(); 
+			    },
+				rules : {
+						loginId : {
+						required : true,
+						isMobile : true
+						},
+					userName : {
+						required : true,
+						noSpecialCharacter : true
+						},
+					compayInfo : {
+						required : true,
+						noSpecialCharacter : true
+						},
+					email : {
+						required: false,
+						email: true
+						},
+					loginPwd : {
+							required: true,
+							pwdVerify: true
+						},
+					confirmPwd : {
+							required: true,
+							pwdVerify: true,
+							equalTo: "#loginPwd"
+						},
+					addr : {
+							required: true
+						},
+					authCode:{
+							required: true,
+							authCodeVerify: true
+					}
+				},
+				messages: {
+						loginId : {
+						required : "请填写登录名(手机号)",
+						isMobile : "请正确填写登录名(手机号)"
+						},
+					userName : {
+						required : "请填写用户昵称",
+						noSpecialCharacter : "用户昵称不能含特殊字符"
+						},
+					compayInfo : {
+						required : "请填写门店或公司名",
+						noSpecialCharacter : "门店或公司名不能含特殊字符"
+						},
+					email: "请正确填写邮箱",
+					loginPwd : {
+						required : "请输入登录密码",
+						pwdVerify : "登录密码必须是6到20位数字和字母"
+						},
+					confirmPwd : {
+						required : "请输入确认密码",
+						pwdVerify : "确认密码必须是6到20位数字和字母",
+						equalTo: "两次输入密码不一致"
+						},
+					addr : {
+						required : "请填写门店或公司地址"
+					},
+					authCode:{
+						required: "短信验证码不能为空",
+						authCodeVerify: "短信验证码必须是6位数字"
+					}
+				}
+			});
+		});
+		$.validator.addMethod("isMobile", function(value, element) {
+				var length = value.length;  
+			    var mobile = /^1[3578]\d{9}$/;
+			    return length==11 && (mobile.test(value));
+			}
+		);
+		$.validator.addMethod("noSpecialCharacter", function(value, element) {
+		    var specialCharacter = /^[a-zA-Z0-9\u4e00-\u9fa5]+$/;
+		    return specialCharacter.test(value);
+		});
+		
+		$.validator.addMethod("pwdVerify", function(value, element) {
+		    var loginPwd = /^[A-Za-z0-9]{6,20}$/;
+		    return loginPwd.test(value);
+		});
+		
+		$.validator.addMethod("authCodeVerify", function(value, element) {
+		    var authCodeTest = /^[0-9]{6}$/;
+		    return authCodeTest.test(value);
+		});
+		
+		function preReg(){
+			var token = $('#token').val();
+			var ts = $('#ts').val();
+			var pwd = jQuery('#loginPwd').val();
+		
+			//console.log("0:"+token);
+			pwd =  CryptoJS.MD5(pwd+"longan_login");
+			//console.log("1:"+pwd);
+			pwd = pwd + "_" + ts;
+			//console.log("2:"+pwd);
+		 	var keyHex = CryptoJS.enc.Utf8.parse(token);
+		 	//console.log("3:"+keyHex);
+		 	
+		    var encrypted = CryptoJS.AES.encrypt(pwd, keyHex, {  
+		        mode: CryptoJS.mode.ECB,
+		        padding: CryptoJS.pad.Pkcs7
+		    });
+		    
+		    //console.log("4:"+encrypted);
+		    //console.log("5:"+encrypted.ciphertext.toString(CryptoJS.enc.Base64));
+			jQuery('#pwd').val(encrypted.ciphertext.toString(CryptoJS.enc.Base64));
+			jQuery('#loginPwd').val("");
+			jQuery('#confirmPwd').val("");
+	 	}
+		
+		var sysSecond = 60 * 1000;
+		var interValObj;
+		
+		function countDonwJump(){
+			 $("#authCodeBtn").val("重新获取短信(60秒)");
+			 $("#authCodeBtn").attr("disabled",true);
+			interValObj = window.setInterval(setRemainTime, 1000);
+		}
+		
+		function setRemainTime(){
+			sysSecond -= 1000;
+			if(sysSecond<=0){
+			 		window.clearInterval(interValObj);
+			 		$("#authCodeBtn").val("重新获取短信");
+			 		$("#authCodeBtn").attr("disabled",true);
+					return;
+			}
+		   if (sysSecond > 0) {
+		  	  var second = sysSecond / 1000;
+		      $("#authCodeBtn").val("重新获取短信(" +second+"秒)");
+		   } 
+		}
+	</script>
+</body>
+</html>
