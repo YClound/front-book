@@ -7,8 +7,8 @@
 
 .generate-font-size(@start:@startNum, @end: @endNum) when (@start <= @end ) {
     @baseLabel: @start * @baseRadio;
-    .dm-padding-@{baseLabel} {
-        padding: (@start) + @base;
+    .dm-fz-@{baseLabel} {
+        font-size: (@start) + @base;
     }
     .generate-font-size((@start + 0.02), @end);
 }

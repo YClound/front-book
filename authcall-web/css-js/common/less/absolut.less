@@ -4,9 +4,9 @@
 .generate-position-right();
 
 @base: 0rem;
-@baseRadio: @endNum00;
-@startNum: -@endNum;
-@endNum: @endNum;
+@baseRadio: 0rem;
+@startNum: -1;
+@endNum: 1;
 
 .generate-position-top(@start: @startNum, @end: @endNum) when (@start <= @end) {
     @baseLabel: @start * @baseRadio;

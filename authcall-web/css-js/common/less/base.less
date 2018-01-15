@@ -1,5 +1,8 @@
 @primaryColor: #2d8cf0;
 @primaryHoverColor: #2b85e4;
+html, body{
+    font-size: 100px;
+}
 
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre,
 form, fieldset, legend, button, input, textarea, th, td {
@@ -126,11 +129,14 @@ a:hover {
     color: @primaryHoverColor;
 }
 
+//button
 .dm-button {
+    text-align: center;
     background-color: @primaryColor;
     color: #fff;
-    padding: 0.1rem 0.4rem;
-    border-radius: 0.15rem;
+    font-size: 0.16rem;
+    padding: 0.12rem 0.4rem;
+    border-radius: 0.05rem;
 }
 
 .dm-button:hover {
