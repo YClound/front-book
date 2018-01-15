@@ -1,5 +1,5 @@
 .idea/
-./authcall-web/**/node_modules/
+./authcall-web/css-js/node_modules/
 ./workproject/**/node_modules/
 ./**/.DS_Store
 .DS_Store
