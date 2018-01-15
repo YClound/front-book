@@ -4,42 +4,48 @@
 .generate-bottom-padding();
 .generate-padding();
 
-@base: 0px;
-@startNum: 5;
-@endNum: 100;
+@base: 0rem;
+@baseRadio: 100;
+@startNum: 0.05;
+@endNum: 1;
 
-.generate-padding(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-padding-@{start} {
-    padding: (@start) + @base;
-  }
-  .generate-padding((@start + @startNum),@end);
+.generate-padding(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-padding-@{baseLabel} {
+        padding: (@start) + @base;
+    }
+    .generate-padding((@start + @startNum), @end);
 }
 
-.generate-left-padding(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-pl-@{start} {
-    padding-left: (@start) + @base;
-  }
-  .generate-left-padding((@start + @startNum),@end);
+.generate-left-padding(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-pl-@{baseLabel} {
+        padding-left: (@start) + @base;
+    }
+    .generate-left-padding((@start + @startNum), @end);
 }
 
-.generate-right-padding(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-pr-@{start} {
-    margin-right: (@start) + @base;
-  }
-  .generate-right-padding((@start + @startNum),@end);
+.generate-right-padding(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-pr-@{baseLabel} {
+        margin-right: (@start) + @base;
+    }
+    .generate-right-padding((@start + @startNum), @end);
 }
 
-.generate-top-padding(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-pt-@{start} {
-    padding-top: (@start) + @base;
-  }
-  .generate-top-padding((@start + @startNum),@end);
+.generate-top-padding(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-pt-@{baseLabel} {
+        padding-top: (@start) + @base;
+    }
+    .generate-top-padding((@start + @startNum), @end);
 }
 
-.generate-bottom-padding(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-pb-@{start} {
-    padding-bottom: (@start) + @base;
-  }
-  .generate-bottom-padding((@start + @startNum),@end);
+.generate-bottom-padding(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-pb-@{baseLabel} {
+        padding-bottom: (@start) + @base;
+    }
+    .generate-bottom-padding((@start + @startNum), @end);
 }
 

@@ -1,0 +1,15 @@
+.generate-font-size();
+
+@base: 0rem;
+@baseRadio: 100;
+@startNum: 0.1;
+@endNum: 1;
+
+.generate-font-size(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-padding-@{baseLabel} {
+        padding: (@start) + @base;
+    }
+    .generate-font-size((@start + 0.02), @end);
+}
+

@@ -1,0 +1,152 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 0.14rem;
+  font-weight: normal;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-size: 0.14rem;
+  outline: none;
+  vertical-align: middle;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: couriernew, courier, monospace;
+}
+small {
+  font-size: 0.12rem;
+}
+ul,
+ol {
+  list-style: none;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+legend {
+  color: #000;
+}
+fieldset,
+img {
+  border: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.dm-fl {
+  float: left;
+}
+.dm-fr {
+  float: right;
+}
+.dm-clearfix::before,
+.dm-clearfix::after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+.dm-clearfix:after {
+  clear: both;
+}
+.dm-clearfix {
+  *zoom: 1;
+  /*IE/7/6*/
+}
+.dm-pointer {
+  cursor: pointer;
+}
+.dm-db {
+  display: block;
+}
+.dm-dib {
+  display: inline-block;
+}
+.dm-bb {
+  border-bottom: #ddd 1px solid;
+}
+.dm-bt {
+  border-top: #ddd 1px solid;
+}
+.dm-bl {
+  border-left: #ddd 1px solid;
+}
+.dm-br {
+  border-right: #ddd 1px solid;
+}
+a {
+  text-decoration: none;
+  color: #2d8cf0;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+  color: #2b85e4;
+}
+.dm-button {
+  background-color: #2d8cf0;
+  color: #fff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.15rem;
+}
+.dm-button:hover {
+  background-color: #2b85e4;
+}

@@ -4,42 +4,48 @@
 .generate-bottom-margin();
 .generate-margin();
 
-@base: 0px;
-@startNum: 5;
-@endNum: 100;
+@base: 0rem;
+@baseRadio: 100;
+@startNum: 0.05;
+@endNum: 1;
 
-.generate-margin(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-margin-@{start} {
-    margin: (@start) + @base;
-  }
-  .generate-margin((@start + @startNum),@end);
+.generate-margin(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-margin-@{baseLabel} {
+        margin: (@start) + @base;
+    }
+    .generate-margin((@start + @startNum), @end);
 }
 
-.generate-left-margin(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-ml-@{start} {
-    margin-left: (@start) + @base;
-  }
-  .generate-left-margin((@start + @startNum),@end);
+.generate-left-margin(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-ml-@{baseLabel} {
+        margin-left: (@start) + @base;
+    }
+    .generate-left-margin((@start + @startNum), @end);
 }
 
-.generate-right-margin(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-mr-@{start} {
-    margin-right: (@start) + @base;
-  }
-  .generate-right-margin((@start + @startNum),@end);
+.generate-right-margin(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-mr-@{baseLabel} {
+        margin-right: (@start) + @base;
+    }
+    .generate-right-margin((@start + @startNum), @end);
 }
 
-.generate-top-margin(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-mt-@{start} {
-    margin-top: (@start) + @base;
-  }
-  .generate-top-margin((@start + @startNum),@end);
+.generate-top-margin(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-mt-@{baseLabel} {
+        margin-top: (@start) + @base;
+    }
+    .generate-top-margin((@start + @startNum), @end);
 }
 
-.generate-bottom-margin(@start:@startNum, @end: @endNum) when (@start <= @end ){
-  .dm-mb-@{start} {
-    margin-bottom: (@start) + @base;
-  }
-  .generate-bottom-margin((@start + @startNum),@end);
+.generate-bottom-margin(@start:@startNum, @end: @endNum) when (@start <= @end ) {
+    @baseLabel: @start * @baseRadio;
+    .dm-mb-@{baseLabel} {
+        margin-bottom: (@start) + @base;
+    }
+    .generate-bottom-margin((@start + @startNum), @end);
 }
 

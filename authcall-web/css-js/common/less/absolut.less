@@ -3,30 +3,39 @@
 .generate-position-left();
 .generate-position-right();
 
-.generate-position-top(@start: -50, @end: 50) when (@start <= @end) {
-  .dm-t-@{start} {
-    top: @start + 0px;
-  }
-  .generate-position-top(@start + 1, @end);
+@base: 0rem;
+@baseRadio: @endNum00;
+@startNum: -@endNum;
+@endNum: @endNum;
+
+.generate-position-top(@start: @startNum, @end: @endNum) when (@start <= @end) {
+    @baseLabel: @start * @baseRadio;
+    .dm-t-@{baseLabel} {
+        top: @start + @base;
+    }
+    .generate-position-top(@start + 0.05, @end);
 }
 
-.generate-position-left(@start: -50, @end: 50) when (@start <= @end) {
-  .dm-l-@{start} {
-    left: @start + 0px;
-  }
-  .generate-position-left(@start + 1, @end);
+.generate-position-left(@start: @startNum, @end: @endNum) when (@start <= @end) {
+    @baseLabel: @start * @baseRadio;
+    .dm-l-@{baseLabel} {
+        left: @start + @base;
+    }
+    .generate-position-left(@start + 0.05, @end);
 }
 
-.generate-position-bottom(@start: -50, @end: 50) when (@start <= @end) {
-  .dm-b-@{start} {
-    bottom: @start + 0px;
-  }
-  .generate-position-bottom(@start + 1, @end);
+.generate-position-bottom(@start: @startNum, @end: @endNum) when (@start <= @end) {
+    @baseLabel: @start * @baseRadio;
+    .dm-b-@{baseLabel} {
+        bottom: @start + @base;
+    }
+    .generate-position-bottom(@start + 0.05, @end);
 }
 
-.generate-position-right(@start: -50, @end: 50) when (@start <= @end) {
-  .dm-r-@{start} {
-    right: @start + 0px;
-  }
-  .generate-position-right(@start + 1, @end);
+.generate-position-right(@start: @startNum, @end: @endNum) when (@start <= @end) {
+    @baseLabel: @start * @baseRadio;
+    .dm-r-@{baseLabel} {
+        right: @start + @base;
+    }
+    .generate-position-right(@start + 0.05, @end);
 }
