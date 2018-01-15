@@ -1,0 +1,32 @@
+.generate-position-top();
+.generate-position-bottom();
+.generate-position-left();
+.generate-position-right();
+
+.generate-position-top(@start: -50, @end: 50) when (@start <= @end) {
+  .dm-t-@{start} {
+    top: @start + 0px;
+  }
+  .generate-position-top(@start + 1, @end);
+}
+
+.generate-position-left(@start: -50, @end: 50) when (@start <= @end) {
+  .dm-l-@{start} {
+    left: @start + 0px;
+  }
+  .generate-position-left(@start + 1, @end);
+}
+
+.generate-position-bottom(@start: -50, @end: 50) when (@start <= @end) {
+  .dm-b-@{start} {
+    bottom: @start + 0px;
+  }
+  .generate-position-bottom(@start + 1, @end);
+}
+
+.generate-position-right(@start: -50, @end: 50) when (@start <= @end) {
+  .dm-r-@{start} {
+    right: @start + 0px;
+  }
+  .generate-position-right(@start + 1, @end);
+}

@@ -1,0 +1,16 @@
+.generate-width-precent();
+.generate-width();
+
+.generate-width-precent(@start: 5, @end: 100) when (@start <= @end) {
+  .dm-width-@{start} {
+    width: @start + 0%;
+  }
+  .generate-width-precent(@start + 5, @end);
+}
+
+.generate-width(@start: 0, @end: 500) when (@start <= @end) {
+  .dm-wd-@{start} {
+    width: @start + 0px;
+  }
+  .generate-width(@start + 10, @end);
+}
