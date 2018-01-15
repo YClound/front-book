@@ -1,8 +1,0 @@
-.s-signature .table-realname-info td{padding:10px}
-.s-signature .table-realname-info td:first-child{text-align:right;position:relative}
-.s-signature .table-realname-info td:first-child:after{content:'|';margin-left:20px}
-.s-signature .realname-info{padding-left:400px;color:#165d8f;background:url(../img/icon-signature.png) 50px center no-repeat}
-.s-signature .realname-info h3{margin-right:60px}
-.s-signature .square-style{width:120px;height:120px;background:#EFF0F4;border:1px solid #c3c6d5}
-.s-signature .square-style img{width:80%;margin-top:10%}
-#pdf-container{height:600px}
