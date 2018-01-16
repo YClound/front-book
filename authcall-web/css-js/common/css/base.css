@@ -93,6 +93,44 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+a {
+  text-decoration: none;
+  color: #2d8cf0;
+  cursor: pointer;
+}
+a:hover,
+a.hover,
+a:active,
+a.active,
+a:visited,
+a.visited {
+  text-decoration: none;
+  color: #2b85e4;
+}
+.dm-ellipsis {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.dm-ellipsis-ln-2,
+.dm-ellipsis-ln-3,
+.dm-ellipsis-ln-4 {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.dm-ellipsis-ln-2 {
+  -webkit-line-clamp: 2;
+}
+.dm-ellipsis-ln-3 {
+  -webkit-line-clamp: 3;
+}
+.dm-ellipsis-ln-4 {
+  -webkit-line-clamp: 4;
+}
 .dm-fl {
   float: left;
 }
@@ -115,14 +153,32 @@ table {
   *zoom: 1;
   /*IE/7/6*/
 }
+.dm-poa {
+  position: absolute;
+}
+.dm-por {
+  position: relative;
+}
+.dm-pof {
+  position: fixed;
+}
 .dm-pointer {
   cursor: pointer;
+}
+.dm-help {
+  cursor: help;
 }
 .dm-db {
   display: block;
 }
 .dm-dib {
   display: inline-block;
+}
+.dm-dil {
+  display: inline;
+}
+.dm-dtc {
+  display: table-cell;
 }
 .dm-bb {
   border-bottom: #ddd 1px solid;
@@ -136,14 +192,67 @@ table {
 .dm-br {
   border-right: #ddd 1px solid;
 }
-a {
-  text-decoration: none;
-  color: #2d8cf0;
-  cursor: pointer;
+.dm-br-circle {
+  border-radius: 100%;
 }
-a:hover {
+.dm-br-fillet {
+  border-radius: 0.05rem;
+}
+.dm-br-ellipse {
+  border-radius: 0.2rem;
+}
+.dm-br-none {
+  border-radius: 0rem;
+}
+.dm-tac {
+  text-align: center;
+}
+.dm-tal {
+  text-align: left;
+}
+.dm-right {
+  text-align: right;
+}
+.dm-tdline {
+  text-decoration: line-through;
+}
+.dm-tdda {
+  -webkit-text-decoration: dashed;
+  text-decoration: dashed;
+}
+.dm-tddo {
+  -webkit-text-decoration: dotted;
+  text-decoration: dotted;
+}
+.dm-tdul {
+  text-decoration: underline;
+}
+.dm-tdnone {
   text-decoration: none;
-  color: #2b85e4;
+}
+.dm-vabt {
+  vertical-align: bottom;
+}
+.dm-vat {
+  vertical-align: top;
+}
+.dm-vabl {
+  vertical-align: baseline;
+}
+.dm-vam {
+  vertical-align: middle;
+}
+.dm-vasub {
+  vertical-align: sub;
+}
+.dm-vasup {
+  vertical-align: super;
+}
+.dm-vatb {
+  vertical-align: text-bottom;
+}
+.dm-vatt {
+  vertical-align: text-top;
 }
 .dm-button {
   text-align: center;
