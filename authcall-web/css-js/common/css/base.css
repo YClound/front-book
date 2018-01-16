@@ -192,6 +192,27 @@ a.visited {
 .dm-br {
   border-right: #ddd 1px solid;
 }
+.dm-divider {
+  position: relative;
+  text-align: center;
+}
+.dm-divider:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  border-top: 1px solid #ff8208;
+  left: 0;
+}
+.dm-divider .dm-title {
+  display: inline-block;
+  padding: 0 1em;
+  position: relative;
+  z-index: 2;
+  background: #FFF;
+}
 .dm-br-circle {
   border-radius: 100%;
 }
