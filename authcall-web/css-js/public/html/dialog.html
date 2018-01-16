@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css样式</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<link rel="stylesheet" type="text/css" href="../css/dm.base.css" />
+	<script src="../js/fastclick.js"></script>
+	<style type="text/css">
+		.dm-dialog-demo {
+		    height: 5rem;
+		    min-height: 500px;
+		    background: url(https://zos.alipayobjects.com/rmsportal/rTrIDRjzFvXhAfgdnPVD.jpg) no-repeat;
+		    background-size: 100% auto;
+		    position: relative;
+		    padding-bottom: 0;
+		}
+		.dm-dialog {
+			position: absolute;
+		}
+	</style>
+</head>
+<body class="dm-bg-white">
+	<h2 class="dm-p-20">dialog对话框</h2>
+	<p class="dm-p-10 dm-bg-black dm-tac dm-c-f">纯文字对话框</p>
+	<div class="dm-dialog-demo">
+		<div class="dm-dialog-mask show">
+			<div class="dm-dialog" role="dialog">
+				<div class="dm-dialog-wrap">
+				    <div class="dm-dialog-header">
+				      	<h3>标题文字</h3>
+				    </div>
+				    <div class="dm-dialog-body">
+				      	<p class="dm-dialog-brief">辅助说明文字辅助说明文字辅助说明文字辅助说明文字</p>
+				    </div>
+				    <div class="dm-dialog-footer">
+					    <a class="dm-dialog-button">取消</a>
+					    <a class="dm-dialog-button">确定</a>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p class="dm-p-10 dm-bg-black dm-tac dm-c-f">纯文字对话框不加header</p>
+	<div class="dm-dialog-demo">
+		<div class="dm-dialog-mask show">
+			<div class="dm-dialog" role="dialog">
+				<div class="dm-dialog-wrap">
+				    <div class="dm-dialog-body">
+				      	<p class="dm-dialog-brief">辅助说明文字辅助说明文字辅助说明文字辅助说明文字</p>
+				    </div>
+				    <div class="dm-dialog-footer">
+					    <a class="dm-dialog-button">取消</a>
+					    <a class="dm-dialog-button disabled">确定</a>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p class="dm-p-10 dm-bg-black dm-tac dm-c-f">纯文字对话框不加header</p>
+	<div class="dm-dialog-demo">
+		<div class="dm-dialog-mask show">
+			<div class="dm-dialog" role="dialog">
+				<div class="dm-dialog-wrap">
+				    <div class="dm-dialog-body">
+				      	<p class="dm-dialog-brief">辅助说明文字辅助说明文字辅助说明文字辅助说明文字</p>
+				    </div>
+				    <div class="dm-dialog-footer selection">
+					    <a class="dm-dialog-button">取消</a>
+					    <a class="dm-dialog-button disabled">确定</a>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<p class="dm-p-10 dm-bg-black dm-tac dm-c-f">纯文字对话框+图片</p>
+	<div class="dm-dialog-demo">
+		<div class="dm-dialog-mask show">
+			<div class="dm-dialog simage" role="dialog">
+				<div class="dm-dialog-wrap">
+					<div class="dm-dialog-img">
+						<img src="https://os.alipayobjects.com/rmsportal/QnFHZkFYDZUJqBD.png" alt="placeholder+image">
+					</div>
+					<div class="dm-dialog-header">
+				      	<h3>标题文字</h3>
+				    </div>
+				    <div class="dm-dialog-body">
+				      	<p class="dm-dialog-brief">辅助说明文字辅助说明文字辅助说明文字辅助说明文字</p>
+				    </div>
+				    <div class="dm-dialog-footer">
+					    <a class="dm-dialog-button">取消</a>
+					    <a class="dm-dialog-button">确定</a>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<p class="dm-p-10 dm-bg-black dm-tac dm-c-f">纯文字对话框+图片+输入框</p>
+	<div class="dm-dialog-demo">
+		<div class="dm-dialog-mask show">
+			<div class="dm-dialog simage" role="dialog">
+				<div class="dm-dialog-wrap">
+					<div class="dm-dialog-img">
+						<img src="https://os.alipayobjects.com/rmsportal/QnFHZkFYDZUJqBD.png" alt="placeholder+image">
+					</div>
+					<div class="dm-dialog-header">
+				      	<h3>标题文字</h3>
+				    </div>
+				    <div class="dm-dialog-body">
+				      	<p class="dm-dialog-brief">辅助说明文字辅助说明文字辅助说明文字辅助说明文字</p>
+				      	<input type="text" name="name" class="dm-input" placeholder="按提示按提示">
+				    </div>
+				    <div class="dm-dialog-footer">
+					    <a class="dm-dialog-button">取消</a>
+					    <a class="dm-dialog-button">确定</a>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<p class="dm-p-10 dm-bg-black dm-tac dm-c-f">单行动按钮 标题+题图+内容</p>
+	<div class="dm-dialog-demo">
+		<div class="dm-dialog-mask show">
+			<div class="dm-dialog simage" role="dialog">
+				<div class="dm-dialog-wrap">
+					<div class="dm-dialog-img">
+						<img src="https://os.alipayobjects.com/rmsportal/QnFHZkFYDZUJqBD.png" alt="placeholder+image">
+					</div>
+					<div class="dm-dialog-header">
+				      	<h3>标题文字</h3>
+				    </div>
+				    <div class="dm-dialog-body">
+				      	<p class="dm-dialog-brief">辅助说明文字辅助说明文字辅助说明文字辅助说明文字</p>
+				      	 <a class="dm-dialog-outlink">查看《支付宝服务协议》</a>
+				    </div>
+				    <div class="dm-dialog-footer">
+					    <a class="dm-dialog-button">确定</a>
+				    </div>
+				    <a class="dm-dialog-close" aria-label="关闭对话框"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

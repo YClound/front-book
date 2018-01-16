@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>viewport的测试</title>
+    <link rel="stylesheet" type="text/css" href="../css/ant.base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <script src="../js/fastclick.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+	<h2>文本文本文本文本</h2>
+	<p id="viewport"></p>
+    <p id="browerport"></p>
+    <p id="screenport"></p>
+
+	<script type="text/javascript">
+		var viewWidth = document.documentElement.clientWidth;
+		var viewHeight = document.documentElement.clientHeight;
+		var viewport = document.getElementById('viewport');
+		viewport.innerHTML = 'viewport的宽高：' + viewWidth + '/' + viewHeight;
+
+        var browerWidth = window.innerWidth;
+        var browerHeight = window.innerHeight;
+        var browerport = document.getElementById('browerport');
+        browerport.innerHTML = '浏览器的宽高：' + browerWidth + '/' + browerHeight;
+
+        var screenWidth = screen.width;
+        var screenHeight = screen.height;
+        var screenport = document.getElementById('screenport');
+        screenport.innerHTML = '屏幕的宽高：' + screenWidth + '/' + screenHeight;
+
+        console.log(window.devicePixelRatio)
+	</script>
+</body>
+</html>
