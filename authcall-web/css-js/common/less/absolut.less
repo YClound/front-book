@@ -4,7 +4,8 @@
 .generate-position-right();
 
 @base: 0rem;
-@baseRadio: 0rem;
+@baseRadio: 100;
+@add: 0.05;
 @startNum: -1;
 @endNum: 1;
 
@@ -13,7 +14,7 @@
     .dm-t-@{baseLabel} {
         top: @start + @base;
     }
-    .generate-position-top(@start + 0.05, @end);
+    .generate-position-top(@start + @add, @end);
 }
 
 .generate-position-left(@start: @startNum, @end: @endNum) when (@start <= @end) {
@@ -21,7 +22,7 @@
     .dm-l-@{baseLabel} {
         left: @start + @base;
     }
-    .generate-position-left(@start + 0.05, @end);
+    .generate-position-left(@start + @add, @end);
 }
 
 .generate-position-bottom(@start: @startNum, @end: @endNum) when (@start <= @end) {
@@ -29,7 +30,7 @@
     .dm-b-@{baseLabel} {
         bottom: @start + @base;
     }
-    .generate-position-bottom(@start + 0.05, @end);
+    .generate-position-bottom(@start + @add, @end);
 }
 
 .generate-position-right(@start: @startNum, @end: @endNum) when (@start <= @end) {
@@ -37,5 +38,5 @@
     .dm-r-@{baseLabel} {
         right: @start + @base;
     }
-    .generate-position-right(@start + 0.05, @end);
+    .generate-position-right(@start + @add, @end);
 }

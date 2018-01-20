@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css样式</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<link rel="stylesheet" type="text/css" href="../css/dm.base.css" />
+	<script src="../js/fastclick.js"></script>
+</head>
+<body class="">
+	<div>
+		<div class="dm-list">
+			<div class="dm-list-header">单行列表头部纯文字</div>
+			<div class="dm-list-body">
+				<div class="dm-list-item dm-list-top">
+					<div class="dm-list-content">标签文本</div>
+				</div>
+				<div class="dm-list-item">
+					<div class="dm-list-content">标签文本</div>
+					<div class="dm-list-extra">辅助标签三四五六七八九十</div>
+				</div>
+				<a href="#" class="dm-list-item">
+				    <div class="dm-list-content">可点链接</div>
+				    <div class="dm-list-extra">辅助标签三四五六七八九十</div>
+				    <!-- A11Y: 对无障碍设置隐藏没有实际意义的图标，下同 -->
+				    <div class="dm-list-arrow">
+				        <span class="dm-icon arrow horizontal"></span>
+				    </div>
+			    </a>
+			    <a href="#" class="dm-list-item">
+				    <div class="dm-list-content">
+				        标签文本<i class="reddot"></i>
+				    </div>
+				    <div class="dm-list-arrow">
+				        <span class="dm-icon arrow vertical"></span>
+				    </div>
+			    </a>
+			    <div href="#" class="dm-list-item">
+			        <div class="dm-list-content">标签文本</div>
+			        <div><button class="dm-button tiny">辅助按钮</button></div>
+			    </div>
+			    <a href="#" class="dm-list-item">
+			        <div class="dm-list-content">标签文本</div>
+			        <span class="dm-bubble reddot"></span>
+			        <div class="dm-list-arrow" aria-hidden="true"><span class="dm-icon arrow horizontal"></span></div>
+			    </a>
+			    <a class="dm-list-item dm-list-item-deletable">
+			        <div class="dm-list-content">删除列表</div>
+			        <div class="dm-list-arrow" aria-hidden="true"><span class="dm-icon arrow horizontal"></span></div>
+			    </a>
+			    <a class="dm-list-item">
+			        <div class="dm-list-content">选中状态</div>
+			        <div class="dm-switch">
+				        <input type="checkbox" name="s1" class="dm-switch-checkbox" checked="checked" id="demo-s-1">
+				        <label class="dm-switch-label" for="demo-s-1">
+					        <div class="dm-switch-inner"></div>
+					        <div class="dm-switch-switch"></div>
+				        </label>
+			      	</div>
+			    </a>
+
+			    <a class="dm-list-item">
+			        <div class="dm-list-content dm-ellipsis">标签文本内容尽量多往右显示</div>
+			        <div class="dm-list-extra dm-list-cell-noflex">辅助标签</div>
+			        <div class="dm-list-arrow" aria-hidden="true"><span class="dm-icon arrow horizontal"></span></div>
+			    </a>
+			    <a class="dm-list-item">
+			        <div class="dm-list-content dm-list-cell-noflex dm-ellipsis">标签文本</div>
+			        <div class="dm-list-extra">辅助标签内容尽量多往左显示</div>
+			        <div class="dm-list-arrow" aria-hidden="true"><span class="dm-icon arrow horizontal"></span></div>
+			    </a>
+			    <a class="dm-list-item">
+			        <div class="dm-list-content dm-list-cell-noflex">标题内容</div>
+			        <div class="dm-list-extra dm-list-cell-noellips">辅助标签多行显示多行显示多行显示多行显示多行显示多行显示多行显示多行显示多行显示</div>
+			        <div class="dm-list-arrow" aria-hidden="true"><span class="dm-icon arrow horizontal"></span></div>
+			    </a>
+			    <a class="dm-list-item">
+				    <div class="dm-list-thumb">
+				        <img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt="图标描述" />
+				    </div>
+				    <div class="dm-list-content">标签文本</div>
+				    <div class="dm-list-extra">辅助标签一二三四五六七八九</div>
+				    <div class="dm-list-arrow" aria-hidden="true">
+				        <span class="dm-icon arrow horizontal"></span>
+				    </div>
+			    </a>
+			    <a class="dm-list-item">
+				    <div class="dm-list-thumb dm-list-thumb-radius">
+				        <img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt="图标描述" />
+				    </div>
+				    <div class="dm-list-content">标签文本</div>
+				    <div class="dm-list-extra">辅助标签一二三四五六七八九</div>
+				    <div class="dm-list-arrow" aria-hidden="true">
+				        <span class="dm-icon arrow horizontal"></span>
+				    </div>
+			    </a>
+			</div>
+			<div class="dm-list-footer">单行列表尾部纯文字</div>
+		</div>
+		<div class="dm-list dm-list-twoline-text">
+			<div class="dm-list-header">双行行列表头部纯文字</div>
+			<div class="dm-list-body">
+				<div class="dm-list-item">
+				    <div class="dm-list-content">
+				      <div class="dm-list-title">标签文本</div>
+				      <div class="dm-list-brief">内容文本内容文本内容文本</div>
+				    </div>
+				</div>
+				<a href="#" class="dm-list-item">
+				    <div class="dm-list-content">
+				        <div class="dm-list-title">标签文本 可点击</div>
+				        <div class="dm-list-brief">内容文本内容文本内容文本</div>
+				    </div>
+				    <div class="dm-list-arrow" aria-hidden="true">
+				        <span class="dm-icon arrow horizontal"></span>
+				    </div>
+				</a>
+				<a href="#" class="dm-list-item">
+				    <div class="dm-list-content">
+				        <div class="dm-list-title dm-ellipsis">标题文本标题文本标题文本标题文本标题文本标题文本标题文本
+				        </div>
+				        <div class="dm-list-brief">内容文本内容文本内容文本内容文本内容文本内容文本内容文本
+				        </div>
+				    </div>
+				    <div class="dm-list-arrow" aria-hidden="true">
+				        <span class="dm-icon arrow horizontal"></span>
+				    </div>
+				</a>
+			    <div class="dm-list-item">
+		            <div class="dm-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+		            <div class="dm-list-content">
+			            <div class="dm-list-title">标签文本</div>
+			            <div class="dm-list-brief">补充内容</div>
+		        	</div>
+		        </div>
+		        <div class="dm-list-item">
+				    <div class="dm-list-thumb">
+				      	<img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt="图标描述" />
+				    </div>
+				    <div class="dm-list-content">
+					    <div class="dm-list-title dm-flexbox twocolumn">
+					        <label class="dm-flex-item dm-ellipsis">标题文本标题文本标题文本标题文本标题文本标题文本标题文本标题文本标题文本</label>
+					        <div class="dm-list-right-brief">2016/12/31</div>
+					    </div>
+					    <div class="dm-list-brief">内容文本内容文本内容文本内容文本内容文本内容文本内容文本</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+
+		<diiv class="dm-list">
+			<div class="dm-list-header">下拉列表显示</div>
+			<div class="dm-list-body">
+				<a class="dm-list-item dropdown">
+					<div class="dm-list-dropdown-main">
+						<div class="dm-flex-1">标签文本</div>
+						<div class="dm-list-arrow">
+					        <span class="dm-icon arrow vertical"></span>
+					    </div>
+					</div>
+		        	<div class="dm-list-dropdown-list">
+		        		<div class="dm-list-dropdown-main">标题一</div>
+		        		<div class="dm-list-dropdown-item">标题一</div>
+		        		<div class="dm-list-dropdown-item">标题一</div>
+		        	</div>
+		        </a>
+		        <a class="dm-list-item dropdown up">
+					<div class="dm-list-dropdown-main">
+						<div class="dm-flex-1">标签文本</div>
+						<div class="dm-list-arrow">
+					        <span class="dm-icon arrow vertical"></span>
+					    </div>
+					</div>
+		        	<div class="dm-list-dropdown-list">
+		        		<div class="dm-list-dropdown-item">标题一</div>
+		        		<div class="dm-list-dropdown-item">标题一</div>
+		        		<div class="dm-list-dropdown-item">标题一</div>
+		        	</div>
+		        </a>
+			</div>
+		</diiv>
+
+		<div class="dm-list">
+			<div class="dm-list-header">左右两行文字展示</div>
+			<div class="dm-list-body">
+				<a class="dm-list-item">
+		            <div class="dm-list-content">
+		                <div class="dm-list-title">标题一</div>
+		                <div class="dm-list-brief">内容一</div>
+		            </div>
+		            <div class="dm-list-extra">
+		                <div class="dm-list-title">标题二</div>
+		                <div class="dm-list-brief">内容二</div>
+		            </div>
+		        </a>
+		        <div class="dm-list-item">
+		            <div class="dm-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+		            <div class="dm-list-content">
+		                <div class="dm-list-title">标题一</div>
+		                <div class="dm-list-brief">内容一</div>
+		            </div>
+		            <div class="dm-list-extra">
+		                <div class="dm-list-title">标题二</div>
+		                <div class="dm-list-brief">内容二</div>
+		            </div>
+		        </div>
+			</div>
+		</div>
+
+		<div class="dm-list info">
+		  	<div class="dm-list-header">纯信息展示</div>
+		  	<div class="dm-list-body">
+			    <div class="dm-list-item oneline">
+			      	<div class="dm-list-content">标签文本标签文本</div>
+			      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+			    </div>
+			    <a class="dm-list-item oneline">
+				    <div class="dm-list-content">标签文本</div>
+				    <div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    <div class="dm-list-arrow" aria-hidden="true">
+				      	<span class="dm-icon arrow horizontal"></span>
+				    </div>
+				</a>
+				<a class="dm-list-item">
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-content">标签文本</div>
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				      	<div class="dm-list-arrow" aria-hidden="true">
+				        	<span class="dm-icon arrow horizontal"></span>
+				      	</div>
+				    </div>
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    </div>
+				</a>
+				<div class="dm-list-item">
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-content">标签文本</div>
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    </div>
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    </div>
+				</div>
+				<a class="dm-list-item">
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-content">标签文本</div>
+				      	<div class="dm-list-extra">标签文本</div>
+				      	<div class="dm-list-arrow" aria-hidden="true">
+				        <span class="dm-icon arrow horizontal"></span>
+				      	</div>
+				    </div>
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-content">标签文本</div>
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    </div>
+				</a>
+			</div>
+		</div>
+
+		<div class="dm-list dm-card">
+			<div class="dm-list-header">卡片形式列表展示</div>
+			<div class="dm-list-body">
+				<a href="#" class="dm-card-item dm-list-item">
+				    <div class="dm-list-content">
+				        <div class="dm-list-title">标签文本 可点击</div>
+				        <div class="dm-list-brief">内容文本内容文本内容文本</div>
+				    </div>
+				</a>
+				<a href="#" class="dm-card-item dm-list-item">
+				    <div class="dm-list-content">
+				        <div class="dm-list-title">标签文本 可点击</div>
+				        <div class="dm-list-brief">内容文本内容文本内容文本</div>
+				    </div>
+				    <div class="dm-list-arrow" aria-hidden="true">
+				        <span class="dm-icon arrow horizontal"></span>
+				    </div>
+				</a>
+				<a href="#" class="dm-card-item">
+					<div class="dm-list-item">
+						<div class="dm-list-thumb">
+					      	<img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt="图标描述" />
+					    </div>
+					    <div class="dm-list-content">
+					        <div class="dm-list-title">标签文本 可点击</div>
+					        <div class="dm-list-brief">内容文本内容文本内容文本</div>
+					    </div>
+					    <div class="dm-list-arrow" aria-hidden="true">
+					        <span class="dm-icon arrow horizontal"></span>
+					    </div>
+					</div>
+				    <div class="dm-card-footnote">483米有门店</div>
+				</a>
+
+			</div>
+		</div>
+		<div class="dm-list dm-card info">
+		  	<div class="dm-list-header">纯信息卡片形式展示</div>
+		  	<div class="dm-list-body">
+			    <div class="dm-list-item oneline">
+			      	<div class="dm-list-content">标签文本标签文本</div>
+			      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+			    </div>
+			    <a class="dm-list-item oneline">
+				    <div class="dm-list-content">标签文本</div>
+				    <div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    <div class="dm-list-arrow" aria-hidden="true">
+				      	<span class="dm-icon arrow horizontal"></span>
+				    </div>
+				</a>
+				<a class="dm-list-item">
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-content">标签文本</div>
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				      	<div class="dm-list-arrow" aria-hidden="true">
+				        	<span class="dm-icon arrow horizontal"></span>
+				      	</div>
+				    </div>
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    </div>
+				</a>
+				<div class="dm-list-item">
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-content">标签文本</div>
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    </div>
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    </div>
+				</div>
+				<a class="dm-list-item">
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-content">标签文本</div>
+				      	<div class="dm-list-extra">标签文本</div>
+				      	<div class="dm-list-arrow" aria-hidden="true">
+				        <span class="dm-icon arrow horizontal"></span>
+				      	</div>
+				    </div>
+				    <div class="dm-list-item-part">
+				      	<div class="dm-list-content">标签文本</div>
+				      	<div class="dm-list-extra">标签文本标签文本标签文本标签文本</div>
+				    </div>
+				</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

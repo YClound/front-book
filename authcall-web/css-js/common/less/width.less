@@ -1,6 +1,12 @@
 .generate-width-precent();
 .generate-width();
 
+@startNum: 0;
+@endNum: 5;
+@add: 0.05;
+@base: 0rem;
+@baseRadio: 100;
+
 .generate-width-precent(@start: 5, @end: 100) when (@start <= @end) {
     .dm-width-@{start} {
         width: @start + 0%;
@@ -8,9 +14,10 @@
     .generate-width-precent(@start + 5, @end);
 }
 
-.generate-width(@start: 0, @end: 500) when (@start <= @end) {
-    .dm-wd-@{start} {
-        width: @start + 0px;
+.generate-width(@start: @startNum, @end: @endNum) when (@start <= @end) {
+    @baseLabel: @start * @baseRadio;
+    .dm-wd-@{baseLabel} {
+        width: @start + @base;
     }
-    .generate-width(@start + 10, @end);
+    .generate-width(@start + @add, @end);
 }
