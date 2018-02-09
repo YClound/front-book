@@ -3,31 +3,54 @@
     display: flex;
 }
 
-.dm-flex-inline{
+//行内flex布局
+.dm-flex-inline {
     display: inline-flex;
 }
-
-//方向
-.dm-direction-column {
-    flex-direction: column;
-}
-
+/*布局方向*/
+//横向布局(默认)
 .dm-direction-row {
     flex-direction: row;
 }
 
-//wrap
-.dm-flex-wrap {
-    flex-wrap: wrap;
+//反向横向布局
+.dm-direction-row-reverse {
+    flex-direction: row-reverse;
 }
 
-//nowrap
+//竖向布局
+.dm-direction-column {
+    flex-direction: column;
+}
 
+//反向竖向布局
+.dm-direction-column-reverse {
+    flex-direction: column-reverse;
+}
+
+/*
+    * 是否换行
+    * 不允许换行(默认)
+*/
+//不允许换行(默认)
 .dm-flex-nowrap {
     flex-wrap: nowrap;
 }
 
-//justify start
+//允许换行，第一行在上方
+.dm-flex-wrap {
+    flex-wrap: wrap;
+}
+
+//允许换行，第一行在下方
+.dm-flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+/*
+    * 主轴上的对齐方式justify-content
+    * start(默认)
+*/
 .dm-justify-start {
     justify-content: flex-start;
 }
@@ -37,7 +60,7 @@
     justify-content: flex-end;
 }
 
-//justify start
+//justify center
 .dm-justify-center {
     justify-content: center;
 }
@@ -47,34 +70,45 @@
     justify-content: space-around;
 }
 
-//justify between
+//justify between两端
 .dm-justify-between {
     justify-content: space-between;
 }
 
-//align-items start
+/*
+    * 交叉轴上如何对齐align-items
+    * stretch(默认)
+*/
+.dm-align-stretch {
+    align-items: stretch;
+}
+
+// start
 .dm-align-start {
     align-items: flex-start;
 }
 
-//align-items end
+//end
 .dm-align-end {
     align-items: flex-end;
 }
 
-//align-items center
-.dm-align-start {
+//center
+.dm-align-center {
     align-items: center;
 }
 
-//align-items baseline
+//baseline
 .dm-align-baseline {
     align-items: baseline;
 }
 
-//align-items start
-.dm-align-stretch {
-    align-items: stretch;
+/*
+    * 多根轴线的对齐方式aligin-content
+    * stretch(默认)
+*/
+.dm-content-stretch {
+    align-content: stretch;
 }
 
 .dm-content-start {
@@ -97,8 +131,94 @@
     align-content: space-between;
 }
 
-.dm-content-stretch {
-    align-content: stretch;
+//项目的属性
+/*
+    ** order
+    ** flex-grow
+    ** flex-shrink
+    ** flex-basis
+    ** flex
+    ** align-self
+*/
+/*
+    * order
+    * 项目的排列顺序
+    * 数值越小，排列越靠前
+    * 默认为0
+*/
+.dm-flex-order-none {
+    order: 0;
+}
+
+.dm-flex-order-5 {
+    order: 5;
+}
+
+.dm-flex-order-4 {
+    order: 4;
+}
+
+.dm-flex-order-3 {
+    order: 3;
+}
+
+.dm-flex-order-2 {
+    order: 2;
+}
+
+.dm-flex-order-1 {
+    order: 1;
+}
+
+/*
+    * flex-grow
+    * 项目的放大比例，默认为0，即如果存在剩余空间，也不放大
+*/
+
+.dm-flex-grow-none {
+    flex-grow: 0;
+}
+
+.dm-flex-grow-1 {
+    flex-grow: 1;
+}
+
+.dm-flex-grow-2 {
+    flex-grow: 2;
+}
+
+.dm-flex-grow-3 {
+    flex-grow: 3;
+}
+
+.dm-flex-grow-4 {
+    flex-grow: 4;
+}
+
+.dm-flex-grow-5 {
+    flex-grow: 5;
+}
+
+/*
+    * flex-shrink
+    * 项目的缩小比例，默认为1，即如果空间不足，该项目将缩小
+*/
+.dm-flex-shrink-1 {
+    flex-shrink: 1;
+}
+
+//不缩放
+.dm-flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+/*
+    * align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。
+    * 默认值为auto，表示继承父元素的align-items属性，
+    * 如果没有父元素，则等同于stretch。
+*/
+.dm-align-self-auto {
+    align-self: auto;
 }
 
 .dm-align-self-start {
@@ -121,6 +241,14 @@
     align-self: baseline;
 }
 
+/*
+    * flex属性是flex-grow, flex-shrink 和 flex-basis的简写，
+    * 默认值为0 1 auto。
+    * 后两个属性可选。
+*/
+.dm-flex-none {
+    flex: auto;
+}
 .dm-flex-1 {
     flex: 1;
 }

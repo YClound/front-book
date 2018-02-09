@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const watch = require('gulp-watch');
 const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer');
-const cssMin = require('gulp-minify-css');
 
 gulp.task('live', function () {
     return watch('./common/less/**.less', function () {

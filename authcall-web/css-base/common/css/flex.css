@@ -10,13 +10,7 @@
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
-.dm-direction-column {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
+/*布局方向*/
 .dm-direction-row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -24,16 +18,50 @@
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.dm-flex-wrap {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+.dm-direction-row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
+.dm-direction-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.dm-direction-column-reverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+/*
+    * 是否换行
+    * 不允许换行(默认)
+*/
 .dm-flex-nowrap {
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
+.dm-flex-wrap {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.dm-flex-wrap-reverse {
+  -webkit-flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+/*
+    * 主轴上的对齐方式justify-content
+    * start(默认)
+*/
 .dm-justify-start {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
@@ -63,6 +91,16 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+/*
+    * 交叉轴上如何对齐align-items
+    * stretch(默认)
+*/
+.dm-align-stretch {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
 .dm-align-start {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
@@ -75,7 +113,7 @@
   -ms-flex-align: end;
   align-items: flex-end;
 }
-.dm-align-start {
+.dm-align-center {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -87,11 +125,14 @@
   -ms-flex-align: baseline;
   align-items: baseline;
 }
-.dm-align-stretch {
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+/*
+    * 多根轴线的对齐方式aligin-content
+    * stretch(默认)
+*/
+.dm-content-stretch {
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
 }
 .dm-content-start {
   -webkit-align-content: flex-start;
@@ -118,10 +159,119 @@
   -ms-flex-line-pack: justify;
   align-content: space-between;
 }
-.dm-content-stretch {
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
+/*
+    ** order
+    ** flex-grow
+    ** flex-shrink
+    ** flex-basis
+    ** flex
+    ** align-self
+*/
+/*
+    * order
+    * 项目的排列顺序
+    * 数值越小，排列越靠前
+    * 默认为0
+*/
+.dm-flex-order-none {
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+.dm-flex-order-5 {
+  -webkit-box-ordinal-group: 6;
+  -webkit-order: 5;
+  -ms-flex-order: 5;
+  order: 5;
+}
+.dm-flex-order-4 {
+  -webkit-box-ordinal-group: 5;
+  -webkit-order: 4;
+  -ms-flex-order: 4;
+  order: 4;
+}
+.dm-flex-order-3 {
+  -webkit-box-ordinal-group: 4;
+  -webkit-order: 3;
+  -ms-flex-order: 3;
+  order: 3;
+}
+.dm-flex-order-2 {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+}
+.dm-flex-order-1 {
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+/*
+    * flex-grow
+    * 项目的放大比例，默认为0，即如果存在剩余空间，也不放大
+*/
+.dm-flex-grow-none {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+.dm-flex-grow-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.dm-flex-grow-2 {
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+}
+.dm-flex-grow-3 {
+  -webkit-box-flex: 3;
+  -webkit-flex-grow: 3;
+  -ms-flex-positive: 3;
+  flex-grow: 3;
+}
+.dm-flex-grow-4 {
+  -webkit-box-flex: 4;
+  -webkit-flex-grow: 4;
+  -ms-flex-positive: 4;
+  flex-grow: 4;
+}
+.dm-flex-grow-5 {
+  -webkit-box-flex: 5;
+  -webkit-flex-grow: 5;
+  -ms-flex-positive: 5;
+  flex-grow: 5;
+}
+/*
+    * flex-shrink
+    * 项目的缩小比例，默认为1，即如果空间不足，该项目将缩小
+*/
+.dm-flex-shrink-1 {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+}
+.dm-flex-shrink-0 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+/*
+    * align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。
+    * 默认值为auto，表示继承父元素的align-items属性，
+    * 如果没有父元素，则等同于stretch。
+*/
+.dm-align-self-auto {
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
 }
 .dm-align-self-start {
   -webkit-align-self: flex-start;
@@ -147,6 +297,17 @@
   -webkit-align-self: baseline;
   -ms-flex-item-align: baseline;
   align-self: baseline;
+}
+/*
+    * flex属性是flex-grow, flex-shrink 和 flex-basis的简写，
+    * 默认值为0 1 auto。
+    * 后两个属性可选。
+*/
+.dm-flex-none {
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
 }
 .dm-flex-1 {
   -webkit-box-flex: 1;
