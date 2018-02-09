@@ -1,8 +1,0 @@
-{
-  "rsm": {
-    "item_id" : 845,
-    "type_name" : "answer"
-  },
-  "errno": 1,
-  "err": "你没有发表评论的权限"
-}

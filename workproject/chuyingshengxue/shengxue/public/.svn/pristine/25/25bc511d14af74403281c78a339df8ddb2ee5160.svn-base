@@ -1,4 +1,0 @@
-.m-mymsg-wrapper{}
-.m-mymsg-wrapper .btn-tab ,.m-mymsg-wrapper .btn-tab u{position: relative;display: block;}
-.m-mymsg-wrapper .btn-tab.active {color: #fe5b7e;}
-.m-mymsg-wrapper .btn-tab.active u:before {content:' ';position: absolute;width: 8px;height: 8px;background-color: red;border-radius: 100%;right: 1px;top:-3px;}
